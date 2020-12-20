@@ -70,16 +70,18 @@ The basics definition of the event.
 **ReCaptcha**
    Protect your order page against spam with `Google ReCaptcha <https://developers.google.com/recaptcha/>`_. Make sure you have set the keys in the `Settings <../getting-started/settings.html#recaptcha-settings>`_. *Fast Events* only supports ReCaptcha v2.
 **Confirmation emails**
-   Use this only with RSVP events. The user must confirm via a link in an email whether he is present.
+   Use this only with RSVP eventsor events with free tickets. The user must confirm via a link in an email whether he is present.
    The process flow is:
    
    #. User makes a booking on booking page
    #. User is redirected to the page you entered in the ``Redirect after booking`` input field
-   #. User gets the email defined in the ‘Confirmation email – tab‘
+   #. User gets the email defined in the `Email tab`_.
    #. User clicks on the :guilabel:`Confirm` button in the email
-   #. User is redirected to the page you entered in the :guilabel:`Redirect` input field in the ‘Confirmation email – tab‘.
+   #. User is redirected to the page you entered in the :guilabel:`Redirect` input field in the `Confirmation email tab`_ and he receives the confirmation email.
    
-   In the orders overview the order will show up as ``Booked - confirmed``.
+   In the orders overview the order will show up as ``booked - confirmed`` or ``dashboard - confirmed`` if they are booked through the admin interface of the :doc:`Orders menu <orders>`.
+**Confirmation timeout**
+   This setting works together with :guilabel:`Confirmation emails`. This field is in minutes. The user must press the confirm link within x minutes otherwise the reservation will be deleted. If you enter ``0`` for this field, the order stays in the system until its confirmed; it wont be deleted automatically.
 **Dashboard orders**
    Whether or not the option to place order in the :doc:`order menu </usage/orders>` is active. These orders follow all defined logic, but no payments are made.
 **Test payments**
@@ -89,7 +91,7 @@ The basics definition of the event.
 **Terms html**
    If this field is not empty, then this is shown at the bottom of the order page as a checkbox. The user must check this in order to place the order. If you work with links (see screenshot above), always target a new window. Only the following html-tags are allowed: ``<a>``, ``<b>``, ``<i>`` and ``<u>``.
 **Redirect after booking**
-   The page (‘*Thank you*‘ page) to which the user will be redirected if the payment has been successfully completed.
+   The page (‘*Thank you*‘ page) to which the user will be redirected if the payment/booking has been successfully completed.
 
 ----
 
@@ -144,11 +146,11 @@ This tabs defines the email the user is receiving after placing an order and pay
    - :guilabel:`{%TICKETS%}` the unique link for downloading the e-tickets.
    - :guilabel:`{%INVOICE%}` the unique link for downloading the invoice.
    - :guilabel:`{%FIELDS%}` the input fields from the input-tab in table format.
-   - :guilabel:`{%CONFIRM%}` only applicable for RSVP events. The link to confirm that you will be present/participate.
+   - :guilabel:`{%CONFIRM%}` only applicable for RSVP events and if the :guilabel:`Confirmation emails` flag in the `Basics tab`_ has bee set. The link to confirm that you will be present/participate.
 
 Don’t forget to test your email if it is ‘**spam-proof**‘. There are many tools available on the Internet, but we recommend using https://www.mail-tester.com/ Click the :guilabel:`Send test email` button and use the email address on the mail-tester site and within a minute you have detailed report. Be pretty serious about this, because if your email gets a high spam rating from receiving domains, your mails may end up in ‘*Spam*‘ folders or won’t be delivered at all.
 Or worse, your domain can be blacklisted.
-737278
+
 Deep dive
 ^^^^^^^^^
 For the experts: the email itself is embedded in a container of maximum 600px wide. Always test on your mobile first if the email formats well.

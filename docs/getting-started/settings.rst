@@ -1,6 +1,6 @@
 Settings
 ========
-The plugin's settings apply to all events. Before you start the sale, make sure that all necessary settings have been entered.
+The plugin's settings apply to all events. Before you start selling etickets, make sure that all necessary settings have been entered.
 
 By clicking on the tabs on the left you can change various parts of the settings. Then press :guilabel:`Save` to save the settings.
 
@@ -22,7 +22,7 @@ Payment provider account
 
 After you have created your free account, you will receive an email from Mollie with your login details. Confirm the email with the button in the email.
 
-Log in to the Mollie dashboard and go through the wizard to enter all data (Your personal info, chamber of commerce id, bankaccount, VAT number (if applicable), your identification (passport), website where you want use payments and finally the payment methods). During the process you will be asked to transfer 1 cent from your company’s bank account to prove that you are the owner.
+Log in to the Mollie dashboard and go through the wizard to enter all data (Your personal info, chamber of commerce id, bankaccount, VAT number (if applicable), your identification (passport), website where you want use payments and finally the payment methods. During the process you will be asked to transfer 1 cent from your company’s bank account to prove that you are the owner.
 
 Live API-key and Test API-key
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -71,7 +71,7 @@ The name and emailaddress you recipients will see in the received tickets email.
 
 Email retries
 ^^^^^^^^^^^^^
-*Fast Events* can be configured to keep retrying to send new order emails. Checking this option is only wise if you are using SMTP or one of the native APIs. The ‘Host email‘ solution uses the MTA on the host itself and, if everything is configured correctly, will never return an error. With ‘Host email‘ possible hard-bounces (for example: emailaddress doesn't exists) or soft-bounces (for example: mailbox full) will be send back to the sender (Send email).
+*Fast Events* can be configured to keep retrying to send new order emails. Checking this option is only wise if you are using SMTP or one of the native APIs. The ``Host email`` solution uses the MTA on the host itself and, if everything is configured correctly, will never return an error. With ‘Host email‘ possible hard-bounces (for example: emailaddress doesn't exists) or soft-bounces (for example: mailbox full) will be send back to the sender (Send email).
 
 With SMTP or the native API’s there can be errors. For example the host may be (temporary) unreachable, too many request per time-period, … Consult you API provider for other possible errors. In case of errors you have 2 options:
 
@@ -99,7 +99,8 @@ SMTP settings
 
 Amazon SES API settings
 ^^^^^^^^^^^^^^^^^^^^^^^
-The settings can be found in the `Amazon console dashboard <https://console.aws.amazon.com/>`_. If you still need to create a SES account, make sure you create it in the ``EU`` region as the plugin is only supported in the `European SEPA countries <https://wiki.xmldation.com/Support/EPC/List_of_SEPA_countries>`_. You can find/create in the Amazon IAM (Identity and Access Management) menu the :guilabel:`Access key` and :guilabel:`Secret key`. Make sure the secret key has the right permissions to send email.
+The settings can be found in the `Amazon console dashboard <https://console.aws.amazon.com/>`_. If you still need to create a SES account, make sure you create it in the ``EU`` region as the plugin is only supported in the `European SEPA countries <https://wiki.xmldation.com/Support/EPC/List_of_SEPA_countries>`_ if online payments are used.
+You can find/create in the Amazon IAM (Identity and Access Management) menu the :guilabel:`Access key` and :guilabel:`Secret key`. Make sure the secret key has the right permissions to send email.
 
 Mailgun API settings
 ^^^^^^^^^^^^^^^^^^^^

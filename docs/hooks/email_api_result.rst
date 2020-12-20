@@ -55,7 +55,7 @@ Send an email to the WordPress admin if there is an error sending the order emai
    
    <?php
    function your_action_email_api( $http_code, $order_id, $email, $result ) {
-     if ( $http_code >= 200 && $http_code <= 299 ) {
+     if ( 299 < $http_code ) {
        $subject = 'Order #' . $order_id . ', ' . $email;
        wp_mail( 'admin@yourdomain.com', $subject, $result );
      }

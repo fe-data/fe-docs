@@ -1,6 +1,6 @@
 Overview
 ************
-Make sure you have your free Mollie account configured. Without it you can only use RSVP events.
+Make sure you have your free Mollie account configured. Without it you can only use RSVP events or sell free etickets (0.00 amount).
 
 .. image:: ../_static/images/getting-started/Mollie.png
    :target: https://www.mollie.com/dashboard/signup/5835294
@@ -38,7 +38,7 @@ Before you start creating an event, it is advisable to go through all the questi
 - Are there different access-rights for some tickets. Eg. all tickets are scanned at the main-entrance but some ticket types (fi. Backstage) have ‘Backstage’ access and can be scanned at the Backstage-entrance.
 - Design the email the user receives after a successful order (see `example <../usage/events.html#email-tab>`_)?
 - Create a “*Thank you for your purchase*” page (See `thank you example <#thank-you-page>`_ below).
-- Do you need more information from the user during ordering. Normally only the name and emailaddress are needed. Be very careful adding too many fields as users tend to bailout if they see a huge list of mandatory fields.
+- Do you need more information from the user during ordering. Normally only the name and emailaddress are needed. Be very careful adding too many fields, as users tend to bailout if they see a huge list of mandatory fields.
 - Design your eticket. Do you need different designs per ticket type?
 - Scanning of the etickets: are multiple entries used and do you want to measure how many pass a specific entry?
 - Do you want to give free tickets to, for example, sponsors?

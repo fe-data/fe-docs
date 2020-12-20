@@ -3,13 +3,14 @@ Installation
 
 Requirements
 ------------
-*Fast Events* is integrated with `Mollie <https://www.mollie.com/dashboard/signup/5835294>`_ as payment provider, providing a variety of payment options. As such the plugin is only available for associations/companies residing in a `SEPA country <https://wiki.xmldation.com/Support/EPC/List_of_SEPA_countries>`_. With Mollie there are no fixed recurring costs, you only pay for successful transactions. Press the button below to create your free Mollie account.
+*Fast Events* is integrated with `Mollie <https://www.mollie.com/dashboard/signup/5835294>`_ as payment provider, providing a variety of payment options. If online payments are used, the plugin currently only works for companies, associations, foundations ... located in a `SEPA country <https://wiki.xmldation.com/Support/EPC/List_of_SEPA_countries>`_.
+With Mollie there are no fixed recurring costs, you only pay for successful transactions. Press the button below to create your free Mollie account. There is no region restriction for free tickets or RSVP events.
 
 .. image:: ../_static/images/getting-started/Mollie.png
    :target: https://www.mollie.com/dashboard/signup/5835294
    :alt: Mollie
 
-.. note:: *Fast Events* has been tested on **WordPress 5.5** and later together with **PHP 7.4** and later. Older versions of WordPress and PHP are not supported! Make sure the PHP extensions ``gd``, ``imagick`` and ``opcache`` are enabled. With most hosting providers this can be done via DirectAdmin or cPanel.
+.. note:: *Fast Events* has been tested on **WordPress 5.6** and later together with **PHP 7.4** and later. Older versions of WordPress and PHP are not supported! Make sure the PHP extensions ``gd``, ``imagick`` and ``opcache`` are enabled. With most hosting providers this can be done via DirectAdmin or cPanel.
 
 Because the number and variety of plugins is vast and wide, we do not guarantee that the plugin will function with all third-party plugins, themes or browsers of any kind. We do not assume responsibility and will not be held responsible for any conflicts or compatibility issues that may occur due to third-party software. We assume no responsibility for any data loss as a result of installing or using *Fast Events*. Should conflicts occur with third-party software, we may provide support at our discretion.
 
