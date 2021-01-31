@@ -247,6 +247,8 @@ Events controller
 - ``example_ticket`` Create an example ticket
 - ``example_invoice`` Create an example invoice
 - ``bulk_copy`` Copy changes from 1 event to many other events
+- ``export`` Expert events and related pages and templates
+- ``import`` Import events and related pages and templates
 
 Tools controller
 ^^^^^^^^^^^^^^^^
@@ -298,6 +300,10 @@ Admin_app controller
 - ``payment_app_change`` Change the qrcode for the Payment App
 - ``scan_app_change`` Change the qrcode for the Scan App
 
+Pay_app controller
+^^^^^^^^^^^^^^^^^^
+- ``create`` Create a new direct payment
+
 Suppose you want to give a customer services representative the option to see orders details, resend the confirmation, change credentials en refund orders, the authorization line would be:
 
 .. code-block:: text
@@ -309,8 +315,10 @@ Suppose you want to give a customer services representative the option to see or
 Miscellaneous settings
 ----------------------
 **Custom order statuses**
-   A list of custom statutes separated by a comma. The length of a single status should be 32 characters or less. You can use the custom status fields in the contextmenu of the order-table. Fi. use it as reminder for calling back a customer after an earlier call. For example, the field could be filled with ``callback,call finished``. You can then easily find the actions by sorting on this field in the order table.
+   A list of custom statutes separated by a comma. The length of a single status should be 32 characters or less. You can use the custom status fields in the contextmenu of the order-table.
+   Fi. use it as reminder for calling back a customer after an earlier call. For example, the field could be filled with ``callback,call finished``.
+   You can then easily find the actions by sorting on this field in the order table.
 
-   But you can also use it if you occasionally want to sell a book or whatever. Then use, for example, the statuses ``processing, shipped``. You can then send the customer an email update with the custom filter :doc:`fast_events_custom_status <../hooks/custom_status>` if the status has changed. A simple solution if you do this occasionally, but if it is more structural then a solution like `WooCommerce <https://wordpress.org/plugins/woocommerce/>`_ is recommended.
-**Load CSS/JS from CDN**
-   *Fast Events* relies on a number of Javascript packages for its Admin menu's, which are standard loaded from your WordPress server. If you check this entry, the packages will be loaded from a CDN (Cloudflare).
+   But you can also use it if you occasionally want to sell a book or whatever. Then use, for example, the statuses ``processing, shipped``.
+   You can then send the customer an email update with the custom filter :doc:`fast_events_custom_status <../hooks/custom_status>` if the status has changed.
+   A simple solution if you do this occasionally, but if it is more structural then a solution like `WooCommerce <https://wordpress.org/plugins/woocommerce/>`_ is recommended.

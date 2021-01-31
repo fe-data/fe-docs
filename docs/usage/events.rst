@@ -12,6 +12,9 @@ Events overview
 The top-left button bar has the following functionality:
 
 - Hide/show columns in the table view.
+- Export selected events. Select 1 or more events by using SHIFT or CTRL-keys and a mouse-click. In the popup-screen you can also select the associated media and pages. In this way you can prepare an event on 1 system, export it, and import it on another system.
+- Import events. Selected the zip-file and choose if you wish to overwrite media and/or pages if present. Any URL's present in the zip-file from the exporting site will be replaced by the url relative to the importing site.
+  Be careful with other people's zip files. Always check whether the URL's in the different parts of the event definition (emails, redirects, REST calls, ..) are valid.
 - Add a new event. Most of the time it’s more convenient to use the ``Duplicate event`` in the context menu, rather than starting with an empty event.
 
 There is a context-menu if you scroll through the orders; **use the right mouse-button** to make it visible and the chosen action is applied on the event where you did the right click.
@@ -70,7 +73,7 @@ The basics definition of the event.
 **ReCaptcha**
    Protect your order page against spam with `Google ReCaptcha <https://developers.google.com/recaptcha/>`_. Make sure you have set the keys in the `Settings <../getting-started/settings.html#recaptcha-settings>`_. *Fast Events* only supports ReCaptcha v2.
 **Confirmation emails**
-   Use this only with RSVP eventsor events with free tickets. The user must confirm via a link in an email whether he is present.
+   Use this only with RSVP events or events with free tickets. The user must confirm via a link in an email whether he is present.
    The process flow is:
    
    #. User makes a booking on booking page

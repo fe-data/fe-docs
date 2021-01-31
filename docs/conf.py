@@ -10,19 +10,20 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-import sys, os
-# sys.path.insert(0, os.path.abspath('.'))
+import sys, os, datetime
 
 import sphinx_rtd_theme
+
+sys.path.insert(0, os.path.abspath('..'))
+sys.path.append(os.path.dirname(__file__))
 
 # -- Project information -----------------------------------------------------
 
 project = 'Fast Events Ticketing'
-copyright = '2020, FE Data'
+copyright = '2020-{}, FE Data & contributors'.format(
+                datetime.date.today().year
+            )
 author = 'FE Data'
-
-# The full version, including alpha/beta/rc tags
-# release = '1.0'
 
 
 # -- General configuration ---------------------------------------------------
@@ -31,7 +32,10 @@ author = 'FE Data'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-   "sphinx_rtd_theme",
+   'sphinx_rtd_theme',
+   'sphinx_tabs.tabs',
+   'sphinxcontrib.httpdomain',
+   'sphinx_copybutton',
 ]
 
 # Add any paths that contain templates here, relative to this directory.

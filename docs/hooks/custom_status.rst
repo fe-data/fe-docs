@@ -83,7 +83,7 @@ See :doc:`Examples </usage/examples>` (*Ship a signed photo book*) for a more de
          '<p>We are processing your order with id <b>' . $attr['order_id'] . '.</b> '.
          'You wil receive another email if we ship your order.</p>' .
          '<p>Vintage Vinyl Open Air 2019 team</p>';
-       fe_helper_func()->send_email( $attr['email'], "We are processing your order", $message );
+       fast_events_helper_func()->send_email( $attr['email'], "We are processing your order", $message );
      }
      if ( 'shipped' === $attr['custom_status'] ) {
        $html = '<input type="text" name="email" value="' . $attr['email'] . '"><br>' .

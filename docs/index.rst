@@ -97,6 +97,8 @@ Most things perform better when they’re maintained. We have pulled together a 
   :doc:`security <advanced/security>`
 * **Performance**:
   :doc:`performance <advanced/performance>`
+* **Public API**:
+  :doc:`api <advanced/api>`
 
 .. toctree::
    :maxdepth: 2
@@ -106,6 +108,7 @@ Most things perform better when they’re maintained. We have pulled together a 
    advanced/analysis
    advanced/security
    advanced/performance
+   advanced/api
    
 Hooks
 -----

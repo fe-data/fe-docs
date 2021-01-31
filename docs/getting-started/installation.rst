@@ -45,7 +45,7 @@ Using FTP
 
 Demo data
 ---------
-The plugin comes pre-loaded with some demo data. Give it a try and play around in the menu and the order contextmenu. Place dashboard orders and give the ‘Scan App‘ a try. If you want to try the ‘Payment App‘, you first have to create your free Mollie account to receive payments.
+The plugin comes pre-loaded with some demo data. Give it a try and play around in the menu and the order contextmenu. Place dashboard orders and give the :doc:`Scan App <../apps/scan>` a try. If you want to try the :doc:`Payment App <../apps/payment>`, you first have to create your free Mollie account to receive payments.
 
 Next steps
 ----------

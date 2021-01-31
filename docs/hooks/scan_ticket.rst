@@ -100,7 +100,7 @@ Send a “*Thank you for visiting*” email to users who pass the exit scan (lev
        $message = '<p>Dear ' . $attr['name'] . ',</p>' .
          '<p>Thank you for visiting our event. Hope to see you <b>next</b> year</p>' .
          '<p>Vintage Vinyl Open Air 2019 team</p>';
-       fe_helper_func()->send_email( $attr['email'], "Thank you for visiting Vintage Vinyl Open Air 2019", $message );
+       fast_events_helper_func()->send_email( $attr['email'], "Thank you for visiting Vintage Vinyl Open Air 2019", $message );
      }
    }
    
@@ -123,7 +123,7 @@ Send a “*Thank you for visiting*” email to users who pass the exit scan (lev
          $message .= '<tr><td>' . $value->scan_date . '</td><td>' . $value->scan_location . '</td></tr>';
        }
        $message .= '</table><p>The National bicycle tour team</p>';
-       fe_helper_func()->send_email( $attr['email'], "Thank you for participating in our bicycle tour", $message );
+       fast_events_helper_func()->send_email( $attr['email'], "Thank you for participating in our bicycle tour", $message );
      }
    }
    
