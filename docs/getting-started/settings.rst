@@ -197,9 +197,11 @@ Or they can scan the qrcode to configure the :doc:`Payment app <../apps/payment>
 
 ----
 
-Settings for the FE Admin App
------------------------------
-These settings work together with the :doc:`FE Admin App <../apps/admin>`. The App can be used on your mobile (for now only on Android) to view the basic information of events and orders. But you can also resend orders, refund, configure the scan app or payment app, and much more …
+REST API settings
+-----------------
+These settings work together with the :doc:`FE Admin App <../apps/admin>` and the :doc:`Public API <../advanced/api>`.
+The App can be used on your mobile (for now only on Android) to view the basic information of events and orders.
+But you can also resend orders, refund, configure the scan app or payment app, and much more …
 
 API key
 ^^^^^^^
@@ -282,19 +284,17 @@ Orders controller
 Admin_app controller
 ^^^^^^^^^^^^^^^^^^^^
 - ``event_read`` Read events
-- ``change_stock`` Change stock of event and/or tickets
-- ``change_dates`` Change date of sales
+- ``event_update`` Change stock of events
 - ``total_sales`` Overview of total sales
 - ``total_scans`` Overview of all scans
-- ``order_read`` Read orders
-- ``order_details`` Show order details
+- ``order_add`` Add new orders
+- ``order_delete`` Delete the order
 - ``order_email`` Resend the order confirmation
-- ``change_email`` Change the user credentials of the order
-- ``delete_order`` Delete the order
+- ``order_read`` Read orders
+- ``order_refund`` Refund the order
+- ``order_update`` Change the user credentials or custom status of the order
 - ``delete_tickets`` Delete the tickets from the order
 - ``create_tickets`` Create new tickets for the selected order
-- ``refund`` Refund the order
-- ``dashboard_order`` A new orders
 - ``payment_app_read`` Show the qrcode for the Payment App
 - ``scan_app_read`` Show the qrcode for the Scan App
 - ``payment_app_change`` Change the qrcode for the Payment App

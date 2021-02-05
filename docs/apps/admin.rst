@@ -15,11 +15,14 @@ The App is available for Android 7.0 and later. The IOS version is not available
    
 Settings
 --------
-First make sure you have configured the ``Settings for the FE Admin app`` in the `settings <../getting-started/settings.html#settings-for-the-fe-admin-app>`_ of the plugin.
+First make sure you have configured the ``REST API settings`` in the `settings <../getting-started/settings.html#rest-api-settings>`_ of the plugin.
 
 You can share the qrcode on the settings page of the plugin with the App to configure the :guilabel:`Server URL` and :guilabel:`API Key` parameters. Email the configuration qrcode as an attachment to the user, which can than be shared with the App to configure it. Still the other parameters have be configured manually.
 
-Users of the App need an account in the WordPress environment. If the user doesn't have the role of '*admin*', you have to make sure to authorize the use in the `Authorization settings <../getting-started/settings.html#authorization-settings>`_.
+Users of the App need an account in the WordPress environment. The App uses WordPress application password.
+You can either create 1 WordPress user and use a single application password for all clients or an application password per client. But you can also create a WordPress user for each client with an application password.
+In WordPress you can then easily revoke the rights per client. The API KEY can be used as a kind of kill switch. By changing this, all clients will be blocked.
+If the user doesn't have the role of '*admin*', you have to make sure to authorize the use in the `Authorization settings <../getting-started/settings.html#authorization-settings>`_.
 
 Usage
 -----
