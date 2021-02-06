@@ -76,7 +76,13 @@ Email retries
 With SMTP or the native API’s there can be errors. For example the host may be (temporary) unreachable, too many request per time-period, … Consult you API provider for other possible errors. In case of errors you have 2 options:
 
 #. Use the :doc:`fast_events_email_api_result <../hooks/email_api_result>` webhook to inform the WordPress Admin (or another user) that something went wrong
-#. Check the checkbox :guilabel:`Email retries` and *Fast Events* will retry sending the email to the SMTP or API-provider again. It will retry the first hour every 15 minutes and after that it will retry every hour for 3 hours. If it still fails after 4 hours *Fast Events* will inform the WordPress Admin user with an email.
+#. Check the checkbox :guilabel:`Email retries` and *Fast Events* will retry sending the email to the SMTP or API-provider again.
+   It will use the ``Retry scheme`` to schedule the next retry.
+
+Retry scheme
+^^^^^^^^^^^^
+The default value is ``2,4,8,16,32,64,128``, which means the first retry is scheduled after 2 minutes, and then 4 minutes, and so on.
+You can define you own scheme.
 
 Consult you SMTP or API provider how it handles hard-bounces and soft-bounces. Usually they provide webhooks to process these bounces.
      
