@@ -91,6 +91,8 @@ The basics definition of the event.
    Use this flag to test your event before the event goes into production.
 **Seats**
    Use a seating plan. Works together with `Seats tab`_.
+**Webhooks**
+   Whether or not webhooks are enabled for this event. See also :doc:`Webhooks </advanced/webhooks>`
 **Terms html**
    If this field is not empty, then this is shown at the bottom of the order page as a checkbox. The user must check this in order to place the order. If you work with links (see screenshot above), always target a new window. Only the following html-tags are allowed: ``<a>``, ``<b>``, ``<i>`` and ``<u>``.
 **Redirect after booking**

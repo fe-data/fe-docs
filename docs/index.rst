@@ -99,6 +99,8 @@ Most things perform better when they’re maintained. We have pulled together a 
   :doc:`performance <advanced/performance>`
 * **Public API**:
   :doc:`api <advanced/api>`
+* **Webhooks**:
+  :doc:`webhooks <advanced/webhooks>`
 
 .. toctree::
    :maxdepth: 2
@@ -109,9 +111,10 @@ Most things perform better when they’re maintained. We have pulled together a 
    advanced/security
    advanced/performance
    advanced/api
-   
-Hooks
------
+   advanced/webhooks
+
+Actions & filters
+-----------------
 *Fast Events* has a number of :doc:`action- and filter hooks </hooks/usage>` that can be used to inject custom specific code.
 
 :doc:`fast_events_custom_status <hooks/custom_status>`
@@ -136,7 +139,7 @@ Hooks
 .. toctree::
    :maxdepth: 2
    :hidden:
-   :caption: Hooks
+   :caption: Actions & filters
 
    hooks/usage
    hooks/custom_status

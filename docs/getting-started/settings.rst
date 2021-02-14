@@ -82,7 +82,7 @@ With SMTP or the native API’s there can be errors. For example the host may be
 Retry scheme
 ^^^^^^^^^^^^
 The default value is ``2,4,8,16,32,64,128``, which means the first retry is scheduled after 2 minutes, and then 4 minutes, and so on.
-You can define you own scheme.
+You can define your own scheme.
 
 Consult you SMTP or API provider how it handles hard-bounces and soft-bounces. Usually they provide webhooks to process these bounces.
      
@@ -227,7 +227,7 @@ Per line you can specify which user is authorized for which actions. Its format 
 
    emailaddress:controller1(action1|action2|...),controller2(action3|action4|...),...
    
-The following controllers and actions are available. If you you want to grant all actions of a single controller, you can also specify a ***** (asterisk):
+The following controllers and actions are available. If you want to grant all actions of a single controller, you can also specify a ***** (asterisk):
 
 Settings controller
 ^^^^^^^^^^^^^^^^^^^
@@ -242,21 +242,21 @@ Errorlog controller
 
 Events controller
 ^^^^^^^^^^^^^^^^^
-- ``read`` Read events
-- ``update`` Change events
 - ``add`` Add new events
-- ``duplicate`` Duplicate events
-- ``set_zero`` Set all counters to zero
-- ``remove_all`` Remove all orders from an event
-- ``test_email`` Send test emails
-- ``user_group_read`` Read closed user groups
-- ``user_group_upload`` Upload new user groups
-- ``user_group_delete`` Delete user groups
-- ``example_ticket`` Create an example ticket
-- ``example_invoice`` Create an example invoice
 - ``bulk_copy`` Copy changes from 1 event to many other events
+- ``duplicate`` Duplicate events
+- ``example_invoice`` Create an example invoice
+- ``example_ticket`` Create an example ticket
 - ``export`` Expert events and related pages and templates
 - ``import`` Import events and related pages and templates
+- ``read`` Read events
+- ``remove_all`` Remove all orders from an event
+- ``set_zero`` Set all counters to zero
+- ``test_email`` Send test emails
+- ``update`` Change events
+- ``user_group_delete`` Delete user groups
+- ``user_group_read`` Read closed user groups
+- ``user_group_upload`` Upload new user groups
 
 Tools controller
 ^^^^^^^^^^^^^^^^
@@ -266,45 +266,58 @@ Tools controller
 
 Qrcode controller
 ^^^^^^^^^^^^^^^^^
-- ``admin_app_read`` Read the qrcode for the Admin App
-- ``payment_app_read`` Read the qrcode for the Payment App
-- ``scan_app_read`` Read the qrcode for the Scan App
 - ``admin_app_change`` Change the qrcode for the Admin App
+- ``admin_app_read`` Read the qrcode for the Admin App
 - ``payment_app_change`` Change the qrcode for the Payment App
+- ``payment_app_read`` Read the qrcode for the Payment App
 - ``scan_app_change`` Change the qrcode for the Scan App
+- ``scan_app_read`` Read the qrcode for the Scan App
 
 Orders controller
 ^^^^^^^^^^^^^^^^^
-- ``read`` Read orders
-- ``dashboard_order`` Add new orders
-- ``email`` Resend the order by email
 - ``change_email`` Change the user credentials
+- ``create_tickets`` Create new tickets
 - ``custom_status`` Set a custom status
+- ``dashboard_order`` Add new orders
 - ``delete`` Delete the order
 - ``delete_tickets`` Delete the tickets
-- ``create_tickets`` Create new tickets
-- ``download_tickets`` Download the PDF tickets
 - ``download_invoice`` Download the PDF invoice
+- ``download_tickets`` Download the PDF tickets
+- ``email`` Resend the order by email
+- ``read`` Read orders
 - ``refund`` Refund the order
 
-Admin_app controller
-^^^^^^^^^^^^^^^^^^^^
+Webhooks controller
+^^^^^^^^^^^^^^^^^^^
+- ``add`` Add new webhooks
+- ``delete`` Delete webhooks
+- ``duplicate`` Duplicate a webhooks
+- ``ping`` Ping a webhook consumer for debugging purposes
+- ``read`` Read webhooks
+- ``reset`` Reset webhook counters
+- ``update`` Update existing webhooks
+
+Admin controller
+^^^^^^^^^^^^^^^^
+Used by the :doc:`Admin app </apps/admin>` and the :doc:`REST API </advanced/api>`.
+
 - ``event_read`` Read events
 - ``event_update`` Change stock of events
-- ``total_sales`` Overview of total sales
-- ``total_scans`` Overview of all scans
 - ``order_add`` Add new orders
 - ``order_delete`` Delete the order
 - ``order_email`` Resend the order confirmation
 - ``order_read`` Read orders
 - ``order_refund`` Refund the order
 - ``order_update`` Change the user credentials or custom status of the order
-- ``delete_tickets`` Delete the tickets from the order
-- ``create_tickets`` Create new tickets for the selected order
-- ``payment_app_read`` Show the qrcode for the Payment App
-- ``scan_app_read`` Show the qrcode for the Scan App
 - ``payment_app_change`` Change the qrcode for the Payment App
+- ``payment_app_read`` Show the qrcode for the Payment App
 - ``scan_app_change`` Change the qrcode for the Scan App
+- ``scan_app_read`` Show the qrcode for the Scan App
+- ``tickets_create`` Create new tickets for the selected order
+- ``tickets_delete`` Delete the tickets from the order
+- ``tickets_read`` Show the tickets from the order
+- ``total_sales`` Overview of total sales
+- ``total_scans`` Overview of all scans
 
 Pay_app controller
 ^^^^^^^^^^^^^^^^^^
@@ -315,6 +328,36 @@ Suppose you want to give a customer services representative the option to see or
 .. code-block:: text
 
    any_email@domain.com:orders(details|email|change_email|refund)
+
+----
+
+Action scheduler
+----------------
+*Fast Events* uses the *Action scheduler* for delivering webhook information, retries to send emails and timed RSVP events.
+
+Do not make any changes to these parameters until you have a good understanding of how the *Action scheduler* works and the consequences of the changes.
+You can find `here more information <https://actionscheduler.org/perf/>`_ for a detailed explanation. In case you do fully understand it, make the changes and test!
+
+Bear in mind that the *Action scheduler* can be used by multiple plugins. Make sure to know how these plugins interact with the *Action scheduler*.
+
+The defaults will do fine for small events, but if you an event with thousands of orders in a short time frame or scanning requests and webhook consumers for these events, you may consider different settings.
+
+**Purge days**
+   After 30 days completed actions will be removed from the logs. With the *Fast Events* plugin you could bring this value down to a lower level.
+   Check for the longest retry schedule you use in sending your email, in webhooks or timed RSVP events. But also check other plugins using the *Action scheduler*, if any.
+**Time limit**
+   Most shared hosting environments allow a maximum of 30 seconds execution time for a job. If this is different in your situation you can change this.
+   But don't forget: long running actions also tie up resources for a long time!
+**Batch size**
+   By default if a queue starts running it processes 25 actions. This means with the previous parameter ``Time limit``, that the system has 30 seconds to process the 25 actions.
+   But the actions issued by *Fast Events* should finish in a fraction of a second. If you hook up new webhook consumers tell them to return a HTTP 200 response as soon as possible and
+   not do first all kinds of processing and then return a HTTP 200. If you switch on logging for a webhook, you can find the full analysis of the webhook including the ``duration``.
+   If this is close to 1 second or even bigger, then there is a serious issue.
+**Concurrent batches**
+   The default is 1. You could increase this, but before you do make sure your webhook consumers can coop with multiple simultaneous connections. This parameter works together with the next one.
+**Additional runners**
+   Because the *Action scheduler* is only triggered at most once every minute by WP Cron, it rarely happens that multiple concurrent batches are running at the same time.
+   With this parameter you can force *Action scheduler* to start additional queues at the same time.
 
 ----
 
