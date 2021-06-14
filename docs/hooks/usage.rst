@@ -1,5 +1,8 @@
+Actions & filters
+=================
+
 Usage
-======
+-----
 *Fast Events* has a number of action- and filter hooks that can be used to inject custom specific code. Take a look at the examples paragraph of the functions to get an idea how to use them.
 
 If you want to use the filter and action hooks, there are generally a few options.
@@ -10,3 +13,39 @@ If you want to use the filter and action hooks, there are generally a few option
 #. Or…. use a plugin that does most of the magic for you. If you just want to use a limited set of filters and or action hooks we strongly advice you to take this route. Install the `Code snippets <https://wordpress.org/plugins/code-snippets/>`_ plugin. All the examples in the functions can be easy copied into ``Snippets`` of this plugin. Most examples are easy to understand and easy to adjust.
 
 .. tip:: If you have made a nice snippet yourself, let us know, and we will include it in the documentation as an example.
+
+Reference
+---------
+
+:doc:`fast_events_custom_status <custom_status>`
+    This filter is called after a custom order status change from the order contextmenu. It can only be used if the ‘Custom order statuses’ field has been set in the plugin settings.
+:doc:`fast_events_email_api_result <email_api_result>`
+    This action is called after an order email has been send to the email-provider (Host-email, SMTP, Amazon SES, Mailgun, …). This call is made with both a successful email and an incorrect email (submission failed).
+:doc:`fast_events_input_fields <input_fields>`
+    This filter is called after a basic check of all input and ticket fields.
+:doc:`fast_events_new_order <new_order>`
+    This action is called after the payment has been received and the customer has already received an email.
+:doc:`fast_events_new_order_text <new_order_text>`
+    Filter the default error text while processing the order and change the text if necessary.
+:doc:`fast_events_scan_error_text <scan_error_text>`
+    This filter is called if there is a scan error. Normally the API returns the localized error, but you can override it and create your own version. You can make the error-string even more specific by using the scancode that is linked to a specific entrance.
+:doc:`fast_events_scan_filter_output <scan_filter_output>`
+    This filter is called just before the output is sent back to the Android or IOS scan app. You can change any of the text lines in the qrcode block.
+:doc:`fast_events_scan_ticket <scan_ticket>`
+    This action is called after the ticket has been scanned.
+:doc:`fast_events_ticket_text <ticket_text>`
+    This filter is called just before the text of the qrcode block is printed on the ticket template.
+
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+
+   custom_status
+   email_api_result
+   input_fields
+   new_order
+   new_order_text
+   scan_error_text
+   scan_filter_output
+   scan_ticket
+   ticket_text

@@ -9,7 +9,6 @@ Webhooks are used for sending data to a URL when an event happens in *Fast Event
 
 ----
 
-
 How does it work?
 -----------------
 Action scheduler
@@ -17,7 +16,7 @@ Action scheduler
 *Fast Events* uses the `Action scheduler <https://actionscheduler.org>`_, which is widely used by other WordPress plugins including `Woocommerce <https://woocommerce.com#>`_.
 *Fast Events* uses it for Webhooks, email retries and RSVP events if confirmation emails are configured and if the customer doesn't respond in time, the Action scheduler will remove the order.
 
-The *Action scheduler* will run every minute and is triggered by the WordPress `WP-Cron <http://codex.wordpress.org/Function_Reference/wp_cron>`_ system.
+The *Action scheduler* will run every minute and is triggered by the WordPress `WP-Cron <https://codex.wordpress.org/Function_Reference/wp_cron>`_ system.
 So you need to make sure WP-Cron is enabled in your WordPress installation, but this is always the case if you have a standard installation.
 
 You can inspect the job queue in the WordPress :guilabel:`Tools` menu under :guilabel:`Scheduled actions`. There is no need to cleanup ``Completed`` jobs manually as the system removes them automatically after 30 days.
@@ -42,7 +41,7 @@ Every HTTP POST has a number of unique HTTP headers:
 
 **User-Agent**
    It will show the version-number of the *Fast Events* plugin and WordPress.
-   Example: ``Fast-Events/1.0 (WordPress/5.6.1)``
+   Example: ``Fast-Events/1.0 (WordPress/5.7.2)``
 **X-FE-Webhook-ID**
    The id of the webhook. You can find the id in the `Webhooks overview`_.
 **X-FE-Webhook-Source**
@@ -50,7 +49,7 @@ Every HTTP POST has a number of unique HTTP headers:
 **X-FE-Webhook-Topic**
    The topic that triggered the webhook. See `Webhooks overview`_.
 **X-FE-Webhook-Resource**
-   The resource can be: ``event``, ``order`` order ``scan``
+   The resource can be: ``event``, ``order``, ``scan`` order ``download``
 **X-FE-Webhook-Event**
    See `Webhooks overview`_ and look for the second part in the ``Topic``.
 **X-FE-Webhook-Delivery-ID**
@@ -165,6 +164,8 @@ Add/update webhooks
    #. Delete order
    #. Refund order
    #. New scan
+   #. Tickets downloaded
+   #. Invoice downloaded
 **Enabled**
    Check this box if the consumer is actively listening for new requests. The system will check if the URL is live.
    It does a ``ping request`` and if no HTTP 200 is received, it will not activate the URL.
@@ -182,395 +183,16 @@ Add/update webhooks
 
 Topics
 ------
-This section shows all the topics that are currently available as webhook.
-
-----
-
-Events
-~~~~~~
-New event
-+++++++++
-
-**Triggered by**
-
-#. Choose for :guilabel:`New event (+)` in the icon-menu of the events-dashboard
-#. Choose for :guilabel:`Duplicate event` in the context-menu of the events-dashboard.
-
-**Example payload**
-
-.. sourcecode:: json
-
-    {
-        "id": 2,
-        "event_name": "Vinyl Open Air 2021",
-        "event_date": "2021-02-28 14:00:00",
-        "event_date_format": "Y-m-d H:i",
-        "start_date": "2021-02-01 00:00:00",
-        "end_date": "2021-02-28 14:00:00",
-        "event_type": 1,
-        "stock": 10000,
-        "stock_link": 0,
-        "sold": 4,
-        "group_type": 0,
-        "event_group": "",
-        "redirect": "http://192.168.2.18/order-thankyou/",
-        "email": {
-            "bcc": "",
-            "subject": "Your Vinyl Open Air 2021 tickets",
-            "body": "HTML truncated ..."
-        },
-        "email_confirmation": {
-            "bcc": "",
-            "subject": "",
-            "body": "",
-            "redirect": ""
-        },
-        "emails_needed": false,
-        "tickets_needed": true,
-        "invoice_needed": true,
-        "unique_users_needed": false,
-        "unique_event_ids": [
-            2
-        ],
-        "user_groups_needed": false,
-        "recaptcha_needed": false,
-        "confirmation_emails_needed": false,
-        "confirmation_timeout": 0,
-        "add_dashboard_orders_needed": true,
-        "test_payments_needed": true,
-        "seats_needed": false,
-        "webhooks_needed": true,
-        "terms": "I agree to <a href=\"\" target=\"_blank\" rel=\"noreferrer noopener\">Terms and Conditions</a>",
-        "pdf_fields": {
-            "ticket": {
-                "attachment_id": 5,
-                "x_position": 40,
-                "y_position": 150,
-                "rotation": 0,
-                "template_per_type": false,
-                "ticket_types ": [
-                    {
-                        "ticket_type": "Silver",
-                        "attachment_id": 5
-                    },
-                    {
-                        "ticket_type": "Gold (Backstage)",
-                        "attachment_id": 5
-                    }
-                ]
-            },
-            "invoice": {
-                "attachment_id": 6,
-                "use_vat": true,
-                "name_position": {
-                    "x_position": 27,
-                    "y_position": 64
-                },
-                "invoice_number_position": {
-                    "x_position": 127,
-                    "y_position": 64
-                },
-                "first_line_position": {
-                    "x_position": 25,
-                    "y_position": 92
-                }
-            }
-        },
-        "scan_date_format": "l, j F H:i:s",
-        "scan_keys": [
-            {
-                "scan_key": "Rg4lCMXWwpyhgbTy",
-                "scan_level": 0,
-                "scan_location": "Main entrance",
-                "scan_tickets": []
-            },
-            {
-                "scan_key": "1DsCwYDOzWnqgU9v",
-                "scan_level": 1,
-                "scan_location": "Backstage entrance",
-                "scan_tickets": [
-                    "Gold (Backstage)"
-                ]
-            }
-        ],
-        "order_submit_text": "Pay",
-        "extra_input_fields": [],
-        "ticket_fields": [
-            {
-                "stock_control": false,
-                "name": "Silver",
-                "price": 25,
-                "vat": 21,
-                "minimum_to_order": 0,
-                "maximum_to_order": 50,
-                "is_counted": true
-            },
-            {
-                "stock_control": true,
-                "stock": 100,
-                "name": "Gold (Backstage)",
-                "price": 40,
-                "vat": 21,
-                "minimum_to_order": 0,
-                "maximum_to_order": 50,
-                "is_counted": true
-            }
-        ],
-        "user_group_info": {
-            "group_type": 0
-        }
-    }
-
-**Changelog**
-
-.. csv-table::
-   :header: "Version", "Description"
-   :width: 100%
-   :widths: auto
-
-   "1.0", "Introduced."
-
-----
-
-Update event
-++++++++++++
-
-**Triggered by**
-
-#. Admin App
-#. Choose for :guilabel:`Change event` in the contextmenu of the events-dashboard
-
-**Example payload**
-   See `New event`_.
-
-
-**Changelog**
-
-.. csv-table::
-   :header: "Version", "Description"
-   :width: 100%
-   :widths: auto
-
-   "1.0", "Introduced."
-
-----
-
-Delete event
-++++++++++++
-
-**Triggered by**
-
-#. Choose for :guilabel:`Delete event` in the contextmenu of the event-dashboard
-
-**Example payload**
-
-.. sourcecode:: json
-
-    {
-        "id": 2
-    }
-
-**Changelog**
-
-.. csv-table::
-   :header: "Version", "Description"
-   :width: 100%
-   :widths: auto
-
-   "1.0", "Introduced."
-
-----
-
-Orders
-~~~~~~
-New order
-+++++++++
-
-**Triggered by**
-
-#. Admin App (New order)
-#. Choose for :guilabel:`New order (+)` in the icon-menu of the orders-dashboard
-#. Orders placed via order-pages. The webhook is not executed until the order has been paid.
-
-**Example payload**
-
-.. sourcecode:: json
-
-    {
-        "id": 14810,
-        "event_id": 44,
-        "event_date": "2021-01-28 09:00:00",
-        "payment_id": "tr_s86ed95uHD",
-        "payment_status": "paid",
-        "custom_status": "",
-        "created_at": "2021-01-09 15:21:24",
-        "uid": "ha9hrHI7jPzb1Q01sjW68KbWsA2we9E1PxDwvWgJ",
-        "name": "John Doe",
-        "email": "john.doe@exampledomain.com",
-        "input_fields": {
-            "fields": [],
-            "tickets": [
-                {
-                    "name": "Gold (Backstage)",
-                    "price": 40,
-                    "vat": 21,
-                    "is_counted": true,
-                    "number": 2
-                }
-            ]
-        },
-        "num_tickets": 2,
-        "total": 80,
-        "ip_address": "1.2.3.4"
-    }
-
-**Changelog**
-
-.. csv-table::
-   :header: "Version", "Description"
-   :width: 100%
-   :widths: auto
-
-   "1.0", "Introduced."
-
-----
-
-Update order
-++++++++++++
-
-**Triggered by**
-
-#. Admin App (Change credentials)
-#. REST API (`Update order request <api.html#order-update>`_)
-#. Choose for :guilabel:`Change credentials` in the contextmenu of the orders-dashboard
-#. Choose for :guilabel:`Custom order status` in the contextmenu of the orders-dashboard
-
-**Example payload**
-
-.. sourcecode:: json
-
-    {
-        "id": 14782,
-        "custom_status": "processing",
-        "name": "John Doe",
-        "email": "john.doe@exampledomain.com"
-    }
-
-**Changelog**
-
-.. csv-table::
-   :header: "Version", "Description"
-   :width: 100%
-   :widths: auto
-
-   "1.0", "Introduced."
-
-----
-
-Delete order
-++++++++++++
-
-**Triggered by**
-
-#. Admin App
-#. REST API (`Delete order request <api.html#delete-order>`_)
-#. Choose for :guilabel:`Delete order` in the contextmenu of the orders-dashboard
-
-**Example payload**
-
-.. sourcecode:: json
-
-    {
-        "id": 14810
-    }
-
-**Changelog**
-
-.. csv-table::
-   :header: "Version", "Description"
-   :width: 100%
-   :widths: auto
-
-   "1.0", "Introduced."
-
-----
-
-Refund order
-++++++++++++
-
-**Triggered by**
-
-#. Admin App
-#. Choose for :guilabel:`Refund` in the contextmenu of the orders-dashboard
-
-**Example payload**
-
-.. sourcecode:: json
-
-    {
-        "ids": [
-            14783
-        ],
-        "refunds": [
-            {
-                "refund_amount": 14.25,
-                "refund_date": "2021-01-09 14:59:54"
-            }
-        ]
-    }
-
-.. note::
-
-   The payload can contain multiple order ids. This will happen if the order is part of a multi-select group, e.g. multiple events grouped together.
-
-**Changelog**
-
-.. csv-table::
-   :header: "Version", "Description"
-   :width: 100%
-   :widths: auto
-
-   "1.0", "Introduced."
-
-----
-
-Scans
-~~~~~
-New scan
-++++++++
-
-**Triggered by**
-
-#. Scan App
-#. REST API (`Scan request <api.html#post--fast-events-v1-scans>`_)
-#. Choose for :guilabel:`Checkin` in the contextmenu of the orders-dashboard
-
-**Example payload**
-
-.. sourcecode:: json
-
-    {
-        "event_id": 94,
-        "order_id": 14810,
-        "name": "John Doe",
-        "email": "john.doe@exampledomain.com",
-        "qrcode": "aImTVXZx1u8Wb9S8",
-        "ticket_type": "Gold (Backstage)",
-        "scan_level": 0,
-        "scan_date": "2021-01-09 15:29:40",
-        "scan_location": "Main entrance"
-    }
-
-.. note::
-
-   Seating information is appended to the ``ticket_type`` if the events uses a seating plan.
-
-**Changelog**
-
-.. csv-table::
-   :header: "Version", "Description"
-   :width: 100%
-   :widths: auto
-
-   "1.0", "Introduced."
-
+* :doc:`Events <webhooks-events>`
+* :doc:`Orders <webhooks-orders>`
+* :doc:`Scans <webhooks-scans>`
+* :doc:`Downloads <webhooks-downloads>`
+
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+
+   webhooks-events
+   webhooks-orders
+   webhooks-scans
+   webhooks-downloads

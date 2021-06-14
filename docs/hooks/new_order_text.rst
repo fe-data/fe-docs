@@ -48,11 +48,13 @@ Parameters
     23. ‘*Unknown user*’. The WordPress user is unknown.
     24. ‘*Invalid password*’. The password for the WordPress user is invalid.
     25. ‘*User role mismatch*’. The user role did not match the one(s) defined in the user group.
-    26. ‘*Wrong input for this event*’. The minimum or maximum number of tickets ordered is invalid.
-    27. ‘*Missing input for this event*’. The extra input fields are not submitted.
-    28. ‘*Required input not available*’. The required extra input fields are not submitted.
+    26. ‘*Missing ticket type:*’. The ticket type is not present in the input. The name of the ticket is appended after the colon.
+    27. ‘*Missing extra input fields for this event*’. The extra input fields are not submitted.
+    28. ‘*Required extra input fields not available*’. The required extra input fields are not submitted.
     29. ‘*No tickets ordered*’.
     30. ‘*Not enough stock for linked event-id %d*’.
+    31. ‘*Illegal value extra input field*’. This may happen in case of a 'select' field.
+    32. ‘*Wrong amount for this ticket type:*’. The amount is too low or too high. The name of the ticket is appended after the colon.
 
 ----
 

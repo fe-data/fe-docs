@@ -69,12 +69,17 @@ Apps
 With Fast Events you can use our free scan app for Android and IOS. No need for expensive scanning equipment, just use your phone.
 There is also a free payment app. The user scans a QR code and the payment is carried out easily and securely.
 
+Use the `FE Tracking App <https://fe-tracking.fast-events.eu/>`_ for sports events in particular to enable participants
+to signal checkpoints on the route in the App and possibly upload them to the server of the event organizer's server when they have been passed.
+
 For Android there is also an Admin App available. You can view events and orders and change them on the go. Or show the stats of sold tickets and scanned tickets. And much more ...
 
 * **Scan App**:
   :doc:`scanning <apps/scan>`
 * **Payment App**:
   :doc:`payment <apps/payment>`
+* **FE Tracking App**:
+  :doc:`tracking <apps/tracking>`
 * **FE Admin App**:
   :doc:`admin <apps/admin>`
 
@@ -85,72 +90,42 @@ For Android there is also an Admin App available. You can view events and orders
 
    apps/scan
    apps/payment
+   apps/tracking
    apps/admin
-   
+
 Advanced features
 -----------------
-Most things perform better when they’re maintained. We have pulled together a number of recommendations in the field of security, performance and tools for data analysis. This list is by no means complete, but we urge you to keep an eye on security and performance in order to safely and in a performant way run the software.
+*Fast Events* provides you with a Public API and Webhooks to deliver different events, making it easy to integrate with external systems.
 
+For developers, *Fast Events* also offers a number of actions and filters.
+
+Most things perform better when they’re maintained. We have pulled together a number of recommendations in the field of security, performance and tools for data analysis.
+This list is by no means complete, but we urge you to keep an eye on security and performance in order to safely and in a performant way run the software.
+
+* **Public API**:
+  :doc:`api <advanced/api>`
+* **Webhooks**:
+  :doc:`webhooks <advanced/webhooks>`
+* **Actions & filters**:
+  :doc:`actions & filters <hooks/usage>`
 * **Data analysis**:
   :doc:`analysis <advanced/analysis>`
 * **Security**:
   :doc:`security <advanced/security>`
 * **Performance**:
   :doc:`performance <advanced/performance>`
-* **Public API**:
-  :doc:`api <advanced/api>`
-* **Webhooks**:
-  :doc:`webhooks <advanced/webhooks>`
 
 .. toctree::
    :maxdepth: 2
    :hidden:
    :caption: Advanced features
 
+   advanced/api
+   advanced/webhooks
+   hooks/usage
    advanced/analysis
    advanced/security
    advanced/performance
-   advanced/api
-   advanced/webhooks
-
-Actions & filters
------------------
-*Fast Events* has a number of :doc:`action- and filter hooks </hooks/usage>` that can be used to inject custom specific code.
-
-:doc:`fast_events_custom_status <hooks/custom_status>`
-    This filter is called after a custom order status change from the order contextmenu. It can only be used if the ‘Custom order statuses’ field has been set in the plugin settings.
-:doc:`fast_events_email_api_result <hooks/email_api_result>`
-    This action is called after an order email has been send to the email-provider (Host-email, SMTP, Amazon SES, Mailgun, …). This call is made with both a successful email and an incorrect email (submission failed).
-:doc:`fast_events_input_fields <hooks/input_fields>`
-    This filter is called after a basic check of all input and ticket fields.
-:doc:`fast_events_new_order <hooks/new_order>`
-    This action is called after the payment has been received and the customer has already received an email.
-:doc:`fast_events_new_order_text <hooks/new_order_text>`
-    Filter the default error text while processing the order and change the text if necessary.
-:doc:`fast_events_scan_error_text <hooks/scan_error_text>`
-    This filter is called if there is a scan error. Normally the API returns the localized error, but you can override it and create your own version. You can make the error-string even more specific by using the scancode that is linked to a specific entrance.
-:doc:`fast_events_scan_filter_output <hooks/scan_filter_output>`
-    This filter is called just before the output is sent back to the Android or IOS scan app. You can change any of the text lines in the qrcode block.
-:doc:`fast_events_scan_ticket <hooks/scan_ticket>`
-    This action is called after the ticket has been scanned.
-:doc:`fast_events_ticket_text <hooks/ticket_text>`
-    This filter is called just before the text of the qrcode block is printed on the ticket template.
-
-.. toctree::
-   :maxdepth: 2
-   :hidden:
-   :caption: Actions & filters
-
-   hooks/usage
-   hooks/custom_status
-   hooks/email_api_result
-   hooks/input_fields
-   hooks/new_order
-   hooks/new_order_text
-   hooks/scan_error_text
-   hooks/scan_filter_output
-   hooks/scan_ticket
-   hooks/ticket_text
 
 Miscellaneous
 -------------

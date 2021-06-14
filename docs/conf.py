@@ -20,9 +20,7 @@ sys.path.append(os.path.dirname(__file__))
 # -- Project information -----------------------------------------------------
 
 project = 'Fast Events Ticketing'
-copyright = '2020-{}, FE Data & contributors'.format(
-                datetime.date.today().year
-            )
+copyright = '2020-{}, FE Data & contributors. '.format(datetime.date.today().year)
 author = 'FE Data'
 
 
@@ -58,3 +56,4 @@ html_theme = 'sphinx_rtd_theme'
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+html_show_sphinx = False

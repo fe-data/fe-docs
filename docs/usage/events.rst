@@ -93,6 +93,13 @@ The basics definition of the event.
    Use a seating plan. Works together with `Seats tab`_.
 **Webhooks**
    Whether or not webhooks are enabled for this event. See also :doc:`Webhooks </advanced/webhooks>`
+**Reload on exit**
+   If an exit scan is done, stock is increased by 1 if this flag is set.
+   You can compare it with a car park that is full. As soon as a car leaves the car park, there is space for a new car.
+**Tracking**
+   Use the `FE Tracking App <https://fe-tracking.fast-events.eu/>`_ for sporting events in particular to enable participants to signal checkpoints
+   on the route in the App and possibly upload them to the server when they are passed.
+   Works together with `Tracking tab`_.
 **Terms html**
    If this field is not empty, then this is shown at the bottom of the order page as a checkbox. The user must check this in order to place the order. If you work with links (see screenshot above), always target a new window. Only the following html-tags are allowed: ``<a>``, ``<b>``, ``<i>`` and ``<u>``.
 **Redirect after booking**
@@ -221,15 +228,23 @@ Tickets tab
            :target: ../_static/images/usage/Event-tickets.png
            :alt: Event tickets
 
-Add the tickets you want to sell. The ‘**+**‘ and ‘**–**‘ buttons are used to add rows or remove them. If the :guilabel:`Count` field is set to ``Yes`` then the purchased quantity is deducted from the stock at the event level as defined in the `Basics tab`_. The :guilabel:`Price` field includes VAT.
+Add the tickets you want to sell. The ‘**+**‘ and ‘**–**‘ buttons are used to add rows or remove them. Duplicate ticket types are not allowed.
+If the :guilabel:`Count` field is set to ``Yes`` then the purchased quantity is deducted from the stock at the event level as defined in the `Basics tab`_.
+The :guilabel:`Price` field includes VAT.
 
-If you leave the stock field empty, you can keep selling tickets until you reach the maximum you have defined at the event level. In the above configuration only 100 ``Gold (Backstage)`` tickets can be sold and there is no limit for the ``Silver`` tickets until it reaches the maximum defined at the event level. It can happen that all tickets are sold out, but only 50 ``Gold (Backstage)`` tickets are sold. If you want 100 ``Gold (Backstage)`` tickets to be guaranteed, you will also have to limit the number of ``Silver`` tickets. Together, they must add up to the number defined at the event level.
+If you leave the stock field empty, you can keep selling tickets until you reach the maximum you have defined at the event level.
+In the above configuration only 100 ``Gold (Backstage)`` tickets can be sold and there is no limit for the ``Silver`` tickets until it reaches the maximum defined at the event level.
+It can happen that all tickets are sold out, but only 50 ``Gold (Backstage)`` tickets are sold.
+If you want 100 ``Gold (Backstage)`` tickets to be guaranteed, you will also have to limit the number of ``Silver`` tickets. Together, they must add up to the number defined at the event level.
 
 If a ticket is sold out, it will still show up in the orderpage, but you can’t select it and it is flagged as sold out.
 
-.. warning:: **Never** add or remove ticket-types if orders already have been accepted.
+.. warning::
+   **Never** add or remove ticket-types if orders already have been accepted.
 
-.. note:: If you want to give free parking tickets to all participants and want to check them at the entrance of the parking lot, you can for example define the following ticket. Define a new tickets: set :guilabel:`Ticket description` to ``Parking ticket``, :guilabel:`Price` is ``0``, :guilabel:`Min` is ``1``, :guilabel:`Max` is ``1`` and :guilabel:`Count` is ``No``.
+.. note::
+   If you want to give free parking tickets to all participants and want to check them at the entrance of the parking lot, you can for example define the following ticket.
+   Define a new tickets: set :guilabel:`Ticket description` to ``Parking ticket``, :guilabel:`Price` is ``0``, :guilabel:`Min` is ``1``, :guilabel:`Max` is ``1`` and :guilabel:`Count` is ``No``.
 
 ----
 
@@ -280,15 +295,24 @@ Scan tab
 
 Preparation
 ^^^^^^^^^^^
-Scanning tickets can be easily defined in this screen. Varying from a single scan for all types (level 0) of tickets to a stepped scan (level 1) for selected ticket types. For example, visitors must first be scanned at the main entrance before they can be scanned at the backstage entrance and only if they have a ``Gold (Backstage)`` ticket. You can add multiple tickets in the :guilabel:`Scan tickets` field. Just separate them with a comma.
+Scanning tickets can be easily defined in this screen. Varying from a single scan for all types (level 0) of tickets to a stepped scan (level 1) for selected ticket types.
+For example, visitors must first be scanned at the main entrance before they can be scanned at the backstage entrance and only if they have a ``Gold (Backstage)`` ticket.
+You can add multiple tickets in the :guilabel:`Scan tickets` field. Just separate them with a comma.
 
 You can also include an exit scan (level 9). Once a user passes this scan, no other scans are possible anymore.
 
-Scanning is done with the :doc:`mobile scan app<../apps/scan>`, so no need for expensive scan equipment. Configure the scan app by pressing the right button in the :guilabel:`Scan key` field and scan it in the app settings and you are ready to scan.
+Scanning is done with the :doc:`mobile scan app<../apps/scan>`, so no need for expensive scan equipment.
+Configure the scan app by pressing the right button in the :guilabel:`Scan key` field and scan it in the app settings and you are ready to scan.
 
-Add more rows by pressing ‘**+**‘ and remove rows by pressing ‘**–**‘ . Use the first button on the :guilabel:`Scan key` field to regenerate the scankey and pressing the other button shows a popup window with the configuration qrcode you can scan with the mobile app to configure it, or copy the configuration qrcode and for example mail it to the people who do the actual scanning
+Add more rows by pressing ‘**+**‘ and remove rows by pressing ‘**–**‘ .
+Use the first button on the :guilabel:`Scan key` field to regenerate the scankey and pressing the other button shows a
+popup window with the configuration qrcode you can scan with the mobile app to configure it, or copy the configuration qrcode and for example mail
+it to the people who do the actual scanning
 
 The :guilabel:`Date format` is used in the :doc:`mobile scan app<../apps/scan>`. You can find the specification `here <https://www.php.net/manual/en/datetime.format.php#refsect1-datetime.format-parameters>`_.
+
+.. note::
+   Scan keys and locations must be unique per event, but you can use the same scan keys and/or locations across events.
 
 Examples
 ^^^^^^^^
@@ -302,6 +326,9 @@ Examples
    See the screenshot above. There is a scankey for all tickets for the main entrance and a separate scankey for the ``Gold (Backstage)`` ticket with the level set to ‘**1**’. This means that before you can scan a backstage ticket it must have been scanned at the main entrance. If you have multiple ticket types that are allowed to go backstage, just add them to :guilabel:`Scan tickets` separated by a comma. Mind you: make sure the name of the ticket matches one (or more) ticket types you have defined in the `Tickets tab`_. The fields are case sensitive.
 **5. Addition on 4. Backstage visitors can also pickup a free cocktail**
    The same definition as example 4, but just add 1 unique scankey for the ``Gold (Backstage)`` ticket, the level should be set to 1 and give it a name (“*Free cocktail*”).
+**6. Cycling tour with several checkpoints**
+   Make a start scan (level 0) at the beginning of the tour and a scan key (level 1) for each checkpoint. Optionally, you can do a level 9 (Exit scan) at the end of the tour and, for example,
+   give the participants a reminder medal when they have completed all the checkpoints. The latter is easy to check in the :doc:`Scan App<../apps/scan>`.
 
 ----
 
@@ -321,7 +348,11 @@ Select from the dropdown list the roles you allow to place orders. You can selec
 
 Upload a csv file
 ^^^^^^^^^^^^^^^^^
-Suppose you want to have a boat trip and only the members of your football club are allowed to participate. Create a spreadsheet with the name in the first column, the email address in the second column and the maximum number of tickets the person can buy in the third column, and save it as a csv-file. Use a comma (,) as field separator. Press the :guilabel:`Upload csv file` button and upload the file. Ready! Now only customers with the email addresses you uploaded can place orders and they can only buy as many tickets as specified.
+Suppose you want to have a boat trip and only the members of your football club are allowed to participate.
+Create a spreadsheet with the name in the first column, the email address in the second column and the maximum number of tickets the person can buy in the third column,
+and save it as a csv-file. Use a comma (,) as field separator. Emailaddresses in the file need to be unique!
+Press the :guilabel:`Upload csv file` button and upload the file. Ready!
+Now only customers with the email addresses you uploaded can place orders and they can only buy as many tickets as specified.
 
 You can upload the same file or an updated version multiple times. Rows will be overwritten or added. No rows are deleted. If you want the latter, you will first have to delete everything by clicking the :guilabel:`Delete group` button. This button only deletes entries of the current event.
 
@@ -436,3 +467,133 @@ But of course there can be seat configurations that are a lot simpler. Suppose y
 
 **Linked event**
    Use the event with this id for the seatingplan.
+
+----
+
+Tracking tab
+------------
+.. list-table::
+
+    * - .. image:: ../_static/images/usage/Event-tracking.png
+           :target: ../_static/images/usage/Event-tracking.png
+           :alt: Event tracking
+
+The essence of Tracking is simple. Suppose you have a sports event in which the participants have to follow a mapped out
+route and scattered along the route are a number of checkpoints where you have to show your eticket and have it scanned.
+At the end of the route your eticket is scanned again and when you have passed all checkpoints you will receive a medal or other proof of participation.
+
+To make this possible, event organisers would normally have people at each checkpoint who scan the participants' tickets and possibly at the start to gain access to the event.
+This in itself is perfectly possible. Define a level 0 scan (=entrance), per checkpoint a level 1 scan and at the end a level 9 scan.
+
+There are, of course, quite sophisticated solutions available on the market, but they all require an investment in hardware and/or software,
+or participants must purchase Apps or a combination of these.
+
+The *Fast Events* WordPress plugin offers a standard solution with a `tracking App  <https://fe-tracking.fast-events.eu/>`_ that participants can download for free for Android and IOS.
+The App allows participants to track their progress along the route, and checkpoints are automatically flagged by
+the App and can be uploaded to the organisation's server, where they are handled as if they were a scan of the ticket.
+This means that checkpoints do not need to be manned, in fact they can be completely virtual. That is, they are only known to the App by their geographical coordinates.
+
+Step-by-step implementation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#. Enable the :guilabel:`Tracking` flag in the `Basics tab`_.
+#. Define KML-files to describe the track, including the checkpoints and any other points of interest you want to show in the App.
+   Ech KML-file can only contain a single track, if for instance you have an event with multiple distances.
+#. Upload **ALL** KML-files by pressing the :guilabel:`Upload KML file(s)` button in this tab. You can't upload them one-by-one or delete one.
+#. Fill in the remaining fields in this tab.
+#. Inform participants how to use the FE Tracking App. This could be in the email that participants receive when they have ordered
+   a ticket or on a webpage that is prominently displayed on the website.
+
+KML files
+^^^^^^^^^
+*Fast Events* uses KML-files created by `Google My Maps <https://support.google.com/mymaps/?topic=3188329>`_. You will need a free Google account for this.
+If your event has only a single distance, you need to create ofcourse 1 KML file. If you have multiple distances you need to create a KML file for every distance.
+Every KML files contains the track, the checkpoints and other points of interest grouped by layer for every type of point of interest.
+Draw the route in the direction it will be walked, cycled, driven, etc. Always start at the beginning! Zoom in as much as possible to make the track as accurate as possible.
+In case of multiple distances, the user can choose the distance in the App. However, if the name of the KML file is the same as the name of the
+ticket that the user has purchased, then this KML file is automatically selected by the App without the user having a choice.
+
+In the App the user can scan the eticket if it has been printed or search the PDF for a valid qrcode if it is stored on the phone. In case of multiple etickets in the PDF
+the user will be asked which page needs to be search for the qrcode.
+
+Here is an example:
+
+.. list-table::
+
+    * - .. image:: ../_static/images/usage/Track-demo.png
+           :target: ../_static/images/usage/Track-demo.png
+           :alt: Demo track
+
+You can only define a single path! And as show in the example every layer with similar points of interests are grouped together and all have to have **the same icon and color**.
+
+.. list-table::
+
+    * - .. image:: ../_static/images/usage/Track-details.png
+           :target: ../_static/images/usage/Track-details.png
+           :alt: Track details
+
+For every point of interest in the layers you have to use a short descriptive name. The description can contain as much text as you like.
+**You can't use your own icons**; always use one of the embedded Google My Maps icons.
+
+.. warning::
+
+   Each checkpoint must be linked to a scan entry in the `Scan tab`_. The link is via the location field.
+   So make sure the name of the checkpoint is exactly the same as a location field
+
+.. list-table::
+
+    * - .. image:: ../_static/images/usage/Phone-details.png
+           :target: ../_static/images/usage/Phone-details.png
+           :alt: Phone details
+
+This is how the dialogues will look like on the phone.
+
+.. sidebar:: Save KML file
+
+    Use the ``Export to KML/KMZ`` in the main menu and make sure you tick the last checkbox.
+
+.. list-table::
+
+    * - .. image:: ../_static/images/usage/Save-kml.png
+           :target: ../_static/images/usage/Save-kml.png
+           :alt: Save KML file
+
+.. tip::
+
+   If you need to create multiple Maps which include mostly the same points of interest, create the first Map and export it as KML file.
+   Create a new Map and import the previous exported KML file and make the changes you need.
+
+Remaining fields
+^^^^^^^^^^^^^^^^
+**Tracking window**
+   Between these 2 times the participant can enable recording in de App and it will register when checkpoints are passed.
+   Outside these windows all information (POI's and record track) is still visible, but recording is not possible.
+**Geofence radius**
+   The radius of the circle around a checkpoint. Once the mobile enters a checkpoint-circle, the checkpoint is flagged as passed.
+   The minimum radius is 200 meters. Make sure you position the checkpoint very accurately on the Map by zooming in as much as possible.
+**Distance filter**
+   The App is optimized for battery-efficiency. It samples the accelerometer periodically while tracking in order to power-down
+   the GPS as soon as the device is determined to be stationary. It uses the distance filter to query for the GPS location.
+   But the filter itself is elastic; the faster you go, the larger the distance filter becomes. And ofcourse the other way around.
+   The default value is 10 meters
+**No entry scan**
+   Suppose you have a cycle tour with several starting points on the route and you do not want to do an access scan so that the participants can start immediately.
+   Then tick this checkbox. If a checkpoint upload is done from the App, an entry scan is done automatically if it has not already been done.
+**Force Tracking App**
+   Level 0 and level 1 checkpoints (= scan location!) can only be uploaded by the Tracking App, you can't scan them with the Scan App.
+   The level 9 scan can be scanned by the Scan App, but please note that it has to be the 'Finish/end qrcode' found in the main screen of the overview of all routes.
+**Information URL**
+   This is where you should put your dynamic information. The user can click this URL from within the App. If you expect a lot of traffic,
+   consider a CDN in front of your site or use some like `Amazon Amplify <https://aws.amazon.com/amplify/>`_, which is free the first year.
+**Emergency number**
+   The phone number users should call in case of emergencies. This phone number is visible in the App.
+**Emergency information**
+   Put here the static information what the rules are to call the number.
+
+Warnings
+^^^^^^^^
+#. Never change the tracking field in the `Basics tab`_ while the event is running.
+#. Participants can download tickets in the FE Tracking App until the end of the tracking window. Except, of course, if the ticket, the order or the event has been deleted earlier.
+#. Participants should keep their qrcodes on the eticket for themselves. Each time the ticket is downloaded into the
+   FE Tracking App a new unique signature will be generated. This means that the last person is the 'owner' of the ticket.
+   Previous downloads (by others or on a different phone) cannot upload checkpoints any more from the App and the final scan will also fail.
+   **So keep the eticket qrcode secret!**

@@ -2,7 +2,7 @@ Examples
 ========
 Some examples of how fast events can be used. You may use them as an example for your own music event, festival, sports event, bicycle tour, …
 
-We will be using our Vinyl Open Air festival and a boattrip on a lake as examples. We wont be setting dates in our examples. And of course we assume you create you own pdf etickets, emails, ..
+We will be using our Vinyl Open Air festival and a boattrip on a lake as examples. We wont be setting dates in our examples. And of course we assume you create your own pdf etickets, emails, ..
 You could also add a seatingplan to the '*Boattrip*' examples.
 
 Single ticket

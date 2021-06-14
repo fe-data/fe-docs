@@ -27,13 +27,18 @@ The easiest way to configure the app is by scanning a configuration qrcode that 
 **API Key**
     The ``Scan key`` as defined in the `Scan  tab <../usage/events.html#scan-tab>`_.
 **Autoclose timeout**
-    Normal operation is that after every valid scan you have to press :guilabel:`Continue` to get a new scan. But you can also let the dialog close automatically. If you enter here :guilabel:`1000` , the dialog will close after 1 second and the :guilabel:`Continue` button is not shown. This way you can operate the phone single handed. Still, if a scan is invalid, it requires manual action and the :guilabel:`Continue` button wil be shown.
+    Normally after each scan you have to press :guilabel:`Continue` to do a new scan.
+    But you can also let the dialog close automatically. If you enter here :guilabel:`1000`,
+    the dialog will close after 1 second and the :guilabel:`Continue` button is not shown.
+    This way you can operate the phone single handed. Still, if a scan is invalid, it requires manual action and the :guilabel:`Continue` button wil be shown.
     
 Usage
 -----
 One of the benefits of using qrcodes, is that it doesn't matter how the qrcode is presented to you, upside down, slanted, it will always deliver a scan.
 
-If the scan is valid a green bar will be shown and the phone will sound a short beep. If the qrcode was already scanned, a red bar will be shown together with the date and location where the eticket was scanned before. The phone will not make a sound but instead it will vibrate.
+If the scan is valid a green bar will be shown and the phone will sound a short beep.
+If the qrcode was already scanned, a red bar will be shown together with the date and location where the eticket was scanned before.
+The phone will not make a sound but instead it will vibrate.
 
 .. list-table::
 

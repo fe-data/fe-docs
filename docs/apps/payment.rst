@@ -31,7 +31,7 @@ Here are the settings of the app:
     In WordPress you can then easily revoke the rights per client. The API KEY can be used as a kind of kill switch. By changing this, all clients will be blocked.
 
     Don't forget to give the WordPress user the right permissions in the `authorization settings <../getting-started/settings.html#authorization-settings>`_. To use this app you have to add the ``pay_app`` controller.
-**Server URL***
+**Server URL**
     The URL where you WordPress install lives. Eg. ``https://yourdomain.com``
 **API Key**
     The secret key that is configured in the plugin settings.

@@ -249,6 +249,7 @@ Events controller
 - ``example_ticket`` Create an example ticket
 - ``export`` Expert events and related pages and templates
 - ``import`` Import events and related pages and templates
+- ``kml_upload`` Upload KML-files for tracking
 - ``read`` Read events
 - ``remove_all`` Remove all orders from an event
 - ``set_zero`` Set all counters to zero
@@ -303,6 +304,8 @@ Used by the :doc:`Admin app </apps/admin>` and the :doc:`REST API </advanced/api
 
 - ``event_read`` Read events
 - ``event_update`` Change stock of events
+- ``input_fields_change`` Change input fields
+- ``input_fields_read`` Read input fields
 - ``order_add`` Add new orders
 - ``order_delete`` Delete the order
 - ``order_email`` Resend the order confirmation
@@ -340,7 +343,7 @@ You can find `here more information <https://actionscheduler.org/perf/>`_ for a 
 
 Bear in mind that the *Action scheduler* can be used by multiple plugins. Make sure to know how these plugins interact with the *Action scheduler*.
 
-The defaults will do fine for small events, but if you an event with thousands of orders in a short time frame or scanning requests and webhook consumers for these events, you may consider different settings.
+The defaults will do fine for small events, but if you have an event with thousands of orders in a short time frame or scanning requests **and** webhook consumers for these events, you may consider different settings.
 
 **Purge days**
    After 30 days completed actions will be removed from the logs. With the *Fast Events* plugin you could bring this value down to a lower level.

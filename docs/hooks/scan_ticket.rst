@@ -74,7 +74,7 @@ All scan data is entered in `Google Analytics <https://analytics.google.com/>`_,
        'body'    => [
          'v'   => 1,
          't'   => 'event',
-         'tid' => 'UA-XXXXXXXXX-X',  // Put you own tracking ID here
+         'tid' => 'UA-XXXXXXXXX-X',  // Put your own tracking ID here
          'ds'  => 'Fast Events',
          'cid' => hash( 'adler32', $attr['email'] ) . '-1a05-49d7-b876-2b884d0f825b',
          'ec'  => 'scan-' . ( true === (bool) $attr['status'] ? '1' : '0' ),

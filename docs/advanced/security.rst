@@ -6,9 +6,9 @@ A couple of suggestions which are quite important as a starting point.
 
 * Make sure you run the latest version of WordPress and all the plugins you use.
 * Check your PHP version. Right now the latest version is 7.4.
-* Use two-factor (2FA) or multi-factor authentication (MFA) for your hosting-account and WordPress admin account. Consider the usage of a password manager, e.g. Lastpass, 1Password, Dashlane, …
-* Don’t use the username ‘*admin*’ as you WordPress admin account. Use a random string as username.
-* Does you hosting-provider offer automatic backups? If not, consider a plugin like `UpdraftPlus – Backup/Restore <https://wordpress.org/plugins/updraftplus/>`_.
+* Use two-factor (2FA) or multi-factor authentication (MFA) for your hosting-account and WordPress admin account. Consider the usage of a password manager, e.g. Bitwarden, Lastpass, 1Password, Dashlane, …
+* Don’t use the username ‘*admin*’ as your WordPress admin account. Use a random string as username.
+* Does your hosting-provider offer automatic backups? If not, consider a plugin like `UpdraftPlus – Backup/Restore <https://wordpress.org/plugins/updraftplus/>`_.
 * Always use HTTPS. Most hostingprovider nowadays support Let’s Encrypt free certificates.
 * …
 
@@ -27,7 +27,7 @@ But this is not enough. You have to make sure your webserver only serves HTTPS r
    RewriteCond %{HTTPS} off
    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-Add you domain to the Strict-Transport-Security preload list. Goto `https://hstspreload.org/ <https://hstspreload.org/>`_ Only do this if you are absolutely sure. Adding your domain to the list is a simple step. Taking it off the list is painful and slow. Before you add your domain to the list, add the next snippet to your ``.htaccess`` file.
+Add your domain to the Strict-Transport-Security preload list. Goto `https://hstspreload.org/ <https://hstspreload.org/>`_ Only do this if you are absolutely sure. Adding your domain to the list is a simple step. Taking it off the list is painful and slow. Before you add your domain to the list, add the next snippet to your ``.htaccess`` file.
 
 .. code-block:: apache
 

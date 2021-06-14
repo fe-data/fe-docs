@@ -9,7 +9,7 @@ Any event type
 
 .. image:: ../_static/images/getting-started/event.gif
    :align: right
-   :alt: events
+   :alt: any-event
        
 Use *Fast Events* for any event type (Sport events, festivals, congresses, concerts, seminars, your local party, …)
 
@@ -23,13 +23,30 @@ Take a look at the :doc:`examples <../usage/examples>` to get an idea.
 
    <div style="clear:both"></div>
 
+Tracking
+--------
+
+.. image:: ../_static/images/getting-started/tracking.png
+   :align: left
+   :alt: tracking
+       
+Use the `FE Tracking App <https://fe-tracking.fast-events.eu/>`_ for sports events in particular to enable participants
+to signal checkpoints on the route in the App and possibly upload them to the server of the event organizer's server when they have been passed.
+
+Realtime tracking and showing additional Points of Interest and description on the map as defined by the event organizer.
+Examples: First aid stations on the track, eateries on the track, checkpoints on the track, ...
+
+.. raw:: html
+
+   <div style="clear:both"></div>
+
 PDF e-tickets
 -------------
 
 .. image:: ../_static/images/getting-started/pdf-tickets.png
-   :align: left
-   :alt: events
-       
+   :align: right
+   :alt: pdf-tickets
+
 Simply define your own e-tickets in your favorite word processor (Word, `LibreOffice <https://www.libreoffice.org/>`_, …)
 Upload the PDF-file into the WordPress Media library and tell *Fast Events* where to print the qrcode-block.
 
@@ -39,12 +56,13 @@ That’s easy isn’t?
 
    <div style="clear:both"></div>
 
+
 Real-time scanning
 ------------------
 
 .. image:: ../_static/images/getting-started/scanning.png
-   :align: right
-   :alt: events
+   :align: left
+   :alt: realtime-scanning
        
 No need for expensive scan equipment. Just use our free `Android <https://play.google.com/store/apps/details?id=nl.fe_data.scanner>`_ and `IOS <https://apps.apple.com/app/fe-scan/id1496549803>`_ app to scan the tickets in real-time at the entrance.
 
@@ -62,8 +80,8 @@ Payouts next day
 ----------------
 
 .. image:: ../_static/images/getting-started/payouts.png
-   :align: left
-   :alt: events
+   :align: right
+   :alt: payouts-the-next-day
        
 *Fast Events* works with the Dutch payment provider `Mollie <https://www.mollie.com/dashboard/signup/5835294>`_. No periodic fees, you just pay for successful transactions. Cheap rates: eg iDEAL is only € 0,29 (ex VAT) per transaction. All leading payment methods supported.
 No fees per ticket.
@@ -82,8 +100,8 @@ Mobile payments
 ---------------
 
 .. image:: ../_static/images/getting-started/payments.png
-   :align: right
-   :alt: events
+   :align: left
+   :alt: mobile-payments
        
 Do you want to sell tickets at the entrance or collect a contribution from people at home?
 
@@ -100,8 +118,8 @@ Admin on the go
 
 .. image:: ../_static/images/getting-started/fe-admin.png
    :scale: 80%
-   :align: left
-   :alt: events
+   :align: right
+   :alt: admin-on-the-go
        
 You want to view events and orders on your mobile? Use the `FE Admin App <https://fast-events.eu/usage/fe-admin-app/>`_.
 
@@ -120,12 +138,32 @@ Seating plans
 
 .. image:: ../_static/images/getting-started/seating.png
    :scale: 80%
-   :align: right
-   :alt: events
+   :align: left
+   :alt: seating-plan
        
 Create your own seating plans for events that need one.
 
 Fill seats in the order you defined it.
+
+.. raw:: html
+
+   <div style="clear:both"></div>
+
+REST API
+--------
+
+.. image:: ../_static/images/getting-started/api.png
+   :scale: 80%
+   :align: right
+   :alt: rest-api
+
+*Fast Events* offers a :doc:`public REST API <../advanced/api>`.
+This allows *Fast Events* data to be created, read, updated, and deleted using requests in JSON format and
+using WordPress REST API Application passwords to grant access.
+
+But you could also create you own scan app by using the :doc:`scan endpoint <../advanced/api-scans>`
+
+Fine grained access control is possible for individual endpoints by using the `authorization settings <settings.html#authorization-settings>`_
 
 .. raw:: html
 
@@ -137,8 +175,26 @@ Webhooks
 .. image:: ../_static/images/getting-started/webhooks.png
    :scale: 80%
    :align: left
-   :alt: events
+   :alt: webhooks
        
+*Fast Events* offers :doc:`Webhooks <../advanced/webhooks>` to sent notifications to a URL of your choice.
+
+You can configure it per event and choose which type of notifications you allow to send.
+
+Webhooks make it easier for third-party apps to integrate with *Fast Events*.
+
+.. raw:: html
+
+   <div style="clear:both"></div>
+
+Action & filters
+----------------
+
+.. image:: ../_static/images/getting-started/code.png
+   :scale: 80%
+   :align: right
+   :alt: actions-and-filters
+
 Want to extend the functionality of *Fast Events*?
 
 We have a number of filters and actions that offer you that possibility.
@@ -158,7 +214,9 @@ Summary
    - Modern bootstrap based admin interface
    - Event types (single, single selection from many, multiple selection and passe-partout)
    - Optional reCAPTCHA protection
-   - Webhooks for custom extensions
+   - REST API
+   - Webhooks
+   - Actions & filters for custom extensions
    - Flexible stock control
    - Create you own seating plan
    - Design your own PDF e-tickets and invoices

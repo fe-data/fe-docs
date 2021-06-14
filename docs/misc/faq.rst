@@ -3,19 +3,35 @@ FAQ
 
 Is there a premium version of the plugin?
 -----------------------------------------
-Noop, this is it and it’s all for free. If you like this plugin, or it is useful to you in some way, please consider a :doc:`donation <../misc/donate>` and give it a review on WordPress.org.
+Noop, this is it and it’s all for free. If you like this plugin, or it is useful to you in some way,
+please consider a :doc:`donation <../misc/donate>` and give it a review on WordPress.org.
 
 Is *Fast Events* integrated with an accounting package?
 -------------------------------------------------------
-No. But it’s quite easy to implement with the :doc:`fast_events_new_order <../hooks/new_order>` action. Here is an :doc:`example <../hooks/new_order>`.
+No. But it’s quite easy to implement with the :doc:`fast_events_new_order <../hooks/new_order>` action.
+Here is an :doc:`example <../hooks/new_order>`.
 
 How do I remove the order-id in the qrcode block?
 -------------------------------------------------
-Use the :doc:`fast_events_ticket_text <../hooks/ticket_text>` filter which can change/remove any line in the info-block. Here is an :doc:`example <../hooks/ticket_text>`.
+Use the :doc:`fast_events_ticket_text <../hooks/ticket_text>` filter which can change/remove any line in the info-block.
+Here is an :doc:`example <../hooks/ticket_text>`.
+
+Downloading tickets fails
+-------------------------
+Take a look in the :doc:`errorlog <../usage/errorlog>`. The PDF template used may not be present.
+For example, you will see the following message in the errorlog.
+
+.. code-block:: text
+   :linenos:
+
+    2020-03-13 17:26:53 Cannot find PDF template id 60
+    -------------------------
 
 I get "Invalid address (setFrom)"
 ---------------------------------
-First of all check your :doc:`settings <../getting-started/settings>` if your emailaddress is valid. If it is valid and you are still getting this error, most likely your PHP version is the culprit. You can check this by executing the following piece of code on your hosting platform
+First of all check your :doc:`settings <../getting-started/settings>` if your emailaddress is valid.
+If it is valid and you are still getting this error, most likely your PHP version is the culprit.
+You can check this by executing the following piece of code on your hosting platform
 
 .. code-block:: php
    :linenos:
