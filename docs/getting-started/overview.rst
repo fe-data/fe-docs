@@ -33,6 +33,7 @@ Before you start creating an event, it is advisable to go through all the questi
 - How many tickets can be ordered in a single order?
 - Are user allowed to place multiple orders?
 - Do you need a seating plan?
+- Is this an sports event and do you want to use the *FE Tracking* App?
 - Is it a single event or are there multiple events eg. 1 event per day for a series of days?
 - Do you need an passe-partout (access to all events for a reduced price)?
 - Are there different access-rights for some tickets. Eg. all tickets are scanned at the main-entrance but some ticket types (fi. Backstage) have ‘Backstage’ access and can be scanned at the Backstage-entrance.
@@ -147,3 +148,5 @@ Once your event(s) has orders you, never change the following fields:
 - don't add, remove or change extra input fields in the `Input tab <../usage/events.html#input-tab>`_
 - don't change :guilabel:`User groups` in the `Groups tab <../usage/events.html#groups-tab>`_
 - don't change the :guilabel:`Seats configuration` in the `Seats tab <../usage/events.html#seats-tab>`_. You can add at the end new seats, but you should never remove seats.
+- don't change the :guilabel:`Android account` or :guilabel:`IOS account` in the `Tracking tab <../usage/events.html#tracking-tab>`_ if you already have sold sports events tickets.
+  All users of the *FE Tracking* App will loose access and are forced to reload the track (delete it first). You are warned!

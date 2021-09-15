@@ -33,6 +33,8 @@ There is a context-menu if you scroll through the orders; **use the right mouse-
    If you need to change multiple events, first change a single event and edit the fields. Now select the target events. Left mouse-click the first one. If you want to select a whole range, press SHIFT and left mouse click or use CTRL and left mouse click to select individual targets. Once you have completed the selection, position the mouse above the event you have changed and right click to show the contextmenu and chose :guilabel:`Bulk copy`. A screen pops up and you can chose which fields you want to copy to the targets.
 **Tickets sold**
    Show the stock and the number of tickets sold per ticket type. The menu selection is especially interesting if you have multiple ticket types.
+**Map**
+   Show track(s) on a map including checkin numbers for all checkpoints.
 
 ----
 
@@ -235,7 +237,8 @@ The :guilabel:`Price` field includes VAT.
 If you leave the stock field empty, you can keep selling tickets until you reach the maximum you have defined at the event level.
 In the above configuration only 100 ``Gold (Backstage)`` tickets can be sold and there is no limit for the ``Silver`` tickets until it reaches the maximum defined at the event level.
 It can happen that all tickets are sold out, but only 50 ``Gold (Backstage)`` tickets are sold.
-If you want 100 ``Gold (Backstage)`` tickets to be guaranteed, you will also have to limit the number of ``Silver`` tickets. Together, they must add up to the number defined at the event level.
+If you want 100 ``Gold (Backstage)`` tickets to be guaranteed, you will also have to limit the number of ``Silver`` tickets.
+Together, they must add up to the number defined at the event level.
 
 If a ticket is sold out, it will still show up in the orderpage, but you can’t select it and it is flagged as sold out.
 
@@ -272,8 +275,11 @@ Pick a template from the dropdown box and start playing with the x and y positio
 With the :guilabel:`Qrcode rotate` field you can rotate the qrcode block. Rotation is done from the top left corner and can be positive or negative. Look at the `example template <../_static/pdf/Vinyl-template.pdf>`_ and the `ticket example <../_static/images/usage/Ticket-example.jpg>`_ if the settings of the screenshot above have been applied.
 
 **Template per ticket-type**
-   *Fast Events* offers you the possibility to use different pdf-templates per ticket-type. For example: your event contains the ticket-types ``Silver`` and ``Backstage``. Create a default template with the name :guilabel:`Vinyl-template.pdf` (any name will do). This default template will be the template for the ``Silver`` ticket. For the ``Backstage`` ticket you should create a pdf with the name
-   :guilabel:`Vinyl-template-Backstage.pdf`. Select in the drop-down box the ‘*Vinyl-template.pdf*‘. That’s it; if *Fast Events* can’t find the template, it will use the default selected template. Mind you: the template-names are case sensitive and make sure the ``.pdf`` suffix is lowercase. The qrcode block will be printed on the same location for all templates.
+   *Fast Events* offers you the possibility to use different pdf-templates per ticket-type. For example: your event contains the ticket-types ``Silver`` and ``Backstage``.
+   Create a default template with the name :guilabel:`Vinyl-template.pdf` (any name will do).
+   This default template will be the template for the ``Silver`` ticket. For the ``Backstage`` ticket you should create a pdf with the name :guilabel:`Vinyl-template-Backstage.pdf`.
+   Select in the drop-down box the ‘*Vinyl-template.pdf*‘. That’s it; if *Fast Events* can’t find the template, it will use the default selected template.
+   Mind you: the template-names are case sensitive and make sure the ``.pdf`` suffix is lowercase and the ticket name should not contain spaces. The qrcode block will be printed on the same location for all templates.
 
    .. note:: If you upload a new ticket template, always open the event for editing and save it again. Do this for every event that is using this template.
 
@@ -490,8 +496,10 @@ or participants must purchase Apps or a combination of these.
 
 The *Fast Events* WordPress plugin offers a standard solution with a `tracking App  <https://fe-tracking.fast-events.eu/>`_ that participants can download for free for Android and IOS.
 The App allows participants to track their progress along the route, and checkpoints are automatically flagged by
-the App and can be uploaded to the organisation's server, where they are handled as if they were a scan of the ticket.
+the App and will be uploaded to the organisation's server, where they are handled as if they were a scan of the ticket.
 This means that checkpoints do not need to be manned, in fact they can be completely virtual. That is, they are only known to the App by their geographical coordinates.
+
+In addition, it is also possible to use real-time track updates and send real-time news messages to all users of the *FE Tracking* App for this event.
 
 Step-by-step implementation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -500,7 +508,8 @@ Step-by-step implementation
    Ech KML-file can only contain a single track, if for instance you have an event with multiple distances.
 #. Upload **ALL** KML-files by pressing the :guilabel:`Upload KML file(s)` button in this tab. You can't upload them one-by-one or delete one.
 #. Fill in the remaining fields in this tab.
-#. Inform participants how to use the FE Tracking App. This could be in the email that participants receive when they have ordered
+#. Optionally use :doc:`Firebase <../advanced/firebase>` if you want realtime track updates and realtime news for the end users
+#. Inform participants how to use the *FE Tracking* App. This could be in the email that participants receive when they have ordered
    a ticket or on a webpage that is prominently displayed on the website.
 
 KML files
@@ -509,7 +518,8 @@ KML files
 If your event has only a single distance, you need to create ofcourse 1 KML file. If you have multiple distances you need to create a KML file for every distance.
 Every KML files contains the track, the checkpoints and other points of interest grouped by layer for every type of point of interest.
 Draw the route in the direction it will be walked, cycled, driven, etc. Always start at the beginning! Zoom in as much as possible to make the track as accurate as possible.
-In case of multiple distances, the user can choose the distance in the App. However, if the name of the KML file is the same as the name of the
+
+In case of multiple distances, the user can choose the distance in the App. However, if the name of the track in the KML file is the same as the name of the
 ticket that the user has purchased, then this KML file is automatically selected by the App without the user having a choice.
 
 In the App the user can scan the eticket if it has been printed or search the PDF for a valid qrcode if it is stored on the phone. In case of multiple etickets in the PDF
@@ -523,7 +533,7 @@ Here is an example:
            :target: ../_static/images/usage/Track-demo.png
            :alt: Demo track
 
-You can only define a single path! And as show in the example every layer with similar points of interests are grouped together and all have to have **the same icon and color**.
+You can only define a single path! And as show in the example every layer with similar points of interests are grouped together and all need to have **the same icon and color**.
 
 .. list-table::
 
@@ -537,7 +547,9 @@ For every point of interest in the layers you have to use a short descriptive na
 .. warning::
 
    Each checkpoint must be linked to a scan entry in the `Scan tab`_. The link is via the location field.
-   So make sure the name of the checkpoint is exactly the same as a location field
+   So make sure the name of the checkpoint is exactly the same as a location field.
+
+   The ``Checkpoints``-layer needs to be the first layer after the track.
 
 .. list-table::
 
@@ -547,6 +559,8 @@ For every point of interest in the layers you have to use a short descriptive na
 
 This is how the dialogues will look like on the phone.
 
+Export the KML file
+^^^^^^^^^^^^^^^^^^^
 .. sidebar:: Save KML file
 
     Use the ``Export to KML/KMZ`` in the main menu and make sure you tick the last checkbox.
@@ -565,35 +579,38 @@ This is how the dialogues will look like on the phone.
 Remaining fields
 ^^^^^^^^^^^^^^^^
 **Tracking window**
-   Between these 2 times the participant can enable recording in de App and it will register when checkpoints are passed.
+   Between these 2 times the participant can enable recording in de *FE Tracking* App and it will register when checkpoints are passed.
    Outside these windows all information (POI's and record track) is still visible, but recording is not possible.
 **Geofence radius**
    The radius of the circle around a checkpoint. Once the mobile enters a checkpoint-circle, the checkpoint is flagged as passed.
    The minimum radius is 200 meters. Make sure you position the checkpoint very accurately on the Map by zooming in as much as possible.
 **Distance filter**
-   The App is optimized for battery-efficiency. It samples the accelerometer periodically while tracking in order to power-down
+   The *FE Tracking* App is optimized for battery-efficiency. It samples the accelerometer periodically while tracking in order to power-down
    the GPS as soon as the device is determined to be stationary. It uses the distance filter to query for the GPS location.
    But the filter itself is elastic; the faster you go, the larger the distance filter becomes. And ofcourse the other way around.
-   The default value is 10 meters
+   The default value is 10 meters. But keep in mind that for walking 10 meters would be a good start, for cycling you would be better of to the start with 25 meters.
 **No entry scan**
    Suppose you have a cycle tour with several starting points on the route and you do not want to do an access scan so that the participants can start immediately.
-   Then tick this checkbox. If a checkpoint upload is done from the App, an entry scan is done automatically if it has not already been done.
+   Then tick this checkbox. If a checkpoint upload is done from the *FE Tracking* App, an entry scan is done automatically if it has not already been done.
+   Under the hood *Fast Events* does a level 0 scan with the same location name (=Checkpoint name) prepended with an asterix (*).
 **Force Tracking App**
    Level 0 and level 1 checkpoints (= scan location!) can only be uploaded by the Tracking App, you can't scan them with the Scan App.
    The level 9 scan can be scanned by the Scan App, but please note that it has to be the 'Finish/end qrcode' found in the main screen of the overview of all routes.
 **Information URL**
-   This is where you should put your dynamic information. The user can click this URL from within the App. If you expect a lot of traffic,
-   consider a CDN in front of your site or use some like `Amazon Amplify <https://aws.amazon.com/amplify/>`_, which is free the first year.
+   This is where you should put your dynamic information. The user can click this URL from within the *FE Tracking* App. If you expect a lot of traffic,
+   consider a CDN in front of your site or use something like `Amazon Amplify <https://aws.amazon.com/amplify/>`_, which is free the first year.
 **Emergency number**
-   The phone number users should call in case of emergencies. This phone number is visible in the App.
+   The phone number users should call in case of emergencies. This phone number is visible in the *FE Tracking* App.
 **Emergency information**
    Put here the static information what the rules are to call the number.
 
 Warnings
 ^^^^^^^^
 #. Never change the tracking field in the `Basics tab`_ while the event is running.
-#. Participants can download tickets in the FE Tracking App until the end of the tracking window. Except, of course, if the ticket, the order or the event has been deleted earlier.
+#. Never change the scan fields in the `Scan tab`_ while the event is running.
+#. Participants can download tickets in the *FE Tracking* App until the end of the tracking window. Except, of course, if the ticket, the order or the event has been deleted earlier.
 #. Participants should keep their qrcodes on the eticket for themselves. Each time the ticket is downloaded into the
-   FE Tracking App a new unique signature will be generated. This means that the last person is the 'owner' of the ticket.
-   Previous downloads (by others or on a different phone) cannot upload checkpoints any more from the App and the final scan will also fail.
+   *FE Tracking* App a new unique signature will be generated. This means that the last person is the ``owner`` of the ticket.
+   Previous downloads (by others or on a different phone) cannot upload checkpoints any more from the *FE Tracking* App and the final scan will also fail.
+   If ``Firebase`` is enabled, tickets on the other device will be de-activated instantly.
    **So keep the eticket qrcode secret!**

@@ -36,6 +36,8 @@ to signal checkpoints on the route in the App and possibly upload them to the se
 Realtime tracking and showing additional Points of Interest and description on the map as defined by the event organizer.
 Examples: First aid stations on the track, eateries on the track, checkpoints on the track, ...
 
+Realtime track updates and realtime news messages from the event organizer.
+
 .. raw:: html
 
    <div style="clear:both"></div>

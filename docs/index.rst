@@ -71,6 +71,7 @@ There is also a free payment app. The user scans a QR code and the payment is ca
 
 Use the `FE Tracking App <https://fe-tracking.fast-events.eu/>`_ for sports events in particular to enable participants
 to signal checkpoints on the route in the App and possibly upload them to the server of the event organizer's server when they have been passed.
+Enjoy real-time route updates and news from the organisation about the event.
 
 For Android there is also an Admin App available. You can view events and orders and change them on the go. Or show the stats of sold tickets and scanned tickets. And much more ...
 
@@ -114,6 +115,8 @@ This list is by no means complete, but we urge you to keep an eye on security an
   :doc:`security <advanced/security>`
 * **Performance**:
   :doc:`performance <advanced/performance>`
+* **Firebase**:
+  :doc:`firebase <advanced/firebase>`
 
 .. toctree::
    :maxdepth: 2
@@ -126,6 +129,7 @@ This list is by no means complete, but we urge you to keep an eye on security an
    advanced/analysis
    advanced/security
    advanced/performance
+   advanced/firebase
 
 Miscellaneous
 -------------

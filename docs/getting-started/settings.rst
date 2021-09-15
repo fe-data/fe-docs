@@ -248,8 +248,10 @@ Events controller
 - ``example_invoice`` Create an example invoice
 - ``example_ticket`` Create an example ticket
 - ``export`` Expert events and related pages and templates
+- ``firebase`` Access to Firebase for creating accounts and realtime messages
 - ``import`` Import events and related pages and templates
 - ``kml_upload`` Upload KML-files for tracking
+- ``map`` Show tracks on a map including checkin numbers for all checkpoints
 - ``read`` Read events
 - ``remove_all`` Remove all orders from an event
 - ``set_zero`` Set all counters to zero
@@ -261,8 +263,8 @@ Events controller
 
 Tools controller
 ^^^^^^^^^^^^^^^^
-- ``orders`` Resend confirmation emails
 - ``email`` Send free format emails
+- ``orders`` Resend confirmation emails
 - ``refund`` Refund orders
 
 Qrcode controller

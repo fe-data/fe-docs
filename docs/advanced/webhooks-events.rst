@@ -140,7 +140,10 @@ New event
             "no_entry_scan": false,
             "force_tracking_app": false,
             "tr_help_url": "https://vinyl-openair.com/info/",
-            "tr_help_tel": "0123456789"
+            "tr_help_tel": "0123456789",
+            "location_sharing": true,
+            "minutes_trigger": 0,
+            "distance_trigger": 0
         }
     }
 
