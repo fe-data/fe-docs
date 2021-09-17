@@ -14,7 +14,7 @@ This plugin allows you to sell tickets for different types of events. Per event 
 - sell etickets for a group of events. The user can only choose a single event
 - sell etickets for a group of events. The user can select multiple events
 - sell a passe-partout. Customers may attend all events in the group
-- use it for a bicycle tour with multiple checkpoints for scanning
+- use it for a bicycle tour with multiple checkpoints for scanning and use the `FE Tracking App <https://fe-tracking.fast-events.eu/>`_
 - sell tickets for a theater and use a seating plan
 
 Have look at the detailed :doc:`examples <../usage/examples>` to get an idea what type of event you can create.
@@ -33,10 +33,11 @@ Before you start creating an event, it is advisable to go through all the questi
 - How many tickets can be ordered in a single order?
 - Are user allowed to place multiple orders?
 - Do you need a seating plan?
-- Is this an sports event and do you want to use the *FE Tracking* App?
+- Is this an sports event and do you want to use the `FE Tracking App <https://fe-tracking.fast-events.eu/>`_ ?
 - Is it a single event or are there multiple events eg. 1 event per day for a series of days?
 - Do you need an passe-partout (access to all events for a reduced price)?
-- Are there different access-rights for some tickets. Eg. all tickets are scanned at the main-entrance but some ticket types (fi. Backstage) have ‘Backstage’ access and can be scanned at the Backstage-entrance.
+- Are there different access-rights for some tickets. Eg. all tickets are scanned at the main-entrance but some ticket types (fi. Backstage) have ‘Backstage’
+  access and can be scanned at the Backstage-entrance. Or for sports events, a scan at the start of the route, several scans along the route as checkpoints and a scan at the end.
 - Design the email the user receives after a successful order (see `example <../usage/events.html#email-tab>`_)?
 - Create a “*Thank you for your purchase*” page (See `thank you example <#thank-you-page>`_ below).
 - Do you need more information from the user during ordering. Normally only the name and emailaddress are needed. Be very careful adding too many fields, as users tend to bailout if they see a huge list of mandatory fields.
@@ -127,6 +128,7 @@ See `Type tab <../usage/events.html#type-tab>`_ for more explanation.
 Next steps
 ----------
 #. Goto the :doc:`orders menu <../usage/orders>` and add via de the dashboard a new order.
+   Make sure you have :guilabel:`Dashboard orders` switched on in the `Basics tab <../usage/events.html#basics-tab>`_ of the event.
 #. Check if the email arrives and if the content is ok.
 #. Download the eticket and check it.
 #. Use the :doc:`Scan App <../apps/scan>` to scan the eticket.
@@ -135,8 +137,11 @@ Next steps
 #. Check again the email, eticket and scan the eticket.
 #. Do a refund of the last order.
 #. Check the stock value.
-#. If you are happy with the results, you should remove all orders and tickets via the contextmenu in the :doc:`events menu <../usage/events>` and uncheck :guilabel:`Test payments`.
-#. Your event is now live
+#. If you are happy with the results, you should remove all orders and tickets via the contextmenu in the
+   :doc:`events menu <../usage/events>` and uncheck :guilabel:`Test payments` in the `Basics tab <../usage/events.html#basics-tab>`_ of the event.
+#. Your event is now live.
+#. If you have a sports event, you can switch on the :guilabel:`Tracking` in the `Basics tab <../usage/events.html#basics-tab>`_ of the event and configure the other tracking fields
+   and optionally use :doc:`Firebase <../advanced/firebase>` for realtime track updates and realtime messages from the event organization.
 
 Don't
 -----
@@ -146,6 +151,7 @@ Once your event(s) has orders you, never change the following fields:
 - don't change the :guilabel:`Connect stock event-id` field in the `Basics tab <../usage/events.html#basics-tab>`_.
 - don't change :guilabel:`Event type`, :guilabel:`Group type` or :guilabel:`Event group` in the `Type tab <../usage/events.html#type-tab>`_. You may change ``Date`` and/or ``Date format``.
 - don't add, remove or change extra input fields in the `Input tab <../usage/events.html#input-tab>`_
+- don't change :guilabel:`Scan key`, :guilabel:`Level` and :guilabel:`Scan location` in the `Scan tab <../usage/events.html#scan-tab>`_
 - don't change :guilabel:`User groups` in the `Groups tab <../usage/events.html#groups-tab>`_
 - don't change the :guilabel:`Seats configuration` in the `Seats tab <../usage/events.html#seats-tab>`_. You can add at the end new seats, but you should never remove seats.
 - don't change the :guilabel:`Android account` or :guilabel:`IOS account` in the `Tracking tab <../usage/events.html#tracking-tab>`_ if you already have sold sports events tickets.

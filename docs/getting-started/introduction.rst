@@ -30,10 +30,10 @@ Tracking
    :align: left
    :alt: tracking
        
-Use the `FE Tracking App <https://fe-tracking.fast-events.eu/>`_ for sports events in particular to enable participants
-to signal checkpoints on the route in the App and possibly upload them to the server of the event organizer's server when they have been passed.
+Use the `FE Tracking App <https://fe-tracking.fast-events.eu/>`_ especially for sporting events to enable participants to signal checkpoints
+on the route in the App and upload the time when they are passed to the event organiser's server.
 
-Realtime tracking and showing additional Points of Interest and description on the map as defined by the event organizer.
+`Realtime tracking <https://player.vimeo.com/video/566996933>`_ and showing additional Points of Interest and description on the map as defined by the event organizer.
 Examples: First aid stations on the track, eateries on the track, checkpoints on the track, ...
 
 Realtime track updates and realtime news messages from the event organizer.
@@ -125,7 +125,7 @@ Admin on the go
        
 You want to view events and orders on your mobile? Use the `FE Admin App <https://fast-events.eu/usage/fe-admin-app/>`_.
 
-You can also resend, refund, delete, re-create tickets or even create orders.
+Resend, refund, delete, re-create tickets or even create orders.
 
 Quickly assist users configuring the :doc:`FE Scanner App <../apps/scan>` or :doc:`FE Payment app <../apps/payment>`.
 

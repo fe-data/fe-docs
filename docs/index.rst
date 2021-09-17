@@ -13,7 +13,8 @@ Fast Events Ticketing
 Getting started
 ---------------
 
-A global overview of the :doc:`features <getting-started/introduction>` that Fast Events supports and how to :doc:`install <getting-started/installation>` and :doc:`configure <getting-started/settings>` the plugin.
+A global overview of the :doc:`features <getting-started/introduction>` that *Fast Events* supports and how
+to :doc:`install <getting-started/installation>` and :doc:`configure <getting-started/settings>` the plugin.
 
 * **Feature overview of Fast Events**:
   :doc:`Introduction <getting-started/introduction>`
@@ -66,14 +67,15 @@ How to use the different menu choices.
    
 Apps
 -----
-With Fast Events you can use our free scan app for Android and IOS. No need for expensive scanning equipment, just use your phone.
+With *Fast Events* you can use our free scan app for Android and IOS. No need for expensive scanning equipment, just use your phone.
 There is also a free payment app. The user scans a QR code and the payment is carried out easily and securely.
 
-Use the `FE Tracking App <https://fe-tracking.fast-events.eu/>`_ for sports events in particular to enable participants
-to signal checkpoints on the route in the App and possibly upload them to the server of the event organizer's server when they have been passed.
+Use the `FE Tracking App <https://fe-tracking.fast-events.eu/>`_ especially for sporting events to enable participants to signal checkpoints
+on the route in the App and upload the time when they are passed to the event organiser's server.
 Enjoy real-time route updates and news from the organisation about the event.
 
-For Android there is also an Admin App available. You can view events and orders and change them on the go. Or show the stats of sold tickets and scanned tickets. And much more ...
+For Android there is also an Admin App available. You can view events and orders and change them on the go.
+Or show the stats of sold tickets and scanned tickets. And much more ...
 
 * **Scan App**:
   :doc:`scanning <apps/scan>`
@@ -133,7 +135,7 @@ This list is by no means complete, but we urge you to keep an eye on security an
 
 Miscellaneous
 -------------
-Developing, improving and maintaining an plugin like Fast Events takes and mobile apps for Android and IOS takes a lot of time. Please consider sponsoring the development of this plugin or a :doc:`one-off donation </misc/donate>` if you have successfully executed an event.
+Developing, improving and maintaining an plugin like *Fast Events* takes and mobile apps for Android and IOS takes a lot of time. Please consider sponsoring the development of this plugin or a :doc:`one-off donation </misc/donate>` if you have successfully executed an event.
 
 * **Donate**:
   :doc:`donate <misc/donate>`

@@ -59,5 +59,7 @@ There is a context-menu if you scroll through the orders; **use the right mouse-
    Download the invoice in a separate window as a pdf-file. This is only possible if the :guilabel:`invoice` flag in the event definition has been set.
 **Refund order**
    Refund order while deducting the costs as configured in the ``Refund costs`` parameter in the Settings-menu.
+
+   .. warning:: Do not use the Mollie dashboard for refunding.
    
 

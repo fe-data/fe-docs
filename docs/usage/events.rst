@@ -153,7 +153,7 @@ This tabs defines the email the user is receiving after placing an order and pay
 **Email body**
    A smart editor where you can create your own fancy styled email. A word of advice: keep it simple and small and don’t pull in large images. If you still have the desire to use images, use links from your own site or a CDN. Keep in mind that the email doesn't include the e-tickets, but instead uses a link to download the e-tickets.
 
-   You can use a couple of keywords and Fast Events will replace them with the info available in the order:
+   You can use a couple of keywords and *Fast Events* will replace them with the info available in the order:
    
    - :guilabel:`{%NAME%}` is the name of the person who placed the order.
    - :guilabel:`{%EMAIL%}` is the email address of the person who placed the order.

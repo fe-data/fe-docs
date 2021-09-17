@@ -66,6 +66,9 @@ Defining this event is pretty straightforward. A single event with an entry scan
 
 You can easily check whether the participant has passed all checkpoints with the :guilabel:`info` button in the :doc:`scan app <../apps/scan>`.
 
+You can take your cycling to the next level by optionally using the `FE Tracking App <https://fe-tracking.fast-events.eu/>`_ for users who want it.
+Or even configure the use of :doc:`Firebase <../advanced/firebase>` to use realtime track updates and realtime messages from the event organization.
+
 Ship a signed photo book
 ^^^^^^^^^^^^^^^^^^^^^^^^
 All visitors of the Open Air DJ Festival can buy a signed photo. Although *Fast Event* is not a full-blown webshop, you can easily ship a single item (photo book) to customers if it’s occasionally. No need to install complex webshop-plugins, just use ‘Fast Events’.
