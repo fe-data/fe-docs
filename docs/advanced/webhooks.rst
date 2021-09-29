@@ -166,6 +166,7 @@ Add/update webhooks
    #. New scan
    #. Tickets downloaded
    #. Invoice downloaded
+   #. Tracking download (User clicked a link to download a ticket into the FE Tracking App)
 **Enabled**
    Check this box if the consumer is actively listening for new requests. The system will check if the URL is live.
    It does a ``ping request`` and if no HTTP 200 is received, it will not activate the URL.
@@ -187,6 +188,7 @@ Topics
 * :doc:`Orders <webhooks-orders>`
 * :doc:`Scans <webhooks-scans>`
 * :doc:`Downloads <webhooks-downloads>`
+* :doc:`Tracking <webhooks-tracking>`
 
 .. toctree::
    :maxdepth: 1
@@ -196,3 +198,4 @@ Topics
    webhooks-orders
    webhooks-scans
    webhooks-downloads
+   webhooks-tracking

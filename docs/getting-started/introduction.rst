@@ -36,7 +36,7 @@ on the route in the App and upload the time when they are passed to the event or
 `Realtime tracking <https://player.vimeo.com/video/566996933>`_ and showing additional Points of Interest and description on the map as defined by the event organizer.
 Examples: First aid stations on the track, eateries on the track, checkpoints on the track, ...
 
-Realtime track updates and realtime news messages from the event organizer.
+Realtime track updates and news messages from the event organizer. Load tickets directly into the App from the ``order thank you`` page.
 
 .. raw:: html
 

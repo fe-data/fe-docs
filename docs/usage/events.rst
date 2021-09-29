@@ -158,9 +158,13 @@ This tabs defines the email the user is receiving after placing an order and pay
    - :guilabel:`{%NAME%}` is the name of the person who placed the order.
    - :guilabel:`{%EMAIL%}` is the email address of the person who placed the order.
    - :guilabel:`{%TICKETS%}` the unique link for downloading the e-tickets.
+   - :guilabel:`{%DEEPLINK%}` the unique link for downloading the ticket into the `FE Tracking App <https://fe-tracking.fast-events.eu/>`_ in case of a sport event.
+     This link will only work on an Android phone or an iPhone. If the App is not installed, the link will ask to install it.
    - :guilabel:`{%INVOICE%}` the unique link for downloading the invoice.
    - :guilabel:`{%FIELDS%}` the input fields from the input-tab in table format.
    - :guilabel:`{%CONFIRM%}` only applicable for RSVP events and if the :guilabel:`Confirmation emails` flag in the `Basics tab`_ has bee set. The link to confirm that you will be present/participate.
+
+.. warning:: Make sure to URL-escape a keyword if it is included in a hyperlink. E.g. ``<a href="%7B%25DEEPLINK%25%7D">Download to FE Tracking</a>``.
 
 Don’t forget to test your email if it is ‘**spam-proof**‘. There are many tools available on the Internet, but we recommend using https://www.mail-tester.com/ Click the :guilabel:`Send test email` button and use the email address on the mail-tester site and within a minute you have detailed report. Be pretty serious about this, because if your email gets a high spam rating from receiving domains, your mails may end up in ‘*Spam*‘ folders or won’t be delivered at all.
 Or worse, your domain can be blacklisted.

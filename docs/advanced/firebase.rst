@@ -125,7 +125,8 @@ If you have several tracks, you can limit the message to the tracks you select. 
 
 Costs
 -----
-Firebase has a very generous free tier where all usage is free. Even better the free quota is per day! See `https://cloud.google.com/firestore/pricing <https://cloud.google.com/firestore/pricing>`_.
+Firebase has a very generous free tier where all usage is free. Even better the free quota is per day!
+See `https://cloud.google.com/firestore/pricing <https://cloud.google.com/firestore/pricing>`_.
 
 You can do the math by your self with your own event. For every ticket sold a ``write`` and a ``read`` is done if(!) the user uses the *FE Tracking* App for the ticket.
 If you use news messages there is a ``read`` for every messages.
@@ -150,7 +151,10 @@ But if you do the actual math you will find out that the actual charge is very m
 and a few extra writes (20.000 free per day). At the end the invoice will be less than 1 Euro.
 
 .. note::
-   No rights can be derived from these examples and amounts. They are only an indication in a theoretical situation.
+   **No rights can be derived from these examples and amounts.** They are only an indication in a theoretical situation.
+   To help avoid unexpected charges on your bill, set monthly budgets and alerts.
+   To set a budget, go to the `Billing <https://console.cloud.google.com/billing/>`_ section in the Google Cloud Console and create a budget for your Cloud Billing account.
+   You can use the default alert settings or modify the alerts to send notifications at different percentages of your monthly budget.
 
 ----
 

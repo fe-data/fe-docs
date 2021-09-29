@@ -376,3 +376,16 @@ Miscellaneous settings
    But you can also use it if you occasionally want to sell a book or whatever. Then use, for example, the statuses ``processing, shipped``.
    You can then send the customer an email update with the custom filter :doc:`fast_events_custom_status <../hooks/custom_status>` if the status has changed.
    A simple solution if you do this occasionally, but if it is more structural then a solution like `WooCommerce <https://wordpress.org/plugins/woocommerce/>`_ is recommended.
+**Use own domain in Deeplink**
+   In case of a sporting event and if the `FE Tracking App <https://fe-tracking.fast-events.eu/>`_ is used for passing checkpoints,
+   a link can be clicked in the *'Thank-you'* page directly after the order, to load the ticket into the App.
+   This link can be added with a `shortcode <overview.html#deeplink>`_. If this link is clicked on an Android or Apple phone, the FE Tracking App will open and the ticket will be added.
+   If the App is not installed, you will first be asked to install it.
+
+   If the link is clicked on a desktop PC, the default display is `https://fast-events.eu/add-ticket <https://fast-events.eu/add-ticket>`_.
+   This page indicates that the link can only be clicked on a phone.
+
+   If this parameter is checked, it is possible to create a page on your own domain with its own content in the local language.
+   For example ``https://exampledomain.com/add-ticket``.
+
+   .. note::  Make sure the page slug is always ``add-ticket``.
