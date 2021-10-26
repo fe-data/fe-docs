@@ -38,6 +38,9 @@ Examples: First aid stations on the track, eateries on the track, checkpoints on
 
 Realtime track updates and news messages from the event organizer. Load tickets directly into the App from the ``order thank you`` page.
 
+While walking, cycling, ... share your track with your family and friends so they can see live where you are.
+
+
 .. raw:: html
 
    <div style="clear:both"></div>

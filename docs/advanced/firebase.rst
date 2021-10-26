@@ -2,13 +2,15 @@ Firebase
 ========
 If your event is a sporting event and uses tracks then the *FE Tracking* App can be used, as described in the `tracking tab <../usage/events.html#tracking-tab>`_.
 
-However, you can go one step further with your event by providing real-time track updates and news messages from the event organizer to the users of the *FE Tracking* App.
+However, you can go one step further with your event by providing real-time track updates real-time news messages from the event organizer to the users of the *FE Tracking* App.
+It is also possible to give users the option of sharing their track in real time with family and friends as they travel it. These features require *FE Tracking v1.3 or higher*.
 The benefits for users of the *FE Tracking* App are:
 
 #. Always the right track
 #. If the organisation updates the Info screen in the *FE Tracking* App, this is also immediately available
 #. News messages from the event organisation are immediately available and can be played via Text-To-Speech while the App is recording the track in the background.
    Of course, this only works if you are wearing a (Bluetooth) headset when, for example, you have the phone in a bracelet.
+#. Family and friends can see where the participant is on the track, how far they have travelled, average speed, distance/time to the next checkpoint or service station, ...
 
 ----
 
@@ -50,30 +52,41 @@ Video time-index
    .. sourcecode:: text
       :linenos:
 
-       rules_version = '2';
-       service cloud.firestore {
-         match /databases/{database}/documents {
+      rules_version = '2';
+      service cloud.firestore {
+        match /databases/{database}/documents {
 
-           function isValid() {
-             return request.auth != null && request.auth.token.ticket;
-           }
+          function isValid() {
+              return request.auth != null && request.auth.token.ticket;
+          }
 
-           match /news/{message} {
-             allow read: if isValid();
-             allow write: if false;
-           }
+          function isShareReader() {
+              return request.auth != null && request.auth.token.sharing;
+          }
 
-           match /tracks/{track} {
-             allow read: if isValid();
-             allow list: if false;
-             allow write: if false;
-           }
+          match /news/{message} {
+            allow read: if isValid();
+            allow write: if false;
+          }
 
-           match /tickets/{ticket} {
-             allow read: if isValid();
-             allow list: if false;
-             allow write: if false;
-           }
+          match /tracks/{track} {
+              allow read: if isValid() || isShareReader();
+            allow list: if false;
+            allow write: if false;
+          }
+
+          match /tickets/{ticket} {
+              allow read: if isValid();
+            allow list: if false;
+            allow write: if false;
+          }
+
+          match /shares/{share} {
+              match /locations/{location} {
+              allow read: if isShareReader() && request.auth.token.share_id == share;
+              allow write: if isValid() && request.auth.token.share_id == share;
+            }
+          }
 
         }
       }
@@ -102,7 +115,24 @@ Firebase event fields
            :alt: Firebase fields
 
 Now upload all 3 files you have downloaded in the video to there corresponding elements.
-The ``Location sharing``, ``Minutes trigger`` and ``Distance trigger`` fields are not used at the moment, they will be part of an upcoming *FE Tracking* release.
+
+Remaining fields
+^^^^^^^^^^^^^^^^
+**Location sharing**
+   If switched on the users of the FE Tracking App(> v1.3) can share the track while it is recording, so family and friend stay up to date where they are on the track.
+**Maximum shares**
+   Is the maximum number of times the share can be used. Mind you: If someone uses the share and immediately discards it and then reinstalls it, this counts as 1 more.
+**Minutes trigger**
+   If this parameter and the ``Distance trigger`` are both ``0``. Every location update is instantly shared with all share users. This is realtime.
+   If this parameter is greater than 0, it means that all location updates are collected until the time expires.
+   This only happens at the next location update, so it is not an exact number of minutes. People using the share will then receive a burst of location updates.
+**Distance trigger**
+   Pretty much the same as the ``Minutes trigger`` only this time updates are collected until the user travelled a distance greater that this parameter.
+   Mind you: if this parameter is not zero or the other one is not zero, they must bothe be set to a non-zero value.
+   During tracking and when sharing is on, a new burst of location updates is sent to the shares if either the distance has been exceeded or the time has been exceeded.
+   When the burst is performed, the distance measurement is restarted from zero and the minute trigger is also restarted from zero.
+   When the user stop tracking any leftover location updates are flushed to the shares.
+
 Finally ``Save`` the event.
 
 ----
@@ -150,6 +180,21 @@ As you can see for this case the free plan won't do the trick, you have to upgra
 But if you do the actual math you will find out that the actual charge is very minimal. In this case you will be charged for 400.000 - 50.000 (daily free quota) = 350.000 ``reads``
 and a few extra writes (20.000 free per day). At the end the invoice will be less than 1 Euro.
 
+Location sharing
+^^^^^^^^^^^^^^^^
+If you enable location sharing it is crucial to understand how this impacts your read and write bundles. Suppose you have an event with 1000 participants and a 10 km walking track.
+You have enabled ``Location sharing`` and both ``Minutes trigger`` and ``Distance trigger`` are **0** and you allow a maximum of 2 shares.
+This would mean that every location update triggers 1 write and 2 reads. Based on a ``Distance filter`` of 25m it means the number of writes would be 400 and the number of reads 800 ( # shares * 400).
+As you know the ``Distance filter`` is elastic. The faster you go the longer the distance becomes. So the numbers are most likely smaller.
+For the whole event this boils down to ~400.000 writes and ~800.000 reads. Still a very small amount of money.
+
+.. warning::
+   The battery consumption with these settings is obviously more than with a ``Distance trigger`` or an update of, for example, once every 3 minutes.
+
+But you can save on the costs by for instance setting the ``Distance trigger`` to 200m and the ``Minutes trigger`` to 1 minute. Remember it is never exactly 200m.
+It means that when the next location update comes in and the new distance is greater than or equal to 200m that the location updates are shared in bulk with the shares.
+The math then becomes (worst case): 10.000m/200m = 50 writes en 100 reads.
+
 .. note::
    **No rights can be derived from these examples and amounts.** They are only an indication in a theoretical situation.
    To help avoid unexpected charges on your bill, set monthly budgets and alerts.
@@ -161,7 +206,7 @@ and a few extra writes (20.000 free per day). At the end the invoice will be les
 Do's and Don't
 --------------
 #. Always first define the whole event, including the ``Basics`` tab of the `Tracking tab <../usage/events.html#tracking-tab>`_ and ``Save`` the event before you start with Firebase.
-#. Do not download the IOS and Android files again from the Firebase Console if you already sold tickets.
+#. Do not download new IOS and Android files from the Firebase Console if you already sold tickets.
    If you do, all users that already downloaded the ticket in the *FE Tracking* App will loose access and have to download the ticket again.
 #. If the event is finished and you want to delete everything, you first have to disable ``Tracking`` in the `Basics tab <../usage/events.html#basics-tab>`_.
    Then all tickets, orders and the event can be deleted. In the Firebase Console you need to select ``Project settings`` and at the bottom select :guilabel:`Delete project`.

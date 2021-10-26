@@ -155,6 +155,7 @@ List events
                     "tr_help_url": "https://vinyl-openair.com/info/",
                     "tr_help_tel": "0123456789",
                     "location_sharing": true,
+                    "maximum_shares": 1,
                     "minutes_trigger": 0,
                     "distance_trigger": 0
                 },
@@ -236,6 +237,7 @@ List events
        :widths: auto
 
        "1.0", "Introduced."
+       "1.2", "Added '*maximum_shares*'."
 
 ----
 
