@@ -1,6 +1,10 @@
 Changelog
 =========
 
+v1.2.1 (17 Nov 2021)
+------------------
+* Fixed: Authorization bug
+
 v1.2 (26 Okt 2021)
 ------------------
 * New: For sport events -> It is possible to give users the option of sharing their track in real time with family and friends as they travel it.
