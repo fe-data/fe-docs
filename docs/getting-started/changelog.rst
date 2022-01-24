@@ -1,6 +1,10 @@
 Changelog
 =========
 
+v1.2.2 (24 Jan 2022)
+------------------
+* Added: Use '{%YEAR%}' in email templates
+
 v1.2.1 (17 Nov 2021)
 ------------------
 * Fixed: Authorization bug

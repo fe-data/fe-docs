@@ -157,6 +157,7 @@ This tabs defines the email the user is receiving after placing an order and pay
    
    - :guilabel:`{%NAME%}` is the name of the person who placed the order.
    - :guilabel:`{%EMAIL%}` is the email address of the person who placed the order.
+   - :guilabel:`{%YEAR%}` substitute the current year (YYYY).
    - :guilabel:`{%TICKETS%}` the unique link for downloading the e-tickets.
    - :guilabel:`{%DEEPLINK%}` the unique link for downloading the ticket into the `FE Tracking App <https://fe-tracking.fast-events.eu/>`_ in case of a sport event.
      This link will only work on an Android phone or an iPhone. If the App is not installed, the link will ask to install it.
