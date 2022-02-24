@@ -1,12 +1,15 @@
 Changelog
 =========
+v1.3.0 (24 Feb 2022)
+--------------------
+* Added: Ordering API added for generating order forms, so that the client frontend can be integrated with other, non WordPress, development environments.
 
 v1.2.2 (24 Jan 2022)
-------------------
+--------------------
 * Added: Use '{%YEAR%}' in email templates
 
 v1.2.1 (17 Nov 2021)
-------------------
+--------------------
 * Fixed: Authorization bug
 
 v1.2 (26 Okt 2021)

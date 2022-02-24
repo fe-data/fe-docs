@@ -389,3 +389,26 @@ Miscellaneous settings
    For example ``https://exampledomain.com/add-ticket``.
 
    .. note::  Make sure the page slug is always ``add-ticket``.
+
+**Use ordering API**
+   Use the Ordering API added for generating order forms and order status forms, so that the client frontend can be integrated with other, non WordPress, development environments.
+   See xxxx for the specification.
+**Ordering shortcodes**
+   Per line you can specify which token should use which shortcode:
+
+   .. code-block:: text
+
+      token:shortcode
+
+      Example
+      =======
+      vintage:[fast_events id=2]
+      cycle:[fast_event group="fast"]
+      status2:[fe_download showimage="yes" downloadtext="Download tickets"]
+      status3:[fe_ticket downloadtext="Download eticket in FE Tracking App"]
+
+   The tokens **vintage** and **cycle** can be used in the ordering API to generate the orderform. You can then embed this orderform in your own frontend.
+   To get it working, you also need the ``fe-payment.js`` or ``fe-payment.min.js`` library, which is part of the Fast Event plugin.
+   The library is 100% javascript and has no other dependencies.
+   You can also query the order status by using the order uid. The API checks to which event id the order belongs and then looks for a token that starts with 'status' supplemented with the event id. So for example 'status2'.
+

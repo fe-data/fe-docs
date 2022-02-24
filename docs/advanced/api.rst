@@ -17,7 +17,7 @@ Requests to the *Fast Events* public API is for private information and all endp
 
 Requirements
 ------------
-All endpoints require an API key in a HTTP header and most use WordPress application passwords in the ``Authorization`` HTTP header.
+Some endpoints require an API key in a HTTP header and most use WordPress application passwords in the ``Authorization`` HTTP header.
 By using application passwords (as of WordPress 5.6) you have a great deal of flexibility.
 You can either create 1 WordPress user and use a single application password for all clients or an application password per client. But you can also create a WordPress user for each client with an application password.
 In WordPress you can then easily revoke the rights per client. The API KEY can be used as a kind of kill switch. By changing this, all clients will be blocked for the specific endpoint.
@@ -37,6 +37,14 @@ For the username in the ``Authorization`` HTTP header you can use the login name
 
    You need to include the ``X-FE-API-KEY`` and its value in a HTTP header for all ``admin`` endpoints. The value can be found in the `plugin settings <../getting-started/settings.html#rest-api-settings>`_.
    These endpoint also needs an application password.
+
+:ordering:
+
+   If you want to use this API, you first need to enable the Ordering API in het `Miscellaneous settings <../getting-started/settings.html#miscellaneous-settings>`_.
+   And don't forget to add the shortcodes to generate the order from or status information.
+
+   You can use the API if the frontend of your website is completely separated from the WordPress backend and your frontend runs, for example, as a static website on Cloudflare Pages, Netlify, etc.
+   In this way the WordPress backend has been completely transformed into a 100% REST API server for all client traffic.
 
 .. tip::
 
@@ -61,6 +69,7 @@ Resources
 * :doc:`Total scans <api-totalscans>`
 * :doc:`Orders <api-orders>`
 * :doc:`Tickets <api-tickets>`
+* :doc:`Ordering <api-ordering>`
 
 .. toctree::
    :maxdepth: 1
@@ -76,3 +85,4 @@ Resources
    api-totalscans
    api-orders
    api-tickets
+   api-ordering
