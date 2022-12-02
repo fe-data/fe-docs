@@ -24,10 +24,14 @@ New event
         "event_type": 1,
         "stock": 10000,
         "stock_link": 0,
+        "saas_fee": "",
+        "saas_user_id": 2,
         "group_type": 0,
         "event_group": "",
         "redirect": "https://vinyl-openair.com/order-thankyou/",
         "email": {
+            "sender_name": "",
+            "sender_email": "",
             "bcc": "",
             "subject": "Your Vinyl Open Air 2021 tickets",
             "body": "HTML truncated ..."
@@ -157,6 +161,7 @@ New event
 
    "1.0", "Introduced."
    "1.2", "Added '*maximum_shares*'."
+   "1.4", "Added '*saas_fee*', '*saas_user_id*', '*email->sender_name*' and '*email->sender_email*'."
 
 ----
 

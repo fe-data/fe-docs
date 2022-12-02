@@ -1,12 +1,26 @@
 Changelog
 =========
+v1.4.0 (5 Dec 2022)
+--------------------
+* New: PHP 8.0 or higher is needed.
+* New: Optional event_ids as emailaddress suffix in the authorisation settings limiting the access to the specified event_ids.
+* New: The plugin is now SaaS enabled and can be used as a ticketing service for multiple companies, associations, ...
+* New: Ability to set a sender and email address per event.
+* New: Optional cache order forms if the Ordering API is used.
+* New: Option of no border around the qrcode block in PDF tickets.
+* New: FE Admin 1.6 will only work with Fast Events 1.4.0 or higher.
+* Change: Ordering status lines are now optional in the `Miscellaneous settings <../getting-started/settings.html#miscellaneous-settings>`_
+* Fix: Order paging length state saved in frontend.
+* Fix: PDF template selection is now sorted.
+* Fix: Order submit button is now disabled after submitting a new order.
+
 v1.3.0 (24 Feb 2022)
 --------------------
-* Added: Ordering API added for generating order forms, so that the client frontend can be integrated with other, non WordPress, development environments.
+* New: Ordering API added for generating order forms so that the client frontend can be integrated with other, non-WordPress, development environments.
 
 v1.2.2 (24 Jan 2022)
 --------------------
-* Added: Use '{%YEAR%}' in email templates
+* New: Use '{%YEAR%}' in email templates
 
 v1.2.1 (17 Nov 2021)
 --------------------

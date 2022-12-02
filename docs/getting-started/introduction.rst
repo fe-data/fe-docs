@@ -29,7 +29,7 @@ Tracking
 .. image:: ../_static/images/getting-started/tracking.png
    :align: left
    :alt: tracking
-       
+
 Use the `FE Tracking App <https://fe-tracking.fast-events.eu/>`_ especially for sporting events to enable participants to signal checkpoints
 on the route in the App and upload the time when they are passed to the event organiser's server.
 
@@ -154,12 +154,28 @@ Fill seats in the order you defined it.
 
    <div style="clear:both"></div>
 
+SaaS mode
+-------------
+
+.. image:: ../_static/images/getting-started/SaaS.png
+   :scale: 80%
+   :align: right
+   :alt: saas-mode
+
+Host multiple organizations on your platform each with their own events. They can use your ticketing platform as sub-merchants.
+
+Use flexible application fees, which will automatically be transferred to you by `Mollie <https://www.mollie.com/dashboard/signup/5835294>`_.
+
+.. raw:: html
+
+   <div style="clear:both"></div>
+
 REST API
 --------
 
 .. image:: ../_static/images/getting-started/api.png
    :scale: 80%
-   :align: right
+   :align: left
    :alt: rest-api
 
 *Fast Events* offers a :doc:`public REST API <../advanced/api>`.
@@ -179,7 +195,7 @@ Webhooks
 
 .. image:: ../_static/images/getting-started/webhooks.png
    :scale: 80%
-   :align: left
+   :align: right
    :alt: webhooks
        
 *Fast Events* offers :doc:`Webhooks <../advanced/webhooks>` to sent notifications to a URL of your choice.
@@ -197,7 +213,7 @@ Action & filters
 
 .. image:: ../_static/images/getting-started/code.png
    :scale: 80%
-   :align: right
+   :align: left
    :alt: actions-and-filters
 
 Want to extend the functionality of *Fast Events*?
@@ -221,6 +237,7 @@ Summary
    - Optional reCAPTCHA protection
    - REST API
    - Webhooks
+   - SaaS mode
    - Actions & filters for custom extensions
    - Flexible stock control
    - Create you own seating plan

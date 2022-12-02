@@ -102,6 +102,12 @@ The basics definition of the event.
    Use the `FE Tracking App <https://fe-tracking.fast-events.eu/>`_ for sporting events in particular to enable participants to signal checkpoints
    on the route in the App and possibly upload them to the server when they are passed.
    Works together with `Tracking tab`_.
+**SaaS fee**
+   If not empty it overrides the saas fee specified in the `Payment provider settings <../getting-started/settings.html#client-fee>`_. Leave empty if you want to use the value in the settings.
+**SaaS user**
+   Select the user this event is assigned to. If the system is not running in ``SaaS mode`` this entry can be ignored.
+   The :guilabel:`Revoke authorization` button is only visible if the assigned user has authorized *Fast Events* to process payment information on its behalf.
+   If access is revoked, the sub-merchant has to authorize again. The sub-merchant **must** authorize *Fast Events* before tickets can be sold.
 **Terms html**
    If this field is not empty, then this is shown at the bottom of the order page as a checkbox. The user must check this in order to place the order. If you work with links (see screenshot above), always target a new window. Only the following html-tags are allowed: ``<a>``, ``<b>``, ``<i>`` and ``<u>``.
 **Redirect after booking**
@@ -146,6 +152,10 @@ Email tab
 
 This tabs defines the email the user is receiving after placing an order and paying for it. This email is also used for dashboard orders (See :doc:`orders menu </usage/orders>`).
 
+**Sender name and sender email**
+   Optional fields. Use it if you want to override the ``Sender name`` and ``Sender email`` in the `Email settings <../getting-started/settings.html#email-settings>`_.
+**Sender email**
+   Optional field. Don’t leave it blank.
 **Email subject**
    The email subject. Don’t leave it blank.
 **Email BCC**
@@ -287,6 +297,9 @@ With the :guilabel:`Qrcode rotate` field you can rotate the qrcode block. Rotati
    Mind you: the template-names are case sensitive and make sure the ``.pdf`` suffix is lowercase and the ticket name should not contain spaces. The qrcode block will be printed on the same location for all templates.
 
    .. note:: If you upload a new ticket template, always open the event for editing and save it again. Do this for every event that is using this template.
+
+**No border**
+   If checked, no border is printed around the qrcode block.
 
 Invoice
 ^^^^^^^

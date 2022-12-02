@@ -81,10 +81,15 @@ List events
                 "event_type": 1,
                 "stock": 9000,
                 "stock_link": 0,
+                "saas_fee": 0.05,
+                "saas_user_id": 2,
+                "saas_user_id": 16,
                 "group_type": 0,
                 "event_group": "",
                 "redirect": "https://vinyl-openair.com/thx-for-your-order/",
                 "email": {
+                    "sender_name": "",
+                    "sender_email": "",
                     "bcc": "",
                     "subject": "Here are your tickets",
                     "body": "HTML truncated ..."
@@ -238,6 +243,7 @@ List events
 
        "1.0", "Introduced."
        "1.2", "Added '*maximum_shares*'."
+       "1.4", "Added '*saas_fee*', '*saas_user_id*', '*email->sender_name*' and '*email->sender_email*'."
 
 ----
 

@@ -53,6 +53,41 @@ The :guilabel:`Error page` is the page where users end up if:
            :target: ../_static/images/getting-started/Error-page.png
            :alt: Error page
 
+SaaS mode
+^^^^^^^^^
+With SaaS mode, it is possible to use *Fast Events* as a ticketing platform to which multiple organizations. associations, ... can be connected.
+Each organization then has its own event(s) and its own WordPress account on the platform.
+If you want to start using this mode you will first have to register your Application (= *Fast Events* ) once in the
+`Mollie Dashboard <https://www.mollie.com/dashboard/signup/5835294>`_ via the menu Developers->Apps. When entering the data, the ``Redirect URL`` should look like this ``https://example.com/wp-json/fast-events/v1/saas/authorize``.
+Once the registration is complete, the :guilabel:`Client-ID` and :guilabel:`Client-secret` can be entered below.
+
+Steps required to connect a new organization to the platform:
+
+1. Create a WordPress account for the new organization. The user must not have the ``Admin`` role.
+2. Add the events for this organization and under the :guilabel:`SaaS user` in the `Basics tab <../usage/events.html#basics-tab>`_ select the username created under step 1.
+3. If necessary, change the sender in the `Email tab <../usage/events.html#email-tab>`_. Verify that the email provider being used can work with this new sender.
+4. Create `authorization rules <#authorization-settings>`_ in the settings and limit usage to the event ids defined in step 2.
+5. The client must create a new Website profile in the `Mollie Dashboard <https://www.mollie.com/dashboard/signup/5835294>`_ via the Settings->Website Profiles menu. This should use the domain on which *Fast Events* is hosted.
+6. The customer can now log in once in *Fast Events* or via the `FE Admin App <../apps/admin>` to authorize the platform to process payment information on behalf of the customer.
+7. Agree the application fee with the client. Below you can specify this for all organizations, but it can be changed for each event.
+   This fee is automatically retained by `Mollie <https://www.mollie.com/dashboard/signup/5835294>`_ and assigned to the service provider hosting *Fast Events*.
+
+Client ID
+^^^^^^^^^
+The ID you got when registering the App. It usually starts with ``app_``.
+
+Client secret
+^^^^^^^^^^^^^
+The secret you got when registering the App.
+
+Client fee
+^^^^^^^^^^
+This is the fee (including VAT) that Mollie retains and allocates to whoever hosts the *Fast Events* plugin in SaaS mode.
+
+Client fee per
+^^^^^^^^^^^^^^
+The fee can be per order or per ticket.
+
 ----
 
 Email settings
@@ -225,8 +260,10 @@ Per line you can specify which user is authorized for which actions. Its format 
 
 .. code-block:: text
 
-   emailaddress:controller1(action1|action2|...),controller2(action3|action4|...),...
+   emailaddress[event_ids]:controller1(action1|action2|...),controller2(action3|action4|...),...
    
+The ``[event_ids]`` suffix is optional. It limits the scope of the authorisation to a predefined set of events identified by the event_id, e.g. ``[1,3]``.
+
 The following controllers and actions are available. If you want to grant all actions of a single controller, you can also specify a ***** (asterisk):
 
 Settings controller
@@ -392,7 +429,10 @@ Miscellaneous settings
 
 **Use ordering API**
    Use the Ordering API added for generating order forms and order status forms, so that the client frontend can be integrated with other, non WordPress, development environments.
-   See xxxx for the specification.
+   See `ordering API <../advanced/api-ordering.html>`_ for the specification.
+**Cache time orderscreen**
+   Optional specify how many seconds the orderform needs to be cached. This option is not using WordPress as cache, but relies on an intermediate cache like Cloudflare or others.
+   For example, if you specify 60 (=60 seconds), an HTTP header is generated such as: ``Cache-Control: public, max-age=60, s-max-age=60``.
 **Ordering shortcodes**
    Per line you can specify which token should use which shortcode:
 
@@ -403,12 +443,17 @@ Miscellaneous settings
       Example
       =======
       vintage:[fast_events id=2]
-      cycle:[fast_event group="fast"]
+      cycle:[fast_events group="fast"]
       status2:[fe_download showimage="yes" downloadtext="Download tickets"]
       status3:[fe_ticket downloadtext="Download eticket in FE Tracking App"]
 
    The tokens **vintage** and **cycle** can be used in the ordering API to generate the orderform. You can then embed this orderform in your own frontend.
-   To get it working, you also need the ``fe-payment.js`` or ``fe-payment.min.js`` library, which is part of the Fast Event plugin.
+   To get it working, you also need the ``fe-payment.js`` or ``fe-payment.min.js`` library, which is part of the Fast Events plugin.
    The library is 100% javascript and has no other dependencies.
-   You can also query the order status by using the order uid. The API checks to which event id the order belongs and then looks for a token that starts with 'status' supplemented with the event id. So for example 'status2'.
+
+   You can also query the order status by using the order uid.
+   The API checks to which event id the order belongs and then looks for a token that starts with 'status' supplemented with the event id.
+   So for example 'status2'.
+
+   The order status lines are optional. If not present the default is ``[fe_download showimage="no" downloadtext="Download tickets"]``
 

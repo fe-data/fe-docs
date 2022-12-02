@@ -38,6 +38,42 @@ Get orderform
             response = requests.get(URL, headers=HEADERS, json=JSON)
             print(response.json())
 
+        .. code-tab:: javascript
+
+            // This will inject the orderform in you frontend HTML and load the payment JS file.
+            <div id="fast-events-order-form"></div>
+            <script>
+                document.addEventListener("DOMContentLoaded", async () => {
+
+                    const checkElement = async selector => {
+                        while (document.getElementById(selector) === null ) {
+                            await new Promise(resolve => requestAnimationFrame(resolve))
+                        }
+                        return document.getElementById(selector)
+                    }
+
+                    try {
+                        document.body.style.cursor = 'progress'
+                        let response = await fetch('https://example.com/wp-json/fast-events/v1/ordering/form/vinyl')
+                        const json = await response.json();
+                        if (response.ok) {
+                            document.getElementById('fast-events-order-form').innerHTML = json.form
+                            checkElement('fast-events-form-submit').then((selector) => {
+                                let js = document.createElement('script')
+                                js.src = '/js/fe-payment.min.js'
+                                document.head.appendChild(js)
+                            })
+                        } else {
+                            alert(json.message)
+                        }
+                    } catch (error) {
+                        alert('Error: ' + error)
+                    } finally {
+                        document.body.style.cursor = 'default'
+                    }
+                });
+            </script>
+
 
     **Example response**
 

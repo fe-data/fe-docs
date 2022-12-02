@@ -19,12 +19,20 @@ Settings
 First make sure you have configured the ``Settings for online payments`` in the `settings <../getting-started/settings.html#settings-for-instant-payments>`_ of the plugin.
 
 You can share the qrcode on the settings page of the plugin with the App to configure the :guilabel:`Server URL` and :guilabel:`API Key` parameters.
-Email the configuration qrcode as an attachment to the user, which can than be shared with the App to configure it. Still the other parameters have be configured manually.
+Email the configuration qrcode as an attachment to the user, which can than be shared with the App to configure it.
+
+Of course, you can also scan the configuration qrcode with the App by pressing the qrcode symbol in the settings screen.
+The :guilabel:`Server URL` and :guilabel:`API Key` are then filled in automatically.
+
+Still the other parameters have be configured manually.
 
 Here are the settings of the app:
 
 **User**
     The username or emailaddress of the WordPress user.
+
+    .. warning:: Do **not** use admin users.
+
 **Password**
     The ``application password``. Mind you, this is not the user password. By using application passwords (as of WordPress 5.6) you have a great deal of flexibility.
     You can either create 1 WordPress user and use a single application password or an application password per client. But you can also create a WordPress user for each client with an application password.
