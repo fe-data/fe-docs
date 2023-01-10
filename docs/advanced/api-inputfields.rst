@@ -247,7 +247,6 @@ Update input field
     .. sourcecode:: json
 
         {
-            "id": "v0f446",
             "name": "Country",
             "type": "text",
             "value": "Netherlands",

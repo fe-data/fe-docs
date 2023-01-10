@@ -286,15 +286,20 @@ Make sure you have uploaded the PDF-templates for the etickets and if needed for
 
 Ticket
 ^^^^^^
-Pick a template from the dropdown box and start playing with the x and y position to position the qrcode block. Click on the :guilabel:`Example ticket` button to see the result. Repeat this step until you are satisfied with the positioning.
-With the :guilabel:`Qrcode rotate` field you can rotate the qrcode block. Rotation is done from the top left corner and can be positive or negative. Look at the `example template <../_static/pdf/Vinyl-template.pdf>`_ and the `ticket example <../_static/images/usage/Ticket-example.jpg>`_ if the settings of the screenshot above have been applied.
+The size of the eticket is always A4 (210mm x 297mm) and so the :guilabel:`Qrcode x-position` and :guilabel:`Qrcode y-position` values must stay within these limits.
+The values of these fields are in millimetres.
+Pick a template from the dropdown box and start playing with the :guilabel:`Qrcode x-position` and :guilabel:`Qrcode y-position` to position the qrcode block.
+Click on the :guilabel:`Example ticket` button to see the result. Repeat this step until you are satisfied with the positioning.
+With the :guilabel:`Qrcode rotate` field you can rotate the qrcode block. Rotation is done from the top left corner and must be between **0** and **360**.
+Look at the `example template <../_static/pdf/Vinyl-template.pdf>`_ and the `ticket example <../_static/images/usage/Ticket-example.jpg>`_ if the settings of the screenshot above have been applied.
 
 **Template per ticket-type**
    *Fast Events* offers you the possibility to use different pdf-templates per ticket-type. For example: your event contains the ticket-types ``Silver`` and ``Backstage``.
    Create a default template with the name :guilabel:`Vinyl-template.pdf` (any name will do).
    This default template will be the template for the ``Silver`` ticket. For the ``Backstage`` ticket you should create a pdf with the name :guilabel:`Vinyl-template-Backstage.pdf`.
    Select in the drop-down box the ‘*Vinyl-template.pdf*‘. That’s it; if *Fast Events* can’t find the template, it will use the default selected template.
-   Mind you: the template-names are case sensitive and make sure the ``.pdf`` suffix is lowercase and the ticket name should not contain spaces. The qrcode block will be printed on the same location for all templates.
+   Mind you: the template-names are case sensitive and make sure the ``.pdf`` suffix is lowercase and the ticket name should not contain spaces.
+   The qrcode block will be printed on the same location for all templates.
 
    .. note:: If you upload a new ticket template, always open the event for editing and save it again. Do this for every event that is using this template.
 

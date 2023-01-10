@@ -5,7 +5,7 @@ This is by no means an exhaustive list of security measurements you should take 
 A couple of suggestions which are quite important as a starting point.
 
 * Make sure you run the latest version of WordPress and all the plugins you use.
-* Check your PHP version. Right now the latest version is 7.4.
+* Check your PHP version. Right now the latest version is 8.2.
 * Use two-factor (2FA) or multi-factor authentication (MFA) for your hosting-account and WordPress admin account. Consider the usage of a password manager, e.g. Bitwarden, Lastpass, 1Password, Dashlane, …
 * Don’t use the username ‘*admin*’ as your WordPress admin account. Use a random string as username.
 * Does your hosting-provider offer automatic backups? If not, consider a plugin like `UpdraftPlus – Backup/Restore <https://wordpress.org/plugins/updraftplus/>`_.

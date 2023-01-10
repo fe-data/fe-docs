@@ -68,7 +68,7 @@ Steps required to connect a new organization to the platform:
 3. If necessary, change the sender in the `Email tab <../usage/events.html#email-tab>`_. Verify that the email provider being used can work with this new sender.
 4. Create `authorization rules <#authorization-settings>`_ in the settings and limit usage to the event ids defined in step 2.
 5. The client must create a new Website profile in the `Mollie Dashboard <https://www.mollie.com/dashboard/signup/5835294>`_ via the Settings->Website Profiles menu. This should use the domain on which *Fast Events* is hosted.
-6. The customer can now log in once in *Fast Events* or via the `FE Admin App <../apps/admin>` to authorize the platform to process payment information on behalf of the customer.
+6. The customer can now log in once in *Fast Events* or via the :doc:`FE Admin App <../apps/admin>` to authorize the platform to process payment information on behalf of the customer.
 7. Agree the application fee with the client. Below you can specify this for all organizations, but it can be changed for each event.
    This fee is automatically retained by `Mollie <https://www.mollie.com/dashboard/signup/5835294>`_ and assigned to the service provider hosting *Fast Events*.
 
@@ -246,15 +246,17 @@ But you can also resend orders, refund, configure the scan app or payment app, a
 
 API key
 ^^^^^^^
-The secret key the :doc:`FE Admin App <../apps/admin>` has to use to secure the communication. You can use the button to generate a new secure token. Copy the qrcode and send it as an attachment in an email to the users of the FE Admin App. Users can than “*Share*” the qrcode with the FE Admin App to configure it. But if printed or shown, users can also scan it with the camera to configure the app.
-
-Or they can scan the qrcode to configure the :doc:`FE Admin App <../apps/admin>`.
+The secret key the :doc:`FE Admin App <../apps/admin>` has to use to secure the communication.
+You can use the button to generate a new secure token.
+If printed or shown, users can scan it with the camera to configure a new server in the app.
 
 ----
 
 Authorization settings
 ----------------------
-In the standard installation, only admin users can change all parts of the *Fast Events* plugin, which is usually good enough. But there may be situation where you want to delegate some functionality to non-admin users. The pre-condition is that users need to have an account on your WordPress site with valid login credentials.
+In the standard installation, only admin users can change all parts of the *Fast Events* plugin, which is usually good enough.
+But there may be situation where you want to delegate some functionality to non-admin users.
+The pre-condition is that users need to have an account on your WordPress site with valid login credentials.
 
 Per line you can specify which user is authorized for which actions. Its format is:
 
@@ -284,7 +286,7 @@ Events controller
 - ``duplicate`` Duplicate events
 - ``example_invoice`` Create an example invoice
 - ``example_ticket`` Create an example ticket
-- ``export`` Expert events and related pages and templates
+- ``export`` Export events and related pages and templates
 - ``firebase`` Access to Firebase for creating accounts and realtime messages
 - ``import`` Import events and related pages and templates
 - ``kml_upload`` Upload KML-files for tracking
@@ -301,7 +303,7 @@ Events controller
 Tools controller
 ^^^^^^^^^^^^^^^^
 - ``email`` Send free format emails
-- ``orders`` Resend confirmation emails
+- ``orders`` Resend order confirmation emails
 - ``refund`` Refund orders
 
 Qrcode controller
@@ -319,8 +321,8 @@ Orders controller
 - ``create_tickets`` Create new tickets
 - ``custom_status`` Set a custom status
 - ``dashboard_order`` Add new orders
-- ``delete`` Delete the order
-- ``delete_tickets`` Delete the tickets
+- ``delete`` Delete an order
+- ``delete_tickets`` Delete the tickets of an order
 - ``download_invoice`` Download the PDF invoice
 - ``download_tickets`` Download the PDF tickets
 - ``email`` Resend the order by email
@@ -331,7 +333,7 @@ Webhooks controller
 ^^^^^^^^^^^^^^^^^^^
 - ``add`` Add new webhooks
 - ``delete`` Delete webhooks
-- ``duplicate`` Duplicate a webhooks
+- ``duplicate`` Duplicate a webhook
 - ``ping`` Ping a webhook consumer for debugging purposes
 - ``read`` Read webhooks
 - ``reset`` Reset webhook counters
@@ -342,21 +344,26 @@ Admin controller
 Used by the :doc:`Admin app </apps/admin>` and the :doc:`REST API </advanced/api>`.
 
 - ``event_read`` Read events
+- ``event_sync`` Sync events with each-other
 - ``event_update`` Change stock of events
-- ``input_fields_change`` Change input fields
+- ``input_fields_change`` Add/update/delete input fields
 - ``input_fields_read`` Read input fields
 - ``order_add`` Add new orders
-- ``order_delete`` Delete the order
+- ``order_delete`` Delete an order
 - ``order_email`` Resend the order confirmation
+- ``order_export`` Export orders in csv format
 - ``order_read`` Read orders
-- ``order_refund`` Refund the order
+- ``order_refund`` Refund an order
 - ``order_update`` Change the user credentials or custom status of the order
 - ``payment_app_change`` Change the qrcode for the Payment App
 - ``payment_app_read`` Show the qrcode for the Payment App
-- ``scan_app_change`` Change the qrcode for the Scan App
-- ``scan_app_read`` Show the qrcode for the Scan App
+- ``scan_app_change`` Add/update/delete/renew the qrcode for the Scan App
+- ``scan_app_read`` Show the qrcodes for the Scan App
+- ``ticket_types_change`` Add/update/delete ticket types
+- ``ticket_types_read`` Read ticket types
 - ``tickets_create`` Create new tickets for the selected order
 - ``tickets_delete`` Delete the tickets from the order
+- ``tickets_export`` Export tickets in csv format
 - ``tickets_read`` Show the tickets from the order
 - ``total_sales`` Overview of total sales
 - ``total_scans`` Overview of all scans
@@ -455,5 +462,5 @@ Miscellaneous settings
    The API checks to which event id the order belongs and then looks for a token that starts with 'status' supplemented with the event id.
    So for example 'status2'.
 
-   The order status lines are optional. If not present the default is ``[fe_download showimage="no" downloadtext="Download tickets"]``
+   The order status lines are **optional**. If not present the default is ``[fe_download showimage="no" downloadtext="Download tickets"]``
 

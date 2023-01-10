@@ -38,7 +38,7 @@ Get orderform
             response = requests.get(URL, headers=HEADERS, json=JSON)
             print(response.json())
 
-        .. code-tab:: javascript
+        .. code-tab:: html
 
             // This will inject the orderform in you frontend HTML and load the payment JS file.
             <div id="fast-events-order-form"></div>
@@ -112,7 +112,7 @@ Get orderstatus
 
             $ curl \
               -H "Content-Type: application/json" \
-              https://exampledomain.com/wp-json/fast-events/v1//ordering/status/WzJQDnAvm7yswYzfSGVvro45q0IOScEXmdzzqO0K
+              https://exampledomain.com/wp-json/fast-events/v1/ordering/status/WzJQDnAvm7yswYzfSGVvro45q0IOScEXmdzzqO0K
 
         .. code-tab:: php
 

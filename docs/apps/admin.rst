@@ -7,7 +7,7 @@ FE Admin can also support you to help configure users’ :doc:`FE Scanner App <s
 
 There is also quick insight into the number of tickets sold or the number of tickets that have been scanned at the different locations. Or change the stock and window of selling tickets.
 
-The App is available for Android 7.0 and later. The IOS version is not available at the moment.
+The App is available for Android 8.0 and later. The IOS version is not available at the moment.
 
 .. image:: ../_static/images/apps/Admin-Android.png
    :target: https://play.google.com/store/apps/details?id=nl.fe_data.admin
@@ -18,9 +18,9 @@ Settings
 --------
 First make sure you have configured the ``REST API settings`` in the `settings <../getting-started/settings.html#rest-api-settings>`_ of the plugin.
 
-You can share the qrcode on the settings page of the plugin with the App to configure the :guilabel:`Server URL` and :guilabel:`API Key` parameters.
-Email the configuration qrcode as an attachment to the user, which can than be shared with the App to configure it.
-Or scan the qrcode from the `REST API settings <../getting-started/settings.html#rest-api-settings>`_ page in the seetings screen of the App by pressing the qrcode-button at the bottom..
+You can share the configuration qrcode with the user, which can be scanned if a server is defined in the App.
+It will set the :guilabel:`Server URL` and :guilabel:`API Key` parameters.
+
 Still the other parameters (:guilabel:`User` and :guilabel:`Application password`) have be configured manually.
 
 Users of the App need an account in the WordPress environment. The App uses WordPress application password.
@@ -39,7 +39,7 @@ Usage
 The first time the App is launched and if *Fast Events* is running in ``SaaS mode`` and the sub-merchant has not yet
 authorized access to its payment information, a ``Connect with Mollie`` screen is displayed to authorize access.
 
-The way the App works is pretty straight forward. You can use the bottom buttons to switch between orders, events and configuring the Payment App.
+The way the App works is pretty straight forward. You can use the bottom buttons to switch between ``orders``, ``events`` and ``tools``.
 In the orders and events tab you can swipe down to refresh the content.
 The ``three dots`` on the right of a an event or order can be pushed to show a context menu. See example screenshot.
 

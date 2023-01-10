@@ -41,7 +41,7 @@ Every HTTP POST has a number of unique HTTP headers:
 
 **User-Agent**
    It will show the version-number of the *Fast Events* plugin and WordPress.
-   Example: ``Fast-Events/1.0 (WordPress/5.7.2)``
+   Example: ``Fast-Events/1.6.0 (WordPress/6.1.1)``
 **X-FE-Webhook-ID**
    The id of the webhook. You can find the id in the `Webhooks overview`_.
 **X-FE-Webhook-Source**
