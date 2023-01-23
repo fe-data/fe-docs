@@ -7,8 +7,8 @@ Fast Events Ticketing
 .. image:: _static/images/Headline.png
    :alt: Headline
 
-.. note:: If online payments are used, the plugin currently only works for companies, associations, foundations ... located in a `SEPA country <https://wiki.xmldation.com/Support/EPC/List_of_SEPA_countries>`_.
-   There is no region restriction for free tickets or RSVP meetings.
+.. note:: If online payments are used, the plugin currently only works for companies, associations, foundations ... based in a `SEPA country <https://wiki.xmldation.com/Support/EPC/List_of_SEPA_countries>`_.
+   There is no regional restriction for free tickets or RSVP meetings.
    
 Getting started
 ---------------
@@ -67,15 +67,15 @@ How to use the different menu choices.
    
 Apps
 -----
-With *Fast Events* you can use our free scan app for Android and IOS. No need for expensive scanning equipment, just use your phone.
-There is also a free payment app. The user scans a QR code and the payment is carried out easily and securely.
+With *Fast Events* you can use our free scanning app for Android and IOS. No need for expensive scanning equipment, just use your phone.
+There is also a free payment app. The user scans a QR code and the payment is carried out simple and secure.
 
 Use the `FE Tracking App <https://fe-tracking.fast-events.eu/>`_ especially for sporting events to enable participants to signal checkpoints
 on the route in the App and upload the time when they are passed to the event organiser's server.
 Enjoy real-time route updates and news from the organisation about the event.
 
-For Android there is also an Admin App available. You can view events and orders and change them on the go.
-Or show the stats of sold tickets and scanned tickets. And much more ...
+An Admin app is available for Android. You can view and change events and orders on the go.
+Or view statistics on tickets sold and tickets scanned. And much more...
 
 * **Scan App**:
   :doc:`scanning <apps/scan>`
@@ -100,10 +100,10 @@ Advanced features
 -----------------
 *Fast Events* provides you with a Public API and Webhooks to deliver different events, making it easy to integrate with external systems.
 
-For developers, *Fast Events* also offers a number of actions and filters.
+For developers, *Fast Events* also offers a range of actions and filters.
 
-Most things perform better when they’re maintained. We have pulled together a number of recommendations in the field of security, performance and tools for data analysis.
-This list is by no means complete, but we urge you to keep an eye on security and performance in order to safely and in a performant way run the software.
+Most things work better when they're maintained. We have compiled a number of recommendations in the areas of security, performance and data analysis tools.
+This list is by no means exhaustive, but we urge you to keep an eye on security and performance to keep your software running safely and performantly.
 
 * **Public API**:
   :doc:`api <advanced/api>`

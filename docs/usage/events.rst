@@ -150,18 +150,20 @@ Email tab
            :target: ../_static/images/usage/Event-email.png
            :alt: Event email
 
-This tabs defines the email the user is receiving after placing an order and paying for it. This email is also used for dashboard orders (See :doc:`orders menu </usage/orders>`).
+This tab defines the email that the user will receive once the order has been placed and paid for. This email is also used for dashboard orders (See :doc:`orders menu </usage/orders>`).
 
 **Sender name and sender email**
    Optional fields. Use it if you want to override the ``Sender name`` and ``Sender email`` in the `Email settings <../getting-started/settings.html#email-settings>`_.
 **Sender email**
-   Optional field. Don’t leave it blank.
+   Optional field. Don't leave it blank.
 **Email subject**
-   The email subject. Don’t leave it blank.
+   The subject of the email. Don't leave it blank.
 **Email BCC**
-   There is an opportunity to add only 1 BCC emailaddress.
+   There is an option to add only 1 BCC email address
 **Email body**
-   A smart editor where you can create your own fancy styled email. A word of advice: keep it simple and small and don’t pull in large images. If you still have the desire to use images, use links from your own site or a CDN. Keep in mind that the email doesn't include the e-tickets, but instead uses a link to download the e-tickets.
+   A smart editor where you can create your own fancy style emails. A word of advice: keep it simple and small and don't include large images.
+   If you must use images, use links from your own site or a CDN.
+   Remember that the email doesn't contain the e-tickets, but a link to download them.
 
    You can use a couple of keywords and *Fast Events* will replace them with the info available in the order:
    
@@ -169,6 +171,14 @@ This tabs defines the email the user is receiving after placing an order and pay
    - :guilabel:`{%EMAIL%}` is the email address of the person who placed the order.
    - :guilabel:`{%YEAR%}` substitute the current year (YYYY).
    - :guilabel:`{%TICKETS%}` the unique link for downloading the e-tickets.
+   - :guilabel:`{%DOWNLOAD-TICKETS%}` insert the following block with the appropriate links to download the tickets.
+
+     .. list-table::
+
+         * - .. image:: ../_static/images/usage/Download-tickets.png
+                :target: ../_static/images/usage/Download-tickets.png
+                :alt: Download tickets block
+
    - :guilabel:`{%DEEPLINK%}` the unique link for downloading the ticket into the `FE Tracking App <https://fe-tracking.fast-events.eu/>`_ in case of a sport event.
      This link will only work on an Android phone or an iPhone. If the App is not installed, the link will ask to install it.
    - :guilabel:`{%INVOICE%}` the unique link for downloading the invoice.
@@ -177,13 +187,16 @@ This tabs defines the email the user is receiving after placing an order and pay
 
 .. warning:: Make sure to URL-escape a keyword if it is included in a hyperlink. E.g. ``<a href="%7B%25DEEPLINK%25%7D">Download to FE Tracking</a>``.
 
-Don’t forget to test your email if it is ‘**spam-proof**‘. There are many tools available on the Internet, but we recommend using https://www.mail-tester.com/ Click the :guilabel:`Send test email` button and use the email address on the mail-tester site and within a minute you have detailed report. Be pretty serious about this, because if your email gets a high spam rating from receiving domains, your mails may end up in ‘*Spam*‘ folders or won’t be delivered at all.
-Or worse, your domain can be blacklisted.
+Don’t forget to test your email if it is ‘**spam-proof**‘. There are many tools available on the Internet, but we recommend using https://www.mail-tester.com/
+Click the :guilabel:`Send test email` button and use the email address on the mail-tester site and within a minute you have detailed report.
+You should take this very seriously, because if your email gets a high spam rating from receiving domains, your emails may end up in the '*Spam*' folder, or they won't be delivered at all.
+Or worse, your domain may be blacklisted.
 
 Deep dive
 ^^^^^^^^^
-For the experts: the email itself is embedded in a container of maximum 600px wide. Always test on your mobile first if the email formats well.
-Don’t include images straight from your camera, which can be several Mb’s. If you want to include images, keep the resolution at an acceptable level and pull the image through tools like https://kraken.io to squeeze the size.
+For the experts: the email itself is embedded in a container that is no wider than 600px. Always test on your mobile first to make sure the email formats well.
+Don't include images directly from your camera, which can be several Mb in size.
+If you must include images, keep the resolution at an acceptable level and use tools such as https://kraken.io to reduce the size.
 
 *Fast Events* will ‘purify’ the email to prevent XSS-attacks, e.g. scripts are not allowed.
 
@@ -291,6 +304,7 @@ The values of these fields are in millimetres.
 Pick a template from the dropdown box and start playing with the :guilabel:`Qrcode x-position` and :guilabel:`Qrcode y-position` to position the qrcode block.
 Click on the :guilabel:`Example ticket` button to see the result. Repeat this step until you are satisfied with the positioning.
 With the :guilabel:`Qrcode rotate` field you can rotate the qrcode block. Rotation is done from the top left corner and must be between **0** and **360**.
+:guilabel:`Qrcode scale` is a percentage that can be used to scale the qrcode block. The default value is ``100``.
 Look at the `example template <../_static/pdf/Vinyl-template.pdf>`_ and the `ticket example <../_static/images/usage/Ticket-example.jpg>`_ if the settings of the screenshot above have been applied.
 
 **Template per ticket-type**

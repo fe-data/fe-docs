@@ -14,7 +14,10 @@ By clicking on the tabs on the left you can change various parts of the settings
 
 Payment provider account
 ------------------------
-*Fast Events* is integrated with `Mollie <https://www.mollie.com/dashboard/signup/5835294>`_ as payment provider, providing a variety of payment options. As such the plugin is only available for associations/companies residing in a `SEPA country <https://wiki.xmldation.com/Support/EPC/List_of_SEPA_countries>`_. With Mollie there are no fixed recurring costs, you only pay for successful transactions. The prices are very competitive. The transactions of, for example, iDEAL (the Netherlands) cost only € 0.29 excluding VAT. Press the button below to create your free Mollie account.
+*Fast Events* is integrated with `Mollie <https://www.mollie.com/dashboard/signup/5835294>`_ as payment provider, providing a variety of payment options.
+As such the plugin is only available for associations/companies residing in a `SEPA country <https://wiki.xmldation.com/Support/EPC/List_of_SEPA_countries>`_.
+With Mollie there are no fixed recurring costs, you only pay for successful transactions. The prices are very competitive.
+The transactions of, for example, iDEAL (the Netherlands) cost only € 0.29 excluding VAT. Press the button below to create your free Mollie account.
 
 .. image:: ../_static/images/getting-started/Mollie.png
    :target: https://www.mollie.com/dashboard/signup/5835294
@@ -22,7 +25,9 @@ Payment provider account
 
 After you have created your free account, you will receive an email from Mollie with your login details. Confirm the email with the button in the email.
 
-Log in to the Mollie dashboard and go through the wizard to enter all data (Your personal info, chamber of commerce id, bankaccount, VAT number (if applicable), your identification (passport), website where you want use payments and finally the payment methods. During the process you will be asked to transfer 1 cent from your company’s bank account to prove that you are the owner.
+Log in to the Mollie dashboard and go through the wizard to enter all data (Your personal info, chamber of commerce id, bankaccount, VAT number (if applicable),
+your identification (passport), website where you want use payments and finally the payment methods.
+During the process you will be asked to transfer 1 cent from your company’s bank account to prove that you are the owner.
 
 Live API-key and Test API-key
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -95,10 +100,16 @@ Email settings
 
 Email-server type
 ^^^^^^^^^^^^^^^^^
-If you choose ``Host email`` then it is sufficient to fill in the :guilabel:`Sender name` and :guilabel:`Sender email`. This setting is the default after installation of the plugin.
+If you choose ``Host email`` then it is sufficient to fill in the :guilabel:`Sender name` and :guilabel:`Sender email`.
+This setting is the default after installation of the plugin.
 
-But choosing the right :guilabel:`Email-server type` depends to a large extent on how many emails can be sent per day. Check with you hosting provider how many emails you can send per day (or any other period) and compare this with how many orders (= 1 email) you expect per day. If the expected amount is more than you can send per day you have to go back to your hosting provider to check if you can upgrade your hosting-package with more emails?
-Or you can use professional companies that can send your email, such as `Amazon SES <https://aws.amazon.com/ses/>`_, `Mailgun <https://www.mailgun.com/>`_, `Sendgrid <https://sendgrid.com/>`_, `Postmark App <https://postmarkapp.com/>`_, … and many more. If you go down this path, you can choose for the other :guilabel:`Email-server type` options. ``SMTP`` is always possible for all email providers, but we have a number of native implementation as well, which are the faster counterpart of SMTP as this is a rather ‘*chatty*’ protocol.
+But choosing the right :guilabel:`Email-server type` depends to a large extent on how many emails can be sent per day.
+Check with you hosting provider how many emails you can send per day (or any other period) and compare this with how many orders (= 1 email) you expect per day.
+If the expected amount is more than you can send per day you have to go back to your hosting provider to check if you can upgrade your hosting-package with more emails?
+Or you can use professional companies that can send your email, such as `Amazon SES <https://aws.amazon.com/ses/>`_, `Mailgun <https://www.mailgun.com/>`_,
+`Sendgrid <https://sendgrid.com/>`_, `Postmark App <https://postmarkapp.com/>`_, … and many more. If you go down this path, you can choose for
+the other :guilabel:`Email-server type` options. ``SMTP`` is always possible for all email providers, but we have a number of native implementation as well,
+which are the faster counterpart of SMTP as this is a rather ‘*chatty*’ protocol.
 
 Sender name and email
 ^^^^^^^^^^^^^^^^^^^^^
@@ -106,7 +117,9 @@ The name and emailaddress you recipients will see in the received tickets email.
 
 Email retries
 ^^^^^^^^^^^^^
-*Fast Events* can be configured to keep retrying to send new order emails. Checking this option is only wise if you are using SMTP or one of the native APIs. The ``Host email`` solution uses the MTA on the host itself and, if everything is configured correctly, will never return an error. With ‘Host email‘ possible hard-bounces (for example: emailaddress doesn't exists) or soft-bounces (for example: mailbox full) will be send back to the sender (Send email).
+*Fast Events* can be configured to keep retrying to send new order emails. Checking this option is only wise if you are using SMTP or one of the native APIs.
+The ``Host email`` solution uses the MTA on the host itself and, if everything is configured correctly, will never return an error.
+With ‘Host email‘ possible hard-bounces (for example: emailaddress doesn't exists) or soft-bounces (for example: mailbox full) will be send back to the sender (Send email).
 
 With SMTP or the native API’s there can be errors. For example the host may be (temporary) unreachable, too many request per time-period, … Consult you API provider for other possible errors. In case of errors you have 2 options:
 
@@ -140,7 +153,8 @@ SMTP settings
 
 Amazon SES API settings
 ^^^^^^^^^^^^^^^^^^^^^^^
-The settings can be found in the `Amazon console dashboard <https://console.aws.amazon.com/>`_. If you still need to create a SES account, make sure you create it in the ``EU`` region as the plugin is only supported in the `European SEPA countries <https://wiki.xmldation.com/Support/EPC/List_of_SEPA_countries>`_ if online payments are used.
+The settings can be found in the `Amazon console dashboard <https://console.aws.amazon.com/>`_.
+If you still need to create a SES account, make sure you create it in the ``EU`` region as the plugin is only supported in the `European SEPA countries <https://wiki.xmldation.com/Support/EPC/List_of_SEPA_countries>`_ if online payments are used.
 You can find/create in the Amazon IAM (Identity and Access Management) menu the :guilabel:`Access key` and :guilabel:`Secret key`. Make sure the secret key has the right permissions to send email.
 
 Mailgun API settings
@@ -151,7 +165,10 @@ The settings can be found in the `Mailgun dashboard <https://www.mailgun.com/>`_
 
    https://api.eu.mailgun.net/v3/mg.somedomain.com/messages
    
-If you create a new sending domain, make sure you create it in the ``EU`` space of Mailgun as this plugin can only be used by the `European SEPA countries <https://wiki.xmldation.com/Support/EPC/List_of_SEPA_countries>`_. If you don’t host your domain in the European union (USA flag in dashboard), you have to strip the ``eu`` part from the URL. This of course will also works, but it adds some latency to the API request. The ‘mg‘ part depends on your DNS settings.
+If you create a new sending domain, make sure you create it in the ``EU`` space of Mailgun as this plugin can only be used by the
+`European SEPA countries <https://wiki.xmldation.com/Support/EPC/List_of_SEPA_countries>`_.
+If you don’t host your domain in the European union (USA flag in dashboard), you have to strip the ``eu`` part from the URL.
+This of course will also works, but it adds some latency to the API request. The ‘mg‘ part depends on your DNS settings.
 
 Mailjet API settings
 ^^^^^^^^^^^^^^^^^^^^
@@ -195,20 +212,25 @@ The settings can be found in the `Sparkpost dashboard <https://www.sparkpost.com
 
    https://api.eu.sparkpost.com/api/v1/transmissions
    
-If you create a new sending domain, make sure you create it in the ``EU`` space of Sparkpost as this plugin can only be used by the `European SEPA countries <https://wiki.xmldation.com/Support/EPC/List_of_SEPA_countries>`_. If you don’t host your domain in the European union, you have to strip the ``eu`` part from the URL. This of course will also works, but it adds some latency to the API request.
+If you create a new sending domain, make sure you create it in the ``EU`` space of Sparkpost as this plugin can only be used by the `European SEPA countries <https://wiki.xmldation.com/Support/EPC/List_of_SEPA_countries>`_.
+If you don’t host your domain in the European union, you have to strip the ``eu`` part from the URL. This of course will also works, but it adds some latency to the API request.
 
 ----
 
 ReCAPTCHA settings
 ------------------
-At RSVP events it can of course occur that sick minds spam you with all kind of different real or bogus emailaddresses, even if you have confirmations enabled. Worse, they may give you a bad reputation, and receiving domains can flag you as spammer. For these cases you can use `Google reCAPTCHA <https://developers.google.com/recaptcha/>`_. Sign in and setup up your domain; *Fast Events* only supports v2 at the moment. Once setup, copy the keys to the :guilabel:`Site key` and :guilabel:`Secret key`.
+At RSVP events it can of course occur that sick minds spam you with all kind of different real or bogus emailaddresses, even if you have confirmations enabled.
+Worse, they may give you a bad reputation, and receiving domains can flag you as spammer. For these cases you can use `Google reCAPTCHA <https://developers.google.com/recaptcha/>`_.
+Sign in and setup up your domain; *Fast Events* only supports v2 at the moment. Once setup, copy the keys to the :guilabel:`Site key` and :guilabel:`Secret key`.
 Switch on the :guilabel:`ReCaptcha` flag in the `Basics tab <../usage/events.html#basics-tab>`_ and the booking screen will have a ReCaptcha.
 
 ----
 
 Settings for instant payments
 -----------------------------
-These settings work together with the :doc:`Payment app <../apps/payment>`. The app generates a qrcode which the customer can scan with the camera or a banking app (Netherlands and Belgium) to make a payment. The ‘*Payment app*’ shows immediately if a payment succeeded or not.
+These settings work together with the :doc:`Payment app <../apps/payment>`.
+The app generates a qrcode which the customer can scan with the camera or a banking app (Netherlands and Belgium) to make a payment.
+The ‘*Payment app*’ shows immediately if a payment succeeded or not.
 
 Event-id
 ^^^^^^^^
@@ -232,7 +254,10 @@ The minimum amount to use for a payment with a qrcode. If you enter a lower valu
 
 API key
 ^^^^^^^
-The secret key the :doc:`Payment app <../apps/payment>` has to use to secure the communication. You can use the button to generate a new secure token. Copy the qrcode and send it as an attachment in an email to the users of the Payment App. Users can than “*Share*” the qrcode with the Payment App to configure it.
+The secret key the :doc:`Payment app <../apps/payment>` has to use to secure the communication.
+You can use the button to generate a new secure token.
+Copy the qrcode and send it as an attachment in an email to the users of the Payment App.
+Users can than “*Share*” the qrcode with the Payment App to configure it.
 
 Or they can scan the qrcode to configure the :doc:`Payment app <../apps/payment>`.
 
@@ -262,9 +287,27 @@ Per line you can specify which user is authorized for which actions. Its format 
 
 .. code-block:: text
 
-   emailaddress[event_ids]:controller1(action1|action2|...),controller2(action3|action4|...),...
+   emailaddress[event_ids](AppName):controller1(action1|action2|...),controller2(action3|action4|...),...
    
-The ``[event_ids]`` suffix is optional. It limits the scope of the authorisation to a predefined set of events identified by the event_id, e.g. ``[1,3]``.
+The ``[event_ids]`` part is optional. It limits the scope of the authorisation to a predefined set of events identified by the event_id, e.g. ``[1,3]``.
+
+The ``AppName`` part is also optional. It must resemble the name of the *Application Password* defined for this user.
+This optional part allows you to create multiple application passwords for a single WordPress account used by different end users of the FE Admin application, each with their own authorisation settings.
+For example:
+
+.. code-block:: text
+
+  John@doe.com(ReadOnly):admin(event_read|order_read)
+  John@doe.com[1,3](Updates):admin(event_read|order_read|order_email|order_update|order_refund)
+  John@doe.com:admin(*)
+
+This is the associated application password block when you change a user via the WordPress admin panel:
+
+.. image:: ../_static/images/getting-started/App-passwords.png
+  :target: ../_static/images/getting-started/App-passwords.png
+  :alt: Application passwords
+
+.. note::  If you use this feature, make sure you first define the rules using the optional ``AppName``. The ``AppName`` is **not** case-sensitive.
 
 The following controllers and actions are available. If you want to grant all actions of a single controller, you can also specify a ***** (asterisk):
 
@@ -343,6 +386,8 @@ Admin controller
 ^^^^^^^^^^^^^^^^
 Used by the :doc:`Admin app </apps/admin>` and the :doc:`REST API </advanced/api>`.
 
+- ``event_add`` Add events
+- ``event_delete`` Delete events
 - ``event_read`` Read events
 - ``event_sync`` Sync events with each-other
 - ``event_update`` Change stock of events
@@ -357,6 +402,8 @@ Used by the :doc:`Admin app </apps/admin>` and the :doc:`REST API </advanced/api
 - ``order_update`` Change the user credentials or custom status of the order
 - ``payment_app_change`` Change the qrcode for the Payment App
 - ``payment_app_read`` Show the qrcode for the Payment App
+- ``pdf_template_read`` Read PDF templates
+- ``pdf_template_change`` Change PDF templates
 - ``scan_app_change`` Add/update/delete/renew the qrcode for the Scan App
 - ``scan_app_read`` Show the qrcodes for the Scan App
 - ``ticket_types_change`` Add/update/delete ticket types
