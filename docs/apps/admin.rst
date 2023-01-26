@@ -121,5 +121,5 @@ Searches are performed on all fields except the number of tickets and amount.
            :alt: Overview scan keys
       - .. image:: ../_static/images/apps/Admin-tools.png
            :target: ../_static/images/apps/Admin-tools.png
-           :alt: Edit scan key
+           :alt: Tools
 
