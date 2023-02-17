@@ -110,17 +110,6 @@ the left the date (and time the page was created.
 
    <div style="clear:both"></div>
 
-Deeplink
-^^^^^^^^
-It is possible to include a deeplink to download the ticket into the *FE Tracking* on the “*Thank you*” page,
-if you our dealing with a sports event and have enabled the :guilabel:`Tracking` checkbox.
-It’s up to you to do this in combination with an email or just omit the email (See `Events (Basic tab) <../usage/events.html#basics-tab>`_, :guilabel:`Emails` checkbox)
-and use the deeplink. You can put this deeplink anywhere in the “*Thank you*” page with a shortcode.
-If there are multiple etickets, the FE Tracking App will ask which ticket needs to be downloaded. Use the following shortcode:
-
-.. code-block:: text
-
-   [fe_ticket downloadtext="Download eticket in FE Tracking App"]
 
 ----
 
