@@ -330,7 +330,6 @@ Events controller
 - ``example_invoice`` Create an example invoice
 - ``example_ticket`` Create an example ticket
 - ``export`` Export events and related pages and templates
-- ``firebase`` Access to Firebase for creating accounts and realtime messages
 - ``import`` Import events and related pages and templates
 - ``kml_upload`` Upload KML-files for tracking
 - ``map`` Show tracks on a map including checkin numbers for all checkpoints

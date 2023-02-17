@@ -545,7 +545,6 @@ Step-by-step implementation
    Ech KML-file can only contain a single track, if for instance you have an event with multiple distances.
 #. Upload **ALL** KML-files by pressing the :guilabel:`Upload KML file(s)` button in this tab. You can't upload them one-by-one or delete one.
 #. Fill in the remaining fields in this tab.
-#. Optionally use :doc:`Firebase <../advanced/firebase>` if you want realtime track updates and realtime news for the end users
 #. Inform participants how to use the *FE Tracking* App. This could be in the email that participants receive when they have ordered
    a ticket or on a webpage that is prominently displayed on the website.
 

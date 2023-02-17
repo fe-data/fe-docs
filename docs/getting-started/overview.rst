@@ -158,8 +158,7 @@ Next steps
 #. If you are happy with the results, you should remove all orders and tickets via the contextmenu in the
    :doc:`events menu <../usage/events>` and uncheck :guilabel:`Test payments` in the `Basics tab <../usage/events.html#basics-tab>`_ of the event.
 #. Your event is now live.
-#. If you have a sports event, you can switch on the :guilabel:`Tracking` in the `Basics tab <../usage/events.html#basics-tab>`_ of the event and configure the other tracking fields
-   and optionally use :doc:`Firebase <../advanced/firebase>` for realtime track updates and realtime messages from the event organization.
+#. If you have a sports event, you can switch on the :guilabel:`Tracking` in the `Basics tab <../usage/events.html#basics-tab>`_ of the event and configure the other tracking fields.
 
 Don't
 -----

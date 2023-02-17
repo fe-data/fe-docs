@@ -117,7 +117,6 @@ Have a look at the `detailed example <../hooks/scan_ticket.html#send-thank-you-e
 You can easily check whether the participant has passed all checkpoints with the :guilabel:`info` button in the :doc:`scan app <../apps/scan>`.
 
 You can take your cycling to the next level by optionally using the `FE Tracking App <https://fe-tracking.fast-events.eu/>`_ for users who want it.
-Or even configure the use of :doc:`Firebase <../advanced/firebase>` to use realtime track updates and realtime messages from the event organization.
 
 Ship a signed photo book
 ^^^^^^^^^^^^^^^^^^^^^^^^

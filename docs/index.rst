@@ -117,8 +117,6 @@ This list is by no means exhaustive, but we urge you to keep an eye on security 
   :doc:`security <advanced/security>`
 * **Performance**:
   :doc:`performance <advanced/performance>`
-* **Firebase**:
-  :doc:`firebase <advanced/firebase>`
 
 .. toctree::
    :maxdepth: 2
@@ -131,7 +129,6 @@ This list is by no means exhaustive, but we urge you to keep an eye on security 
    advanced/analysis
    advanced/security
    advanced/performance
-   advanced/firebase
 
 Miscellaneous
 -------------
