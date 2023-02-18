@@ -188,7 +188,6 @@ Topics
 * :doc:`Orders <webhooks-orders>`
 * :doc:`Scans <webhooks-scans>`
 * :doc:`Downloads <webhooks-downloads>`
-* :doc:`Tracking <webhooks-tracking>`
 
 .. toctree::
    :maxdepth: 1
@@ -198,4 +197,3 @@ Topics
    webhooks-orders
    webhooks-scans
    webhooks-downloads
-   webhooks-tracking

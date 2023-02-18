@@ -179,13 +179,11 @@ This tab defines the email that the user will receive once the order has been pl
                 :target: ../_static/images/usage/Download-tickets.png
                 :alt: Download tickets block
 
-   - :guilabel:`{%DEEPLINK%}` the unique link for downloading the ticket into the `FE Tracking App <https://fe-tracking.fast-events.eu/>`_ in case of a sport event.
-     This link will only work on an Android phone or an iPhone. If the App is not installed, the link will ask to install it.
    - :guilabel:`{%INVOICE%}` the unique link for downloading the invoice.
    - :guilabel:`{%FIELDS%}` the input fields from the input-tab in table format.
    - :guilabel:`{%CONFIRM%}` only applicable for RSVP events and if the :guilabel:`Confirmation emails` flag in the `Basics tab`_ has bee set. The link to confirm that you will be present/participate.
 
-.. warning:: Make sure to URL-escape a keyword if it is included in a hyperlink. E.g. ``<a href="%7B%25DEEPLINK%25%7D">Download to FE Tracking</a>``.
+.. warning:: Make sure to URL-escape a keyword if it is included in a hyperlink. E.g. ``<a href="%7B%25TICKETS%25%7D">Download tickets</a>``.
 
 Don’t forget to test your email if it is ‘**spam-proof**‘. There are many tools available on the Internet, but we recommend using https://www.mail-tester.com/
 Click the :guilabel:`Send test email` button and use the email address on the mail-tester site and within a minute you have detailed report.
@@ -648,5 +646,4 @@ Warnings
 #. Participants should keep their qrcodes on the eticket for themselves. Each time the ticket is downloaded into the
    *FE Tracking* App a new unique signature will be generated. This means that the last person is the ``owner`` of the ticket.
    Previous downloads (by others or on a different phone) cannot upload checkpoints any more from the *FE Tracking* App and the final scan will also fail.
-   If ``Firebase`` is enabled, tickets on the other device will be de-activated instantly.
    **So keep the eticket qrcode secret!**

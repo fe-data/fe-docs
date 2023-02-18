@@ -484,7 +484,6 @@ Miscellaneous settings
       vintage:[fast_events id=2]
       cycle:[fast_events group="fast"]
       status2:[fe_download showimage="yes" downloadtext="Download tickets"]
-      status3:[fe_ticket downloadtext="Download eticket in FE Tracking App"]
 
    The tokens **vintage** and **cycle** can be used in the ordering API to generate the orderform. You can then embed this orderform in your own frontend.
    To get it working, you also need the ``fe-payment.js`` or ``fe-payment.min.js`` library, which is part of the Fast Events plugin.
