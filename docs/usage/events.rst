@@ -105,7 +105,7 @@ The basics definition of the event.
 **SaaS fee**
    If not empty it overrides the saas fee specified in the `Payment provider settings <../getting-started/settings.html#client-fee>`_. Leave empty if you want to use the value in the settings.
 **SaaS user**
-   Select the user this event is assigned to. If the system is not running in ``SaaS mode`` this entry can be ignored.
+   Select the user this event is assigned to. If you don't select a user and select **'---'** instead, the system will use the default Mollie keys as defined in the settings and will not operate in Saas-mode for this event. If the system is not running in ``SaaS mode`` this entry can be ignored.
    The :guilabel:`Revoke authorization` button is only visible if the assigned user has authorized *Fast Events* to process payment information on its behalf.
    If access is revoked, the sub-merchant has to authorize again. The sub-merchant **must** authorize *Fast Events* before tickets can be sold.
 **Terms html**
