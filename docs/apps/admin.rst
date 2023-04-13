@@ -36,6 +36,7 @@ Orders
 
 Tools
 ^^^^^
+#. Show and delete logging entries (:guilabel:`log_read` and :guilabel:`log_delete` for deleting an entry).
 #. Scan a ticket to see its details. This is an informational scan only (:guilabel:`tickets_read`).
 #. Show, add, modify and delete input fields (:guilabel:`input_fields_read` and :guilabel:`input_fields_change` for add, modify or delete).
 #. Show, add, modify and delete ticket types (:guilabel:`ticket_types_read` and :guilabel:`ticket_types_change` for add, modify or delete).

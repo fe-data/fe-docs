@@ -187,6 +187,10 @@ The settings can be found in the `Postmark dashboard <https://postmarkapp.com/>`
 .. code-block:: html
 
    https://api.postmarkapp.com/email
+
+It is possible to log Postmark bounces in the log-table of *Fast Events*. You can configure this in the webhooks section of the Postmark dashboard.
+Use this as URL ``https://fillinyourdomain.com/wp-json/fast-events/v1/email/webhook/postmark/bounce``. Furthermore: make sure you enable
+Basic authentication and use a valid WordPress user and an application password.
    
 Sendgrid API settings
 ^^^^^^^^^^^^^^^^^^^^^
@@ -392,6 +396,8 @@ Used by the :doc:`Admin app </apps/admin>` and the :doc:`REST API </advanced/api
 - ``event_update`` Change stock of events
 - ``input_fields_change`` Add/update/delete input fields
 - ``input_fields_read`` Read input fields
+- ``log_delete`` Delete log entries
+- ``log_read`` Read log entries
 - ``order_add`` Add new orders
 - ``order_delete`` Delete an order
 - ``order_email`` Resend the order confirmation

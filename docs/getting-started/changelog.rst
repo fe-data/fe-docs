@@ -1,6 +1,10 @@
 Changelog
 =========
 
+v1.9.0 (13 Apr 2023)
+--------------------
+* New: Bounce webhook for Postmark.
+
 v1.8.4 (1 Apr 2023)
 -------------------
 * Fix: Don't show online payment events in FE Admin.
