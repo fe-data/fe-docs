@@ -133,6 +133,13 @@ The default value is ``2,4,8,16,32,64,128``, which means the first retry is sche
 You can define your own scheme.
 
 Consult you SMTP or API provider how it handles hard-bounces and soft-bounces. Usually they provide webhooks to process these bounces.
+
+Email webhooks
+^^^^^^^^^^^^^^
+Enable this if you want include error notification events (bounces, spam reports, ...) from the email-provider, in the errorlog.
+Potential error-events are visible in in the ``Error log`` context menu of the orders tab in the ``FE Admin`` app.
+In the tools section of the ``FE Admin`` App all error-events are visible.
+For the moment webhooks are only supported for ``Postmark``, ``Mailgun``, ``Mailjet`` and ``Sendgrid``. See below for the details.
      
 SMTP settings
 ^^^^^^^^^^^^^
@@ -170,6 +177,12 @@ If you create a new sending domain, make sure you create it in the ``EU`` space 
 If you don’t host your domain in the European union (USA flag in dashboard), you have to strip the ``eu`` part from the URL.
 This of course will also works, but it adds some latency to the API request. The ‘mg‘ part depends on your DNS settings.
 
+It is possible to log Mailgun '*Spam complaints*', '*Permanent failures*', '*Temporary failures*' and '*Unsubscribe*' events in the log-table of *Fast Events*.
+You can configure this in the webhooks section of the Mailgun dashboard.
+For the moment other events are discarded.
+Use this as URL ``https://user:password@fillinyourdomain.com/wp-json/fast-events/v1/email/webhook/mailgun``.
+Use a valid WordPress user and an application password in the url and remove the spaces from the application password.
+
 Mailjet API settings
 ^^^^^^^^^^^^^^^^^^^^
 The settings can be found in the `Mailjet dashboard <https://www.mailjet.com/>`_. The URL for the server is:
@@ -180,6 +193,12 @@ The settings can be found in the `Mailjet dashboard <https://www.mailjet.com/>`_
    
 The :guilabel:`Mailjet API key` is the combination of the user identifier and API key, separated by a colon. For example ``7a8e12:1234a1``
 
+It is possible to log Mailjet '*Bounce*', '*Spam*' and '*Blocked*' events in the log-table of *Fast Events*.
+You can configure this in the webhooks section of the Mailjet dashboard. For the moment other events are discarded.
+Use this as URL ``https://user:password@fillinyourdomain.com/wp-json/fast-events/v1/email/webhook/mailjet``.
+Use a valid WordPress user and an application password in the url and remove the spaces from the application password.
+Do not group webhooks. So uncheck these in the Mailjet webhooks dashboard.
+
 Postmark API settings
 ^^^^^^^^^^^^^^^^^^^^^
 The settings can be found in the `Postmark dashboard <https://postmarkapp.com/>`_. The URL for the server is:
@@ -188,9 +207,11 @@ The settings can be found in the `Postmark dashboard <https://postmarkapp.com/>`
 
    https://api.postmarkapp.com/email
 
-It is possible to log Postmark *Bounce* and *Spam complaint* events in the log-table of *Fast Events*. You can configure this in the webhooks section of the Postmark dashboard.
+It is possible to log Postmark '*Bounce*', '*Spam complaint*', '*Subscription change*' and '*Manual suppression*' events in the log-table of *Fast Events*.
+You can configure this in the webhooks section of the Postmark dashboard. For the moment other events are discarded.
 Use this as URL ``https://fillinyourdomain.com/wp-json/fast-events/v1/email/webhook/postmark``. Furthermore: make sure you enable
 Basic authentication and use a valid WordPress user and an application password.
+Do **not** include the message content in the webhook!
    
 Sendgrid API settings
 ^^^^^^^^^^^^^^^^^^^^^
@@ -198,7 +219,12 @@ The settings can be found in the `Sendgrid dashboard <https://sendgrid.com/>`_. 
 
 .. code-block:: html
 
-   https://api.sendgrid.com/v2/mail/send
+   https://api.sendgrid.com/v3/mail/send
+
+It is possible to log Sendgrid '*Deferred*', '*Bounce*', '*Dropped*', '*Spam report*', '*Unsubscribe*' and '*Group unsubscribe*' events in the log-table of *Fast Events*.
+You can configure this in the webhooks section of the Sendgrid dashboard. For the moment other events are discarded.
+Use this as URL ``https://user:password@fillinyourdomain.com/wp-json/fast-events/v1/email/webhook/sendgrid``.
+Use a valid WordPress user and an application password in the url and remove the spaces from the application password.
    
 Sendinblue API settings
 ^^^^^^^^^^^^^^^^^^^^^^^

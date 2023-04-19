@@ -1,7 +1,7 @@
 FE Admin App
 ============
-With the FE Admin app, you can quickly view details of events and orders on your mobile phone and change various
-components of events and/or orders, if you are authorised to do so.
+With the FE Admin app, you can quickly view details of events and orders and change various
+components of events and/or orders, if you are authorised to do so. The App
 
 Full list of capabilities
 -------------------------
@@ -32,6 +32,7 @@ Orders
 #. Delete tickets (:guilabel:`tickets_delete`).
 #. Create tickets (:guilabel:`tickets_create`).
 #. Refund and order (:guilabel:`order_refund`).
+#. Error log (:guilabel:`log_read` and :guilabel:`log_delete` for deleting an entry).
 #. Add new orders (:guilabel:`order_add`).
 
 Tools
@@ -45,7 +46,9 @@ Tools
 #. Export orders to Excel format (:guilabel:`order_export`).
 #. Export tickets to Excel format (:guilabel:`tickets_export`).
 
-The App is available for Android 9.0 and above and IOS 13 and above.
+Download
+--------
+The App is available for Android 9.0 and above and IOS 13 (available soon) and above.
 
 .. image:: ../_static/images/apps/Admin-Android.png
    :target: https://play.google.com/store/apps/details?id=nl.fe_data.admin

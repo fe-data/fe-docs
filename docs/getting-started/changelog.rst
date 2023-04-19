@@ -1,9 +1,13 @@
 Changelog
 =========
 
+v1.9.1 (19 Apr 2023)
+--------------------
+* New: Email event webhooks for Sendgrid, Mailgun and Mailjet.
+
 v1.9.0 (13 Apr 2023)
 --------------------
-* New: Bounce webhook for Postmark.
+* New: Email event webhooks for Postmark.
 
 v1.8.4 (1 Apr 2023)
 -------------------
