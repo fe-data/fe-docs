@@ -172,5 +172,3 @@ Once your event(s) has orders you, never change the following fields:
 - don't change :guilabel:`Scan key`, :guilabel:`Level` and :guilabel:`Scan location` in the `Scan tab <../usage/events.html#scan-tab>`_
 - don't change :guilabel:`User groups` in the `Groups tab <../usage/events.html#groups-tab>`_
 - don't change the :guilabel:`Seats configuration` in the `Seats tab <../usage/events.html#seats-tab>`_. You can add at the end new seats, but you should never remove seats.
-- don't change the :guilabel:`Android account` or :guilabel:`IOS account` in the `Tracking tab <../usage/events.html#tracking-tab>`_ if you already have sold sports events tickets.
-  All users of the *FE Tracking* App will loose access and are forced to reload the track (delete it first). You are warned!
