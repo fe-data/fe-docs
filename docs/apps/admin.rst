@@ -3,6 +3,20 @@ FE Admin App
 With the FE Admin app, you can quickly view details of events and orders and change various
 components of events and/or orders, if you are authorised to do so. The App
 
+Download
+--------
+The App is available for Android 9.0 and above and IOS 13 and above.
+
+.. list-table::
+
+    * - .. image:: ../_static/images/apps/Admin-Android.png
+           :target: https://play.google.com/store/apps/details?id=nl.fe_data.admin
+           :alt: FE Admin App
+           :scale: 50%
+      - .. image:: ../_static/images/apps/Admin-IOS.png
+           :scale: 50%
+           :target: https://apps.apple.com/app/fe-admin/id6448051190
+
 Full list of capabilities
 -------------------------
 Depending on the permissions configuration on the webserver hosting the Fast Events WordPress plugin,
@@ -46,15 +60,6 @@ Tools
 #. Export orders to Excel format (:guilabel:`order_export`).
 #. Export tickets to Excel format (:guilabel:`tickets_export`).
 
-Download
---------
-The App is available for Android 9.0 and above and IOS 13 (available soon) and above.
-
-.. image:: ../_static/images/apps/Admin-Android.png
-   :target: https://play.google.com/store/apps/details?id=nl.fe_data.admin
-   :alt: FE Admin App
-   :scale: 50%
-   
 Server accounts
 ---------------
 The first time you start the application it will display the ``Server account`` page where you can configure a new server. Press the ``+`` button to add a new server.
