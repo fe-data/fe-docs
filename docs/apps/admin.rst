@@ -1,7 +1,7 @@
 FE Admin App
 ============
 With the FE Admin app, you can quickly view details of events and orders and change various
-components of events and/or orders, if you are authorised to do so. The App
+components of events and/or orders, if you are authorised to do so.
 
 Download
 --------
@@ -62,7 +62,7 @@ Tools
 
 Server accounts
 ---------------
-The first time you start the application it will display the ``Server account`` page where you can configure a new server. Press the ``+`` button to add a new server.
+The first time you start the App it will display the ``Server account`` page where you can configure a new server. Press the ``+`` button to add a new server.
 
 First, make sure you have configured the ``REST API settings`` in the `settings <../getting-started/settings.html#rest-api-settings>`_ of the plugin.
 To configure a new server you can scan this QR code to fill in the :guilabel:`Server URL` and :guilabel:`API Key` parameters.

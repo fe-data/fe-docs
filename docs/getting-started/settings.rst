@@ -14,13 +14,13 @@ By clicking on the tabs on the left you can change various parts of the settings
 
 Payment provider account
 ------------------------
-*Fast Events* is integrated with `Mollie <https://www.mollie.com/dashboard/signup/5835294>`_ as payment provider, providing a variety of payment options.
+*Fast Events* is integrated with `Mollie <https://my.mollie.com/dashboard/signup/5835294>`_ as payment provider, providing a variety of payment options.
 As such the plugin is only available for associations/companies residing in a `SEPA country <https://wiki.xmldation.com/Support/EPC/List_of_SEPA_countries>`_.
 With Mollie there are no fixed recurring costs, you only pay for successful transactions. The prices are very competitive.
 The transactions of, for example, iDEAL (the Netherlands) cost only € 0.29 excluding VAT. Press the button below to create your free Mollie account.
 
 .. image:: ../_static/images/getting-started/Mollie.png
-   :target: https://www.mollie.com/dashboard/signup/5835294
+   :target: https://my.mollie.com/dashboard/signup/5835294
    :alt: Mollie
 
 After you have created your free account, you will receive an email from Mollie with your login details. Confirm the email with the button in the email.
@@ -63,7 +63,7 @@ SaaS mode
 With SaaS mode, it is possible to use *Fast Events* as a ticketing platform to which multiple organizations. associations, ... can be connected.
 Each organization then has its own event(s) and its own WordPress account on the platform.
 If you want to start using this mode you will first have to register your Application (= *Fast Events* ) once in the
-`Mollie Dashboard <https://www.mollie.com/dashboard/signup/5835294>`_ via the menu Developers->Apps. When entering the data, the ``Redirect URL`` should look like this ``https://example.com/wp-json/fast-events/v1/saas/authorize``.
+`Mollie Dashboard <https://my.mollie.com/dashboard/signup/5835294>`_ via the menu Developers->Apps. When entering the data, the ``Redirect URL`` should look like this ``https://example.com/wp-json/fast-events/v1/saas/authorize``.
 Once the registration is complete, the :guilabel:`Client-ID` and :guilabel:`Client-secret` can be entered below.
 
 Steps required to connect a new organization to the platform:
@@ -72,10 +72,10 @@ Steps required to connect a new organization to the platform:
 2. Add the events for this organization and under the :guilabel:`SaaS user` in the `Basics tab <../usage/events.html#basics-tab>`_ select the username created under step 1.
 3. If necessary, change the sender in the `Email tab <../usage/events.html#email-tab>`_. Verify that the email provider being used can work with this new sender.
 4. Create `authorization rules <#authorization-settings>`_ in the settings and limit usage to the event ids defined in step 2.
-5. The client must create a new Website profile in the `Mollie Dashboard <https://www.mollie.com/dashboard/signup/5835294>`_ via the Settings->Website Profiles menu. This should use the domain on which *Fast Events* is hosted.
+5. The client must create a new Website profile in the `Mollie Dashboard <https://my.mollie.com/dashboard/signup/5835294>`_ via the Settings->Website Profiles menu. This should use the domain on which *Fast Events* is hosted.
 6. The customer can now log in once in *Fast Events* or via the :doc:`FE Admin App <../apps/admin>` to authorize the platform to process payment information on behalf of the customer.
 7. Agree the application fee with the client. Below you can specify this for all organizations, but it can be changed for each event.
-   This fee is automatically retained by `Mollie <https://www.mollie.com/dashboard/signup/5835294>`_ and assigned to the service provider hosting *Fast Events*.
+   This fee is automatically retained by `Mollie <https://my.mollie.com/dashboard/signup/5835294>`_ and assigned to the service provider hosting *Fast Events*.
 
 Client ID
 ^^^^^^^^^

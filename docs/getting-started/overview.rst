@@ -3,7 +3,7 @@ Overview
 Make sure you have your free Mollie account configured. Without it you can only use RSVP events or sell free etickets (0.00 amount).
 
 .. image:: ../_static/images/getting-started/Mollie.png
-   :target: https://www.mollie.com/dashboard/signup/5835294
+   :target: https://my.mollie.com/dashboard/signup/5835294
    :alt: Mollie
 
 To use *Fast Events*, a one-time configuration is required. To do this, go to the :doc:`settings <settings>` of the plugin.

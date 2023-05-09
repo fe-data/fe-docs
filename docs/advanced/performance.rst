@@ -3,7 +3,7 @@ Performance
 
 PHP version
 -----------
-Make sure you run the latest version of PHP. Right now that is **8.0**
+Make sure you run the latest version of PHP. Right now that is **8.2**
 Most hosting providers give you the option to set the version via DirectAdmin or cPanel.
 
 .. warning:: Make sure the PHP extensions ``gd``, ``imagick`` and ``opcache`` are enabled.

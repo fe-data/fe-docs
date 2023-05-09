@@ -88,14 +88,14 @@ Payouts next day
    :align: right
    :alt: payouts-the-next-day
        
-*Fast Events* works with the Dutch payment provider `Mollie <https://www.mollie.com/dashboard/signup/5835294>`_.
+*Fast Events* works with the Dutch payment provider `Mollie <https://my.mollie.com/dashboard/signup/5835294>`_.
 No recurring fees, you just pay for successful transactions. Competitive rates: e.g. iDEAL is only € 0,29 (excl. VAT) per transaction.
 All major payment methods supported. No fees per ticket.
 
 Apply for your free account.
 
 .. image:: ../_static/images/getting-started/Mollie.png
-   :target: https://www.mollie.com/dashboard/signup/5835294
+   :target: https://my.mollie.com/dashboard/signup/5835294
    :alt: Mollie
 
 .. raw:: html
@@ -165,7 +165,7 @@ SaaS mode
 
 Host multiple organisations on your platform each with their own events. They can use your ticketing platform as sub-merchants.
 
-Use flexible application fees, which will automatically be transferred to you by `Mollie <https://www.mollie.com/dashboard/signup/5835294>`_.
+Use flexible application fees, which will automatically be transferred to you by `Mollie <https://my.mollie.com/dashboard/signup/5835294>`_.
 
 .. raw:: html
 
@@ -250,7 +250,7 @@ Summary
    - Define e-ticket types
    - Sell to closed user groups
    - Flexible real-time e-ticket scanning with mobile app
-   - Integrated with `Mollie <https://www.mollie.com/dashboard/signup/5835294>`_ as payment provider, providing a variety of payment methods
+   - Integrated with `Mollie <https://my.mollie.com/dashboard/signup/5835294>`_ as payment provider, providing a variety of payment methods
    - Define your own statuses for orders
    - Authorize parts of the plugin admin pages to other users
 

@@ -3,15 +3,15 @@ Installation
 
 Requirements
 ------------
-*Fast Events* is integrated with `Mollie <https://www.mollie.com/dashboard/signup/5835294>`_ as payment provider, providing a variety of payment options. If online payments are used, the plugin currently only works for companies, associations, foundations ... located in a `SEPA country <https://wiki.xmldation.com/Support/EPC/List_of_SEPA_countries>`_.
+*Fast Events* is integrated with `Mollie <https://my.mollie.com/dashboard/signup/5835294>`_ as payment provider, providing a variety of payment options. If online payments are used, the plugin currently only works for companies, associations, foundations ... located in a `SEPA country <https://wiki.xmldation.com/Support/EPC/List_of_SEPA_countries>`_.
 With Mollie there are no fixed recurring costs, you only pay for successful transactions. Press the button below to create your free Mollie account. There is no region restriction for free tickets or RSVP events.
 
 .. image:: ../_static/images/getting-started/Mollie.png
-   :target: https://www.mollie.com/dashboard/signup/5835294
+   :target: https://my.mollie.com/dashboard/signup/5835294
    :alt: Mollie
 
 .. note::
-   *Fast Events* has been tested on **WordPress 6.0** and later together with **PHP 8.0**.
+   *Fast Events* has been tested on **WordPress 6.0** and above together with **PHP 8.0** and above.
    Older versions of WordPress and PHP are not supported! Make sure the PHP extensions ``gd``, ``imagick`` and ``opcache`` are enabled.
    With most hosting providers this can be done via DirectAdmin or cPanel.
 
@@ -50,7 +50,7 @@ Demo data
 ---------
 The plugin comes pre-loaded with some demo data. Give it a try and play around in the menu and the order contextmenu.
 Place dashboard orders and give the :doc:`Scan App <../apps/scan>` a try.
-If you want to try the :doc:`Payment App <../apps/payment>`, you first have to create your `free Mollie account <https://www.mollie.com/dashboard/signup/5835294>`_ to receive payments.
+If you want to try the :doc:`Payment App <../apps/payment>`, you first have to create your `free Mollie account <https://my.mollie.com/dashboard/signup/5835294>`_ to receive payments.
 
 Next steps
 ----------

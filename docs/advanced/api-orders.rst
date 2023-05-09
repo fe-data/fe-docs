@@ -411,6 +411,7 @@ Create order
 
     Create an order. The unique id must be used for both the additional input fields and the number of tickets per type.
     You can find these unique ids in the :doc:`input_fields <api-inputfields>` and :doc:`ticket_types <api-tickettypes>` endpoints.
+    Include **all ticket_types** in the request and set them to 0 if you don't want to order a specific ticket_type.
 
     **Example request**
 
