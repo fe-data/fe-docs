@@ -1,7 +1,7 @@
 Scan App
 ========
 Check in visitors easily with our Android or IOS App; no need to use (expensive) scanning terminals.
-The App is available for Android 7.0 and later and IOS 13.0 and later.
+The App is available for Android 7.0 and later and IOS 14.0 and later.
     
 .. list-table::
 
