@@ -1,7 +1,7 @@
 Scan App
 ========
 Check in visitors easily with our Android or IOS App; no need to use (expensive) scanning terminals.
-The App is available for Android 7.0 and later and IOS 14.0 and later.
+The App is available for Android 9.0 and later and IOS 14.0 and later.
     
 .. list-table::
 
@@ -14,26 +14,50 @@ The App is available for Android 7.0 and later and IOS 14.0 and later.
    
 Configuration
 -------------
+
+Add/edit checkpoints
+^^^^^^^^^^^^^^^^^^^^
 There are 3 possibilities to configure the app:
 
 1. Manual configuration
 2. Scan a configuration qrcode
-3. Send the configuration QR code to the user as an email attachment. The user can then select the QR code and share it with the Scan application.
+3. Scan the configuration qrcode from an image file.
 
+.. list-table::
+
+    * - .. image:: ../_static/images/apps/Scan-checkpoints.png
+           :target: ../_static/images/apps/Scan-checkpoints.png
+           :alt: Checkpoints overview
+      - .. image:: ../_static/images/apps/Scan-edit.png
+           :target: ../_static/images/apps/Scan-edit.png
+           :alt: Add/edit checkpoint
+      - .. image:: ../_static/images/apps/Scan-settings.png
+           :target: ../_static/images/apps/Scan-settings.png
+           :alt: Edit settings
+
+Adding or changing checkpoints is the first menu item in the navigation drawer (top left).
+You can add a new checkpoint by pressing the new checkpoint button (bottom right) or change an existing checkpoint by pressing the pencil button.
 The easiest way to configure the App is to scan a configuration qrcode, which can be copied from the `Scan  tab <../usage/events.html#scan-tab>`_ when changing an event.
-Use the Settings button (top right) and then press the QR Code button (bottom right) in the Settings screen.
-It is also possible to share a configuration qrcode from email applications with the Scan application.
+Pressing the qrcode button (top right) in the add/edit checkpoint gives you the option to
+to scan a configuration QRcode with the camera or to scan a configuration QRcode from an image file.
 
 **Server URL**
     The URL where you have installed WordPress. For example ``https://exampledomain.com``. Only secure connections (https) are allowed.
 **API Key**
     The ``Scan key`` as defined in the `Scan  tab <../usage/events.html#scan-tab>`_.
+
+Settings
+^^^^^^^^
+The Settings menu is located in the navigation drawer (top left icon).
+
 **Autoclose timeout**
     Normally you will need to press :guilabel:`Continue` after each scan to start a new scan.
     You can also set the dialogue box to close automatically.
     If you enter :guilabel:`1000` here, the dialogue box will close after 1 second and the :guilabel:`Continue` button will not be displayed.
     This allows you to operate the phone with one hand.
     However, if a scan is invalid, manual intervention is required and the :guilabel:`Continue` button will be displayed.
+**Duplicates timer**
+    If a qrcode is scanned within this time window, the qrcode will be ignored. 1000 equals to 1 second.
     
 Usage
 -----
@@ -45,14 +69,14 @@ The phone will not make a sound, but will vibrate.
 
 .. list-table::
 
-    * - .. image:: ../_static/images/apps/Scan-ok.jpg
-           :target: ../_static/images/apps/Scan-ok.jpg
+    * - .. image:: ../_static/images/apps/Scan-ok.png
+           :target: ../_static/images/apps/Scan-ok.png
            :alt: Scan Ok
-      - .. image:: ../_static/images/apps/Scan-wrong.jpg
-           :target: ../_static/images/apps/Scan-wrong.jpg
+      - .. image:: ../_static/images/apps/Scan-wrong.png
+           :target: ../_static/images/apps/Scan-wrong.png
            :alt: Scan wrong
-      - .. image:: ../_static/images/apps/Scan-info.jpg
-           :target: ../_static/images/apps/Scan-info.jpg
+      - .. image:: ../_static/images/apps/Scan-info.png
+           :target: ../_static/images/apps/Scan-info.png
            :alt: Scan info
            
    
@@ -66,5 +90,5 @@ This can be useful, for example, if you are organising a cycle race (or any othe
 At the end (finish), the participants receive a medal if they have passed all the checkpoints. You can easily check this with the info button after an exit scan.
 
 If for some reason the scanner can't read the QR code, you can enter the Ticket ID manually as a fallback.
-Press the pencil-button (top-bar), enter the Ticket ID (found under the QR code) and press :guilabel:`OK`.
+Press the tripe-dots-button (top right) and choose :guilabel:`Enter qrcode` to enter the Ticket ID (found under the QR code) and press :guilabel:`OK`.
 

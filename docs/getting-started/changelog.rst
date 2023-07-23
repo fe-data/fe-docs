@@ -1,6 +1,10 @@
 Changelog
 =========
 
+v1.9.3 (23 Jul 2023)
+--------------------
+* Update Scan App to reflect version 2.0.
+
 v1.9.1 (19 Apr 2023)
 --------------------
 * New: Email event webhooks for Sendgrid, Mailgun and Mailjet.
