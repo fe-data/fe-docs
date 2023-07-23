@@ -17,6 +17,10 @@ This filter is called just before the output is sent back to the Android or IOS 
 
 Parameters
 ----------
+**$attr['order_id']**
+    (*int*) The unique order id. This value is *read-only*.
+**$attr['qrcode']**
+    (*string*) The unique qrcode of the ticket. This value is *read-only*.
 **$attr['event']**
     (*string*) The name of the event.
 **$attr['type']**
@@ -47,6 +51,7 @@ Changelog
    :widths: auto
 
    "1.0", "Introduced."
+   "1.9.3", "Added order_id and qrcode (read-only)."
 
 ----
   

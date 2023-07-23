@@ -52,6 +52,8 @@ New scan
     .. sourcecode:: json
 
         {
+            "order_id": 739,
+            "qrcode": "KnRpypng4OLq2FrY",
             "event": "Vintage Vinyl Open Air 2021",
             "name": "John Doe",
             "email": "john.doe@exampledomain.com",
@@ -75,6 +77,7 @@ New scan
        :widths: auto
 
        "1.0", "Introduced."
+       "1.9.3", "Added order_id and qrcode."
 
 ----
 
@@ -123,6 +126,8 @@ List scans
     .. sourcecode:: json
 
         {
+            "order_id": 739,
+            "qrcode": "KnRpypng4OLq2FrY",
             "event_name": "Vintage Vinyl Open Air 2021",
             "ticket_type": "Gold (Backstage)",
             "name": "John Doe",
@@ -157,3 +162,4 @@ List scans
        :widths: auto
 
        "1.0", "Introduced."
+       "1.9.3", "Added order_id and qrcode."

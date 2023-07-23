@@ -16,6 +16,10 @@ This action is called after the ticket has been scanned. Be careful not to inclu
 
 Parameters
 ----------
+**$attr['order_id']**
+    (*int*) The unique order id.
+**$attr['qrcode']**
+    (*string*) The unique qrcode of the ticket.
 **$attr['status']**
     (*boolean*) Scan result is ``true`` or ``false``. If false, *$attr[‘date’]* and *$attr[‘location’]* will contain the date and location where the ticket was already scanned.
 **$attr['event']**
@@ -55,6 +59,7 @@ Changelog
    :widths: auto
 
    "1.0", "Introduced."
+   "1.9.3", "Added order_id and qrcode."
 
 ----
   
