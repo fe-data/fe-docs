@@ -46,6 +46,25 @@ Using FTP
 3. Upload the *fast-events* directory to the ``/wp-content/plugins/`` directory in your web server
 4. Activate the plugin in the Plugin dashboard
 
+Web based FE Admin
+------------------
+From *Fast Events* version 1.10 and onwards you can install a Web based version of the FE Admin App. This PWA will be the default admin
+interface for *Fast Events* version 2.0, which will be released later in 2023.
+
+Currently there are 3 interfaces to modify the system: the admin interface, the public REST API and the FE Admin App.
+These three systems will be merged so that 1 codebase can be maintained.
+This means that only the settings menu will remain in the admin interface.
+All other functionality will be housed in the FE Admin App.
+There will not only be a version for Android and IOS, but also a web version which will only be supported on Chrome,
+Safari and Edge. Other browsers may work but are not supported.
+
+The current beta version can be downloaded from https://drive.proton.me/urls/P6JSBFSDK4#Upl2zS1tT7ir
+Create a folder ``wp-fe-admin`` in the same directory where ``wp-admin``, ``wp-content``, ... are located.
+Unzip the file in this newly created folder. Point you browser at ``http://yourdomain.con/wp-fe-admin``.
+
+You can install the PWA in another directory if you want. Edit the ``index.html`` file of the PWA and change the line
+``<base href="/wp-fe-admin/">`` to reflect the new location.
+
 Demo data
 ---------
 The plugin comes pre-loaded with some demo data. Give it a try and play around in the menu and the order contextmenu.

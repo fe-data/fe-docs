@@ -28,24 +28,31 @@ Below is a list of menu options. The permission required for each item is shown 
 Events
 ^^^^^^
 #. Detailed overview (:guilabel:`event_read`).
-#. Change event stock (:guilabel:`event_update`).
-#. Change event dates (:guilabel:`event_update`).
-#. Change various setting flags (:guilabel:`event_update`).
 #. Synchronise parts of an event with another event (:guilabel:`event_sync`).
-#. Show scan information and configuration QR code for the :doc:`FE Scanner App <scan>` (:guilabel:`scan_app_read`).
 #. Detailed information about tickets sold (:guilabel:`total_sales`).
 #. Detailed information on scanning tickets in progress (:guilabel:`total_scans`).
+#. Basic settings (:guilabel:`event_update`).
+#. Show and modify email templates (:guilabel:`email_template_read`, :guilabel:`email_template_change` for modify and :guilabel:`email_template_example` for sending a test email ).
+#. Show, add, modify and delete input fields (:guilabel:`input_fields_read` and :guilabel:`input_fields_change` for add, modify or delete).
+#. Show, add, modify and delete ticket types (:guilabel:`ticket_types_read` and :guilabel:`ticket_types_change` for add, modify or delete).
+#. Show and modify PDF templates (:guilabel:`pdf_template_read` and :guilabel:`pdf_template_change` for modify).
+#. Show, add, modify and delete scan keys (:guilabel:`scan_app_read` and :guilabel:`scan_app_change` for add, modify or delete).
+#. Duplicate event (:guilabel:`event_add`).
+#. Delete all orders (:guilabel:`event_delete`).
+#. Delete event (:guilabel:`event_delete`).
 
 Orders
 ^^^^^^
 #. Detailed overview of the order (:guilabel:`order_read` and :guilabel:`scan_app_read`).
 #. Email the order (:guilabel:`order_email`).
+#. Share tickets link (:guilabel:`order_read`).
+#. Share tickets PDF (:guilabel:`order_read`).
 #. Change the name and email address of the order (:guilabel:`order_update`).
-#. Share tickets using Android Sharing (:guilabel:`order_read`).
+#. Refund and order (:guilabel:`order_refund`).
 #. Delete an order (:guilabel:`order_delete`).
 #. Delete tickets (:guilabel:`tickets_delete`).
 #. Create tickets (:guilabel:`tickets_create`).
-#. Refund and order (:guilabel:`order_refund`).
+#. Checkin tickets (:guilabel:`checkin`).
 #. Error log (:guilabel:`log_read` and :guilabel:`log_delete` for deleting an entry).
 #. Add new orders (:guilabel:`order_add`).
 
@@ -53,9 +60,8 @@ Tools
 ^^^^^
 #. Show and delete logging entries (:guilabel:`log_read` and :guilabel:`log_delete` for deleting an entry).
 #. Scan a ticket to see its details. This is an informational scan only (:guilabel:`tickets_read`).
-#. Show, add, modify and delete input fields (:guilabel:`input_fields_read` and :guilabel:`input_fields_change` for add, modify or delete).
-#. Show, add, modify and delete ticket types (:guilabel:`ticket_types_read` and :guilabel:`ticket_types_change` for add, modify or delete).
-#. Show, add, modify and delete scan keys (:guilabel:`scan_app_read` and :guilabel:`scan_app_change` for add, modify or delete).
+#. Maintain email lists / closed user groups  (:guilabel:`email_list`).
+
 #. Sales dashboard (:guilabel:`total_sales`).
 #. Export orders to Excel format (:guilabel:`order_export`).
 #. Export tickets to Excel format (:guilabel:`tickets_export`).

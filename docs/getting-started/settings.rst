@@ -415,6 +415,11 @@ Admin controller
 ^^^^^^^^^^^^^^^^
 Used by the :doc:`Admin app </apps/admin>` and the :doc:`REST API </advanced/api>`.
 
+- ``checkin`` Maintain ticket checkins
+- ``email_list`` Maintain user groups
+- ``email_template_change`` Change email templates
+- ``email_template_example`` Send an example email
+- ``email_template_read`` Read email templates
 - ``event_add`` Add events
 - ``event_delete`` Delete events
 - ``event_read`` Read events
