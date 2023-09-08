@@ -60,10 +60,14 @@ Safari and Edge. Other browsers may work but are not supported.
 
 The current beta version can be downloaded from https://drive.proton.me/urls/P6JSBFSDK4#Upl2zS1tT7ir
 Create a folder ``wp-fe-admin`` in the same directory where ``wp-admin``, ``wp-content``, ... are located.
-Unzip the file in this newly created folder. Point you browser at ``http://yourdomain.con/wp-fe-admin``.
+Unzip the file in this newly created folder. Point you browser at ``http://yourdomain.com/wp-fe-admin``.
 
 You can install the PWA in another directory if you want. Edit the ``index.html`` file of the PWA and change the line
 ``<base href="/wp-fe-admin/">`` to reflect the new location.
+
+.. note::
+   If you install the PWA on domain ``exampledomain-a.com`` you can only create an account in the App which has it's URL point to that domain.
+   If you create a server account in the App pointing to ``exampledomain-b.com`` you will run into CORS problems.
 
 Demo data
 ---------
