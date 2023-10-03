@@ -256,43 +256,6 @@ Switch on the :guilabel:`ReCaptcha` flag in the `Basics tab <../usage/events.htm
 
 ----
 
-Settings for instant payments
------------------------------
-These settings work together with the :doc:`Payment app <../apps/payment>`.
-The app generates a qrcode which the customer can scan with the camera or a banking app (Netherlands and Belgium) to make a payment.
-The ‘*Payment app*’ shows immediately if a payment succeeded or not.
-
-Event-id
-^^^^^^^^
-This is the id of a special event you have to define. The event is just used for reporting purposes. Set the following fields:
-
-- Basic tab
-   - ``Name`` "*Online payments*". You can of course translate this.
-   - ``Available start/end date`` make the window large enough
-   - ``Stock`` 0
-   - ``Redirect after booking`` Set a valid URL to thank the user for the payment
-   - Don’t use the other settings
-- Type tab
-   - ``Event type`` No date
-   - ``Group type`` No group
-- 'Email tab' and 'Confirmation email tab': don’t use
-- 'Input tab': add 2 text-fields ``Account`` and ``Description``. Do **not** translate these fields
-
-Minimum amount
-^^^^^^^^^^^^^^
-The minimum amount to use for a payment with a qrcode. If you enter a lower value in the app, an error will be returned an no qrcode is generated.
-
-API key
-^^^^^^^
-The secret key the :doc:`Payment app <../apps/payment>` has to use to secure the communication.
-You can use the button to generate a new secure token.
-Copy the qrcode and send it as an attachment in an email to the users of the Payment App.
-Users can than “*Share*” the qrcode with the Payment App to configure it.
-
-Or they can scan the qrcode to configure the :doc:`Payment app <../apps/payment>`.
-
-----
-
 REST API settings
 -----------------
 These settings work together with the :doc:`FE Admin App <../apps/admin>` and the :doc:`Public API <../advanced/api>`.
