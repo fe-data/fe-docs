@@ -68,7 +68,6 @@ How to use the different menu choices.
 Apps
 -----
 With *Fast Events* you can use our free scanning app for Android and IOS. No need for expensive scanning equipment, just use your phone.
-There is also a free payment app. The user scans a QR code and the payment is carried out simple and secure.
 
 Use the `FE Tracking App <https://fe-tracking.fast-events.eu/>`_ especially for sporting events to enable participants to signal checkpoints
 on the route in the App and upload the time when they are passed to the event organiser's server.
@@ -79,8 +78,6 @@ Or view statistics on tickets sold and tickets scanned. And much more...
 
 * **Scan App**:
   :doc:`scanning <apps/scan>`
-* **Payment App**:
-  :doc:`payment <apps/payment>`
 * **FE Tracking App**:
   :doc:`tracking <apps/tracking>`
 * **FE Admin App**:
@@ -92,7 +89,6 @@ Or view statistics on tickets sold and tickets scanned. And much more...
    :caption: Apps
 
    apps/scan
-   apps/payment
    apps/tracking
    apps/admin
 
