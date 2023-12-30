@@ -53,7 +53,7 @@ PDF e-tickets
    :alt: pdf-tickets
 
 Simply define your own e-tickets in your favourite word processor (Word, `LibreOffice <https://www.libreoffice.org/>`_, …)
-Upload the PDF-file to your WordPress media library and tell *Fast Events* where to print the qrcode-block.
+Upload the PDF file in WordPress via the plugin's management interface and tell *Fast Events* where to print the qrcode-block.
 
 That’s easy isn’t?
 
@@ -102,38 +102,23 @@ Apply for your free account.
 
    <div style="clear:both"></div>
 
-Mobile payments
----------------
-
-.. image:: ../_static/images/getting-started/payments.png
-   :align: left
-   :alt: mobile-payments
-       
-Do you want to sell tickets at the door or collect a contribution from people at home?
-
-There is no need to rent expensive payment terminals. Use our `Android App <https://play.google.com/store/apps/details?id=nl.fe_data.ideal>`_ or `IOS App <https://apps.apple.com/app/fe-payment/id1496549728>`_; let the customer scan the qrcode and pay.
-
-Dutch and Belgian banking apps can scan directly from the app.
-
-.. raw:: html
-
-   <div style="clear:both"></div>
-
-Admin on the go
----------------
+Admin App
+---------
 
 .. image:: ../_static/images/getting-started/fe-admin.png
    :scale: 80%
-   :align: right
+   :align: left
    :alt: admin-on-the-go
        
-Want to view events and orders on your mobile? Use the `FE Admin App <https://fast-events.eu/usage/fe-admin-app/>`_.
+Want to view events and orders on your mobile/tablet/desktop? Use the :doc:`FE Admin App <../apps/admin>`.
 
 Resend, refund, delete, re-create tickets or even create orders.
 
-Quickly assist users configuring the :doc:`FE Scanner App <../apps/scan>` or :doc:`FE Payment app <../apps/payment>`.
+Quickly assist users configuring the :doc:`FE Scanner App <../apps/scan>`.
 
-Or view statistics on tickets sold and tickets scanned.
+Or view statistics on tickets sold and tickets scanned and a lot more ...
+
+The system has a comprehensive permissions system where users can have restrictions on functionality and events that can be modified.
 
 .. raw:: html
 
@@ -144,7 +129,7 @@ Seating plans
 
 .. image:: ../_static/images/getting-started/seating.png
    :scale: 80%
-   :align: left
+   :align: right
    :alt: seating-plan
        
 Create your own seating plans for events that require them.
@@ -160,10 +145,12 @@ SaaS mode
 
 .. image:: ../_static/images/getting-started/SaaS.png
    :scale: 80%
-   :align: right
+   :align: left
    :alt: saas-mode
 
 Host multiple organisations on your platform each with their own events. They can use your ticketing platform as sub-merchants.
+
+Add (sub)accounts in the :doc:`FE Admin App <../apps/admin>` and assign selected events to users and where necessary restrict functionality.
 
 Use flexible application fees, which will automatically be transferred to you by `Mollie <https://my.mollie.com/dashboard/signup/5835294>`_.
 
@@ -176,7 +163,7 @@ REST API
 
 .. image:: ../_static/images/getting-started/api.png
    :scale: 80%
-   :align: left
+   :align: right
    :alt: rest-api
 
 *Fast Events* offers a :doc:`public REST API <../advanced/api>`.
@@ -185,7 +172,7 @@ using WordPress REST API application passwords to grant access.
 
 But you could also create you own scan app by using the :doc:`scan endpoint <../advanced/api-scans>`
 
-Fine grained access control is possible for individual endpoints by using the `authorization settings <settings.html#authorization-settings>`_
+Fine grained access control is possible for individual endpoints by using the `Accounts <../usage/tools.html#admin-accounts>`_ tool of the :doc:`FE Admin App <../apps/admin>`
 
 .. raw:: html
 
@@ -196,7 +183,7 @@ Webhooks
 
 .. image:: ../_static/images/getting-started/webhooks.png
    :scale: 80%
-   :align: right
+   :align: left
    :alt: webhooks
        
 *Fast Events* offers :doc:`Webhooks <../advanced/webhooks>` to sent notifications to a URL of your choice.
@@ -214,7 +201,7 @@ Action & filters
 
 .. image:: ../_static/images/getting-started/code.png
    :scale: 80%
-   :align: left
+   :align: right
    :alt: actions-and-filters
 
 Do you want to extend the functionality of *Fast Events*?
@@ -233,8 +220,10 @@ Summary
 -------
 .. hlist::
 
-   - Modern bootstrap based admin interface
+   - Modern bootstrap based settings interface
+   - Fully responsive :doc:`FE Admin App <../apps/admin>` for Android, IOS and Web
    - Event types (single, single selection from many, multiple selection and passe-partout)
+   - Native interfaces for many email-providers (PostMark, Mailgun, Amazon, Sendgrid, ...)
    - Optional reCAPTCHA protection
    - REST API
    - Webhooks
@@ -246,10 +235,9 @@ Summary
    - Design email confirmations
    - Define  input fields for selling e-tickets
    - Export orders and tickets for offline data analysis (Eg. Excel)
-   - Flexible scanning at multiple levels
+   - Flexible realtime scanning at multiple levels with mobile app.
    - Define e-ticket types
    - Sell to closed user groups
-   - Flexible real-time e-ticket scanning with mobile app
    - Integrated with `Mollie <https://my.mollie.com/dashboard/signup/5835294>`_ as payment provider, providing a variety of payment methods
    - Define your own statuses for orders
    - Authorize parts of the plugin admin pages to other users
@@ -264,7 +252,7 @@ Demo data
        
 The plugin comes loaded with demo data to give you an instant view of the possibilities.
 
-Give the :doc:`Scan App <../apps/scan>` a try, add Dashboard orders, …
+Give the :doc:`FE Admin App <../apps/admin>` and the :doc:`Scan App <../apps/scan>` a try, add Dashboard orders, …
 
 .. raw:: html
 

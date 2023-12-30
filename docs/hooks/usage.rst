@@ -17,8 +17,6 @@ If you want to use the filter and action hooks, there are generally a few option
 Reference
 ---------
 
-:doc:`fast_events_custom_status <custom_status>`
-    This filter is called after a custom order status change from the order contextmenu. It can only be used if the ‘Custom order statuses’ field has been set in the plugin settings.
 :doc:`fast_events_email_api_result <email_api_result>`
     This action is called after an order email has been send to the email-provider (Host-email, SMTP, Amazon SES, Mailgun, …). This call is made with both a successful email and an incorrect email (submission failed).
 :doc:`fast_events_input_fields <input_fields>`
@@ -40,7 +38,6 @@ Reference
    :maxdepth: 1
    :hidden:
 
-   custom_status
    email_api_result
    input_fields
    new_order

@@ -7,7 +7,7 @@ New scan
 
 #. Scan App
 #. REST API (`Scan request <api-scans.html#new-scan>`_)
-#. Choose for :guilabel:`Checkin` in the contextmenu of the orders-dashboard
+#. Choose for :guilabel:`Tickets -> Checkin` in the popupmenu of the orders-dashboard
 
 **Example payload**
 

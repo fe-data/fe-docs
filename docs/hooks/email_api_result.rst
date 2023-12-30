@@ -1,6 +1,7 @@
 fast_events_email_api_result
 ============================
-This action is called after an order email has been send to the email-provider (Host-email, SMTP, Amazon SES, Mailgun, …). This call is made with both a successful email and an incorrect email (submission failed).
+This action is called after an order email has been send to the email-provider (Host-email, SMTP, Amazon SES, Mailgun, …).
+This call is made with both a successful email and an incorrect email (submission failed).
 
 .. code-block:: php
    :linenos:
@@ -17,7 +18,9 @@ This action is called after an order email has been send to the email-provider (
 Parameters
 ----------
 **$http_code**
-    (*int*) The http resultcode. Consult the Mail Provider API for the right codes. The code may be in the 2xx-range (processing went ok) or an error (usually in the 4xx-range). For ``Host-email`` and ``SMTP`` this is 200 (*Success*) or 400 (*Failure*)
+    (*int*) The http resultcode. Consult the Mail Provider API for the right codes.
+    The code may be in the 2xx-range (processing went ok) or an error (usually in the 4xx-range).
+    For ``Host-email`` and ``SMTP`` this is 200 (*Success*) or 400 (*Failure*)
 **$order_id**
     (*int*) The id of the order.
 **$email**

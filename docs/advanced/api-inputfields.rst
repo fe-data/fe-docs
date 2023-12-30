@@ -3,7 +3,7 @@ Input fields
 List all input fields
 +++++++++++++++++++++
 
-.. http:get:: /fast-events/v1/admin/events/(integer:id)/input_fields
+.. http:get:: /fast-events/v1/admin/events/(integer:id)/input-fields
 
     List all input fields of the selected event.
 
@@ -22,13 +22,13 @@ List all input fields
               -H "X-FE-API-KEY: 3zo58AUYP9zOE6YT"  \
               -H "Content-Type: application/json" \
               -u "test:4ZAN O5OY OAvZ FZb2 Lslv JnJG" \
-              https://exampledomain.com/wp-json/fast-events/v1/admin/events/54/input_fields
+              https://exampledomain.com/wp-json/fast-events/v1/admin/events/54/input-fields
 
         .. code-tab:: php
 
             <?php
             $ch = curl_init();
-            $url = 'https://exampledomain.com/wp-json/fast-events/v1/admin/events/54/input_fields';
+            $url = 'https://exampledomain.com/wp-json/fast-events/v1/admin/events/54/input-fields';
             curl_setopt($ch, CURLOPT_URL, $url);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($ch, CURLOPT_USERPWD, 'test:4ZAN O5OY OAvZ FZb2 Lslv JnJG');
@@ -43,7 +43,7 @@ List all input fields
 
             import requests
             from requests.auth import HTTPBasicAuth
-            URL = 'https://exampledomain.com/wp-json/fast-events/v1/admin/events/54/input_fields'
+            URL = 'https://exampledomain.com/wp-json/fast-events/v1/admin/events/54/input-fields'
             HEADERS = {'X-FE-API-KEY':'3zo58AUYP9zOE6YT'}
             AUTH = HTTPBasicAuth('test', '4ZAN O5OY OAvZ FZb2 Lslv JnJG')
             response = requests.get(URL, headers=HEADERS, auth=AUTH)
@@ -63,12 +63,12 @@ List all input fields
                 "_links": {
                     "self": [
                         {
-                            "href": "https://vinyl-openair.com/wp-json/fast-events/v1/admin/events/54/input_fields/v0f446"
+                            "href": "https://vinyl-openair.com/wp-json/fast-events/v1/admin/events/54/input-fields/v0f446"
                         }
                     ],
                     "collection": [
                         {
-                            "href": "https://vinyl-openair.com/wp-json/fast-events/v1/admin/events/54/input_fields"
+                            "href": "https://vinyl-openair.com/wp-json/fast-events/v1/admin/events/54/input-fields"
                         }
                     ]
                 }
@@ -82,12 +82,12 @@ List all input fields
                 "_links": {
                     "self": [
                         {
-                            "href": "https://vinyl-openair.com/wp-json/fast-events/v1/admin/events/54/input_fields/v19e73"
+                            "href": "https://vinyl-openair.com/wp-json/fast-events/v1/admin/events/54/input-fields/v19e73"
                         }
                     ],
                     "collection": [
                         {
-                            "href": "https://vinyl-openair.com/wp-json/fast-events/v1/admin/events/54/input_fields"
+                            "href": "https://vinyl-openair.com/wp-json/fast-events/v1/admin/events/54/input-fields"
                         }
                     ]
                 }
@@ -109,7 +109,7 @@ List input field
 ++++++++++++++++
 
 
-.. http:get:: /fast-events/v1/admin/events/(integer:id)/input_fields/(input_field)
+.. http:get:: /fast-events/v1/admin/events/(integer:id)/input-fields/(input_field)
 
     Retrieve details of a single input field.
 
@@ -128,13 +128,13 @@ List input field
               -H "X-FE-API-KEY: 3zo58AUYP9zOE6YT"  \
               -H "Content-Type: application/json" \
               -u "test:4ZAN O5OY OAvZ FZb2 Lslv JnJG" \
-              https://exampledomain.com/wp-json/fast-events/v1/admin/events/54/input_fields/v0f446
+              https://exampledomain.com/wp-json/fast-events/v1/admin/events/54/input-fields/v0f446
 
         .. code-tab:: php
 
             <?php
             $ch = curl_init();
-            $url = 'https://exampledomain.com/wp-json/fast-events/v1/admin/events/54/input_fields/v0f446';
+            $url = 'https://exampledomain.com/wp-json/fast-events/v1/admin/events/54/input-fields/v0f446';
             curl_setopt($ch, CURLOPT_URL, $url);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($ch, CURLOPT_USERPWD, 'test:4ZAN O5OY OAvZ FZb2 Lslv JnJG');
@@ -149,7 +149,7 @@ List input field
 
             import requests
             from requests.auth import HTTPBasicAuth
-            URL = 'https://exampledomain.com/wp-json/fast-events/v1/admin/events/54/input_fields/v0f446'
+            URL = 'https://exampledomain.com/wp-json/fast-events/v1/admin/events/54/input-fields/v0f446'
             HEADERS = {'X-FE-API-KEY':'3zo58AUYP9zOE6YT'}
             AUTH = HTTPBasicAuth('test', '4ZAN O5OY OAvZ FZb2 Lslv JnJG')
             response = requests.get(URL, headers=HEADERS, auth=AUTH)
@@ -168,12 +168,12 @@ List input field
             "_links": {
                 "self": [
                     {
-                        "href": "https://vinyl-openair.com/wp-json/fast-events/v1/admin/events/54/input_fields/v0f446"
+                        "href": "https://vinyl-openair.com/wp-json/fast-events/v1/admin/events/54/input-fields/v0f446"
                     }
                 ],
                 "collection": [
                     {
-                        "href": "https://vinyl-openair.com/wp-json/fast-events/v1/admin/events/54/input_fields"
+                        "href": "https://vinyl-openair.com/wp-json/fast-events/v1/admin/events/54/input-fields"
                     }
                 ]
             }
@@ -193,7 +193,7 @@ List input field
 Update input field
 ++++++++++++++++++
 
-.. http:patch:: /fast-events/v1/admin/events/(integer:id)/input_fields/(input_field)
+.. http:put:: /fast-events/v1/admin/events/(integer:id)/input-fields/(input_field)
 
     Update a input field.
 
@@ -204,21 +204,21 @@ Update input field
         .. code-tab:: bash
 
             $ curl \
-              -X PATCH \
+              -X PUT \
               -H "X-FE-API-KEY: 3zo58AUYP9zOE6YT"  \
               -H "Content-Type: application/json" \
               -u "test:4ZAN O5OY OAvZ FZb2 Lslv JnJG" \
               -d '{"value": "Netherlands"}' \
-              https://exampledomain.com/wp-json/fast-events/v1/admin/events/54/input_fields/v0f446
+              https://exampledomain.com/wp-json/fast-events/v1/admin/events/54/input-fields/v0f446
 
         .. code-tab:: php
 
             <?php
             $ch = curl_init();
-            $url = 'https://exampledomain.com/wp-json/fast-events/v1/admin/events/54/input_fields/v0f446';
+            $url = 'https://exampledomain.com/wp-json/fast-events/v1/admin/events/54/input-fields/v0f446';
             curl_setopt($ch, CURLOPT_URL, $url);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PATCH");
+            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
             curl_setopt($ch, CURLOPT_USERPWD, 'test:4ZAN O5OY OAvZ FZb2 Lslv JnJG');
             curl_setopt($ch, CURLOPT_HTTPHEADER, array(
                 'Content-Type: application/json',
@@ -234,11 +234,11 @@ Update input field
 
             import requests
             from requests.auth import HTTPBasicAuth
-            URL = 'https://exampledomain.com/wp-json/fast-events/v1/admin/events/54/input_fields/v0f446'
+            URL = 'https://exampledomain.com/wp-json/fast-events/v1/admin/events/54/input-fields/v0f446'
             HEADERS = {'X-FE-API-KEY':'3zo58AUYP9zOE6YT'}
             AUTH = HTTPBasicAuth('test', '4ZAN O5OY OAvZ FZb2 Lslv JnJG')
             JSON = {'value': 'Netherlands'}
-            response = requests.patch(URL, headers=HEADERS, auth=AUTH, json=JSON)
+            response = requests.put(URL, headers=HEADERS, auth=AUTH, json=JSON)
             print(response.json())
 
     **Example response**
@@ -254,12 +254,12 @@ Update input field
             "_links": {
                 "self": [
                     {
-                        "href": "https://vinyl-openair.com/wp-json/fast-events/v1/admin/events/54/input_fields/v0f446"
+                        "href": "https://vinyl-openair.com/wp-json/fast-events/v1/admin/events/54/input-fields/v0f446"
                     }
                 ],
                 "collection": [
                     {
-                        "href": "https://vinyl-openair.com/wp-json/fast-events/v1/admin/events/54/input_fields"
+                        "href": "https://vinyl-openair.com/wp-json/fast-events/v1/admin/events/54/input-fields"
                     }
                 ]
             }
@@ -279,7 +279,7 @@ Update input field
 Delete input field
 ++++++++++++++++++
 
-.. http:delete:: /fast-events/v1/admin/events/(integer:id)/input_fields/(input_field)
+.. http:delete:: /fast-events/v1/admin/events/(integer:id)/input-fields/(input_field)
 
     Delete a single input field.
 
@@ -294,13 +294,13 @@ Delete input field
               -H "X-FE-API-KEY: 3zo58AUYP9zOE6YT"  \
               -H "Content-Type: application/json" \
               -u "test:4ZAN O5OY OAvZ FZb2 Lslv JnJG" \
-              https://exampledomain.com/wp-json/fast-events/v1/admin/events/54/input_fields/v0f446
+              https://exampledomain.com/wp-json/fast-events/v1/admin/events/54/input-fields/v0f446
 
         .. code-tab:: php
 
             <?php
             $ch = curl_init();
-            $url = 'https://exampledomain.com/wp-json/fast-events/v1/admin/events/54/input_fields/v0f446';
+            $url = 'https://exampledomain.com/wp-json/fast-events/v1/admin/events/54/input-fields/v0f446';
             curl_setopt($ch, CURLOPT_URL, $url);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "DELETE");
@@ -316,7 +316,7 @@ Delete input field
 
             import requests
             from requests.auth import HTTPBasicAuth
-            URL = 'https://exampledomain.com/wp-json/fast-events/v1/admin/events/54/input_fields/v0f446'
+            URL = 'https://exampledomain.com/wp-json/fast-events/v1/admin/events/54/input-fields/v0f446'
             HEADERS = {'X-FE-API-KEY':'3zo58AUYP9zOE6YT'}
             AUTH = HTTPBasicAuth('test', '4ZAN O5OY OAvZ FZb2 Lslv JnJG')
             response = requests.delete(URL, headers=HEADERS, auth=AUTH)
@@ -350,7 +350,7 @@ Delete input field
 Create input field
 ++++++++++++++++++
 
-.. http:post:: /fast-events/v1/admin/events/(integer:id)/input_fields
+.. http:post:: /fast-events/v1/admin/events/(integer:id)/input-fields
 
     Create a new input field.
 
@@ -361,21 +361,21 @@ Create input field
         .. code-tab:: bash
 
             $ curl \
-              -X PATCH \
+              -X POST \
               -H "X-FE-API-KEY: 3zo58AUYP9zOE6YT"  \
               -H "Content-Type: application/json" \
               -u "test:4ZAN O5OY OAvZ FZb2 Lslv JnJG" \
               -d '{"name":"Country"}' \
-              https://exampledomain.com/wp-json/fast-events/v1/admin/events/54/input_fields
+              https://exampledomain.com/wp-json/fast-events/v1/admin/events/54/input-fields
 
         .. code-tab:: php
 
             <?php
             $ch = curl_init();
-            $url = 'https://exampledomain.com/wp-json/fast-events/v1/admin/events/54/input_fields';
+            $url = 'https://exampledomain.com/wp-json/fast-events/v1/admin/events/54/input-fields';
             curl_setopt($ch, CURLOPT_URL, $url);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PATCH");
+            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
             curl_setopt($ch, CURLOPT_USERPWD, 'test:4ZAN O5OY OAvZ FZb2 Lslv JnJG');
             curl_setopt($ch, CURLOPT_HTTPHEADER, array(
                 'Content-Type: application/json',
@@ -391,11 +391,11 @@ Create input field
 
             import requests
             from requests.auth import HTTPBasicAuth
-            URL = 'https://exampledomain.com/wp-json/fast-events/v1/admin/events/54/input_fields'
+            URL = 'https://exampledomain.com/wp-json/fast-events/v1/admin/events/54/input-fields'
             HEADERS = {'X-FE-API-KEY':'3zo58AUYP9zOE6YT'}
             AUTH = HTTPBasicAuth('test', '4ZAN O5OY OAvZ FZb2 Lslv JnJG')
             JSON = {'name': 'Country'}
-            response = requests.patch(URL, headers=HEADERS, auth=AUTH, json=JSON)
+            response = requests.post(URL, headers=HEADERS, auth=AUTH, json=JSON)
             print(response.json())
 
     **Example response**
@@ -412,12 +412,12 @@ Create input field
             "_links": {
                 "self": [
                     {
-                        "href": "https://vinyl-openair.com/wp-json/fast-events/v1/admin/events/54/input_fields/v3f5e6"
+                        "href": "https://vinyl-openair.com/wp-json/fast-events/v1/admin/events/54/input-fields/v3f5e6"
                     }
                 ],
                 "collection": [
                     {
-                        "href": "https://vinyl-openair.com/wp-json/fast-events/v1/admin/events/54/input_fields"
+                        "href": "https://vinyl-openair.com/wp-json/fast-events/v1/admin/events/54/input-fields"
                     }
                 ]
             }

@@ -33,7 +33,16 @@ Include the following snippet in the Snippets-plugin to enable this feature.
 
    <?php
    add_filter('autoptimize_filter_cache_create_static_gzip','__return_true');
-   
+
+Translations
+------------
+*Fast Events* uses the WordPress translation API. This API is not very efficient and the WordPress Performance Team has come up
+with the `Performant Translations <https://wordpress.org/plugins/performant-translations/>`_ plugin to speed up the API.
+Tests have shown that this plugin can improve elapse time of the API by more than 20%.
+
+Plans are to use this approach in an upcoming version of WordPress.
+But at the moment it is advisable to use this plugin.
+
 CDN
 ---
 Consider using a CDN. There are many available, but `Cloudflare <https://www.cloudflare.com/cdn/>`_ has a free plan.
@@ -44,6 +53,15 @@ Redis
 -----
 Not every hosting provider is offering Redis. But some do and if you have a VPS you can configure it yourself.
 Install the `Redis Object Cache plugin <https://wordpress.org/plugins/redis-cache/>`_ and it will cache objects in memory rather then getting information from the database every time.
+
+Cloudflare
+----------
+Even with the free plan your site will hugely benefit from Cloudflare. You can just go for a simple caching approach by using the
+free `Cloudflare plugin <https://wordpress.org/plugins/cloudflare/>`_;
+here is an `example guide <https://themeisle.com/blog/cloudflare-for-wordpress-tutorial/>`_ how to do this.
+
+Paid plans do offer extensive WAF (WordPress Application Firewall) rules, and a lot more, that can protect your site.
+
 
 Use a Theme optimized for speed
 -------------------------------
@@ -62,4 +80,3 @@ Another possibility is to use WordPress only as a REST API server and thus not f
 For example, use `Cloudflare Pages <https://pages.cloudflare.com/>`_ as the frontend web server and call the `ordering API <api-ordering.html>`_ on the server to order etickets.
 For this case enable the :guilabel:`Use ordering API` in `Miscellaneous-settings <../getting-started/settings.html#miscellaneous-settings>`_.
 Also be sure to fill in the :guilabel:`Cache time orderscreen` and :guilabel:`Ordering shortcodes` fields.
-` fields

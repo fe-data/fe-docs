@@ -32,7 +32,7 @@ Parameters
 **$attr['date']**
     (*string*) The date when the ticket was scanned. Format ``YYYY-MM-DD HH:MM:SS``.
 **$attr['location']**
-    (*string*) The location where the ticket was scanned. Comes from `Tickets tab <../usage/events.html#tickets-tab>`_.
+    (*string*) The location where the ticket was scanned.
 
 ----
 

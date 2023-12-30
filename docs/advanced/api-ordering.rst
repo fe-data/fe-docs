@@ -6,7 +6,7 @@ Get orderform
 
 .. http:get:: /fast-events/v1/ordering/form/(string:token)
 
-    Get the order form for this token.
+    Get the order form for this token. You can use this API to embed the ordering form in you own html-code.
 
     **Example request**
 
@@ -84,6 +84,55 @@ Get orderform
         }
 
     The ``form`` field is truncated. It will be empty if the shortcode can't be found.
+
+    **Example implementation**
+
+    Below is sample implementation on how to use this REST API call in your own html page.
+    After the *Fast Event* html order form is loaded, the javascript code in ``fe-payment.min.js`` is also loaded.
+    This javascript code is part of the *Fast Events* plugin and can be found in the :guilabel:`assets/js` directory of the plugin.
+    You should copy it to your own site.
+
+    .. code-block:: html
+
+       <div id="fast-events-order-form"></div>
+       <script>
+           document.addEventListener("DOMContentLoaded", async () => {
+
+               const checkElement = async selector => {
+                   while (document.getElementById(selector) === null ) {
+                       await new Promise(resolve => requestAnimationFrame(resolve))
+                   }
+                   return document.getElementById(selector)
+               }
+
+               try {
+                   document.body.style.cursor = 'progress'
+                   let response = await fetch('https://exampledomain.com/wp-json/fast-events/v1/ordering/form/vintage')
+                   const json = await response.json();
+                   if (response.ok) {
+                       document.getElementById('fast-events-order-form').innerHTML = json.form
+                       checkElement('fast-events-form-submit').then((selector) => {
+                           let js = document.createElement('script')
+                           js.src = '/js/fe-payment.min.js'
+                           document.head.appendChild(js)
+                       })
+                   } else {
+                       if (json.code === 'rest_no_route') {
+                           document.getElementById('fast-events-order-form').innerHTML =
+                               '<div style="font-size:18px;color:#141619;background:#d4d4d4;margin-bottom:0!important;padding:1rem;border:1px solid rgb(188,190,191);border-radius:0.375rem">\
+                                   <p>The ticket system is currently inactive.</p>\
+                               </div>'
+                       } else {
+                           alert(json.message)
+                       }
+                   }
+               } catch (error) {
+                   alert('Error: ' + error)
+               } finally {
+                   document.body.style.cursor = 'default'
+               }
+           });
+       </script>
 
     **Changelog**
 

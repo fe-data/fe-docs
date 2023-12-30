@@ -4,7 +4,7 @@ Scan keys
 List all scan keys
 ++++++++++++++++++
 
-.. http:get:: /fast-events/v1/admin/events/(integer:id)/scan_keys
+.. http:get:: /fast-events/v1/admin/events/(integer:id)/scan-keys
 
     List all scan keys of the selected event.
 
@@ -23,13 +23,13 @@ List all scan keys
               -H "X-FE-API-KEY: 3zo58AUYP9zOE6YT"  \
               -H "Content-Type: application/json" \
               -u "test:4ZAN O5OY OAvZ FZb2 Lslv JnJG" \
-              https://exampledomain.com/wp-json/fast-events/v1/admin/events/54/scan_keys
+              https://exampledomain.com/wp-json/fast-events/v1/admin/events/54/scan-keys
 
         .. code-tab:: php
 
             <?php
             $ch = curl_init();
-            $url = 'https://exampledomain.com/wp-json/fast-events/v1/admin/events/54/scan_keys';
+            $url = 'https://exampledomain.com/wp-json/fast-events/v1/admin/events/54/scan-keys';
             curl_setopt($ch, CURLOPT_URL, $url);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($ch, CURLOPT_USERPWD, 'test:4ZAN O5OY OAvZ FZb2 Lslv JnJG');
@@ -44,7 +44,7 @@ List all scan keys
 
             import requests
             from requests.auth import HTTPBasicAuth
-            URL = 'https://exampledomain.com/wp-json/fast-events/v1/admin/events/54/scan_keys'
+            URL = 'https://exampledomain.com/wp-json/fast-events/v1/admin/events/54/scan-keys'
             HEADERS = {'X-FE-API-KEY':'3zo58AUYP9zOE6YT'}
             AUTH = HTTPBasicAuth('test', '4ZAN O5OY OAvZ FZb2 Lslv JnJG')
             response = requests.get(URL, headers=HEADERS, auth=AUTH)
@@ -64,12 +64,12 @@ List all scan keys
                 "_links": {
                     "self": [
                         {
-                            "href": "https://vinyl-openair.com/wp-json/fast-events/v1/admin/events/54/scan_keys/GTIeWqKGtvLsWhP7"
+                            "href": "https://vinyl-openair.com/wp-json/fast-events/v1/admin/events/54/scan-keys/GTIeWqKGtvLsWhP7"
                         }
                     ],
                     "collection": [
                         {
-                            "href": "https://vinyl-openair.com/wp-json/fast-events/v1/admin/events/54/scan_keys"
+                            "href": "https://vinyl-openair.com/wp-json/fast-events/v1/admin/events/54/scan-keys"
                         }
                     ]
                 }
@@ -83,12 +83,12 @@ List all scan keys
                 "_links": {
                     "self": [
                         {
-                            "href": "https://vinyl-openair.com/wp-json/fast-events/v1/admin/events/54/scan_keys/zzFms83MjBsNEM6Y"
+                            "href": "https://vinyl-openair.com/wp-json/fast-events/v1/admin/events/54/scan-keys/zzFms83MjBsNEM6Y"
                         }
                     ],
                     "collection": [
                         {
-                            "href": "https://vinyl-openair.com/wp-json/fast-events/v1/admin/events/54/scan_keys"
+                            "href": "https://vinyl-openair.com/wp-json/fast-events/v1/admin/events/54/scan-keys"
                         }
                     ]
                 }
@@ -102,12 +102,12 @@ List all scan keys
                 "_links": {
                     "self": [
                         {
-                            "href": "https://vinyl-openair.com/wp-json/fast-events/v1/admin/events/54/scan_keys/kJj05xtvIIO6RQAQ"
+                            "href": "https://vinyl-openair.com/wp-json/fast-events/v1/admin/events/54/scan-keys/kJj05xtvIIO6RQAQ"
                         }
                     ],
                     "collection": [
                         {
-                            "href": "https://vinyl-openair.com/wp-json/fast-events/v1/admin/events/54/scan_keys"
+                            "href": "https://vinyl-openair.com/wp-json/fast-events/v1/admin/events/54/scan-keys"
                         }
                     ]
                 }
@@ -129,7 +129,7 @@ List scan key
 +++++++++++++
 
 
-.. http:get:: /fast-events/v1/admin/events/(integer:id)/scan_keys/(scan_key)
+.. http:get:: /fast-events/v1/admin/events/(integer:id)/scan-keys/(scan_key)
 
     Retrieve details of a single scan key.
 
@@ -148,13 +148,13 @@ List scan key
               -H "X-FE-API-KEY: 3zo58AUYP9zOE6YT"  \
               -H "Content-Type: application/json" \
               -u "test:4ZAN O5OY OAvZ FZb2 Lslv JnJG" \
-              https://exampledomain.com/wp-json/fast-events/v1/admin/events/54/scan_keys/zzFms83MjBsNEM6Y
+              https://exampledomain.com/wp-json/fast-events/v1/admin/events/54/scan-keys/zzFms83MjBsNEM6Y
 
         .. code-tab:: php
 
             <?php
             $ch = curl_init();
-            $url = 'https://exampledomain.com/wp-json/fast-events/v1/admin/events/54/scan_keys/zzFms83MjBsNEM6Y';
+            $url = 'https://exampledomain.com/wp-json/fast-events/v1/admin/events/54/scan-keys/zzFms83MjBsNEM6Y';
             curl_setopt($ch, CURLOPT_URL, $url);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($ch, CURLOPT_USERPWD, 'test:4ZAN O5OY OAvZ FZb2 Lslv JnJG');
@@ -169,7 +169,7 @@ List scan key
 
             import requests
             from requests.auth import HTTPBasicAuth
-            URL = 'https://exampledomain.com/wp-json/fast-events/v1/admin/events/54/scan_keys/zzFms83MjBsNEM6Y'
+            URL = 'https://exampledomain.com/wp-json/fast-events/v1/admin/events/54/scan-keys/zzFms83MjBsNEM6Y'
             HEADERS = {'X-FE-API-KEY':'3zo58AUYP9zOE6YT'}
             AUTH = HTTPBasicAuth('test', '4ZAN O5OY OAvZ FZb2 Lslv JnJG')
             response = requests.get(URL, headers=HEADERS, auth=AUTH)
@@ -188,12 +188,12 @@ List scan key
             "_links": {
                 "self": [
                     {
-                        "href": "https://vinyl-openair.com/wp-json/fast-events/v1/admin/events/54/scan_keys/zzFms83MjBsNEM6Y"
+                        "href": "https://vinyl-openair.com/wp-json/fast-events/v1/admin/events/54/scan-keys/zzFms83MjBsNEM6Y"
                     }
                 ],
                 "collection": [
                     {
-                        "href": "https://vinyl-openair.com/wp-json/fast-events/v1/admin/events/54/scan_keys"
+                        "href": "https://vinyl-openair.com/wp-json/fast-events/v1/admin/events/54/scan-keys"
                     }
                 ]
             }
@@ -213,7 +213,7 @@ List scan key
 Update scan key
 +++++++++++++++
 
-.. http:patch:: /fast-events/v1/admin/events/(integer:id)/scan_keys/(scan_key)
+.. http:put:: /fast-events/v1/admin/events/(integer:id)/scan-keys/(scan_key)
 
     Update a scan key. It is possible to change the scan key by including the ``key`` parameter in the payload.
     It must be exactly 16 characters long and can only contain the following characters: a-z, A-Z or 0-9
@@ -225,21 +225,21 @@ Update scan key
         .. code-tab:: bash
 
             $ curl \
-              -X PATCH \
+              -X PUT \
               -H "X-FE-API-KEY: 3zo58AUYP9zOE6YT"  \
               -H "Content-Type: application/json" \
               -u "test:4ZAN O5OY OAvZ FZb2 Lslv JnJG" \
               -d '{"location": "Free tropical cocktail"}' \
-              https://exampledomain.com/wp-json/fast-events/v1/admin/events/54/scan_keys/kJj05xtvIIO6RQAQ
+              https://exampledomain.com/wp-json/fast-events/v1/admin/events/54/scan-keys/kJj05xtvIIO6RQAQ
 
         .. code-tab:: php
 
             <?php
             $ch = curl_init();
-            $url = 'https://exampledomain.com/wp-json/fast-events/v1/admin/events/54/scan_keys/kJj05xtvIIO6RQAQ';
+            $url = 'https://exampledomain.com/wp-json/fast-events/v1/admin/events/54/scan-keys/kJj05xtvIIO6RQAQ';
             curl_setopt($ch, CURLOPT_URL, $url);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PATCH");
+            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
             curl_setopt($ch, CURLOPT_USERPWD, 'test:4ZAN O5OY OAvZ FZb2 Lslv JnJG');
             curl_setopt($ch, CURLOPT_HTTPHEADER, array(
                 'Content-Type: application/json',
@@ -255,11 +255,11 @@ Update scan key
 
             import requests
             from requests.auth import HTTPBasicAuth
-            URL = 'https://exampledomain.com/wp-json/fast-events/v1/admin/events/54/scan_keys/kJj05xtvIIO6RQAQ'
+            URL = 'https://exampledomain.com/wp-json/fast-events/v1/admin/events/54/scan-keys/kJj05xtvIIO6RQAQ'
             HEADERS = {'X-FE-API-KEY':'3zo58AUYP9zOE6YT'}
             AUTH = HTTPBasicAuth('test', '4ZAN O5OY OAvZ FZb2 Lslv JnJG')
             JSON = {'location': 'Free tropical cocktail'}
-            response = requests.patch(URL, headers=HEADERS, auth=AUTH, json=JSON)
+            response = requests.put(URL, headers=HEADERS, auth=AUTH, json=JSON)
             print(response.json())
 
     **Example response**
@@ -276,12 +276,12 @@ Update scan key
             "_links": {
                 "self": [
                     {
-                        "href": "https://vinyl-openair.com/wp-json/fast-events/v1/admin/events/54/scan_keys/zzFms83MjBsNEM6Y"
+                        "href": "https://vinyl-openair.com/wp-json/fast-events/v1/admin/events/54/scan-keys/zzFms83MjBsNEM6Y"
                     }
                 ],
                 "collection": [
                     {
-                        "href": "https://vinyl-openair.com/wp-json/fast-events/v1/admin/events/54/scan_keys"
+                        "href": "https://vinyl-openair.com/wp-json/fast-events/v1/admin/events/54/scan-keys"
                     }
                 ]
             }
@@ -301,7 +301,7 @@ Update scan key
 Delete scan key
 +++++++++++++++
 
-.. http:delete:: /fast-events/v1/admin/events/(integer:id)/scan_keys/(scan_key)
+.. http:delete:: /fast-events/v1/admin/events/(integer:id)/scan-keys/(scan_key)
 
     Delete a single scan key.
 
@@ -316,13 +316,13 @@ Delete scan key
               -H "X-FE-API-KEY: 3zo58AUYP9zOE6YT"  \
               -H "Content-Type: application/json" \
               -u "test:4ZAN O5OY OAvZ FZb2 Lslv JnJG" \
-              https://exampledomain.com/wp-json/fast-events/v1/admin/events/54/scan_keys/zzFms83MjBsNEM6Y
+              https://exampledomain.com/wp-json/fast-events/v1/admin/events/54/scan-keys/zzFms83MjBsNEM6Y
 
         .. code-tab:: php
 
             <?php
             $ch = curl_init();
-            $url = 'https://exampledomain.com/wp-json/fast-events/v1/admin/events/54/scan_keys/zzFms83MjBsNEM6Y';
+            $url = 'https://exampledomain.com/wp-json/fast-events/v1/admin/events/54/scan-keys/zzFms83MjBsNEM6Y';
             curl_setopt($ch, CURLOPT_URL, $url);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "DELETE");
@@ -338,7 +338,7 @@ Delete scan key
 
             import requests
             from requests.auth import HTTPBasicAuth
-            URL = 'https://exampledomain.com/wp-json/fast-events/v1/admin/events/54/scan_keys/zzFms83MjBsNEM6Y'
+            URL = 'https://exampledomain.com/wp-json/fast-events/v1/admin/events/54/scan-keys/zzFms83MjBsNEM6Y'
             HEADERS = {'X-FE-API-KEY':'3zo58AUYP9zOE6YT'}
             AUTH = HTTPBasicAuth('test', '4ZAN O5OY OAvZ FZb2 Lslv JnJG')
             response = requests.delete(URL, headers=HEADERS, auth=AUTH)
@@ -373,7 +373,7 @@ Delete scan key
 Create scan key
 +++++++++++++++
 
-.. http:post:: /fast-events/v1/admin/events/(integer:id)/scan_keys
+.. http:post:: /fast-events/v1/admin/events/(integer:id)/scan-keys
 
     **Example request**
 
@@ -385,21 +385,21 @@ Create scan key
         .. code-tab:: bash
 
             $ curl \
-              -X PATCH \
+              -X POST \
               -H "X-FE-API-KEY: 3zo58AUYP9zOE6YT"  \
               -H "Content-Type: application/json" \
               -u "test:4ZAN O5OY OAvZ FZb2 Lslv JnJG" \
               -d '{"level":1,"tickets":"Gold (Backstage)","location": "Free tropical cocktail"}' \
-              https://exampledomain.com/wp-json/fast-events/v1/admin/events/54/scan_keys
+              https://exampledomain.com/wp-json/fast-events/v1/admin/events/54/scan-keys
 
         .. code-tab:: php
 
             <?php
             $ch = curl_init();
-            $url = 'https://exampledomain.com/wp-json/fast-events/v1/admin/events/54/scan_keys';
+            $url = 'https://exampledomain.com/wp-json/fast-events/v1/admin/events/54/scan-keys';
             curl_setopt($ch, CURLOPT_URL, $url);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PATCH");
+            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
             curl_setopt($ch, CURLOPT_USERPWD, 'test:4ZAN O5OY OAvZ FZb2 Lslv JnJG');
             curl_setopt($ch, CURLOPT_HTTPHEADER, array(
                 'Content-Type: application/json',
@@ -417,11 +417,11 @@ Create scan key
 
             import requests
             from requests.auth import HTTPBasicAuth
-            URL = 'https://exampledomain.com/wp-json/fast-events/v1/admin/events/54/scan_keys'
+            URL = 'https://exampledomain.com/wp-json/fast-events/v1/admin/events/54/scan-keys'
             HEADERS = {'X-FE-API-KEY':'3zo58AUYP9zOE6YT'}
             AUTH = HTTPBasicAuth('test', '4ZAN O5OY OAvZ FZb2 Lslv JnJG')
             JSON = {'level': 1, 'tickets': 'Gold (Backstage)', 'location': 'Free tropical cocktail'}
-            response = requests.patch(URL, headers=HEADERS, auth=AUTH, json=JSON)
+            response = requests.post(URL, headers=HEADERS, auth=AUTH, json=JSON)
             print(response.json())
 
     **Example response**
@@ -438,12 +438,12 @@ Create scan key
             "_links": {
                 "self": [
                     {
-                        "href": "https://vinyl-openair.com/wp-json/fast-events/v1/admin/events/54/scan_keys/UT2gIFkepRB5BQTn"
+                        "href": "https://vinyl-openair.com/wp-json/fast-events/v1/admin/events/54/scan-keys/UT2gIFkepRB5BQTn"
                     }
                 ],
                 "collection": [
                     {
-                        "href": "https://vinyl-openair.com/wp-json/fast-events/v1/admin/events/54/scan_keys"
+                        "href": "https://vinyl-openair.com/wp-json/fast-events/v1/admin/events/54/scan-keys"
                     }
                 ]
             }

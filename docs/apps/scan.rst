@@ -37,14 +37,15 @@ There are 3 possibilities to configure the app:
 
 Adding or changing checkpoints is the first menu item in the navigation drawer (top left).
 You can add a new checkpoint by pressing the new checkpoint button (bottom right) or change an existing checkpoint by pressing the pencil button.
-The easiest way to configure the App is to scan a configuration qrcode, which can be copied from the `Scan  tab <../usage/events.html#scan-tab>`_ when changing an event.
+The easiest way to configure the App is to scan a configuration qrcode,
+which can be copied from the ``Qrcode`` popupmenu item in the `Scan keys <../usage/events.html#scan-keys>`_ overview when changing an event.
 Pressing the qrcode button (top right) in the add/edit checkpoint gives you the option to
 to scan a configuration QRcode with the camera or to scan a configuration QRcode from an image file.
 
 **Server URL**
     The URL where you have installed WordPress. For example ``https://exampledomain.com``. Only secure connections (https) are allowed.
 **API Key**
-    The ``Scan key`` as defined in the `Scan  tab <../usage/events.html#scan-tab>`_.
+    The ``Scan key`` as defined in the `Scan keys overview <../usage/events.html#scan-keys>`_.
 
 Settings
 ^^^^^^^^
@@ -80,8 +81,10 @@ The phone will not make a sound, but will vibrate.
            :alt: Scan info
            
    
-You can scan one step at a time. For example: you can only scan the ‘*Gold (Backstage)*‘ ticket at the backstage entrance if it has already been scanned at the main entrance.
-This requires a different ``Scan key`` at the main entrance and the backstage entrances. See the screenshot in the `Scan  tab <../usage/events.html#scan-tab>`_.
+You can scan one step at a time.
+For example: you can only scan the ‘*Gold (Backstage)*‘ ticket at the backstage entrance if it has already been scanned at the main entrance.
+This requires a different ``Scan key`` at the main entrance and the backstage entrances.
+See this `screenshot <../usage/events.html#scan-keys>`_.
 The first entry will scan all tickets at the Main Entrance and the second entry will scan only ‘*Gold (Backstage)*‘ tickets at the Backstage Entrance.
 If the ‘*Gold (Backstage)*‘ ticket is first presented at the Backstage Entrance first, it will result in an invalid scan as it has not been scanned at the Main Entrance.
 

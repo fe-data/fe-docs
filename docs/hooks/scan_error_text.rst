@@ -1,6 +1,7 @@
 fast_events_scan_error_text
 ===========================
-This filter is called if there is a scan error. Normally the API returns the localized error, but you can override it and create your own version. You can make the error-string even more specific by using the scancode that is linked to a specific entrance. See the ‘Scan-tab‘.
+This filter is called if there is a scan error. Normally the API returns the localized error, but you can override it and create your own version.
+You can make the error-string even more specific by using the scancode that is linked to a specific entrance. See the `Scan keys overview <../usage/events.html#scan-keys>`__.
 
 .. code-block:: php
    :linenos:
@@ -37,7 +38,7 @@ Parameters
     12. ‘*You cannot scan this checkpoint*’. The 'Force Tracking App' is set; no level 0 and level 1 scans are possible with the Scann App, they  need to uploaded automatically by the Tracking App.
 
 **$scancode**
-    (*string*) The scancode used. Comes from the `Scan tab <../usage/events.html#scan-tab>`_.
+    (*string*) The scancode used.
 
 ----
 

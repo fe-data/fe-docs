@@ -67,7 +67,7 @@ New scan
     The ``status`` field indicates whether the scan is correct (*true*) or not (*false*).
     If the ``status`` is *false*, the other fields indicate when the scan took place and where.
     If a seating plan is used, the seating info is appended to the ``type`` field.
-    The format of the ``date`` field is set by the ``Date format`` field in the `Scan  tab <../usage/events.html#scan-tab>`_
+    The format of the ``date`` field is set by the ``Date format`` field in the `Scan keys overview <../usage/events.html#scan-keys>`_
 
     **Changelog**
 
@@ -152,7 +152,7 @@ List scans
         }
 
     If a seating plan is used, the seating info is appended to the ``ticket_type`` field.
-    The format of the ``scan_date`` field is set by the ``Date format`` field in the `Scan  tab <../usage/events.html#scan-tab>`_
+    The format of the ``scan_date`` field is set by the ``Date format`` field in the `Scan keys overview <../usage/events.html#scan-keys>`_
 
     **Changelog**
 

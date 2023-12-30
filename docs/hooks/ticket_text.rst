@@ -18,11 +18,11 @@ This filter is called just before the text of the qrcode block is printed on the
 Parameters
 ----------
 **$attr['event_name']**
-    (*string*) The name of the event. Comes from `Basics tab <../usage/events.html#basics-tab>`_.
+    (*string*) The name of the event.
 **$attr['ticket_type']**
-    (*string*) The name of the ticket. Comes from `Tickets tab <../usage/events.html#tickets-tab>`_.
+    (*string*) The name of the ticket.
 **$attr['event_date']**
-    (*string*) The date of the event. Comes from the `Type tab <../usage/events.html#type-tab>`_ using the defined format.
+    (*string*) The date of the event.
 **$attr['order_id']**
     (*string*) The order id. Example ‘*Order #2914*’. Mind you the word ``Order`` may be translated.
 **$attr['name']**

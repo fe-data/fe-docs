@@ -6,8 +6,8 @@ New event
 
 **Triggered by**
 
-#. Choose for :guilabel:`New event (+)` in the icon-menu of the events-dashboard
-#. Choose for :guilabel:`Duplicate event` in the context-menu of the events-dashboard.
+#. Choose for the :guilabel:`New event (+)` button of the events-dashboard
+#. Choose for :guilabel:`Duplicate event` in the popup-menu of the events-dashboard.
 #. REST API (`Create event <api-events.html#create-event>`_)
 
 **Example payload**
@@ -63,6 +63,8 @@ New event
                 "x_position": 40,
                 "y_position": 150,
                 "rotation": 0,
+                "scale": 100,
+                "no_border": false
             },
             "invoice": {
                 "attachment_id": 6,
@@ -166,8 +168,8 @@ Update event
 
 **Triggered by**
 
-#. Admin App
-#. Choose for :guilabel:`Change event` in the contextmenu of the events-dashboard
+#. Choose for :guilabel:`Change event` in the popupmenu of the events-dashboard.
+   ``Basic settings``, ``Input fields``, ``Ticket types`` and ``Scan keys`` all trigger this webhook
 #. REST API (`Update event <api-events.html#event-update>`_)
 #. REST API (update, delete or create a `scan key <api-scankeys.html#scan-keys>`_)
 #. REST API (update, delete or create an `input field <api-inputfields.html#input-fields>`_)
@@ -193,7 +195,7 @@ Delete event
 
 **Triggered by**
 
-#. Choose for :guilabel:`Delete event` in the contextmenu of the event-dashboard
+#. Choose for :guilabel:`Delete event` in the popupmenu of the event-dashboard
 #. REST API (`Delete event request <api-events.html#delete-event>`_)
 
 **Example payload**

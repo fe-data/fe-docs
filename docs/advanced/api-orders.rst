@@ -253,7 +253,7 @@ Order details
 Order update
 ++++++++++++
 
-.. http:patch:: /fast-events/v1/admin/orders/(integer:id)
+.. http:put:: /fast-events/v1/admin/orders/(integer:id)
 
     Update a single order. Only the fields ``custom_status``, ``name`` and ``email`` can be changed.
 
@@ -264,7 +264,7 @@ Order update
         .. code-tab:: bash
 
             $ curl \
-              -X PATCH \
+              -X PUT \
               -H "X-FE-API-KEY: 3zo58AUYP9zOE6YT"  \
               -H "Content-Type: application/json" \
               -u "test:4ZAN O5OY OAvZ FZb2 Lslv JnJG" \
@@ -278,7 +278,7 @@ Order update
             $url = 'https://exampledomain.com/wp-json/fast-events/v1/admin/orders/14779';
             curl_setopt($ch, CURLOPT_URL, $url);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PATCH");
+            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
             curl_setopt($ch, CURLOPT_USERPWD, 'test:4ZAN O5OY OAvZ FZb2 Lslv JnJG');
             curl_setopt($ch, CURLOPT_HTTPHEADER, array(
                 'Content-Type: application/json',
@@ -298,7 +298,7 @@ Order update
             HEADERS = {'X-FE-API-KEY':'3zo58AUYP9zOE6YT'}
             AUTH = HTTPBasicAuth('test', '4ZAN O5OY OAvZ FZb2 Lslv JnJG')
             JSON = {'name': 'Harry Doe'}
-            response = requests.patch(URL, headers=HEADERS, auth=AUTH, json=JSON)
+            response = requests.put(URL, headers=HEADERS, auth=AUTH, json=JSON)
             print(response.json())
 
     **Example response**
@@ -339,7 +339,7 @@ Delete order
 
 .. http:delete:: /fast-events/v1/admin/orders/(integer:id)
 
-    Delete a single order.
+    Delete a single email list.
 
     **Example request**
 
@@ -424,7 +424,7 @@ Create order
               -H "X-FE-API-KEY: 3zo58AUYP9zOE6YT"  \
               -H "Content-Type: application/json" \
               -u "test:4ZAN O5OY OAvZ FZb2 Lslv JnJG" \
-              -d '{"event_id":65,"name":"John Doe","email":"John999@doe999.com","fields":[],"tickets":[{"v24a1f":1}]}' \
+              -d '{"event_id":65,"name":"John Doe","email":"John999@doe999.com","fields":[],"tickets":[{"v14a1f":1}]}' \
               https://exampledomain.com/wp-json/fast-events/v1/admin/orders
 
         .. code-tab:: php
@@ -447,7 +447,7 @@ Create order
                 "fields"   => [],
                 "tickets"  => [
                     [
-                        "v24a1f" => 1
+                        "v14a1f" => 1
                     ]
                 ]
             ]));
@@ -467,7 +467,7 @@ Create order
                 'email': 'John999@doe999.com',
                 'fields': [],
                 'tickets': [
-                    {'v24a1f': 1}
+                    {'v14a1f': 1}
                 ]
             }
             response = requests.post(URL, headers=HEADERS, auth=AUTH, json=JSON)

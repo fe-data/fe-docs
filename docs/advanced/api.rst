@@ -1,7 +1,7 @@
 Public API
 ==========
 
-API v1
+API v2
 ------
 The *Fast Events* public API uses :abbr:`REST (Representational State Transfer)` and
 :abbr:`JSON (JavaScript Object Notation)` is returned by all API responses including errors
@@ -17,34 +17,26 @@ Requests to the *Fast Events* public API is for private information and all endp
 
 Requirements
 ------------
-Some endpoints require an API key in a HTTP header and most use WordPress application passwords in the ``Authorization`` HTTP header.
-By using application passwords (as of WordPress 5.6) you have a great deal of flexibility.
-You can either create 1 WordPress user and use a single application password for all clients or an application password per client. But you can also create a WordPress user for each client with an application password.
-In WordPress you can then easily revoke the rights per client. The API KEY can be used as a kind of kill switch. By changing this, all clients will be blocked for the specific endpoint.
-For the username in the ``Authorization`` HTTP header you can use the login name or the emailaddress. Overview per resource:
+Some endpoints require an API key in a HTTP header but most use WordPress application passwords in the ``Authorization`` HTTP header and use the API key.
+Use the ``Accounts`` tool in the :guilabel:`Tools` section of the Web interface or FE Admin App for management of the API key and application password of the accounts.
+You can also limit functionality and limit the number of visible events in the ``Accounts`` tool.
 
-:scans:
+In all api descriptions we provide examples in ``php`` and ``python`` how to supply these HTTP headers. But if you use another environment,
+make sure you include these headers:
 
-   You need to include the ``X-FE-API-KEY`` and its value in a HTTP header. The value can be found in the `Scan  tab <../usage/events.html#scan-tab>`_.
-   The :doc:`Scan app <../apps/scan>` is using these endpoints.
+.. code-block:: text
 
-:payments:
+   Content-Type: application/json
+   X-FE-API-KEY: PUT_YOUR_API_KEY_HERE
+   Authorization: Basic Base64Encode USERNAME:APPLICATION_PASSWORD
 
-   You need to include the ``X-FE-API-KEY`` and its value in a HTTP header. The value can be found in the `settings <../getting-started/settings.html#settings-for-instant-payments>`_ of the plugin.
-   The endpoint also needs an application password. The :doc:`Payment app <../apps/payment>` is using these endpoints.
+A real live example:
 
-:admin:
+.. code-block:: text
 
-   You need to include the ``X-FE-API-KEY`` and its value in a HTTP header for all ``admin`` endpoints. The value can be found in the `plugin settings <../getting-started/settings.html#rest-api-settings>`_.
-   These endpoint also needs an application password.
-
-:ordering:
-
-   If you want to use this API, you first need to enable the Ordering API in het `Miscellaneous settings <../getting-started/settings.html#miscellaneous-settings>`_.
-   And don't forget to add the shortcodes to generate the order from or status information.
-
-   You can use the API if the frontend of your website is completely separated from the WordPress backend and your frontend runs, for example, as a static website on Cloudflare Pages, Netlify, etc.
-   In this way the WordPress backend has been completely transformed into a 100% REST API server for all client traffic.
+   Content-Type: application/json
+   X-FE-API-KEY: rtQOChtCjj2Nmbei
+   Authorization: Basic ZHdhcnNncmFjaHQ6djBkRSBkYXlaIGVPV0wgQzhKUyBhVWtSIEIyZ3g=
 
 .. tip::
 
@@ -59,30 +51,42 @@ For the username in the ``Authorization`` HTTP header you can use the login name
 
 Resources
 ---------
-* :doc:`Scans <api-scans>`
-* :doc:`Payments <api-payments>`
+* :doc:`Bulk emails <api-bulk-emails>`
+* :doc:`Bulk order emails <api-bulk-order-emails>`
+* :doc:`Bulk refunds <api-bulk-refunds>`
+* :doc:`Email lists <api-emaillists>`
 * :doc:`Events <api-events>`
 * :doc:`Input fields <api-inputfields>`
-* :doc:`Ticket types <api-tickettypes>`
+* :doc:`Error logs <api-logs>`
+* :doc:`Ordering <api-ordering>`
+* :doc:`Orders <api-orders>`
+* :doc:`PDF templates <api-pdf-templates>`
+* :doc:`Scans <api-scans>`
 * :doc:`Scankeys <api-scankeys>`
+* :doc:`Tickets <api-tickets>`
+* :doc:`Ticket types <api-tickettypes>`
 * :doc:`Total sales <api-totalsales>`
 * :doc:`Total scans <api-totalscans>`
-* :doc:`Orders <api-orders>`
-* :doc:`Tickets <api-tickets>`
-* :doc:`Ordering <api-ordering>`
+* :doc:`Webhooks <api-webhooks>`
 
 .. toctree::
    :maxdepth: 1
    :hidden:
 
-   api-scans
-   api-payments
+   api-bulk-emails
+   api-bulk-order-emails
+   api-bulk-refunds
+   api-emaillists
    api-events
    api-inputfields
-   api-tickettypes
+   api-logs
+   api-ordering
+   api-orders
+   api-pdf-templates
+   api-scans
    api-scankeys
+   api-tickets
+   api-tickettypes
    api-totalsales
    api-totalscans
-   api-orders
-   api-tickets
-   api-ordering
+   api-webhooks

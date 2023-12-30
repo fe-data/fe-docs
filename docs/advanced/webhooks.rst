@@ -13,13 +13,16 @@ How does it work?
 -----------------
 Action scheduler
 ~~~~~~~~~~~~~~~~
-*Fast Events* uses the `Action scheduler <https://actionscheduler.org>`_, which is widely used by other WordPress plugins including `Woocommerce <https://woocommerce.com#>`_.
-*Fast Events* uses it for Webhooks, email retries and RSVP events if confirmation emails are configured and if the customer doesn't respond in time, the Action scheduler will remove the order.
+*Fast Events* uses the `Action scheduler <https://actionscheduler.org>`_, which is widely used by other WordPress
+plugins including `Woocommerce <https://woocommerce.com#>`_.
+*Fast Events* uses it for Webhooks, email retries and RSVP events if confirmation emails are configured and if
+the customer doesn't respond in time, the Action scheduler will remove the order.
 
 The *Action scheduler* will run every minute and is triggered by the WordPress `WP-Cron <https://codex.wordpress.org/Function_Reference/wp_cron>`_ system.
 So you need to make sure WP-Cron is enabled in your WordPress installation, but this is always the case if you have a standard installation.
 
-You can inspect the job queue in the WordPress :guilabel:`Tools` menu under :guilabel:`Scheduled actions`. There is no need to cleanup ``Completed`` jobs manually as the system removes them automatically after 30 days.
+You can inspect the job queue in the WordPress :guilabel:`Tools` menu under :guilabel:`Scheduled actions`.
+There is no need to cleanup ``Completed`` jobs manually as the system removes them automatically after 30 days.
 This value can be changed in the `Action scheduler settings <../getting-started/settings.html#action-scheduler>`_.
 
 Requirements for consumers
@@ -28,9 +31,9 @@ Requirements for consumers
 #. *Fast Event* always uses the ``POST`` method.
 #. The body payload is always a JSON encoded string.
 #. Consumers must be able to process multiple requests simultaneously.
-#. Consumers must respond to a :guilabel:`Ping URL` (See contextmenu) with a HTTP 200. This request has an empty body!
+#. Consumers must respond to a :guilabel:`Test webhook` (See popupmenu) with a HTTP 200. This request has an empty body!
 #. Consumers must return a HTTP 200 as soon as possible, and not first do all kind of internal operations (database, ...).
-   Make sure the response time is a fraction of a second and not close to a second or even higher. Test it with :guilabel:`Ping URL` in the contextmenu.
+   Make sure the response time is a fraction of a second and not close to a second or even higher. Test it with :guilabel:`Test webhook` in the popupmenu.
    The ``Duration`` is part of the output.
 #. Consumers must also respond with a HTTP 200 if the signature is invalid and not respond with something like *Invalid signature*.
    This prevents information from being revealed to pranksters if they happen to know your URL.
@@ -55,7 +58,8 @@ Every HTTP POST has a number of unique HTTP headers:
 **X-FE-Webhook-Delivery-ID**
    A unique id for every request. Used for debugging purposes to lookup the right request.
 **X-FE-Webhook-Signature**
-   A unique signature based on the Webhook secret and the body content. Before you start processing the request always first check if the signature does match.
+   A unique signature based on the Webhook secret and the body content.
+   Before you start processing the request always first check if the signature does match.
    Here are some examples how you can very the signature.
    Use the raw input from the body and do *not* include any possible newlines at the end.
 
@@ -91,7 +95,8 @@ Every HTTP POST has a number of unique HTTP headers:
         signature = base64.b64encode(hmac.new(secret, payload, digestmod=hashlib.sha256).digest())
         print(signature)
 
-Before activating a webhook, always check that all conditions (see `Requirements for consumers`_) are met and that the duration (see :guilabel:`Ping URL` contextmenu in `Webhooks overview`_) is a fraction of a second.
+Before activating a webhook, always check that all conditions (see `Requirements for consumers`_) are met and
+that the duration (see :guilabel:`Test webhook` popupmenu in `Webhooks overview`_) is a fraction of a second.
 
 ----
 
@@ -106,20 +111,9 @@ Webhooks overview
            :target: ../_static/images/advanced/Webhooks-overview.png
            :alt: Overview webhooks
 
-The top-left button bar has the following functionality:
+Webhooks can be found in the ``Tools`` section.
 
-- Hide/show columns in the table view.
-- Add a new webhook. Most of the time it’s more convenient to use the ``Duplicate webhook`` in the context menu, rather than starting with an empty webhook.
-
-There is a context-menu if you scroll through the webhooks; **use the right mouse-button** to make it visible and the chosen action is applied on the webhook where you did the right click.
-
-**Edit webhook**
-   In a popup window you can edit the webhook. It’s also possible to double-click on the webhook to edit it.
-**Delete webhook**
-   Deletion of the webhook. Keep in mind if you delete a webhook, any remaining ``pending`` actions will be ignored. The system will flag this in the logfile if there where still ``pending`` actions..
-**Duplicate webhook**
-   Duplicate an existing webhook. The new webhook is *disabled* by default.
-**Counters overview**
+**Show counters**
    A detailed overview of some counters and dates.
 
    .. list-table::
@@ -128,16 +122,22 @@ There is a context-menu if you scroll through the webhooks; **use the right mous
               :target: ../_static/images/advanced/Webhooks-counters.png
               :alt: Overview webhook counters
 
+**Change webhook**
+   In a popup window you can edit the webhook. It’s also possible to double-click/double-tap on the webhook to edit it.
 **Reset counter**
    All counters and dates are reset to zero.
-**Ping URL**
-   A handy utility to check the connection to a webhook consumer. It will show all debugging output in a popup window.
+**Test webhook**
+   A handy utility to check the connection to a webhook consumer. It will show all debugging output in a new window.
 
    .. list-table::
 
        * - .. image:: ../_static/images/advanced/Webhooks-ping.png
               :target: ../_static/images/advanced/Webhooks-ping.png
               :alt: Debugging info
+**Delete webhook**
+   Deletion of the webhook. Keep in mind if you delete a webhook, any remaining ``pending`` actions will be ignored. T
+   he system will flag this in the logfile if there where still ``pending`` actions..
+
 
 ----
 
@@ -151,8 +151,8 @@ Add/update webhooks
 
 **Webhook name**
    The name of the webhook.
-**URL**
-   A valid URL provided by the webhook consumer. Mind you only ``https`` is supported.
+**Enabled**
+   Check this box if the consumer is actively listening for new requests.
 **Topic**
    Which event is the consumer interested in. At the moment the following events are available:
 
@@ -167,16 +167,15 @@ Add/update webhooks
    #. Tickets downloaded
    #. Invoice downloaded
    #. Tracking download (User clicked a link to download a ticket into the FE Tracking App)
-**Enabled**
-   Check this box if the consumer is actively listening for new requests. The system will check if the URL is live.
-   It does a ``ping request`` and if no HTTP 200 is received, it will not activate the URL.
-**Logging**
-   Retries and failures will always be logged, but if you check this checkbox, all messages will be logged.
+**URL**
+   A valid URL provided by the webhook consumer. Mind you only ``https`` is supported.
 **Secret**
    The shared secret to create a signature of the body content.
 **Retry scheme**
-   A comma separated string of integers. For instance ``1,2,4``. Which means that if the webhook could not be executed successfully (*no HTTP 200 returned*) it will retry after 1 minute,
-   if it fails again it will retry in 2 minutes, and so on. Every retry is counted and if the final retry fails it is counted as a failure and the request is logged and not retried again.
+   A comma separated string of integers. For instance ``1,2,4``.
+   Which means that if the webhook could not be executed successfully (*no HTTP 200 returned*) it will retry after 1 minute,
+   if it fails again it will retry in 2 minutes, and so on.
+   Every retry is counted and if the final retry fails it is counted as a failure and the request is logged and not retried again.
 **Failure threshold**
    After this number of failures the webhook is disabled and no new request will be accepted.
 

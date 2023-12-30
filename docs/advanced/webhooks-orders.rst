@@ -6,8 +6,7 @@ New order
 
 **Triggered by**
 
-#. Admin App (New order)
-#. Choose for :guilabel:`New order (+)` in the icon-menu of the orders-dashboard
+#. Choose for the :guilabel:`New order (+)` button of the orders-dashboard
 #. Orders placed via order-pages. The webhook is not executed until the order has been paid.
 
 **Example payload**
@@ -58,10 +57,8 @@ Update order
 
 **Triggered by**
 
-#. Admin App (Change credentials)
+#. Choose for :guilabel:`Edit customer` in the popupmenu of the orders-dashboard
 #. REST API (`Update order request <api-orders.html#order-update>`_)
-#. Choose for :guilabel:`Change credentials` in the contextmenu of the orders-dashboard
-#. Choose for :guilabel:`Custom order status` in the contextmenu of the orders-dashboard
 
 **Example payload**
 
@@ -90,9 +87,8 @@ Delete order
 
 **Triggered by**
 
-#. Admin App
+#. Choose for :guilabel:`Delete order` in the popupmenu of the orders-dashboard
 #. REST API (`Delete order request <api-orders.html#delete-order>`_)
-#. Choose for :guilabel:`Delete order` in the contextmenu of the orders-dashboard
 
 **Example payload**
 
@@ -118,8 +114,7 @@ Refund order
 
 **Triggered by**
 
-#. Admin App
-#. Choose for :guilabel:`Refund` in the contextmenu of the orders-dashboard
+#. Choose for :guilabel:`Refund` in the popupmenu of the orders-dashboard
 
 **Example payload**
 

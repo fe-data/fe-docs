@@ -85,3 +85,6 @@ Here is a list of some free and paid security plugins that can be used to keep y
 Further reading
 ---------------
 Have a look at `https://premium.wpmudev.org/blog/ultimate-guide-wordpress-security/ <https://premium.wpmudev.org/blog/ultimate-guide-wordpress-security/>`_.
+
+Use `Cloudflare <https://www.cloudflare.com/learning/security/how-to-improve-wordpress-security/>`_ to protect your site.
+They offer a ton of services, even on there free plan, to protect your site, enhance performance, caching and much more.

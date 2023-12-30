@@ -74,12 +74,13 @@ List events
             {
                 "id": 122,
                 "event_name": "Vinyl Openair 2021",
-                "event_date": null,
+                "event_date": "2021-03-01 13:00:00",
                 "event_date_format": "%Y-%m-%d %H:%M",
                 "start_date": "2021-03-01 10:02:00",
                 "end_date": "2021-03-01 13:02:00",
                 "event_type": 1,
                 "stock": 9000,
+                "sold": 12,
                 "stock_link": 0,
                 "saas_fee": 0.05,
                 "saas_user_id": 2,
@@ -120,7 +121,9 @@ List events
                         "attachment_id": 260,
                         "x_position": 13,
                         "y_position": 58,
-                        "rotation": 0
+                        "rotation": 0,
+                        "scale": 100,
+                        "no_border": false
                     },
                     "invoice": {
                         "attachment_id": 55,
@@ -189,6 +192,12 @@ List events
                             "href": "https://vinyl-openair.com/wp-json/fast-events/v1/admin/events/122/scan_keys"
                         }
                     ],
+                    "email_list": [
+                        {
+                            "embeddable": true,
+                            "href": "https://vinyl-openair.com/wp-json/fast-events/v1/admin/emaillists/122"
+                        }
+                    ],
                     "sales_totals": [
                         {
                             "embeddable": true,
@@ -204,11 +213,11 @@ List events
                     "wp:attachment": [
                         {
                             "embeddable": true,
-                            "href": "https://vinyl-openair.com/wp-json/wp/v2/media/260"
+                            "href": "https://vinyl-openair.com/wp-json/wp/v1/media/260"
                         },
                         {
                             "embeddable": true,
-                            "href": "https://vinyl-openair.com/wp-json/wp/v2/media/55"
+                            "href": "https://vinyl-openair.com/wp-json/wp/v1/media/55"
                         }
                     ]
                 }
@@ -305,7 +314,7 @@ Event details
 Event update
 ++++++++++++
 
-.. http:patch:: /fast-events/v1/admin/events/(integer:id)
+.. http:put:: /fast-events/v1/admin/events/(integer:id)
 
     **Example request**
 
@@ -314,7 +323,7 @@ Event update
         .. code-tab:: bash
 
             $ curl \
-              -X PATCH \
+              -X PUT \
               -H "X-FE-API-KEY: 3zo58AUYP9zOE6YT"  \
               -H "Content-Type: application/json" \
               -u "test:4ZAN O5OY OAvZ FZb2 Lslv JnJG" \
@@ -328,7 +337,7 @@ Event update
             $url = 'https://exampledomain.com/wp-json/fast-events/v1/admin/events/147';
             curl_setopt($ch, CURLOPT_URL, $url);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PATCH");
+            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
             curl_setopt($ch, CURLOPT_USERPWD, 'test:4ZAN O5OY OAvZ FZb2 Lslv JnJG');
             curl_setopt($ch, CURLOPT_HTTPHEADER, array(
                 'Content-Type: application/json',
@@ -348,7 +357,7 @@ Event update
             HEADERS = {'X-FE-API-KEY':'3zo58AUYP9zOE6YT'}
             AUTH = HTTPBasicAuth('test', '4ZAN O5OY OAvZ FZb2 Lslv JnJG')
             JSON = {'stock': 6000}
-            response = requests.patch(URL, headers=HEADERS, auth=AUTH, json=JSON)
+            response = requests.put(URL, headers=HEADERS, auth=AUTH, json=JSON)
             print(response.json())
 
     **Example response**
@@ -448,7 +457,7 @@ Create Event
         .. code-tab:: bash
 
             $ curl \
-              -X PATCH \
+              -X POST \
               -H "X-FE-API-KEY: 3zo58AUYP9zOE6YT"  \
               -H "Content-Type: application/json" \
               -u "test:4ZAN O5OY OAvZ FZb2 Lslv JnJG" \
@@ -462,7 +471,7 @@ Create Event
             $url = 'https://exampledomain.com/wp-json/fast-events/v1/admin/events';
             curl_setopt($ch, CURLOPT_URL, $url);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PATCH");
+            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
             curl_setopt($ch, CURLOPT_USERPWD, 'test:4ZAN O5OY OAvZ FZb2 Lslv JnJG');
             curl_setopt($ch, CURLOPT_HTTPHEADER, array(
                 'Content-Type: application/json',
@@ -484,7 +493,7 @@ Create Event
             HEADERS = {'X-FE-API-KEY':'3zo58AUYP9zOE6YT'}
             AUTH = HTTPBasicAuth('test', '4ZAN O5OY OAvZ FZb2 Lslv JnJG')
             JSON = {'event_name': 'Openair 2022', 'event_date': '2022-03-30 09:00:00', 'stock': 6000}
-            response = requests.patch(URL, headers=HEADERS, auth=AUTH, json=JSON)
+            response = requests.post(URL, headers=HEADERS, auth=AUTH, json=JSON)
             print(response.json())
 
     **Example response**

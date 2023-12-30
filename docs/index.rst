@@ -7,9 +7,32 @@ Fast Events Ticketing
 .. image:: _static/images/Headline.png
    :alt: Headline
 
+Summary
+-------
+.. hlist::
+
+   - Fully responsive :doc:`FE Admin App <../apps/admin>` for Android, IOS and Web
+   - Authorize parts of the plugin's functionality to other users
+   - Event types (single, single selection from many, multiple selection and passe-partout)
+   - Native interfaces for many email-providers (PostMark, Mailgun, Amazon, Sendgrid, ...)
+   - REST API
+   - Webhooks
+   - SaaS mode
+   - Actions & filters for custom extensions
+   - Flexible stock control
+   - Design your own PDF e-tickets and invoices
+   - Design email confirmations
+   - Define  input fields for selling e-tickets
+   - Export orders and tickets for offline data analysis (Eg. Excel)
+   - Flexible realtime scanning at multiple levels
+   - Sell to closed user groups
+   - Integrated with `Mollie <https://my.mollie.com/dashboard/signup/5835294>`_ as payment provider, providing a variety of payment methods
+   - Define your own statuses for orders
+   - And much more ...
+
 .. note:: If online payments are used, the plugin currently only works for companies, associations, foundations ... based in a `SEPA country <https://wiki.xmldation.com/Support/EPC/List_of_SEPA_countries>`_.
    There is no regional restriction for free tickets or RSVP meetings.
-   
+
 Getting started
 ---------------
 
@@ -42,16 +65,16 @@ to :doc:`install <getting-started/installation>` and :doc:`configure <getting-st
 Usage
 -----
 
-How to use the different menu choices.
+How to use the different part in *Fast Events*.
 
-* **Error logging**:
-  :doc:`Errors <usage/errorlog>`
-* **Events menu**:
-  :doc:`Edit events <usage/events>`
-* **Tools menu**:
-  :doc:`Tools <usage/tools>`
-* **Order menu**:
+* **Events administration**:
+  :doc:`Events <usage/events>`
+* **Order administration**:
   :doc:`Orders <usage/orders>`
+* **Tools**:
+  :doc:`Tools <usage/tools>`
+* **Example usage**
+  :doc:`Tools <usage/tools>`
 
 
 .. toctree::
@@ -62,19 +85,18 @@ How to use the different menu choices.
    usage/events
    usage/orders
    usage/tools
-   usage/errorlog
    usage/examples
    
 Apps
 -----
-With *Fast Events* you can use our free scanning app for Android and IOS. No need for expensive scanning equipment, just use your phone.
+An :doc:`Admin App(Android, IOS and Web) </apps/admin>` is available to manage all components of the *Fast Events* plugin.
+Multiple (sub)accounts can be created in the Admin App and authorisations can be limited to certain events and functionality.
+
+With *Fast Events* you can use our :doc:`free scanning app </apps/scan>` for Android and IOS. No need for expensive scanning equipment, just use your phone.
 
 Use the `FE Tracking App <https://fe-tracking.fast-events.eu/>`_ especially for sporting events to enable participants to signal checkpoints
 on the route in the App and upload the time when they are passed to the event organiser's server.
 Enjoy real-time route updates and news from the organisation about the event.
-
-An Admin app is available for Android. You can view and change events and orders on the go.
-Or view statistics on tickets sold and tickets scanned. And much more...
 
 * **Scan App**:
   :doc:`scanning <apps/scan>`

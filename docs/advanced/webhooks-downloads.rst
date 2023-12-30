@@ -6,7 +6,7 @@ Tickets download
 **Triggered by**
 
 #. Link in user email for downloading tickets
-#. Choose for :guilabel:`Download tickets` in the contextmenu of the orders-dashboard
+#. Choose for :guilabel:`Share -> PDF with tickets` in the popupmenu of the orders-dashboard
 
 **Example payload**
 
@@ -56,7 +56,7 @@ Invoice download
 **Triggered by**
 
 #. Link in user email for downloading invoice
-#. Choose for :guilabel:`Download invoice` in the contextmenu of the orders-dashboard
+#. Choose for :guilabel:`Share -> PDF invoice` in the popupmenu of the orders-dashboard
 
 **Example payload**
 

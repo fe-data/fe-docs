@@ -1,7 +1,14 @@
 FE Admin App
 ============
-With the FE Admin app, you can quickly view details of events and orders and change various
-components of events and/or orders, if you are authorised to do so.
+With the FE Admin App, you can manage the entire *Fast Events* plugin.
+Far-reaching possibilities to create and manage accounts and, for example,
+limit their functionality and only grant access to selected events.
+
+The App has a responsive design. On phones it will use cards to display the information and bottom-navigation
+to navigate between ``Tools``, ``Events`` and ``Orders``. On larger screens, typically on phones in landscape mode
+and tablets in portrait mode, it will show multiple cards side by side and navigation will be in a sidebar.
+
+On large screens, desktop browsers and tablets in landscape mode, the information is displayed in table format.
 
 Download
 --------
@@ -19,118 +26,189 @@ The App is available for Android 9.0 and above and IOS 13 and above.
 
 Full list of capabilities
 -------------------------
-Depending on the permissions configuration on the webserver hosting the Fast Events WordPress plugin,
-users will only see the components they are allowed to see. The full list of components is shown below.
-Permissions can be configured in `Authorization Settings <../getting-started/settings.html#authorization-settings>`_
+Depending on the permissions configuration, users will only see the components they are allowed to see.
+The full list of components is shown below.
+Permissions can be configured in the ``Permissions`` popupmenu choice in the :guilabel:`Accounts` tool.
 
-Below is a list of menu options. The permission required for each item is shown after it.
 
 Events
 ^^^^^^
-#. Detailed overview (:guilabel:`event_read`).
-#. Synchronise parts of an event with another event (:guilabel:`event_sync`).
-#. Detailed information about tickets sold (:guilabel:`total_sales`).
-#. Detailed information on scanning tickets in progress (:guilabel:`total_scans`).
-#. Basic settings (:guilabel:`event_update`).
-#. Show and modify email templates (:guilabel:`email_template_read`, :guilabel:`email_template_change` for modify and :guilabel:`email_template_example` for sending a test email ).
-#. Show, add, modify and delete input fields (:guilabel:`input_fields_read` and :guilabel:`input_fields_change` for add, modify or delete).
-#. Show, add, modify and delete ticket types (:guilabel:`ticket_types_read` and :guilabel:`ticket_types_change` for add, modify or delete).
-#. Show and modify PDF templates (:guilabel:`pdf_template_read` and :guilabel:`pdf_template_change` for modify).
-#. Show, add, modify and delete scan keys (:guilabel:`scan_app_read` and :guilabel:`scan_app_change` for add, modify or delete).
-#. Duplicate event (:guilabel:`event_add`).
-#. Delete all orders (:guilabel:`event_delete`).
-#. Delete event (:guilabel:`event_delete`).
+#. Detailed overview.
+#. Synchronise parts of an event with another event.
+#. Detailed information about tickets sold.
+#. Detailed information on scanning tickets in progress.
+#. Basic settings.
+#. Show and modify email templates.
+#. Show, add, modify and delete input fields.
+#. Show and modify PDF templates.
+#. Show, add, modify and delete ticket types.
+#. Show, add, modify and delete scan keys.
+#. Show and modify seating plans.
+#. Show and modify tracking information.
+#. Show and modify Saas information.
+#. Add event.
+#. Duplicate event.
+#. Delete all orders.
+#. Delete event.
 
 Orders
 ^^^^^^
-#. Detailed overview of the order (:guilabel:`order_read` and :guilabel:`scan_app_read`).
-#. Email the order (:guilabel:`order_email`).
-#. Share tickets link (:guilabel:`order_read`).
-#. Share tickets PDF (:guilabel:`order_read`).
-#. Change the name and email address of the order (:guilabel:`order_update`).
-#. Refund and order (:guilabel:`order_refund`).
-#. Delete an order (:guilabel:`order_delete`).
-#. Delete tickets (:guilabel:`tickets_delete`).
-#. Create tickets (:guilabel:`tickets_create`).
-#. Checkin tickets (:guilabel:`checkin`).
-#. Error log (:guilabel:`log_read` and :guilabel:`log_delete` for deleting an entry).
-#. Add new orders (:guilabel:`order_add`).
+#. Detailed overview of the order.
+#. Email the order.
+#. Share tickets link.
+#. Share tickets PDF.
+#. Change the name, email address and custom status of the order.
+#. Refund and order.
+#. Delete an order.
+#. Delete tickets.
+#. Create tickets.
+#. Checkin tickets.
+#. Error log.
+#. Add new orders).
 
 Tools
 ^^^^^
-#. Show and delete logging entries (:guilabel:`log_read` and :guilabel:`log_delete` for deleting an entry).
-#. Scan a ticket to see its details. This is an informational scan only (:guilabel:`tickets_read`).
-#. Maintain email lists / closed user groups  (:guilabel:`email_list`).
-
-#. Sales dashboard (:guilabel:`total_sales`).
-#. Export orders to Excel format (:guilabel:`order_export`).
-#. Export tickets to Excel format (:guilabel:`tickets_export`).
+#. Scan a ticket to see its details. This is an informational scan only.
+#. Show and delete logging entries.
+#. Maintain email lists / closed user groups.
+#. Sales dashboard.
+#. Export orders to Excel format.
+#. Export tickets to Excel format.
+#. Show, add, modify and delete webhooks.
+#. Export events.
+#. Import events.
+#. Send bulk order emails.
+#. Send bulk free format emails.
+#. Bulk refund orders.
+#. (Sub)account management.
 
 Server accounts
 ---------------
-The first time you start the App it will display the ``Server account`` page where you can configure a new server. Press the ``+`` button to add a new server.
+The first time the App is launched, it will show the ``Server Account`` page where a new server can be configured.
+Press the ``+`` button to add a new server.
 
-First, make sure you have configured the ``REST API settings`` in the `settings <../getting-started/settings.html#rest-api-settings>`_ of the plugin.
-To configure a new server you can scan this QR code to fill in the :guilabel:`Server URL` and :guilabel:`API Key` parameters.
+Administrator accounts
+^^^^^^^^^^^^^^^^^^^^^^
+If the `Web management interface <../getting-started/settings.html#management-interface>`_ is installed
+there is no reel need to use this type of account configuration. But of course, if you want to manage your events on the go,
+you can do that too. But bear in mind that 'administrator' accounts always have full access to all functionality.
+If full access is not needed, just configure a new regular account in the ``Accounts`` tool and limit its functionality.
 
-Users of the App need an account in the WordPress environment. The App uses WordPress application password.
-You can either create 1 WordPress user and use a single application password for all clients or an application password per client.
-You can also create a WordPress user for each client with an application password.
-In WordPress you can then easily revoke the rights per client.
-The API KEY can be used as a kind of kill switch. Changing it will block all clients.
-Make sure to authorize the use in the `Authorization settings <../getting-started/settings.html#authorization-settings>`_ and, if needed, limit the access to certain events.
+To configure the 'administrator' account, enter any name, scan the qrcode on the
+`Rest API settings <../getting-started/settings.html#rest-api-settings>`_ page of the plugin and enter the
+login-name of the 'administrator' user in the 'Username' field.
 
-If :guilabel:`SaaS mode` has been checked in the `Payment provider settings <../getting-started/settings.html#saas-mode>`_, every sub-merchant **must have** it's own WordPress account!
+For the application password, an application password needs to be created once in WordPress for the 'administrator' user.
+Make sure you are logged into WordPress as an 'administrator' user and choose :guilabel:`Users` -> :guilabel:`Profile`.
+Scroll down to the 'Application Passwords' section. Enter any name in ``New Application Password Name``
+and press :guilabel:`Add New Application Password`.
+The popup window now displays the generated application password. Copy and save it and use it in this server configuration of the App.
 
-.. warning:: Users with the role of '**admin**' are not allowed.
+Now that all fields are filled in, press save (disk icon at top right). To login click/tap the card shown.
 
-**Name**
-   The name of the account. Choose one of your own.
-**Server URL**
-   This is the location of your WordPress installation resides. Typically something like https://www.exampledomain.com.
-**API key**
-   The unique REST API key. You can find it in the Settings.
-**User**
-   The user login name.
-**Password**
-   The application password.
+Regular accounts
+^^^^^^^^^^^^^^^^
+Create/maintain accounts in the `Accounts <../usage/tools.html#admin-accounts>`_ tool of the :guilabel:`Tools` section.
+With the popupmenu choices you can configure all settings of the account.
 
-Once you have entered the server details, save them and press the server card to log in.
-To switch between accounts, simply press the top-right circle and select a different account.
+**Add/change account**
+   * **Basic settings - tab**
+      #. **Login:**
+         The login name of the account. This is only shown when creating an account.
+         When the account is saved, a popup will show the application password. Be sure to save this in a safe location.
+         You will not be able to retrieve it.
+      #. **Name:**
+         The descriptive name of the account.
+      #. **Emailadress:**
+         Use any emailaddress you want, even a non-existing one is ok. WordPress needs one, but Fast Events never uses it.
+         Use a valid one if you want to use regular logins to WordPress for this account
+      #. **Disable WordPress login:**
+         The default is switched on. You can't use the account to login to WordPress and a password reset wil not work either.
+      #. **Temporary blocking:**
+         If enabled, the account is temporary blocked. The user cannot use the App.
+      #. **Allowed endpoints:**
+         A comma separated list of allowed endpoints. The default value is ``fast-events/v1``.
+         But more can be added if there are other plugins using REST and if this user needs to be able to access those as well.
+      #. **Maximum number of sub-accounts:**
+         If this account is allowed - later in the ``Permissions`` settings - maintenance permission on its own account,
+         specify here how many sub-accounts it can create. The sub-accounts all have the same set of permissions and
+         events visibility as the account itself. But while defining it, you can narrow down the permissions even further.
+         You can **never** extend them. If you want that, the 'administrator' first has to enable the extra permission on the account level.
+   * **Authorised events - tab**
+      Select the events the user has access to.
+   * **Saas - tab**
+      Only visible to 'administrator` accounts and if `Saas mode <../getting-started/settings.html#saas-mode>`_ has
+      been in enabled in the settings.
+      It wil show if the user has already authorised the plugin to manage payment transactions on its behalve.
+      If authorisation has been given the 'administrator' can revoke it.
+**Permissions**
+   Select the permissions the account is allowed to use.
+**Copy/paste permissions**
+   This copies or pasts all permissions.
+**Settings**
+   It shows the configuration qrcode the user can scan to configure the account in the FE Admin App. Still the user has to manually enter
+   the username and application password.
+**Reset API**
+   If the API key is reset, then all users of this account and its sub-accounts must re-enter the API key.
+**Reset password**
+   If the application password is reset, then all users of this account must re-enter the application password to continue using the App.
+**Sub-accounts**
+   Maintaining sub-accounts more-or-less follows the same rules as maintaining an account. Except it uses the API key that is defined
+   at the account level and it uses the same ``Basic settings`` as defined at the account level.
+**Delete account**
+   Delete all information (including all sub-accounts!). Access to the App and the REST API is instantly disabled.
+
+Once you have entered the server details, save them and click/tap the server card to log in.
+To switch between accounts, simply press the top-left 'hamburger' menu and select a different account.
+
+Desktop users
+^^^^^^^^^^^^^
+If the `Web interface <../getting-started/settings.html#management-interface>`_ has been installed it is also
+possible to use it apart from WordPress in any webbrowser.
+The URL is:
+
+.. code-block:: html
+
+   https://exampledomain.com/wp-content/plugins/fast-events/admin/
+
+Just configure a regular account and you are good to go.
+
+While it is possible to switch between different accounts on the same server in the browser version of the app,
+it is **not possible** to switch between accounts on different servers.
+The WordPress REST API has a strict CORS setting by default for security reasons.
+By default, it is not allowed to use the REST API from a browser with pages loaded from another server.
+The easiest way is then to define multiple bookmarks that point to the correct server. For example,
+if you have the *Fast Events* plugin running on 2 servers, configure the URLs as follows:
+
+.. code-block:: html
+
+   https://exampleserver-1.com/wp-content/plugins/fast-events/admin/
+   https://exampleserver-2.com/wp-content/plugins/fast-events/admin/
+
+Nevertheless, for specialists versed in http header configurations and CORS, it is possible to access multiple servers from one location.
+However, we strongly advise against this.
 
 Usage
 -----
 The first time the App is launched and if *Fast Events* is running in ``SaaS mode`` and the sub-merchant has not yet
 authorized access to its payment information, a ``Connect with Mollie`` screen will be displayed to authorise access.
 
-The way the App works is pretty straightforward. You can use the buttons at the bottom to switch between ``Orders``, ``Events`` and ``Tools``.
-In the orders and events tab you can swipe down to refresh the content.
-The ``three dots`` on the right of a an event or order can be pressed to display a context menu. See example screenshots.
+The way the App works is pretty straightforward. You can use the buttons at the bottom or sidebar to switch
+between ``Orders``, ``Events`` and ``Tools``.
+As the App is responsive it either displays 1 or 2 cards side by side or information is shown in table format.
 
-In the orders tab you to quickly search for an order. Just start typing and the result will be displayed.
-Searches are performed on all fields except the number of tickets and amount.
+Pretty much every where you can double-tap on the content (card or line) to jump immediately to editing the content,
+provided you the permission to do so. For other choices you have to tap/click the three vertical dots and either
+a popupmenu or bottom-sheet will be shown.
 
-.. list-table::
+How to use the different sections. Al examples are taken from the Web based version of the App. On other devices like
+phones or tablets it may look differently, but the same functionality is offered.
 
-    * - .. image:: ../_static/images/apps/Admin-accounts.png
-           :target: ../_static/images/apps/Admin-accounts.png
-           :alt: FE Admin login
-      - .. image:: ../_static/images/apps/Admin-edit-account.png
-           :target: ../_static/images/apps/Admin-edit-account.png
-           :alt: Edit account
-      - .. image:: ../_static/images/apps/Admin-events.png
-           :target: ../_static/images/apps/Admin-events.png
-           :alt: Events
-
-.. list-table::
-
-    * - .. image:: ../_static/images/apps/Admin-orders.png
-           :target: ../_static/images/apps/Admin-orders.png
-           :alt: Orders
-      - .. image:: ../_static/images/apps/Admin-order-detail.png
-           :target: ../_static/images/apps/Admin-order-detail.png
-           :alt: Order details
-      - .. image:: ../_static/images/apps/Admin-tools.png
-           :target: ../_static/images/apps/Admin-tools.png
-           :alt: Tools
-
+* **Events administration**:
+  :doc:`Events <../usage/events>`
+* **Order administration**:
+  :doc:`Orders <../usage/orders>`
+* **Tools**:
+  :doc:`Tools <../usage/tools>`
+* **Example usage**
+  :doc:`Tools <../usage/tools>`
