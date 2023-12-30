@@ -61,21 +61,6 @@ However, no email addresses are deleted.
 
 Tickets sold
 ------------
-.. panels::
-   :container: container-lg
-   :column: col-lg-6 col-md-12 col-sm-12
-
-   .. figure:: ../_static/images/usage/Tools-tickets-sold-1.png
-      :target: ../_static/images/usage/Tools-tickets-sold-1.png
-      :alt: Select events
-
-      Select events
-   ---
-   .. figure:: ../_static/images/usage/Tools-tickets-sold-2.png
-      :target: ../_static/images/usage/Tools-tickets-sold-2.png
-      :alt: Overview of all events
-
-      Overview of all events
 
 |
 
@@ -85,17 +70,6 @@ First select the events you want to seen in the overview.
 
 Export orders
 -------------
-.. panels::
-   :container: container-lg
-   :column: col-lg-6 col-md-12 col-sm-12
-
-   .. figure:: ../_static/images/usage/Tools-export-orders.png
-      :target: ../_static/images/usage/Tools-export-orders.png
-      :alt: Select events
-
-      Select events
-   ---
-   Select the events from which all orders are to be downloaded. The file is downloaded in csv format.
 
 |
 
@@ -103,17 +77,6 @@ Export orders
 
 Export tickets
 --------------
-.. panels::
-   :container: container-lg
-   :column: col-lg-6 col-md-12 col-sm-12
-
-   .. figure:: ../_static/images/usage/Tools-export-tickets.png
-      :target: ../_static/images/usage/Tools-export-tickets.png
-      :alt: Select events
-
-      Select events
-   ---
-   Select the events from which all tickets are to be downloaded. The file is downloaded in csv format.
 
 |
 

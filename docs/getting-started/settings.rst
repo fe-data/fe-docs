@@ -418,21 +418,6 @@ The order status lines are **optional**. If not present the default is ``[fe_dow
 
 Management interface
 --------------------
-.. panels::
-   :container: container-lg
-   :column: col-lg-6 col-md-12 col-sm-12
-
-   .. figure:: ../_static/images/getting-started/Settings-mgt-install.png
-      :target: ../_static/images/getting-started/Settings-mgt-install.png
-      :alt: Installation management interface
-
-      Installation management interface
-   ---
-   .. figure:: ../_static/images/getting-started/Settings-mgt-update.png
-      :target: ../_static/images/getting-started/Settings-mgt-update.png
-      :alt: Maintenance management interface
-
-      Maintenance management interface
 
 |
 

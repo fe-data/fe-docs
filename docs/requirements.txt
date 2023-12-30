@@ -3,7 +3,6 @@ sphinx-rtd-theme==1.2.2
 sphinx-tabs==3.4.4
 sphinxcontrib-httpdomain==1.8.1
 sphinx-copybutton==0.5.1
-sphinx-panels==0.6.0
 pillow==5.4.1
 mock==1.0.1
 commonmark==0.9.1
