@@ -61,8 +61,20 @@ However, no email addresses are deleted.
 
 Tickets sold
 ------------
+.. grid:: 2
+   :gutter: 2
 
-|
+   .. grid-item-card::  Select events
+
+       .. figure:: ../_static/images/usage/Tools-tickets-sold-1.png
+          :target: ../_static/images/usage/Tools-tickets-sold-1.png
+          :alt: Select events
+
+   .. grid-item-card::  Overview of all events
+
+       .. figure:: ../_static/images/usage/Tools-tickets-sold-2.png
+          :target: ../_static/images/usage/Tools-tickets-sold-2.png
+          :alt: Overview of all events
 
 First select the events you want to seen in the overview.
 
@@ -70,15 +82,35 @@ First select the events you want to seen in the overview.
 
 Export orders
 -------------
+.. grid:: 2
+   :gutter: 2
 
-|
+   .. grid-item-card::  Select events
+
+       .. figure:: ../_static/images/usage/Tools-export-orders.png
+          :target: ../_static/images/usage/Tools-export-orders.png
+          :alt: Select events
+
+   .. grid-item::
+
+       Select the events from which all orders are to be downloaded. The file is downloaded in csv format.
 
 ----
 
 Export tickets
 --------------
+.. grid:: 2
+   :gutter: 2
 
-|
+   .. grid-item::
+
+       Select the events from which all tickets are to be downloaded. The file is downloaded in csv format.
+
+   .. grid-item-card::  Select events
+
+       .. figure:: ../_static/images/usage/Tools-export-tickets.png
+          :target: ../_static/images/usage/Tools-export-tickets.png
+          :alt: Select events
 
 ----
 

@@ -418,8 +418,20 @@ The order status lines are **optional**. If not present the default is ``[fe_dow
 
 Management interface
 --------------------
+.. grid:: 2
+   :gutter: 2
 
-|
+   .. grid-item-card::  Installation management interface
+
+       .. figure:: ../_static/images/getting-started/Settings-mgt-install.png
+          :target: ../_static/images/getting-started/Settings-mgt-install.png
+          :alt: Installation management interface
+
+   .. grid-item-card::  Maintenance management interface
+
+       .. figure:: ../_static/images/getting-started/Settings-mgt-update.png
+          :target: ../_static/images/getting-started/Settings-mgt-update.png
+          :alt: Maintenance management interface
 
 As of version 2.0, the plugin's management interface is no longer part of the plugin.
 The management interface can be installed separately in this menu and kept up-to-date automatically.
