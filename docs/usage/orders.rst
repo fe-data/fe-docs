@@ -11,6 +11,8 @@ Sort orders by clicking on the header descriptions. On smaller screens select th
 
 Double clicking/tapping on a card or line brings you straight to the order `details`_.
 
+Pulling down the list triggers a refresh of the orders.
+
 Adding a new order can be done by clicking/tapping the ``+``-icon. The order will have the order status ``Dashboard``.
 
 Searching

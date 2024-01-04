@@ -14,6 +14,8 @@ each editable event-item separately in the bottomsheet menu.
 
 Sort events by clicking on the header descriptions. On smaller screens select the filter-icon and choose on which field to sort.
 
+Pulling down the list triggers a refresh of the whole list.
+
 In the following paragraphs, we will go step-by-step through all the menu choices.
 
 ----
@@ -712,6 +714,11 @@ Step-by-step implementation
 #. Enable the :guilabel:`Tracking` flag in the `Event settings`_ tab.
 #. Define KML-files to describe the track, including the checkpoints and any other points of interest you want to show in the App.
    Ech KML-file can only contain a single track, if for instance you have an event with multiple distances.
+   In the KML-file the order of the layers is fixed:
+
+    * The track layer is always first
+    * The checkpoints layer
+    * 0 or more layers, where every layer has similar points of interest
 #. Upload **ALL** KML-files by pressing the :guilabel:`Upload KML file(s)` button in this tab. You can't upload them one-by-one or delete one.
 #. Fill in the remaining fields in this tab.
 #. Inform participants how to use the *FE Tracking* App. This could be in the email that participants receive when they have ordered

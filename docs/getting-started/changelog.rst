@@ -1,6 +1,11 @@
 Changelog
 =========
 
+v2.0.1 (04 Jan 2024)
+--------------------
+* Corrected authorisation permissions for reading/deleting order logs.
+* Set default template-id for tickets
+
 v2.0.0 (30 Dec 2023)
 --------------------
 * Major refactor of the administration interface. The :doc:`FE Admin App <../apps/admin>` is now available for Android, IOS **and Web**.
