@@ -11,7 +11,7 @@ This filter is called just before the output is sent back to the Android or IOS 
      return $attr;
    }
    
-   add_filter( 'fast_events_scan_error_text', 'your_filter_scan_filter_output', 10, 1 );
+   add_filter( 'fast_events_scan_filter_output', 'your_filter_scan_filter_output', 10, 1 );
    
 ----
 

@@ -73,8 +73,10 @@ How to use the different part in *Fast Events*.
   :doc:`Orders <usage/orders>`
 * **Tools**:
   :doc:`Tools <usage/tools>`
+* **Ticket personalisation**
+  :doc:`Ticket personalisation <usage/personalise>`
 * **Example usage**
-  :doc:`Tools <usage/tools>`
+  :doc:`Tools <usage/examples>`
 
 
 .. toctree::
@@ -85,6 +87,7 @@ How to use the different part in *Fast Events*.
    usage/events
    usage/orders
    usage/tools
+   usage/personalise
    usage/examples
    
 Apps

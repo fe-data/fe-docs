@@ -21,6 +21,14 @@ Reference
     This action is called after an order email has been send to the email-provider (Host-email, SMTP, Amazon SES, Mailgun, …). This call is made with both a successful email and an incorrect email (submission failed).
 :doc:`fast_events_input_fields <input_fields>`
     This filter is called after a basic check of all input and ticket fields.
+:doc:`fast_events_invoice <invoice>`
+    Download your own designed invoice possibly using an external financial accounting package.
+:doc:`fast_events_mail_charset <mail_charset>`
+    This filter is called when an email is sent. Change the character set used in the email.
+:doc:`fast_events_mail_from <mail_from>`
+    This filter is called when an email is sent. Change the From address based on order information.
+:doc:`fast_events_mail_from_name <mail_from_name>`
+    This filter is called when an email is sent. Change the From address name based on order information.
 :doc:`fast_events_new_order <new_order>`
     This action is called after the payment has been received and the customer has already received an email.
 :doc:`fast_events_new_order_text <new_order_text>`
@@ -40,6 +48,10 @@ Reference
 
    email_api_result
    input_fields
+   invoice
+   mail_charset
+   mail_from
+   mail_from_name
    new_order
    new_order_text
    scan_error_text

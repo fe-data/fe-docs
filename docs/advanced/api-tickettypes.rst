@@ -7,6 +7,12 @@ List all ticket types
 .. http:get:: /fast-events/v1/admin/events/(integer:id)/ticket-types
 
     List all ticket types of the selected event.
+    The ``personalise`` field is a comma-separated list of input field names that need to be personalised after the order is placed.
+    Each member of this list must have an input field name with the ``is_personalised`` set to **true**.
+
+    The ``layout`` field is a comma-separated list of input field names that can be printed in the qrcode info block of a PDF ticket.
+    If empty the default plugin layout will be used. You can use up to 6 fields.
+    It is also possible to include **Order-id**, **Name** and **Email** as a field. These fields are taken from the order.
 
     **Optional query parameters**
 
@@ -66,6 +72,8 @@ List all ticket types
                 "maximum_to_order": 10,
                 "is_counted": true,
                 "attachment_id": 260,
+                "personalise": "",
+                "layout": "",
                 "_links": {
                     "self": [
                         {
@@ -91,6 +99,8 @@ List all ticket types
                 "maximum_to_order": 1,
                 "is_counted": true,
                 "attachment_id": 60,
+                "personalise": "",
+                "layout": "",
                 "_links": {
                     "self": [
                         {
@@ -114,6 +124,7 @@ List all ticket types
        :widths: auto
 
        "1.0", "Introduced."
+       "2.1.0", "Added personalise and layout fields."
 
 ----
 
@@ -183,6 +194,8 @@ List ticket type
             "maximum_to_order": 1,
             "is_counted": true,
             "attachment_id": 60,
+            "personalise": "",
+            "layout": "",
             "_links": {
                 "self": [
                     {
@@ -205,6 +218,7 @@ List ticket type
        :widths: auto
 
        "1.0", "Introduced."
+       "2.1.0", "Added personalise and layout fields."
 
 ----
 
@@ -280,6 +294,8 @@ Update ticket type
             "maximum_to_order": 1,
             "is_counted": true,
             "attachment_id": 160,
+            "personalise": "",
+            "layout": "",
             "_links": {
                 "self": [
                     {
@@ -302,6 +318,7 @@ Update ticket type
        :widths: auto
 
        "1.0", "Introduced."
+       "2.1.0", "Added personalise and layout fields."
 
 ----
 
@@ -367,7 +384,9 @@ Delete ticket type
                 "minimum_to_order": 0,
                 "maximum_to_order": 1,
                 "is_counted": true,
-                "attachment_id": 160
+                "attachment_id": 160,
+                "personalise": "",
+                "layout": ""
             }
         }
 
@@ -379,6 +398,7 @@ Delete ticket type
        :widths: auto
 
        "1.0", "Introduced."
+       "2.1.0", "Added personalise and layout fields."
 
 ----
 
@@ -424,6 +444,7 @@ Create ticket type
                 "name" => "Gold (Backstage)",
                 "price" => 40.3,
                 "attachment_id" => 170,
+                "personalise" => "Year",
             ]));
             $result = curl_exec($ch);
             echo $result;
@@ -455,6 +476,8 @@ Create ticket type
             "maximum_to_order": 1,
             "is_counted": true,
             "attachment_id": 170,
+            "personalise": "Year",
+            "layout": "",
             "_links": {
                 "self": [
                     {
@@ -477,3 +500,4 @@ Create ticket type
        :widths: auto
 
        "1.0", "Introduced."
+       "2.1.0", "Added personalise and layout fields."

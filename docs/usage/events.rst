@@ -343,9 +343,12 @@ You can use a couple of keywords and *Fast Events* will replace them with the in
              :target: ../_static/images/usage/Download-tickets.png
              :alt: Download tickets block
 
+- :guilabel:`{%PERSONALISE%}` insert the personalisation link for the tickets.
+  This is the link specified in the ``Redirect after booking`` field in the *Basic Settings* `Type`_ tab of the event.
+  It will insert a block similar to the one in `{%DOWNLOAD-TICKETS%}`.
 - :guilabel:`{%INVOICE%}` the unique link for downloading the invoice.
 - :guilabel:`{%FIELDS%}` the input fields from the input-tab in table format.
-- :guilabel:`{%CONFIRM%}` only applicable for RSVP events and if the :guilabel:`Confirmation emails` flag in the `Type`_ tab has bee set.
+- :guilabel:`{%CONFIRM%}` only applicable for RSVP events and if the :guilabel:`Confirmation emails` flag in the  tab has bee set.
   The link to confirm that you will be present/participate.
 
 .. warning:: Make sure to URL-escape a keyword if it is included in a hyperlink. E.g. ``<a href="%7B%25TICKETS%25%7D">Download tickets</a>``.
@@ -440,16 +443,27 @@ Input fields
            :target: ../_static/images/usage/Event-input.png
            :alt: Event input
 
-The fields are displayed top to bottom in the order screen.
-The value field is optional, except if the type-field is ``Select``, then you enter the choices separated by a ‘**,**‘.
+Specify the input fields here and tick the ``Personalise`` checkbox if required.
+If unchecked, the input field will be displayed on the order screen.
+If checked, the customer must personalise the tickets after the order has been placed.
+Once **all** tickets have been personalised, they can be downloaded.
 
+How this works is explained in the :doc:`Personalisation section <personalise>` of the documentation.
+
+The fields that don't need to be personalised appear from top to bottom of the order screen.
+
+The value field is optional, except if the type field is ``Select``, then enter the choices separated by a ‘**,**‘.
 Example: the :guilabel:`Field description` is ``Color`` and :guilabel:`Value` could be something like ``Black,White,Green,Red``.
 
-If the Type field is set to :guilabel:`Password`, the value the user has entered will **not** be stored in the database.
+If the type field is set to :guilabel:`Password`, the value the user has entered will **not** be stored in the database.
+In addition, the password field cannot be personalised and is only used on the order screen.
 The value is preserved till the filter ‘:doc:`fast_events_input_fields </hooks/input_fields>` is executed.
 Immediate after the filter it’s value is removed.
 
-You can reorder the fields by dragging them to the right position.
+For most fields a minimum and maximum value can be specified. For the ``text`` and ``password`` fields, a minimum and maximum length can be specified.
+All fields are limited to 50 characters.
+
+You can reorder the fields by dragging them to the correct position.
 
 ----
 
@@ -545,6 +559,22 @@ If you want 100 ``Gold (Backstage)`` tickets to be guaranteed, you will also hav
 Together, they must add up to the number defined at the event level.
 
 If a ticket is sold out, it will still show up in the orderpage, but you can’t select it and it is flagged as sold out.
+
+Attach a `PDF template <events.html#pdf-templates>`_ to the ticket by selecting one from the :guilabel:`Ticket PDF template` dropdown box.
+You can attach different PDF templates for each ticket type, but the QR code block must always be in the same position on the template.
+
+If you have defined personalisation fields in the `input fields`_, you can select them in :guilabel:`Fields for personalisation`.
+They will appear in the :doc:`Personalisation dialog <personalise>` in the order you select them.
+
+.. list-table::
+
+    * - .. image:: ../_static/images/usage/Event-tickets-layout.png
+           :target: ../_static/images/usage/Event-tickets-layout.png
+           :alt: Event tickets
+
+The QR code info block on the eTicket will look like the first example if you check the :guilabel:`Default layout` checkbox.
+If unchecked, you can select up to 6 fields in the QR Code info block, by tapping the :guilabel:`Layout fields` box.
+They will appear in the QR Code info block in the order you select them.
 
 .. warning::
    **Never** add or remove ticket-types if orders already have been accepted.

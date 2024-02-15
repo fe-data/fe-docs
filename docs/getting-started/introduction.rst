@@ -8,7 +8,7 @@ Any event type
 --------------
 
 .. image:: ../_static/images/getting-started/event.gif
-   :align: right
+   :align: left
    :alt: any-event
        
 Use *Fast Events* for any type of event (sport events, festivals, congresses, concerts, seminars, your local party, …)
@@ -18,6 +18,23 @@ From selling 1 type of ticket with a single entrance scan to an event with multi
 Ideal for sporting events with multiple scan checkpoints along the route and a final check to ensure all checkpoints have been scanned.
 
 Take a look at the :doc:`examples <../usage/examples>` to get an idea.
+
+.. raw:: html
+
+   <div style="clear:both"></div>
+
+Ticket personalisation
+----------------------
+
+.. image:: ../_static/images/getting-started/Personalisation.png
+   :align: right
+   :alt: ticket-personalisation
+
+A unique ticket personalisation module to personalise tickets, share tickets, display order information and generate invoices if required.
+
+Define order or ticket level input fields and assign them to ticket types.
+
+Embed the ticket personalisation module into a page using a WordPress shortcode.
 
 .. raw:: html
 
@@ -36,11 +53,6 @@ on the route in the App and upload the time at which they pass them to the event
 `Realtime tracking <https://player.vimeo.com/video/566996933>`_ display additional points of interest and descriptions on the map, as defined by the event organiser.
 Examples include First aid stations along the route, catering facilities along the route, checkpoints along the route, ...
 
-Get real-time track updates and news messages from the event organizer. Load tickets directly into the App from the ``order thank you`` page.
-
-As you walk, cycle, ... share your track with your family and friends so they can see live where you are.
-
-
 .. raw:: html
 
    <div style="clear:both"></div>
@@ -53,7 +65,9 @@ PDF e-tickets
    :alt: pdf-tickets
 
 Simply define your own e-tickets in your favourite word processor (Word, `LibreOffice <https://www.libreoffice.org/>`_, …)
-Upload the PDF file in WordPress via the plugin's management interface and tell *Fast Events* where to print the qrcode-block.
+Upload the PDF file to WordPress via the plugin's admin interface and tell Fast Events where to print the QR code block.
+
+Use the default layout or specify a custom layout with personalisation fields or order information.
 
 That’s easy isn’t?
 
@@ -110,13 +124,13 @@ Admin App
    :align: left
    :alt: admin-on-the-go
        
-Want to view events and orders on your mobile/tablet/desktop? Use the :doc:`FE Admin App <../apps/admin>`.
+Would you like to view events and orders on your mobile / tablet / desktop? Use the :doc:`FE Admin App <../apps/admin>`.
 
 Resend, refund, delete, re-create tickets or even create orders.
 
 Quickly assist users configuring the :doc:`FE Scanner App <../apps/scan>`.
 
-Or view statistics on tickets sold and tickets scanned and a lot more ...
+Or view statistics on tickets sold and tickets scanned. Basically, you maintain the entire plugin from your mobile, tablet or browser.
 
 The system has a comprehensive permissions system where users can have restrictions on functionality and events that can be modified.
 
@@ -209,8 +223,6 @@ Do you want to extend the functionality of *Fast Events*?
 We have a number of filters and actions that allow you to do just that.
 
 Have a look at our :doc:`examples <../hooks/usage>`.
-
-How about a nice :doc:`Google Analytics integration <../hooks/new_order>` that shows you all sales activities in beautiful graphs, and you always have the data at your fingertips.
 
 .. raw:: html
 

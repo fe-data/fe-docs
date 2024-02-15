@@ -6,6 +6,11 @@ List all input fields
 .. http:get:: /fast-events/v1/admin/events/(integer:id)/input-fields
 
     List all input fields of the selected event.
+    If ``is_personalised`` is **false**, the input field is used on the order level.
+    Users need to fill it in when ordering.
+
+    If the value is **true**, each ticket must be personalised after ordering.
+    You cannot download tickets unless all tickets are personalised.
 
     **Optional query parameters**
 
@@ -58,8 +63,11 @@ List all input fields
                 "id": "v0f446",
                 "name": "Country",
                 "type": "text",
-                "value": "",
+                "value": "France",
+                "min": "",
+                "max": "30",
                 "is_required": false,
+                "is_personalised": false,
                 "_links": {
                     "self": [
                         {
@@ -78,7 +86,10 @@ List all input fields
                 "name": "Public transport",
                 "type": "select",
                 "value": "Yes,No",
+                "min": "",
+                "max": "30",
                 "is_required": true,
+                "is_personalised": false,
                 "_links": {
                     "self": [
                         {
@@ -102,6 +113,7 @@ List all input fields
        :widths: auto
 
        "1.0", "Introduced."
+       "2.1.0", "Added min, max and is_personalised."
 
 ----
 
@@ -163,8 +175,11 @@ List input field
             "id": "v0f446",
             "name": "Country",
             "type": "text",
-            "value": "",
+            "value": "France",
+            "min": "",
+            "max": "30",
             "is_required": false,
+            "is_personalised": false,
             "_links": {
                 "self": [
                     {
@@ -187,6 +202,7 @@ List input field
        :widths: auto
 
        "1.0", "Introduced."
+       "2.1.0", "Added min, max and is_personalised."
 
 ----
 
@@ -250,7 +266,10 @@ Update input field
             "name": "Country",
             "type": "text",
             "value": "Netherlands",
+            "min": "",
+            "max": "30",
             "is_required": false,
+            "is_personalised": false,
             "_links": {
                 "self": [
                     {
@@ -273,6 +292,7 @@ Update input field
        :widths: auto
 
        "1.0", "Introduced."
+       "2.1", "Added min, max and is_personalised."
 
 ----
 
@@ -332,7 +352,10 @@ Delete input field
                 "name": "Country",
                 "type": "text",
                 "value": "Netherlands",
-                "is_required": false
+                "min": "",
+                "max": "30",
+                "is_required": false,
+                "is_personalised": false,
             }
         }
 
@@ -344,6 +367,7 @@ Delete input field
        :widths: auto
 
        "1.0", "Introduced."
+       "2.1", "Added min, max and is_personalised."
 
 ----
 
@@ -408,7 +432,10 @@ Create input field
             "name": "Country",
             "type": "text",
             "value": "",
-            "is_required": true,
+            "min": "",
+            "max": "",
+            "is_required": false,
+            "is_personalised": false,
             "_links": {
                 "self": [
                     {
@@ -431,3 +458,4 @@ Create input field
        :widths: auto
 
        "1.0", "Introduced."
+       "2.1", "Added min, max and is_personalised."
