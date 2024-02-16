@@ -1,7 +1,7 @@
 Changelog
 =========
 
-v2.1.0 (Coming soon ...)
+v2.1.0 (16 feb 2024)
 ------------------------
 * Added personalisation for tickets. Input fields can now be defined at the order level or ticket level and
   attach input fields to ticket types. Ticket personalisation can be embedded into the **Redirect after booking** page using a shortcode
