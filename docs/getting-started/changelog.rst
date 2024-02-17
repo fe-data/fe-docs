@@ -28,10 +28,3 @@ v2.0.0 (30 Dec 2023)
 * Redesign of the authentication system. There is no migration from the old system to the new one.
 * New :doc:`public REST API's <../advanced/api>` are available.
 * This release requires :doc:`FE Admin <../apps/admin>` v4.0.0 or higher.
-
-We will release the 2.1 version at the end of Q1 2024. This version is all about personalising etickets with input data to be entered after the order is placed.
-Personalisation can be done by the order taker or by individuals who receive a link to one of the order taker's tickets.
-The existing input fields will be used. However, the 2.1 upgrade should **not be done on an active event** because the internal structure of the orders will be different.
-There will be **no conversion of the old orders** during the upgrade.
-
-
