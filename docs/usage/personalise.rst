@@ -21,10 +21,10 @@ Configure personalisation
 
        The first step is to define 1 or more `input fields <events.html#input-fields>`_.
 
-       If the :guilabel:`Required` checkbox is unchecked, the field will be displayed on the order form.
+       If the :guilabel:`Personalised` checkbox is unchecked, the field will be displayed on the order form.
        This means that the field has the same value for all tickets and can't be changed once the order has been submitted.
 
-       If the :guilabel:`Required` checkbox is checked, the field must be personalised for each ticket.
+       If the :guilabel:`Personalised` checkbox is checked, the field must be personalised for each ticket.
 
 2. Use in ticket types
 ^^^^^^^^^^^^^^^^^^^^^^
