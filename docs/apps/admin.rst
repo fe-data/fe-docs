@@ -68,13 +68,15 @@ Orders
 
 Tools
 ^^^^^
+#. Sales dashboard.
 #. Scan a ticket to see its details. This is an informational scan only.
 #. Show and delete logging entries.
 #. Maintain email lists / closed user groups.
-#. Sales dashboard.
+#. Show, add, modify and delete webhooks.
+#. Show, add, modify and delete coupons.
 #. Export orders to Excel format.
 #. Export tickets to Excel format.
-#. Show, add, modify and delete webhooks.
+#. Export scans to Excel format.
 #. Export events.
 #. Import events.
 #. Send bulk order emails.
@@ -169,7 +171,7 @@ The URL is:
 
 .. code-block:: html
 
-   https://exampledomain.com/wp-content/plugins/fast-events/admin/
+   https://exampledomain.com/wp-content/uploads/fast-events/admin/
 
 Just configure a regular account and you are good to go.
 
@@ -182,8 +184,8 @@ if you have the *Fast Events* plugin running on 2 servers, configure the URLs as
 
 .. code-block:: html
 
-   https://exampleserver-1.com/wp-content/plugins/fast-events/admin/
-   https://exampleserver-2.com/wp-content/plugins/fast-events/admin/
+   https://exampleserver-1.com/wp-content/uploads/fast-events/admin/
+   https://exampleserver-2.com/wp-content/uploads/fast-events/admin/
 
 Nevertheless, for specialists versed in http header configurations and CORS, it is possible to access multiple servers from one location.
 However, we strongly advise against this.

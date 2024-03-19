@@ -209,9 +209,9 @@ Invoice
 ^^^^^^^
 .. list-table::
 
-    * - .. image:: ../_static/images/usage/Pers-page-order.png
-           :target: ../_static/images/usage/Pers-page-order.png
-           :alt: Order overview
+    * - .. image:: ../_static/images/usage/Pers-page-invoice.png
+           :target: ../_static/images/usage/Pers-page-invoice.png
+           :alt: Invoice
 
 This tab is only visible if invoices are enabled at the event level. See `Event settings <events.html#event-settings>`_.
 Fill in the form, :guilabel:`Save` it and you will be able to download the invoice.

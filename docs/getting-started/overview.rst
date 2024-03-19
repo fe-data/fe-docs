@@ -33,6 +33,7 @@ Before you start creating an event, it is a good idea to go through the question
 - How many tickets are available (stock on event level)?
 - Do you need multiple ticket types? Eg. a tickets for adults and a ticket for children, each with a different price and stock. Do they need to be counted (Deducted from the stock)?
 - How many tickets can be ordered in a single order?
+- Do you want to use volume pricing?
 - Are users allowed to place multiple orders?
 - Do you need a seating plan?
 - Is this an sports event and do you want to use the `FE Tracking App <https://fe-tracking.fast-events.eu/>`_ ?

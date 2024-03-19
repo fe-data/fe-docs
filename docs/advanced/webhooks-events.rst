@@ -56,6 +56,8 @@ New event
         "seats_needed": false,
         "webhooks_needed": true,
         "reload_on_exit_needed": false,
+        "tracking_needed": false,
+        "coupons_needed": false,
         "terms": "I agree to <a href=\"\" target=\"_blank\" rel=\"noreferrer noopener\">Terms and Conditions</a>",
         "pdf_fields": {
             "ticket": {
@@ -160,6 +162,7 @@ New event
    "1.0", "Introduced."
    "1.2", "Added '*maximum_shares*'."
    "1.4", "Added '*saas_fee*', '*saas_user_id*', '*email->sender_name*' and '*email->sender_email*'."
+   "2.20", "Added '*no_border*' and '*coupons_needed*'."
 
 ----
 

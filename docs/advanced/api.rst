@@ -45,7 +45,7 @@ A real live example:
 
 .. warning::
 
-   Default values in the schemas are only applicable if a new object is created and if not all fields all provided in the REST request.
+   Default values in the schemas are only applicable if a new object is created and if not all fields are provided in the REST request.
 
 ----
 
@@ -54,6 +54,7 @@ Resources
 * :doc:`Bulk emails <api-bulk-emails>`
 * :doc:`Bulk order emails <api-bulk-order-emails>`
 * :doc:`Bulk refunds <api-bulk-refunds>`
+* :doc:`Coupons <api-coupons>`
 * :doc:`Email lists <api-emaillists>`
 * :doc:`Events <api-events>`
 * :doc:`Input fields <api-inputfields>`
@@ -76,6 +77,7 @@ Resources
    api-bulk-emails
    api-bulk-order-emails
    api-bulk-refunds
+   api-coupons
    api-emaillists
    api-events
    api-inputfields

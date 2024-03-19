@@ -38,6 +38,7 @@ New order
         },
         "num_tickets": 2,
         "total": 80,
+        "discount": 0,
         "ip_address": "1.2.3.4"
     }
 
@@ -49,6 +50,7 @@ New order
    :widths: auto
 
    "1.0", "Introduced."
+   "2.2.0", "Added '*discount*' field."
 
 ----
 

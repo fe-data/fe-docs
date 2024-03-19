@@ -33,6 +33,10 @@ Reference
     This action is called after the payment has been received and the customer has already received an email.
 :doc:`fast_events_new_order_text <new_order_text>`
     Filter the default error text while processing the order and change the text if necessary.
+:doc:`fast_events_order_mail <order_mail>`
+    The filter is called for every new order. Filter the email address and return a WP_Error if necessary.
+:doc:`fast_events_order_name <order_name>`
+    The filter is called for every new order. Filter the name and return a WP_Error if necessary.
 :doc:`fast_events_scan_error_text <scan_error_text>`
     This filter is called if there is a scan error. Normally the API returns the localized error, but you can override it and create your own version. You can make the error-string even more specific by using the scancode that is linked to a specific entrance.
 :doc:`fast_events_scan_filter_output <scan_filter_output>`
@@ -54,6 +58,8 @@ Reference
    mail_from_name
    new_order
    new_order_text
+   order_mail
+   order_name
    scan_error_text
    scan_filter_output
    scan_ticket

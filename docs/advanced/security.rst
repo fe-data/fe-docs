@@ -5,7 +5,7 @@ This is by no means an exhaustive list of security measurements you should take 
 A couple of suggestions which are quite important as a starting point.
 
 * Make sure you run the latest version of WordPress and all the plugins you use.
-* Check your PHP version. Right now the latest version is 8.2.
+* Check your PHP version. Right now the latest version is 8.3.
 * Use two-factor (2FA) or multi-factor authentication (MFA) for your hosting-account and WordPress admin account. Consider the usage of a password manager, e.g. Bitwarden, Lastpass, 1Password, Dashlane, …
 * Don’t use the username ‘*admin*’ as your WordPress admin account. Use a random string as username.
 * Does your hosting-provider offer automatic backups? If not, consider a plugin like `UpdraftPlus – Backup/Restore <https://wordpress.org/plugins/updraftplus/>`_.
@@ -52,7 +52,7 @@ Protect you WordPress admin login (and other logins as well) with the `Two Facto
 
 Disable File Editing
 --------------------
-WordPress comes with a set of easy-to-reach theme and plugin editors. You can find them under :guilabel:`Appearance` > :guilabel:`Theme Editor` and :guilabel:`Plugins` > :guilabel:`Plugin Editor`. These allow direct access to your site’s code.
+WordPress comes with a set of easy-to-reach theme and plugin editors. You can find them under :guilabel:`Appearance` > :guilabel:`Theme File Editor` and :guilabel:`Plugins` > :guilabel:`Plugin File Editor`. These allow direct access to your site’s code.
 
 While these tools are useful to some, many WordPress users aren’t programmers and will never need to touch anything here.
 WordPress has a constant to disable editing from Dashboard. Placing this line in :file:`wp-config.php`.

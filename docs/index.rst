@@ -14,6 +14,9 @@ Summary
    - Fully responsive :doc:`FE Admin App <../apps/admin>` for Android, IOS and Web
    - Authorize parts of the plugin's functionality to other users
    - Event types (single, single selection from many, multiple selection and passe-partout)
+   - Volume pricing per ticket type
+   - Add personalisation fields to tickets
+   - Flexible coupons
    - Native interfaces for many email-providers (PostMark, Mailgun, Amazon, Sendgrid, ...)
    - REST API
    - Webhooks
@@ -22,8 +25,8 @@ Summary
    - Flexible stock control
    - Design your own PDF e-tickets and invoices
    - Design email confirmations
-   - Define  input fields for selling e-tickets
-   - Export orders and tickets for offline data analysis (Eg. Excel)
+   - Define input fields for tickets
+   - Export orders, tickets and scans for offline data analysis (Eg. Excel)
    - Flexible realtime scanning at multiple levels
    - Sell to closed user groups
    - Integrated with `Mollie <https://my.mollie.com/dashboard/signup/5835294>`_ as payment provider, providing a variety of payment methods

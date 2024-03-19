@@ -230,6 +230,8 @@ Event settings
    Works together with `Tracking`_ settings.
 **Webhooks**
    Whether or not webhooks are enabled for this event. See also :doc:`Webhooks </advanced/webhooks>`
+**Coupons**
+   Whether or not coupons are enabled for this event.
 
 
 Groups
@@ -240,21 +242,21 @@ Groups
            :target: ../_static/images/usage/Event-basic-group.png
            :alt: Basic settings - Groups
 
-In this tab you can configure that orders can only be made if customers are member of a group.
+This tab allows you to configure that orders can only be placed if customers are members of a group.
 Configuring this tab only makes sense if you have checked ``User groups`` in the `Event settings`_ tab.
 
 WordPress roles
 ~~~~~~~~~~~~~~~
-Select from the dropdown list the roles you allow to place orders.
-*Fast Events* will check if the emailaddress entered during the order-process belongs to an existing user in
-the WordPress database and if the role of the user matches the ones you have enabled.
+Select the roles you want to allow to place orders from the drop down list.
+*Fast Events* will check if the email address entered during the order process matches an existing user in the
+WordPress database and that the user's role matches the ones you have enabled.
 If you have defined a :guilabel:`Password` field in the `Input fields`_ tab, *Fast Events* will also verify if
 the password matches with the one stored in de WordPress Database.
-If you don’t select any role, *Fast Events* assumes any role is valid.
+If you don't select a role, *Fast Events* assumes that any role is valid.
 
 Email list
 ~~~~~~~~~~
-Suppose you want to have a boat trip and only the members of your football club are allowed to participate.
+Suppose you want to go on a boat trip and only the members of your football club are allowed to go.
 Select an email list you have uploaded in `Tools -> Email list <tools.html#email-lists>`_.
 
 REST API
@@ -445,7 +447,7 @@ Input fields
 
 Specify the input fields here and tick the ``Personalise`` checkbox if required.
 If unchecked, the input field will be displayed on the order screen.
-If checked, the customer must personalise the tickets after the order has been placed.
+If checked, the customer must personalise the tickets after placing the order.
 Once **all** tickets have been personalised, they can be downloaded.
 
 How this works is explained in the :doc:`Personalisation section <personalise>` of the documentation.
@@ -559,6 +561,11 @@ If you want 100 ``Gold (Backstage)`` tickets to be guaranteed, you will also hav
 Together, they must add up to the number defined at the event level.
 
 If a ticket is sold out, it will still show up in the orderpage, but you can’t select it and it is flagged as sold out.
+
+Click on the :guilabel:`Volume pricing` field if you want to use volume pricing.
+For example: from 3 tickets the price is 30 each, from 6 tickets the price is 25 each, etc....
+In the follow-up screen, you can enter or delete the numbers and prices.
+If volume pricing is available for a ticket type, a ``+`` will appear next to the ticket type on the order form for the user to click on to view the pricing.
 
 Attach a `PDF template <events.html#pdf-templates>`_ to the ticket by selecting one from the :guilabel:`Ticket PDF template` dropdown box.
 You can attach different PDF templates for each ticket type, but the QR code block must always be in the same position on the template.

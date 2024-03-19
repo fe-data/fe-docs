@@ -65,6 +65,17 @@ List all ticket types
                 "id": "v05ef7",
                 "name": "Silver",
                 "price": 20.25,
+                "volume_price": [
+                    {
+                        "4": 20
+                    },
+                    {
+                        "10": 18.75
+                    },
+                    {
+                        "15": 18.25
+                    }
+                ],
                 "vat": 21,
                 "stock_control": false,
                 "sold": 2,
@@ -91,6 +102,7 @@ List all ticket types
                 "id": "v14a1f",
                 "name": "Gold (Backstage)",
                 "price": 40.5,
+                "volume_price": [],
                 "vat": 0,
                 "stock_control": true,
                 "stock": 100,
@@ -125,6 +137,7 @@ List all ticket types
 
        "1.0", "Introduced."
        "2.1.0", "Added personalise and layout fields."
+       "2.2.0", "Added volume_price field."
 
 ----
 
@@ -186,6 +199,7 @@ List ticket type
             "id": "v14a1f",
             "name": "Gold (Backstage)",
             "price": 40.5,
+            "volume_price": [],
             "vat": 0,
             "stock_control": true,
             "stock": 100,
@@ -219,6 +233,7 @@ List ticket type
 
        "1.0", "Introduced."
        "2.1.0", "Added personalise and layout fields."
+       "2.2.0", "Added volume_price field."
 
 ----
 
@@ -286,6 +301,7 @@ Update ticket type
             "id": "v14a1f",
             "name": "Gold (Backstage)",
             "price": 40.5,
+            "volume_price": [],
             "vat": 0,
             "stock_control": true,
             "stock": 100,
@@ -319,6 +335,7 @@ Update ticket type
 
        "1.0", "Introduced."
        "2.1.0", "Added personalise and layout fields."
+       "2.2.0", "Added volume_price field."
 
 ----
 
@@ -377,6 +394,7 @@ Delete ticket type
             "previous": {
                 "name": "Gold (Backstage)",
                 "price": 40.5,
+                "volume_price": [],
                 "vat": 0,
                 "stock_control": true,
                 "stock": 100,
@@ -399,6 +417,7 @@ Delete ticket type
 
        "1.0", "Introduced."
        "2.1.0", "Added personalise and layout fields."
+       "2.2.0", "Added volume_price field."
 
 ----
 
@@ -469,6 +488,7 @@ Create ticket type
             "id": "v1f34a",
             "name": "Gold (Backstage)",
             "price": 40.3,
+            "volume_price": [],
             "vat": 0,
             "stock_control": true,
             "stock": 100,
@@ -501,3 +521,4 @@ Create ticket type
 
        "1.0", "Introduced."
        "2.1.0", "Added personalise and layout fields."
+       "2.2.0", "Added volume_price field."

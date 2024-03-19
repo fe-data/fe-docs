@@ -326,7 +326,7 @@ Delete webhook
 
 .. http:delete:: /fast-events/v1/admin/webhooks/(integer:id)
 
-    Delete a single input field.
+    Delete a single webhook.
 
     **Example request**
 

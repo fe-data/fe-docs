@@ -3,10 +3,31 @@ Tools
 .. list-table::
 
     * - .. image:: ../_static/images/usage/Tools.png
-           :target: ../_static/images/usage/Tools-ticket.png
+           :target: ../_static/images/usage/Tools.png
            :alt: Ticket details
 
 All available tools.
+
+----
+
+Tickets sold
+------------
+.. grid:: 2
+   :gutter: 2
+
+   .. grid-item-card::  Select events
+
+       .. figure:: ../_static/images/usage/Tools-tickets-sold-1.png
+          :target: ../_static/images/usage/Tools-tickets-sold-1.png
+          :alt: Select events
+
+   .. grid-item-card::  Overview of all events
+
+       .. figure:: ../_static/images/usage/Tools-tickets-sold-2.png
+          :target: ../_static/images/usage/Tools-tickets-sold-2.png
+          :alt: Overview of all events
+
+First select the events you want to see in the overview.
 
 ----
 
@@ -57,26 +78,19 @@ You need to set the :guilabel:`Group type` to ``Email list`` for the event to ma
 It is possible to overwrite the email list. Existing email addresses are then overwritten and new ones are added.
 However, no email addresses are deleted.
 
+.. note:: Make sure that the fields are separated by a ``;`` and that the fields are embedded in ``"``.
+
 ----
 
-Tickets sold
-------------
-.. grid:: 2
-   :gutter: 2
+Webhooks
+--------
+See :doc:`Webhooks <../advanced/webhooks>`
 
-   .. grid-item-card::  Select events
+----
 
-       .. figure:: ../_static/images/usage/Tools-tickets-sold-1.png
-          :target: ../_static/images/usage/Tools-tickets-sold-1.png
-          :alt: Select events
-
-   .. grid-item-card::  Overview of all events
-
-       .. figure:: ../_static/images/usage/Tools-tickets-sold-2.png
-          :target: ../_static/images/usage/Tools-tickets-sold-2.png
-          :alt: Overview of all events
-
-First select the events you want to seen in the overview.
+Coupons
+-------
+Coming soon ...
 
 ----
 
@@ -93,7 +107,7 @@ Export orders
 
    .. grid-item::
 
-       Select the events from which all orders are to be downloaded. The file is downloaded in csv format.
+       Select the events from which to download all orders. The file will be downloaded in .csv format.
 
 ----
 
@@ -104,7 +118,7 @@ Export tickets
 
    .. grid-item::
 
-       Select the events from which all tickets are to be downloaded. The file is downloaded in csv format.
+       Select the events from which to download all tickets. The file will be downloaded in .csv format.
 
    .. grid-item-card::  Select events
 
@@ -114,15 +128,27 @@ Export tickets
 
 ----
 
-Webhooks
---------
-See :doc:`Webhooks <../advanced/webhooks>`
+Export scans
+------------
+.. grid:: 2
+   :gutter: 2
+
+   .. grid-item-card::  Select events
+
+       .. figure:: ../_static/images/usage/Tools-export-orders.png
+          :target: ../_static/images/usage/Tools-export-orders.png
+          :alt: Select events
+
+   .. grid-item::
+
+       Select the events from which to download all scans. The file will be downloaded in .csv format.
+
 
 ----
 
 Export events
 -------------
-This tool is only available to 'administrator' users.
+This tool is only available to ``administrator`` users.
 
 Select the events, media files (pdf ticket- and invoice-templates) and web-pages that needs to be included in the zip-file.
 
@@ -202,7 +228,17 @@ A progress bar will keep you informed on the progress. Don’t close the window 
    
    - :guilabel:`{%NAME%}` is the name of the person who placed the order.
    - :guilabel:`{%EMAIL%}` is the email address of the person who placed the order.
+   - :guilabel:`{%YEAR%}` substitute the current year (YYYY).
    - :guilabel:`{%TICKETS%}` the unique link for downloading the e-tickets.
+   - :guilabel:`{%DOWNLOAD-TICKETS%}` insert the following block with the appropriate links to download the tickets.
+
+     .. list-table::
+
+         * - .. image:: ../_static/images/usage/Download-tickets.png
+                :target: ../_static/images/usage/Download-tickets.png
+                :alt: Download tickets block
+
+   - :guilabel:`{%PERSONALISE%}` insert the personalisation link for the tickets.
    - :guilabel:`{%INVOICE%}` the unique link for downloading the invoice.
    - :guilabel:`{%FIELDS%}` the input fields from the `input fields <events.html#input-fields>`__ in table format.
    - :guilabel:`{%CONFIRM%}` only applicable for RSVP events (no e-tickets). The link to confirm that you will be present.

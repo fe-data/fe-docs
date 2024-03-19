@@ -32,7 +32,7 @@ Ticket personalisation
 
 A unique ticket personalisation module to personalise tickets, share tickets, display order information and generate invoices if required.
 
-Define order or ticket level input fields and assign them to ticket types.
+Define order or ticket level input fields and assign them to ticket types. Optionally, you can add volume prices.
 
 Embed the ticket personalisation module into a page using a WordPress shortcode.
 
@@ -248,10 +248,11 @@ Summary
    - Define  input fields for selling e-tickets
    - Export orders and tickets for offline data analysis (Eg. Excel)
    - Flexible realtime scanning at multiple levels with mobile app.
-   - Define e-ticket types
+   - Define e-ticket types (Optionally, you can add volume prices)
    - Sell to closed user groups
    - Integrated with `Mollie <https://my.mollie.com/dashboard/signup/5835294>`_ as payment provider, providing a variety of payment methods
    - Define your own statuses for orders
+   - Coupons
    - Authorize parts of the plugin admin pages to other users
 
 Demo data

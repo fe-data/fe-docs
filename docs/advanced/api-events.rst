@@ -115,6 +115,8 @@ List events
                 "seats_needed": false,
                 "webhooks_needed": false,
                 "reload_on_exit_needed": false,
+                "tracking_needed": false,
+                "coupons_needed": false,
                 "terms": "",
                 "pdf_fields": {
                     "ticket": {
@@ -249,6 +251,7 @@ List events
        "1.0", "Introduced."
        "1.2", "Added '*maximum_shares*'."
        "1.4", "Added '*saas_fee*', '*saas_user_id*', '*email->sender_name*' and '*email->sender_email*'."
+       "2.2.0", "Added '*coupons_needed*'."
 
 ----
 

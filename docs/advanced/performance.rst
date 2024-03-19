@@ -3,7 +3,7 @@ Performance
 
 PHP version
 -----------
-Make sure you run the latest version of PHP. Right now that is **8.2**
+Make sure you run the latest version of PHP. Right now that is **8.3**
 Most hosting providers give you the option to set the version via DirectAdmin or cPanel.
 
 .. warning:: Make sure the PHP extensions ``gd``, ``imagick`` and ``opcache`` are enabled.
@@ -15,7 +15,7 @@ The `WP Super Cache plugin <https://wordpress.org/plugins/wp-super-cache/>`_ tur
 so your pages are not delivered from time consuming WordPress scripts, but simply from these static files.
 This ensures a speed gain since the PHP scripts do not have to be run every time.
 
-Don’t cache dynamic pages! For *Fast Events* you have to make an exception for every order-page, thank-you-page and the error-page.
+Don’t cache dynamic pages! For *Fast Events* you have to make an exception for every **order-page**, **thank-you-page** and the **error-page**.
 Add them in the ``Advanced`` tab of the WP Super Cache settings.
 
 Autoptimize
@@ -40,8 +40,10 @@ Translations
 with the `Performant Translations <https://wordpress.org/plugins/performant-translations/>`_ plugin to speed up the API.
 Tests have shown that this plugin can improve elapse time of the API by more than 20%.
 
-Plans are to use this approach in an upcoming version of WordPress.
-But at the moment it is advisable to use this plugin.
+**Important**: this new functionality has been merged into WordPress 6.5! However, this plugin is still useful!
+
+On WordPress 6.5+, this plugin automatically converts existing .mo files to .php and afterwards only loads the translations from the .php file.
+This is useful for cases where language packs are not downloaded from WordPress.org but somewhere else.
 
 CDN
 ---
@@ -72,7 +74,7 @@ The premium version offers you a ton of features and good support, and is defini
 Database size
 -------------
 Keep your database as small as possible. If you have finished an event, remove it’s content before you start a new one.
-Before you do, you can of course export all the orders and tickets for archiving purposes or data analysis.
+Before you do, you can of course export all the orders, tickets and scans for archiving purposes or data analysis.
 
 REST API server
 ---------------

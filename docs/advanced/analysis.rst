@@ -6,7 +6,7 @@ Whats is available
 ------------------
 Just click on the popupmenu of the :guilabel:`Events` overview to show the actual sold tickets or how many tickets have been scanned,
 but we also offer you a fast download of the order data in csv-format.
-Use the ``Export orders`` or ``Export tickets`` in the :guilabel:`Tools` section.
+Use the ``Export orders``, ``Export tickets`` or ``Export scans`` in the :guilabel:`Tools` section.
 
 Within a split second it downloads tens of thousands of orders.
 Pull it into you favorite spreadsheet tool (Excel, LibreOffice, …) and create your own pivot-table and associated graphs.

@@ -98,6 +98,7 @@ List orders
                 },
                 "num_tickets": 2,
                 "total": 80,
+                "discount": 0,
                 "ip_address": "84.120.12.4",
                 "_links": {
                     "self": [
@@ -142,6 +143,7 @@ List orders
        :widths: auto
 
        "1.0", "Introduced."
+       "2.2.0", "Added '*discount*' field."
 
 ----
 
@@ -218,6 +220,7 @@ Order details
             },
             "num_tickets": 2,
             "total": 80,
+            "discount": 0,
             "ip_address": "84.120.12.4",
             "_links": {
                 "self": [
@@ -247,6 +250,7 @@ Order details
        :widths: auto
 
        "1.0", "Introduced."
+       "2.2.0", "Added '*discount*' field."
 
 ----
 

@@ -1,8 +1,14 @@
 Changelog
 =========
 
-v2.1.0 (16 feb 2024)
-------------------------
+v2.2.0 (19 Mar 2024)
+--------------------
+* Added flexible discount codes. Optionally linked to events, tickets types, user email, min/max number of tickets and min/max amount. Possible usage limit per user.
+* Added volume pricing per ticket type. Eg. 1 ticket for 10.00, from 4 tickets for 9.00, from 10 tickets for 8.50, ...
+* Two new filters: 'fast_events_order_mail' and 'fast_events_order_name' for filtering the emailaddress and name.
+
+v2.1.0 (16 Feb 2024)
+--------------------
 * Added personalisation for tickets. Input fields can now be defined at the order level or ticket level and
   attach input fields to ticket types. Ticket personalisation can be embedded into the **Redirect after booking** page using a shortcode
   or as a link in the order confirmation email.

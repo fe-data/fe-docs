@@ -55,6 +55,17 @@ Parameters
     30. ‘*Not enough stock for linked event-id %d*’.
     31. ‘*Illegal value extra input field*’. This may happen in case of a 'select' field.
     32. ‘*Wrong amount for this ticket type:*’. The amount is too low or too high. The name of the ticket is appended after the colon.
+    33. ‘*Coupon code %s not found*’. The coupon code does not exist.
+    34. ‘*The discount code is not yet active*’.
+    35. ‘*The discount code has expired*’.
+    36. ‘*The maximum number of times the discount code can be used has been reached*’.
+    37. ‘*This discount code is linked to another email address*’.
+    38. ‘*This discount code is not linked to this event*’.
+    39. ‘*This discount code requires a minimum of %1$s tickets %2$s*’. The first parameter is the minimum number of tickets. The second a comma-separated list of ticket types.
+    40. ‘*This discount code allows a maximum of%1$s tickets %2$s*’. The first parameter is the maximum number of tickets. The second a comma-separated list of ticket types.
+    41. ‘*A minimum amount of %1$s %2$s is required for this discount code*’.The first parameter is the minimum amount. The second a comma-separated list of ticket types.
+    42. ‘*A maximum amount of %1$s %2$s is allowed for this discount code*’.The first parameter is the maximum amount. The second a comma-separated list of ticket types.
+    43. ‘*The maximum number of times the discount code can be used is: %s*’.
 
 ----
 
