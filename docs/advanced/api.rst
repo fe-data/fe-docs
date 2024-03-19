@@ -55,6 +55,7 @@ Resources
 * :doc:`Bulk order emails <api-bulk-order-emails>`
 * :doc:`Bulk refunds <api-bulk-refunds>`
 * :doc:`Coupons <api-coupons>`
+* :doc:`Coupons bulk emails <api-coupons-bulk-emails>`
 * :doc:`Email lists <api-emaillists>`
 * :doc:`Events <api-events>`
 * :doc:`Input fields <api-inputfields>`
@@ -78,6 +79,7 @@ Resources
    api-bulk-order-emails
    api-bulk-refunds
    api-coupons
+   api-coupons-bulk-emails
    api-emaillists
    api-events
    api-inputfields

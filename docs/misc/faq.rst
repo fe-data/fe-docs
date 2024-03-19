@@ -18,7 +18,7 @@ Here is an :doc:`example <../hooks/ticket_text>`.
 
 Downloading tickets fails
 -------------------------
-Take a look in the :doc:`errorlog <../usage/errorlog>`. The PDF template used may not be present.
+Take a look in the `errorlog <../usage/tools.html#error-log>`_. The PDF template used may not be present.
 For example, you will see the following message in the errorlog.
 
 .. code-block:: text
