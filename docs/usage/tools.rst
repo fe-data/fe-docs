@@ -90,7 +90,58 @@ See :doc:`Webhooks <../advanced/webhooks>`
 
 Coupons
 -------
-Coming soon ...
+Coupons can be used in two different ways, either a single coupon is defined and can be used by all users or
+personalised coupons with a unique code associated with each individual email address.
+
+However, both approaches use the same coupon constraints. you can define a number of constraints:
+
+- :guilabel:`Usage limit` the maximum number of times the coupon can be used.
+- :guilabel:`Usage limit per user` the maximum number of times a specific user (based on email address) can use the coupon.
+- :guilabel:`Start date` the coupon is valid from this date.
+- :guilabel:`End date` the coupon is valid until this date.
+- :guilabel:`Events` the coupon can only be used by the specified events (comma separated list of event ids). If empty all events are allowed.
+- :guilabel:`Tickets` the coupon can only be used by the specified ticket types (comma separated list of ticket types). If empty all ticket types are allowed.
+- :guilabel:`Minimum # tickets` the minimum number of tickets required for the coupon. If empty there is no minimum.
+- :guilabel:`Maximum # tickets` the maximum number of tickets allowed for the coupon. If empty there is no maximum.
+- :guilabel:`Minimum amount` the minimum amount required for the coupon. If empty there is no minimum.
+- :guilabel:`Maximum amount` the maximum amount allowed for the coupon. If empty there is no maximum.
+- :guilabel:`Email address` the coupon can only be used by this email address. If it is empty, anyone can use it.
+
+The coupon type can be defined as ``fixed`` if a fixed amount is to be deducted from the total, or ``percent`` if a percentage is to be deducted from the total.
+
+.. note:: Note that if you use ``percent`` and limit the scope of the coupon to certain ticket types, the percentage will only be applied to those ticket types.
+
+Usage
+^^^^^
+Enable the `coupon-setting <events.html#event-settings>`_ at the event level to use coupons for the specified event.
+You will now be able to enter a coupon code on the order form.
+Coupon codes can only be entered in the orderform if all mandatory fields (input fields, number of tickets) have been completed.
+Once the coupon html block is used, the input fields cannot be edited. When the coupon block is collapsed, editing is possible again.
+
+Single coupon
+~~~~~~~~~~~~~
+Using a single coupon is simple: define a coupon with the restrictions that suit your needs and tell (email, webpage, orderform, ...) your customers how to use it.
+
+Single coupon emaillist
+~~~~~~~~~~~~~~~~~~~~~~~
+If you have an emaillist associated with an event it is possible to send a bulk email to all members of that list via the menu choice
+:guilabel:`Bulk emails` from the ``coupon`` menu. In this menu, you must specify a coupon that will be used as the template for the email.
+The `keywords <../apps/admin.html#id3>`_ used in the email will be replaced with the information from the coupon.
+
+Personalised coupons
+~~~~~~~~~~~~~~~~~~~~
+The idea behind this approach is that everyone receives a unique coupon code, which often can be used once.
+You should take the following steps to generate all these coupons:
+
+- Create a coupon that can act template for the unique coupons.
+- Use the :guilabel:`Generate coupons` choice of the template coupon context menu.
+- Enter how many coupons should be generated. If necessary, use a prefix and/or suffix for the code.
+- A csv-file is generated with all the coupons.
+- You can now add emailaddresses to this csv-file in any way you prefer.
+- Use the :guilabel:`Import coupons` from the ``coupon`` menu to import the new csv-file - including the emailaddresses - into *Fast Events*.
+- Use the :guilabel:`Bulk emails` from the ``coupon`` menu to send everyone the unique coupon code.
+  You can change the email body and the used `keywords <../apps/admin.html#id3>`_ will be replaced with the information from the coupon.
+  Select ``Coupons`` as source and, if needed, specify other selection parameters.
 
 ----
 

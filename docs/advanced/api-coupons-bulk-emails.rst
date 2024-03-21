@@ -47,7 +47,7 @@ List selected ids
     *subject*
         The subject of the email.
     *body*
-        The html email body of the email. Any keywords in the email will be replaced with the information from the coupon.
+        The html email body of the email. Any `keywords <../apps/admin.html#id3>`_ in the email will be replaced with the information from the coupon.
 
     .. note:: All parameters must be included in the request. Even if they are not used.
 

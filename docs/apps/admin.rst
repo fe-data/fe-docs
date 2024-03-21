@@ -214,3 +214,49 @@ phones or tablets it may look differently, but the same functionality is offered
   :doc:`Tools <../usage/tools>`
 * **Example usage**
   :doc:`Tools <../usage/tools>`
+
+Settings
+--------
+The App and Admin Web interface have some general settings. You can find them by clicking on the hamburger menu and selecting :guilabel:`Settings`.
+Most settings are related to sharing information within the application. For example, when sharing information with an email application,
+you can enter a subject and by default the text in the setting will be used.
+
+Events
+^^^^^^
+**Details**
+   Share subject of a short overview of the event details.
+**Total sales**
+   Share subject of an overview of the number of tickets sold.
+**Total scans**
+   Share subject of an overview of the number of scans per location and ticket type.
+
+Orders
+^^^^^^
+**Details**
+   Share subject of a short overview of the order details, including the tickets.
+**Cache**
+   If you switch between the order lists of different events, the order list is cached for this amount of minutes.
+   You can always force to reload a fresh copy by pulling down the order list in the App or Web interface.
+
+Tools
+^^^^^
+**Error log**
+   Share subject of an overview of a specific error.
+**Sales dashboard**
+   Share subject of an overview of the number of tickets sold for the selected events.
+**Coupon email subject**
+   The default subject used when sending an email with coupon information.
+**Coupon email body**
+   Press the :guilabel:`Set email body` button to define the email body when sending an email with coupon information.
+   This is the default body used when sending bulk coupon emails, but you can override the default by using the menu option to send the emails.
+   The body can contain a number of keywords, that will be replaced with the information in the coupon.
+
+   - :guilabel:`{%EMAIL%}` the email address in the coupon.
+   - :guilabel:`{%CODE%}` the coupon code.
+   - :guilabel:`{%AMOUNT%}` the discount percentage or amount.
+   - :guilabel:`{%START-DATE%}` the coupon is valid from this date.
+   - :guilabel:`{%END-DATE%}` the coupon is valid until this date.
+   - :guilabel:`{%MIN-TICKETS%}` the minimum number of tickets required.
+   - :guilabel:`{%MAX-TICKETS%}` the maximum number of tickets allowed.
+   - :guilabel:`{%MIN-AMOUNT%}` the minimum amount required.
+   - :guilabel:`{%MAX-AMOUNT%}` the maximum amount allowed.
