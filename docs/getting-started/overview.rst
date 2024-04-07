@@ -129,7 +129,7 @@ If you just have a single event, use the shortcode-format as shown in the exampl
 
 .. code-block:: text
 
-   [fast_event id=2]
+   [fast_events id=2]
 
 .. raw:: html
 
@@ -146,7 +146,7 @@ You need to create an event for every day, which are linked together by the grou
 
 .. code-block:: text
 
-   [fast_event group="OpenAir"]
+   [fast_events group="OpenAir"]
 
 
 See ``Event type`` in the `Type settings <../usage/events.html#type>`_ for more explanation.
