@@ -1,6 +1,21 @@
 Changelog
 =========
 
+2.2.3 (28 Jan 2025)
+-------------------
+* Fix: Store the personalized input of the tickets un-escaped.
+
+v2.2.2 (28 Oct 2024)
+--------------------
+* Fix: Selected wrong template for passe-partout.
+* New: WordPress 6.7 compatible.
+* New: Bump minimum WordPress version to 6.4.
+
+v2.2.1 (05 Jul 2024)
+--------------------
+* Fix: Public Ordering API could not be used.
+* Fix: An event cannot refer to itself as a linked-event.
+
 v2.2.0 (19 Mar 2024)
 --------------------
 * Added flexible discount codes. Optionally linked to events, tickets types, user email, min/max number of tickets and min/max amount. Possible usage limit per user.
