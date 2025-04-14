@@ -233,13 +233,13 @@ You can configure this in the webhooks section of the Sendgrid dashboard. For th
 Use this as URL ``https://user:password@fillinyourdomain.com/wp-json/fast-events/v1/email/webhook/sendgrid``.
 Use a valid WordPress user and an application password in the url and remove the spaces from the application password.
    
-Sendinblue API settings
-^^^^^^^^^^^^^^^^^^^^^^^
-The settings can be found in the `Sendinblue dashboard <https://www.sendinblue.com/>`_. The URL for the server is:
+Brevo API settings
+^^^^^^^^^^^^^^^^^^
+The settings can be found in the `Brevo dashboard <https://www.brevo.com/>`_. The URL for the server is:
 
 .. code-block:: html
 
-   https://api.sendinblue.com/v3/smtp/email
+   https://api.brevo.com/v3/smtp/email
    
 Sparkpost API settings
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -263,10 +263,14 @@ ReCAPTCHA settings
            :target: ../_static/images/getting-started/Settings-recaptcha.png
            :alt: Settings - recaptcha
 
-At RSVP events it can of course occur that sick minds spam you with all kind of different real or bogus emailaddresses, even if you have confirmations enabled.
-Worse, they may give you a bad reputation, and receiving domains can flag you as spammer. For these cases you can use `Google reCAPTCHA <https://developers.google.com/recaptcha/>`_.
-Sign in and setup up your domain; *Fast Events* only supports v2 at the moment. Once setup, copy the keys to the :guilabel:`Site key` and :guilabel:`Secret key`.
+With RSVP events, it is possible for people to spam you with all sorts of real or fake email addresses, even if you have confirmations turned on.
+Worse, they may give you a bad reputation, and the receiving domains may flag you as a spammer.
+
+For these cases you can use `Google reCAPTCHA <https://developers.google.com/recaptcha/>`_ or `Cloudflare Turnstile <https://www.cloudflare.com/application-services/products/turnstile/>`_.
+Sign in and setup up your domain. *Fast Events* only supports Google ReCaptcha v2 checkbox at the moment. Once setup, copy the keys to the :guilabel:`Site key` and :guilabel:`Secret key`.
 Switch on the :guilabel:`ReCaptcha` flag in the `Event settings <../usage/events.html#event-settings>`_ and the booking screen will have a ReCaptcha.
+
+You must have a valid account with either Cloudflare or Google.
 
 ----
 

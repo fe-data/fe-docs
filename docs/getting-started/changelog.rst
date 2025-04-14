@@ -1,6 +1,14 @@
 Changelog
 =========
 
+2.3.0 (14 Apr 2025)
+-------------------
+* New: Added Cloudflare Turnstile as Captcha provider.
+* Fix: Store inputfields, ticketnames and personalisation-fields un-escaped.
+* Change: Sendinblue is now Brevo.
+* Change: action-scheduler updated to the latest version (3.9.2).
+* Change: Upgrade internal components.
+
 2.2.3 (28 Jan 2025)
 -------------------
 * Fix: Store the personalized input of the tickets un-escaped.
