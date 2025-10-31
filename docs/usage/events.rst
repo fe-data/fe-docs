@@ -583,6 +583,9 @@ The QR code info block on the eTicket will look like the first example if you ch
 If unchecked, you can select up to 6 fields in the QR Code info block, by tapping the :guilabel:`Layout fields` box.
 They will appear in the QR Code info block in the order you select them.
 
+Ticking the :guilabel:`show remaining tickets` checkbox, will display the remaining tickets in the order form.
+Keep in mind, however, that this is a snapshot. Once the order form has been compiled, other users may have placed orders, resulting in fewer tickets being available.
+
 .. warning::
    **Never** add or remove ticket-types if orders already have been accepted.
 
@@ -607,6 +610,7 @@ Preparation
 Scanning tickets can be easily defined in this screen.
 Varying from a single scan for all types (level 0) of tickets to a stepped scan (level 1) for selected ticket types.
 For example, visitors must first be scanned at the main entrance before they can be scanned at the backstage entrance and only if they have a ``Gold (Backstage)`` ticket.
+You can temporarily leave the event (e.g. to smoke) and return a little later using levels 7 (Temporarily leave) and 8 (Re-enter).
 
 You can also include an exit scan (level 9). Once a user passes this scan, no other scans are possible anymore.
 

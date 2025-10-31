@@ -1,6 +1,6 @@
 Scan App
 ========
-Check in visitors easily with our Android or IOS App; no need to use (expensive) scanning terminals.
+Check in visitors easily with our Android or IOS App; no expensive scanning terminals required.
 The App is available for Android 9.0 and later and IOS 14.0 and later.
     
 .. list-table::
@@ -36,11 +36,11 @@ There are 3 possibilities to configure the app:
            :alt: Edit settings
 
 Adding or changing checkpoints is the first menu item in the navigation drawer (top left).
-You can add a new checkpoint by pressing the new checkpoint button (bottom right) or change an existing checkpoint by pressing the pencil button.
-The easiest way to configure the App is to scan a configuration qrcode,
-which can be copied from the ``Qrcode`` popupmenu item in the `Scan keys <../usage/events.html#scan-keys>`_ overview when changing an event.
-Pressing the qrcode button (top right) in the add/edit checkpoint gives you the option to
-to scan a configuration QRcode with the camera or to scan a configuration QRcode from an image file.
+You can add a new checkpoint by pressing the new checkpoint button (bottom right) or edit an existing checkpoint by pressing the pencil button.
+The quickest way to configure the App is to scan a configuration qrcode,
+which you can copy from the ``Qrcode`` popupmenu item in the `Scan keys <../usage/events.html#scan-keys>`_ overview when editing an event.
+Pressing the QR code button (top‑right) in the add/edit checkpoint screen gives you two options:
+scan a configuration QRcode with the camera, or load a configuration QRcode from an image file.
 
 **Server URL**
     The URL where you have installed WordPress. For example ``https://exampledomain.com``. Only secure connections (https) are allowed.

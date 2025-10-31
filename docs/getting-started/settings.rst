@@ -17,17 +17,17 @@ Payment provider account
 *Fast Events* is integrated with `Mollie <https://my.mollie.com/dashboard/signup/5835294>`_ as payment provider, providing a variety of payment options.
 As such the plugin is only available for associations/companies residing in a `SEPA country <https://wiki.xmldation.com/Support/EPC/List_of_SEPA_countries>`_.
 With Mollie there are no fixed recurring costs, you only pay for successful transactions. The prices are very competitive.
-The transactions of, for example, iDEAL (the Netherlands) cost only € 0.29 excluding VAT. Press the button below to create your free Mollie account.
+The transactions of, for example, iDEAL (the Netherlands) cost only € 0.32 excluding VAT. Press the button below to create your free Mollie account.
 
 .. image:: ../_static/images/getting-started/Mollie.png
    :target: https://my.mollie.com/dashboard/signup/5835294
    :alt: Mollie
 
-After you have created your free account, you will receive an email from Mollie with your login details. Confirm the email with the button in the email.
+After you create your free account, you’ll receive an email from Mollie containing your login details. Click the button in that email to confirm your address.
 
 Log in to the Mollie dashboard and go through the wizard to enter all data (Your personal info, chamber of commerce id, bankaccount, VAT number (if applicable),
 your identification (passport), website where you want use payments and finally the payment methods.
-During the process you will be asked to transfer 1 cent from your company’s bank account to prove that you are the owner.
+During the process you’ll be asked to transfer 1 cent from your company’s bank account to verify ownership.
 
 Live API-key and Test API-key
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -146,7 +146,7 @@ Email webhooks
 ^^^^^^^^^^^^^^
 Enable this if you want include error notification events (bounces, spam reports, ...) from the email-provider, in the errorlog.
 Potential error-events are visible in the ``Tools`` section of the ``FE Admin`` App.
-For the moment webhooks are only supported for ``Postmark``, ``Mailgun``, ``Mailjet`` and ``Sendgrid``. See below for the details.
+For the moment webhooks are only supported for ``Postmark``, ``Mailgun``, ``Mailjet``, ``SMTP2GO`` and ``Sendgrid``. See below for the details.
      
 SMTP settings
 ^^^^^^^^^^^^^
@@ -170,6 +170,14 @@ Amazon SES API settings
 The settings can be found in the `Amazon console dashboard <https://console.aws.amazon.com/>`_.
 If you still need to create a SES account, make sure you create it in the ``EU`` region as the plugin is only supported in the `European SEPA countries <https://wiki.xmldation.com/Support/EPC/List_of_SEPA_countries>`_ if online payments are used.
 You can find/create in the Amazon IAM (Identity and Access Management) menu the :guilabel:`Access key` and :guilabel:`Secret key`. Make sure the secret key has the right permissions to send email.
+
+Brevo API settings
+^^^^^^^^^^^^^^^^^^
+The settings can be found in the `Brevo dashboard <https://www.brevo.com/>`_. The URL for the server is:
+
+.. code-block:: html
+
+   https://api.brevo.com/v3/smtp/email
 
 Mailgun API settings
 ^^^^^^^^^^^^^^^^^^^^
@@ -232,14 +240,21 @@ It is possible to log Sendgrid '*Deferred*', '*Bounce*', '*Dropped*', '*Spam rep
 You can configure this in the webhooks section of the Sendgrid dashboard. For the moment other events are discarded.
 Use this as URL ``https://user:password@fillinyourdomain.com/wp-json/fast-events/v1/email/webhook/sendgrid``.
 Use a valid WordPress user and an application password in the url and remove the spaces from the application password.
-   
-Brevo API settings
-^^^^^^^^^^^^^^^^^^
-The settings can be found in the `Brevo dashboard <https://www.brevo.com/>`_. The URL for the server is:
+
+SMTP2GO API settings
+^^^^^^^^^^^^^^^^^^^^
+The settings can be found in the `SMTP2GO dashboard <https://app.smtp2go.com/>`_. The URL for the server is:
 
 .. code-block:: html
 
-   https://api.brevo.com/v3/smtp/email
+   https://eu-api.smtp2go.com/v3/email/send
+
+It is possible to log SMTP2GO '*bounce*', '*spam*', '*unsubscribe*', '*resubscribe*' and '*reject*' events in the log-table of *Fast Events*.
+To set this up, go to the Webhooks section of the SMTP2GO dashboard. For the moment other events are discarded.
+Use this as URL ``https://fillinyourdomain.com/wp-json/fast-events/v1/email/webhook/smtp2go``. Furthermore: make sure you enable
+Basic authentication and use a valid WordPress user and an application password. Provide the Base64‑encoded string.
+
+Add the custom headers '*X_fast_events_event_id*', '*X_fast_events_order_id*' and '*X_fast_events_name*'. After typing each one, press Enter.
    
 Sparkpost API settings
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -437,8 +452,8 @@ Management interface
           :target: ../_static/images/getting-started/Settings-mgt-update.png
           :alt: Maintenance management interface
 
-As of version 2.0, the plugin's management interface is no longer part of the plugin.
-The management interface can be installed separately in this menu and kept up-to-date automatically.
+As of version 2.0, the plugin’s management interface is no longer bundled with the plugin.
+You can install the management interface separately from this menu, and it will stay up‑to‑date automatically.
 The other option is to use the :doc:`FE Admin App <../apps/admin>` for Android and IOS phones/tablets and not install the Web interface.
 This App contains exactly the same functionality as the Web interface.
 

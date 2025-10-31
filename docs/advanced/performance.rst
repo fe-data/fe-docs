@@ -3,7 +3,7 @@ Performance
 
 PHP version
 -----------
-Make sure you run the latest version of PHP. Right now that is **8.3**
+Make sure you run the latest version of PHP. Right now that is **8.4**
 Most hosting providers give you the option to set the version via DirectAdmin or cPanel.
 
 .. warning:: Make sure the PHP extensions ``gd``, ``imagick`` and ``opcache`` are enabled.
@@ -78,7 +78,7 @@ Before you do, you can of course export all the orders, tickets and scans for ar
 
 REST API server
 ---------------
-Another possibility is to use WordPress only as a REST API server and thus not for frontend use.
-For example, use `Cloudflare Pages <https://pages.cloudflare.com/>`_ as the frontend web server and call the `ordering API <api-ordering.html>`_ on the server to order etickets.
-For this case enable the :guilabel:`Use ordering API` in `Miscellaneous-settings <../getting-started/settings.html#miscellaneous-settings>`_.
-Also be sure to fill in the :guilabel:`Cache time orderscreen` and :guilabel:`Ordering shortcodes` fields.
+Another option is to run WordPress only as a REST‑API server, without using it for any front‑end rendering.
+For example, you can use `Cloudflare Pages <https://pages.cloudflare.com/>`_ as the front-end web server and call the `ordering API <api-ordering.html>`_ on the back-end to order etickets.
+Enable :guilabel:`Use ordering API` in the `Miscellaneous-settings <../getting-started/settings.html#miscellaneous-settings>`_ for this scenario.
+Then fill in the :guilabel:`Cache time orderscreen` and :guilabel:`Ordering shortcodes` fields.

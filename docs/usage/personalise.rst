@@ -1,7 +1,7 @@
 Ticket personalisation
 ======================
 
-The following is a step-by-step guide on how to configure ticket personalisation and how the end user will ultimately be able to personalise tickets.
+The following step‑by‑step guide explains how to configure ticket personalization and shows how the end user can ultimately personalize their tickets.
 
 Configure personalisation
 -------------------------
@@ -21,8 +21,8 @@ Configure personalisation
 
        The first step is to define 1 or more `input fields <events.html#input-fields>`_.
 
-       If the :guilabel:`Personalise` checkbox is unchecked, the field will be displayed on the order form.
-       This means that the field has the same value for all tickets and can't be changed once the order has been submitted.
+       If the :guilabel:`Personalise` checkbox is unchecked, the field appears on the order form.
+       Its value will be the same for all tickets and cannot be changed after the order is submitted.
 
        If the :guilabel:`Personalise` checkbox is checked, the field must be personalised for each ticket.
 
@@ -48,8 +48,12 @@ Connecting input fields to `ticket types <events.html#ticket-types>`_ is the nex
 It is possible to associate different input fields with different tickets.
 And not all tickets need to have personalisation fields.
 
-Simply tap on the :guilabel:`Fields for personalisation` and select the fields you want to use.
-The order in which they are selected is also the order in which they will be displayed during personalisation.
+Simply tap :guilabel:`Fields for personalisation` and choose the fields you want to use.
+The order in which you select them determines the order in which they will appear during personalisation.
+
+.. note::
+   Example: Suppose you have two personalization fields, and you want the second one to appear first in the personalization dialog, with the first field shown last.
+   Tap :guilabel:`Fields for personalisation`, select the last field, and click ``Ok``. Then tap :guilabel:`Fields for personalisation` again, choose the first field, and click ``Ok``.
 
 3. Use in thank-you-page
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -68,12 +72,12 @@ The order in which they are selected is also the order in which they will be dis
 
        Insert the shortcode ``[fe_personalise]`` anywhere on the page.
 
-       You can save 5 hits on your server by using the shortcode ``[fe_personalise cdn]``.
-       Instead of fetching the supporting files from your server, it fetches them from Cloudflare's global CDN.
+       You can reduce server load by up to five requests by using the shortcode ``[fe_personalise cdn]``.
+       Instead of pulling the supporting files from your own server, the shortcode loads them from Cloudflare’s global CDN.
 
-       Another option is to use the **dark** attribute in the shortcode.
-       The default theme is light, but if your site has a dark background you can use this keyword.
-       Combine it optionally with the **cdn** attribute and the resulting shortcode should be ``[fe_personalise cdn dark]``.
+       You can also use the **dark** attribute in the shortcode.
+       The default theme is light, but if your site has a dark background you can switch to the dark theme.
+       You may combine it with the **cdn** attribute, resulting in a shortcode like: ``[fe_personalise cdn dark]``.
 
 4. Use in order email
 ^^^^^^^^^^^^^^^^^^^^^
@@ -84,7 +88,7 @@ The order in which they are selected is also the order in which they will be dis
 
        Insert the keyword ``{%PERSONALISE%}`` anywhere in the body of the email.
 
-       The customer will see a button in the email which, when clicked, will take them to the page used in step 3.
+       The customer will see a button in the email that, when clicked, takes them to the page referenced in step 3.
 
    .. grid-item-card::  Define email
 
@@ -109,10 +113,11 @@ The order in which they are selected is also the order in which they will be dis
           :target: ../_static/images/usage/Event-tickets-layout.png
           :alt: PDF eticket layout
 
-Checking the :guilabel:`Default layout` checkbox will cause the default QR code info block to be printed in the eTicket PDF.
+Checking the :guilabel:`Default layout` checkbox causes the default QR-code info block to be printed in the eTicket PDF.
 
-If you deselect it, tap on the :guilabel:`Layout fields` and select up to 6 fields you want to print on the PDF of the eTicket.
-The order in which they are selected is also the order in which they are printed.
+If you deselect it, tap :guilabel:`Layout fields` and choose up to 6 fields you want to print on the eticket PDF.
+The order in which you select them determines the order in which they appear on the PDF.
+Just as with the :guilabel:`Fields for personalisation`, you may need to open and close the dialog multiple times to set the correct order.
 
 Use personalisation
 -------------------
@@ -178,11 +183,13 @@ The ``pencil`` icon is no longer available.
            :target: ../_static/images/usage/Pers-page-edit-2.png
            :alt: Personalised ticket saved
 
-You can of course personalise shared tickets yourself, but once you have done so, the recipient of the shared ticket will see the data if they try to personalise it.
-Conversely, if the other person has personalised one or more tickets and you try to personalise it, it will also
-warn that the ticket has already been personalised. The data will be displayed and you will not be able to edit it.
+You can, of course, personalize shared tickets yourself. However, once you’ve done so,
+anyone who receives the shared ticket will see the data if they try to personalize it.
+Conversely, if another person has already personalized a ticket and you attempt to personalize it,
+you’ll receive a warning that the ticket has already been personalized.
+The existing data will be displayed, and you won’t be able to edit it.
 
-Once all tickets have been personalised the QR codes become visible.
+Once all tickets have been personalized, the QR codes become visible.
 
 Download tickets
 ^^^^^^^^^^^^^^^^
@@ -193,7 +200,7 @@ Download tickets
            :alt: Download tickets
 
 Download all tickets by tapping the ``tickets`` icon at the top right,
-or download an individual ticket by tapping the ``download`` icon in a ticket card.
+or download an individual ticket by tapping the ``download`` icon on that ticket's card.
 
 Order information
 ^^^^^^^^^^^^^^^^^
@@ -203,7 +210,7 @@ Order information
            :target: ../_static/images/usage/Pers-page-order.png
            :alt: Order overview
 
-A simplified order overview that is not visible to share recipients.
+A simplified order overview that is hidden from share recipients.
 
 Invoice
 ^^^^^^^
@@ -213,8 +220,8 @@ Invoice
            :target: ../_static/images/usage/Pers-page-invoice.png
            :alt: Invoice
 
-This tab is only visible if invoices are enabled at the event level. See `Event settings <events.html#event-settings>`_.
-Fill in the form, :guilabel:`Save` it and you will be able to download the invoice.
+This tab is visible only when invoices are enabled at the event level. See `Event settings <events.html#event-settings>`_.
+Fill in the form, click :guilabel:`Save`, and you will be able to download the invoice.
 
 Scan App
 ^^^^^^^^
@@ -229,11 +236,11 @@ Scan App
 
    .. grid-item::
 
-       When you scan a personalised ticket, all the data is displayed in the green box on the scan screen.
+       When you scan a personalized ticket, all of the data appears in the green box on the scan screen.
 
 Tips
 ----
 .. note::
-   It can also be useful to use the personalisation module for events that don't use personalisation.
-   It will allow customers to simply present the QR codes at a scanning point without printing them,
-   or to download all or individual tickets.
+   The personalization module can also be useful for events that don’t require personalization.
+   It lets customers simply present the QR codes at a scanning point without printing them,
+   or download all tickets—or individual tickets—if they wish.

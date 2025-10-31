@@ -82,6 +82,7 @@ List all ticket types
                 "minimum_to_order": 0,
                 "maximum_to_order": 10,
                 "is_counted": true,
+                "show_remaining": false,
                 "attachment_id": 260,
                 "personalise": "",
                 "layout": "",
@@ -110,6 +111,7 @@ List all ticket types
                 "minimum_to_order": 0,
                 "maximum_to_order": 1,
                 "is_counted": true,
+                "show_remaining": false,
                 "attachment_id": 60,
                 "personalise": "",
                 "layout": "",
@@ -138,6 +140,7 @@ List all ticket types
        "1.0", "Introduced."
        "2.1.0", "Added personalise and layout fields."
        "2.2.0", "Added volume_price field."
+       "2.4.0", "Added show_remaining field."
 
 ----
 
@@ -207,6 +210,7 @@ List ticket type
             "minimum_to_order": 0,
             "maximum_to_order": 1,
             "is_counted": true,
+            "show_remaining": false,
             "attachment_id": 60,
             "personalise": "",
             "layout": "",
@@ -234,6 +238,7 @@ List ticket type
        "1.0", "Introduced."
        "2.1.0", "Added personalise and layout fields."
        "2.2.0", "Added volume_price field."
+       "2.4.0", "Added show_remaining field."
 
 ----
 
@@ -309,6 +314,7 @@ Update ticket type
             "minimum_to_order": 0,
             "maximum_to_order": 1,
             "is_counted": true,
+            "show_remaining": false,
             "attachment_id": 160,
             "personalise": "",
             "layout": "",
@@ -336,6 +342,7 @@ Update ticket type
        "1.0", "Introduced."
        "2.1.0", "Added personalise and layout fields."
        "2.2.0", "Added volume_price field."
+       "2.4.0", "Added show_remaining field."
 
 ----
 
@@ -402,6 +409,7 @@ Delete ticket type
                 "minimum_to_order": 0,
                 "maximum_to_order": 1,
                 "is_counted": true,
+                "show_remaining": false,
                 "attachment_id": 160,
                 "personalise": "",
                 "layout": ""
@@ -418,6 +426,7 @@ Delete ticket type
        "1.0", "Introduced."
        "2.1.0", "Added personalise and layout fields."
        "2.2.0", "Added volume_price field."
+       "2.4.0", "Added show_remaining field."
 
 ----
 
@@ -495,6 +504,7 @@ Create ticket type
             "minimum_to_order": 0,
             "maximum_to_order": 1,
             "is_counted": true,
+            "show_remaining": false,
             "attachment_id": 170,
             "personalise": "Year",
             "layout": "",
@@ -522,3 +532,4 @@ Create ticket type
        "1.0", "Introduced."
        "2.1.0", "Added personalise and layout fields."
        "2.2.0", "Added volume_price field."
+       "2.4.0", "Added show_remaining field."

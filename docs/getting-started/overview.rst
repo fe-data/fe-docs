@@ -34,6 +34,8 @@ Before you start creating an event, it is a good idea to go through the question
 - Do you need multiple ticket types? Eg. a tickets for adults and a ticket for children, each with a different price and stock. Do they need to be counted (Deducted from the stock)?
 - How many tickets can be ordered in a single order?
 - Do you want to use volume pricing?
+- Do you need extra input fields when placing an order?
+- Do tickets need to be personalized using specific required fields?
 - Are users allowed to place multiple orders?
 - Do you need a seating plan?
 - Is this an sports event and do you want to use the `FE Tracking App <https://fe-tracking.fast-events.eu/>`_ ?
@@ -53,7 +55,8 @@ Before you start creating an event, it is a good idea to go through the question
 
 PDF etickets
 ------------
-Customers will receive an email with an unique link to download the etickets as a pdf-file. You have to create a PDF-template which the plugin can use to create the eticket.
+Customers will receive an email containing a unique link that lets them download their e‑tickets as a PDF file.
+You need to create a PDF template that the plugin can use to generate the e‑ticket.
 This is an `example of a template <../_static/pdf/Vinyl-template.pdf>`_.
 
 How to create a template?
@@ -87,19 +90,19 @@ Thank you page
 Download link
 ^^^^^^^^^^^^^
 
-It is possible to include a download link for the etickets in the “*Thank you*” page.
-It’s up to you to do this in combination with an email or just omit the email
-(See `Event settings <../usage/events.html#event-settings>`_, :guilabel:`Emails` checkbox)
-and use the download link. You can put that download link anywhere in the “Thank you” page with a shortcode. Use the following shortcode:
+It is possible to include a download link for the etickets on the “*Thank you*” page.
+You can either combine this with the confirmation email or skip the email altogether
+(See `Event settings <../usage/events.html#event-settings>`_, :guilabel:`Emails` checkbox).
+Place the download link anywhere on the “Thank you” page using the following shortcode:
 
 .. code-block:: text
 
    [fe_download showimage="yes" downloadtext="Download eticket(s)"]
 
-You can customize the text of the hyperlink by changing the ``downloadtext`` parameter. The ``showimage`` parameter is only applicable if there is a single (1) eticket.
+You can customize the hyperlink text by setting the ``downloadtext`` parameter. The ``showimage`` parameter is only applicable if there is a single (1) eticket.
 If you set it to “**yes**” , the qrcode wil be included in the page. This can be useful, for example, for the sale of consumption coins.
-You buy the coins on your mobile and show the qrcode on the “*Thank you*” page at the counter and the qrcode can be scanned directly and you receive your coins.
-So no queuing at the counter or time consuming payment actions. If there is more than 1 eticket this parameter will be ignored.
+You purchase the coins on your mobile device, then display the QR code on the “Thank you” page at the counter. The QR code can be scanned directly, and you’ll receive your coins instantly.
+No queuing at the counter or time‑consuming payment steps are required. If more than one e‑ticket is issued, this parameter is ignored.
 Don't use this shortcode together with the ``Event type`` :guilabel:`Select multiple dates`.
 
 .. image:: ../_static/images/getting-started/Qrcode-example.png

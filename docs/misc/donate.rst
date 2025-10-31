@@ -1,7 +1,7 @@
 Donate
 ======
-Developing, improving and maintaining an plugin like *Fast Events* and mobile apps for Android and IOS takes a lot of time.
-Please consider sponsoring the development of this plugin or a one-off donation if you have successfully executed an event.
+Developing, improving, and maintaining a plugin like *Fast Events* —along with its Android and iOS mobile apps— requires a lot of time and effort.
+If you’ve successfully run an event with the plugin, please consider sponsoring its development or making a one‑off donation.
 
 You can use iDEAL, Apple Pay, Credit card, Bancontact or Giropay.
    

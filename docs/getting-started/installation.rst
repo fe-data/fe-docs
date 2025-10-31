@@ -11,7 +11,7 @@ With Mollie there are no fixed recurring costs, you only pay for successful tran
    :alt: Mollie
 
 .. note::
-   *Fast Events* has been tested on **WordPress 6.0** and above together with **PHP 8.0** and above.
+   *Fast Events* has been tested on **WordPress 6.4** and above together with **PHP 8.0** and above.
    Older versions of WordPress and PHP are not supported! Make sure the PHP extensions ``gd``, ``imagick`` and ``opcache`` are enabled.
    With most hosting providers this can be done via DirectAdmin or cPanel.
 

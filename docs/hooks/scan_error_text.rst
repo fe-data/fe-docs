@@ -35,7 +35,9 @@ Parameters
     9. ‘*Wrong type of qrcode*’. The qrocde presented is not one that was generated for a tracking event.
     10. ‘*Invalid track signature*’. The FE Scan App submitted an invalid track signature.
     11. ‘*Invalid finish API key*’. An invalid API key (not level 9) was used in the FE Scan App
-    12. ‘*You cannot scan this checkpoint*’. The 'Force Tracking App' is set; no level 0 and level 1 scans are possible with the Scann App, they  need to uploaded automatically by the Tracking App.
+    12. ‘*You cannot scan this checkpoint*’. The 'Force Tracking App' is set; no level 0 and level 1 scans are possible with the Scan App, they  need to uploaded automatically by the Tracking App.
+    13. ‘*Ticket already temporarily left the event*’. A level 7 (Temporarily leave) scan was already done.
+    14. ‘*Ticket already re-entered the event*’. A level 8 (Re-enter) scan was already done.
 
 **$scancode**
     (*string*) The scancode used.
@@ -56,6 +58,7 @@ Changelog
    :widths: auto
 
    "1.0", "Introduced."
+   "2.4.0", "Introduced message #13 and #14."
 
 ----
    

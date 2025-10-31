@@ -40,18 +40,22 @@ Embed the ticket personalisation module into a page using a WordPress shortcode.
 
    <div style="clear:both"></div>
 
-Tracking
---------
+Real-time scanning
+------------------
 
-.. image:: ../_static/images/getting-started/tracking.png
+.. image:: ../_static/images/getting-started/scanning.png
    :align: left
-   :alt: tracking
+   :alt: realtime-scanning
 
-Use the `FE Tracking App <https://fe-tracking.fast-events.eu/>`_ especially for sporting events to allow participants to signal checkpoints
-on the route in the App and upload the time at which they pass them to the event organiser's server.
+No need for expensive scanning equipment. Just use our free `Android <https://play.google.com/store/apps/details?id=nl.fe_data.scanner>`_ and `IOS <https://apps.apple.com/app/fe-scan/id1496549803>`_ app to scan the tickets in real-time at the entrance.
 
-`Realtime tracking <https://player.vimeo.com/video/566996933>`_ display additional points of interest and descriptions on the map, as defined by the event organiser.
-Examples include First aid stations along the route, catering facilities along the route, checkpoints along the route, ...
+No limit on the number of scan applications running simultaneously.
+
+You can temporarily leave the event (e.g. to smoke) and return a little later using levels 7 (temporarily leave) and 8 (re-enter).
+
+Staged scans and exit scans are possible and error messages can be tailored to your own event.
+
+How about, sending a “*Thank you for visiting our event*” email after a (exit) scan. Have a look at this :doc:`example <../hooks/scan_ticket>`.
 
 .. raw:: html
 
@@ -75,21 +79,18 @@ That’s easy isn’t?
 
    <div style="clear:both"></div>
 
+Tracking
+--------
 
-Real-time scanning
-------------------
-
-.. image:: ../_static/images/getting-started/scanning.png
+.. image:: ../_static/images/getting-started/tracking.png
    :align: left
-   :alt: realtime-scanning
-       
-No need for expensive scanning equipment. Just use our free `Android <https://play.google.com/store/apps/details?id=nl.fe_data.scanner>`_ and `IOS <https://apps.apple.com/app/fe-scan/id1496549803>`_ app to scan the tickets in real-time at the entrance.
+   :alt: tracking
 
-No limit on the number of scan applications running simultaneously.
+Use the `FE Tracking App <https://fe-tracking.fast-events.eu/>`_ especially for sporting events to allow participants to signal checkpoints
+on the route in the App and upload the time at which they pass them to the event organiser's server.
 
-Staged scans and exit scans are possible and error messages can be tailored to your own event.
-
-How about, sending a “*Thank you for visiting our event*” email after a (exit) scan. Have a look at this :doc:`example <../hooks/scan_ticket>`.
+`Realtime tracking <https://player.vimeo.com/video/566996933>`_ display additional points of interest and descriptions on the map, as defined by the event organiser.
+Examples include First aid stations along the route, catering facilities along the route, checkpoints along the route, ...
 
 .. raw:: html
 
@@ -103,7 +104,7 @@ Payouts next day
    :alt: payouts-the-next-day
        
 *Fast Events* works with the Dutch payment provider `Mollie <https://my.mollie.com/dashboard/signup/5835294>`_.
-No recurring fees, you just pay for successful transactions. Competitive rates: e.g. iDEAL is only € 0,29 (excl. VAT) per transaction.
+No recurring fees, you just pay for successful transactions. Competitive rates: e.g. iDEAL is only € 0,32 (excl. VAT) per transaction.
 All major payment methods supported. No fees per ticket.
 
 Apply for your free account.

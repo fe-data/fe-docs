@@ -1,10 +1,21 @@
 Changelog
 =========
 
+2.4.0 (4 Nov 2025)
+------------------
+* New: Added a flag to ticket types showing the remaining tickets in the order form.
+* New: Added SMTP2GO email provider.
+* New: Added new scan-levels: you can temporarily leave the event (e.g. to smoke) and return a little later using levels 7 (temporarily leave) and 8 (re-enter).
+* Change: This version requires Management Interface 4.4 or higher.
+* Change: action-scheduler updated to the latest version (3.9.3).
+* Change: Upgrade internal components.
+* Change: Upgrade FE-Admin to the latest version (4.4.0: API level 8).
+
+
 2.3.0 (14 Apr 2025)
 -------------------
 * New: Added Cloudflare Turnstile as Captcha provider.
-* Fix: Store inputfields, ticketnames and personalisation-fields un-escaped.
+* Fix: Store inputfields, ticket-names and personalisation-fields un-escaped.
 * Change: Sendinblue is now Brevo.
 * Change: action-scheduler updated to the latest version (3.9.2).
 * Change: Upgrade internal components.
