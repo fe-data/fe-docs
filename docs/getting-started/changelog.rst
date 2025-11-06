@@ -1,6 +1,12 @@
 Changelog
 =========
 
+2.4.1 (14 Nov 2025)
+-------------------
+* Change: Improved selection of personalization fields and layout fields.
+* Change: Don't print the separator line in the qrcode block if there are no layout fields.
+* Change: Amazon SES API extended with more regions.
+
 2.4.0 (4 Nov 2025)
 ------------------
 * New: Added a flag to ticket types showing the remaining tickets in the order form.

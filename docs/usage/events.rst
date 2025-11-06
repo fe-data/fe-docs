@@ -571,7 +571,7 @@ Attach a `PDF template <events.html#pdf-templates>`_ to the ticket by selecting 
 You can attach different PDF templates for each ticket type, but the QR code block must always be in the same position on the template.
 
 If you have defined personalisation fields in the `input fields`_, you can select them in :guilabel:`Fields for personalisation`.
-They will appear in the :doc:`Personalisation dialog <personalise>` in the order you select them.
+They will appear in the :doc:`Personalisation dialog <personalise>` in the order you select them. You can drag and drop them to change the order.
 
 .. list-table::
 
@@ -581,7 +581,7 @@ They will appear in the :doc:`Personalisation dialog <personalise>` in the order
 
 The QR code info block on the eTicket will look like the first example if you check the :guilabel:`Default layout` checkbox.
 If unchecked, you can select up to 6 fields in the QR Code info block, by tapping the :guilabel:`Layout fields` box.
-They will appear in the QR Code info block in the order you select them.
+They will appear in the QR Code info block in the order you select them. You can drag and drop them to change the order.
 
 Ticking the :guilabel:`show remaining tickets` checkbox, will display the remaining tickets in the order form.
 Keep in mind, however, that this is a snapshot. Once the order form has been compiled, other users may have placed orders, resulting in fewer tickets being available.

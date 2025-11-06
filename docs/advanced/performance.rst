@@ -34,17 +34,6 @@ Include the following snippet in the Snippets-plugin to enable this feature.
    <?php
    add_filter('autoptimize_filter_cache_create_static_gzip','__return_true');
 
-Translations
-------------
-*Fast Events* uses the WordPress translation API. This API is not very efficient and the WordPress Performance Team has come up
-with the `Performant Translations <https://wordpress.org/plugins/performant-translations/>`_ plugin to speed up the API.
-Tests have shown that this plugin can improve elapse time of the API by more than 20%.
-
-**Important**: this new functionality has been merged into WordPress 6.5! However, this plugin is still useful!
-
-On WordPress 6.5+, this plugin automatically converts existing .mo files to .php and afterwards only loads the translations from the .php file.
-This is useful for cases where language packs are not downloaded from WordPress.org but somewhere else.
-
 CDN
 ---
 Consider using a CDN. There are many available, but `Cloudflare <https://www.cloudflare.com/cdn/>`_ has a free plan.

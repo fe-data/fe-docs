@@ -169,6 +169,7 @@ Amazon SES API settings
 ^^^^^^^^^^^^^^^^^^^^^^^
 The settings can be found in the `Amazon console dashboard <https://console.aws.amazon.com/>`_.
 If you still need to create a SES account, make sure you create it in the ``EU`` region as the plugin is only supported in the `European SEPA countries <https://wiki.xmldation.com/Support/EPC/List_of_SEPA_countries>`_ if online payments are used.
+Use `this link <https://docs.aws.amazon.com/general/latest/gr/ses.html>`_ for the AWS regions that can be used (e.g. ``eu-west-2``).
 You can find/create in the Amazon IAM (Identity and Access Management) menu the :guilabel:`Access key` and :guilabel:`Secret key`. Make sure the secret key has the right permissions to send email.
 
 Brevo API settings
