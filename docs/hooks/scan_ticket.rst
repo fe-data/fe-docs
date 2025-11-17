@@ -31,7 +31,7 @@ Parameters
 **$attr['email']**
     (*string*) The emailaddress of the person who placed the order.
 **$attr['level']**
-    (*int*) **0** = entrance scan, **1** = staged scan, **9** = exit scan.
+    (*int*) **0** = entrance scan, **1** = staged scan, **7** = Temporarily leave, **8** = Re-enter and **9** = exit scan.
 **$attr['date']**
     (*string*) The date when the ticket was scanned. Format ``YYYY-MM-DD HH:MM:SS``.
 **$attr['location']**
@@ -39,7 +39,7 @@ Parameters
 **$attr['scans']**
     (*array*) Scans ordered by ‘*scan_date*‘
        
-    1. **'level'** (*int*)  **0** = Entry scan, **1** = staged scan, **9** = exit scan
+    1. **'level'** (*int*)  **0** = Entry scan, **1** = staged scan, **7** = Temporarily leave, **8** = Re-enter and **9** = exit scan
     2. **'scan_date'** (*string*) Uses the date format defined in `Date of sale Overview <../usage/events.html#date-of-sale>`_.
     3. **'scan_location'** (*string*) The location of the scan.
     

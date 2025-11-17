@@ -48,12 +48,7 @@ Connecting input fields to `ticket types <events.html#ticket-types>`_ is the nex
 It is possible to associate different input fields with different tickets.
 And not all tickets need to have personalisation fields.
 
-Simply tap :guilabel:`Fields for personalisation` and choose the fields you want to use.
-The order in which you select them determines the order in which they will appear during personalisation.
-
-.. note::
-   Example: Suppose you have two personalization fields, and you want the second one to appear first in the personalization dialog, with the first field shown last.
-   Tap :guilabel:`Fields for personalisation`, select the last field, and click ``Ok``. Then tap :guilabel:`Fields for personalisation` again, choose the first field, and click ``Ok``.
+Simply tap :guilabel:`Fields for personalisation` and choose the fields you want to use. You can drag and drop them to change the order.
 
 3. Use in thank-you-page
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -116,8 +111,7 @@ The order in which you select them determines the order in which they will appea
 Checking the :guilabel:`Default layout` checkbox causes the default QR-code info block to be printed in the eTicket PDF.
 
 If you deselect it, tap :guilabel:`Layout fields` and choose up to 6 fields you want to print on the eticket PDF.
-The order in which you select them determines the order in which they appear on the PDF.
-Just as with the :guilabel:`Fields for personalisation`, you may need to open and close the dialog multiple times to set the correct order.
+The order of the fields in the ticket layout runs from top to bottom, and you can change the order if needed by dragging the fields to the desired position.
 
 Use personalisation
 -------------------
