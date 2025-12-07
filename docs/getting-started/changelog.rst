@@ -1,6 +1,21 @@
 Changelog
 =========
 
+2.5.0 (8 Dec 2025)
+------------------
+* New: Optionally encrypt sensitive data in the database (plugin settings, Fast Events account information and Saas information, if used).
+* New: Scan level 6 (= Reset). All previous scans are removed and the ticket can be used again.
+* New: The number of days to retain log entries is now configurable.
+* New: Optionally, delete expired, failed, and cancelled orders daily.
+* New: Ability to check whether the daily action-scheduler tasks of Fast Events are still running and, if necessary, restart them.
+* New: All webhooks from email providers can now be saved and viewed.
+* New: Filter and action hooks for errorlog entries.
+* Fix: No longer leaking sensitive information in the URL parameters — which are logged by the web server — when the Admin Interface is used.
+* Fix: When an order is deleted, the associated logs and email logs are now removed as well.
+* Change: Generating a QR‑code image is now done on the client side.
+* Change: Improved error handling and UI behavior in the plugin’s JavaScript files.
+* Change: Upgrade FE-Admin to the latest version (4.5.0: API level 9) to work with Fast Events 2.5.0.
+
 2.4.1 (14 Nov 2025)
 -------------------
 * Change: Improved selection of personalization fields and layout fields.
@@ -16,7 +31,6 @@ Changelog
 * Change: action-scheduler updated to the latest version (3.9.3).
 * Change: Upgrade internal components.
 * Change: Upgrade FE-Admin to the latest version (4.4.0: API level 8).
-
 
 2.3.0 (14 Apr 2025)
 -------------------

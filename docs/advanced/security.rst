@@ -57,10 +57,15 @@ WordPress comes with a set of easy-to-reach theme and plugin editors. You can fi
 While these tools are useful to some, many WordPress users aren’t programmers and will never need to touch anything here.
 WordPress has a constant to disable editing from Dashboard. Placing this line in :file:`wp-config.php`.
 
-.. code-block:: text
+.. code-block:: php
 
    define('DISALLOW_FILE_EDIT', true);
-  
+
+Encrypt sensitive data
+----------------------
+Optionally, `encryption can be enabled <../getting-started/settings.html#encryption-settings>`_ for sensitive information such as plugin settings,
+Fast Events user information, and SaaS information (when SaaS is enabled).
+
 Online security check
 ---------------------
 There are a few sites that offer online security checks.

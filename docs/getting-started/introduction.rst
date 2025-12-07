@@ -52,6 +52,7 @@ No need for expensive scanning equipment. Just use our free `Android <https://pl
 No limit on the number of scan applications running simultaneously.
 
 You can temporarily leave the event (e.g. to smoke) and return a little later using levels 7 (temporarily leave) and 8 (re-enter).
+Or a reset of your ticket (scan level 6), which deletes all scans so the ticket can be reused—handy, for example, for members’ access to a sports facility.
 
 Staged scans and exit scans are possible and error messages can be tailored to your own event.
 

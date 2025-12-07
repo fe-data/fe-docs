@@ -9,8 +9,9 @@ For example, you will see the following message in the errorlog.
 .. code-block:: text
    :linenos:
 
-    2020-03-13 17:26:53 Cannot find PDF template id 60
-    -------------------------
+    2025-03-13 17:26:53
+    REST API
+    Cannot find PDF template id 60. Change the ticket types by selecting an existing PDF template.
 
 I get "Invalid address (setFrom)"
 ---------------------------------

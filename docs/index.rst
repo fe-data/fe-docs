@@ -78,6 +78,8 @@ How to use the different part in *Fast Events*.
   :doc:`Tools <usage/tools>`
 * **Ticket personalisation**
   :doc:`Ticket personalisation <usage/personalise>`
+* **Email webhooks**
+  :doc:`Email webhooks <usage/email-webhooks>`
 * **Example usage**
   :doc:`Tools <usage/examples>`
 
@@ -91,6 +93,7 @@ How to use the different part in *Fast Events*.
    usage/orders
    usage/tools
    usage/personalise
+   usage/email-webhooks
    usage/examples
    
 Apps

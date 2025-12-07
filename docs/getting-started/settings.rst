@@ -146,7 +146,7 @@ Email webhooks
 ^^^^^^^^^^^^^^
 Enable this if you want include error notification events (bounces, spam reports, ...) from the email-provider, in the errorlog.
 Potential error-events are visible in the ``Tools`` section of the ``FE Admin`` App.
-For the moment webhooks are only supported for ``Postmark``, ``Mailgun``, ``Mailjet``, ``SMTP2GO`` and ``Sendgrid``. See below for the details.
+For the moment webhooks are only supported for ``Postmark``, ``Mailgun``, ``Mailjet``, ``SMTP2GO``, ``Brevo`` and ``Sendgrid``. See below for the details.
      
 SMTP settings
 ^^^^^^^^^^^^^
@@ -193,12 +193,6 @@ If you create a new sending domain, make sure you create it in the ``EU`` space 
 If you don’t host your domain in the European union (USA flag in dashboard), you have to strip the ``eu`` part from the URL.
 This of course will also works, but it adds some latency to the API request. The ‘mg‘ part depends on your DNS settings.
 
-It is possible to log Mailgun '*Spam complaints*', '*Permanent failures*', '*Temporary failures*' and '*Unsubscribe*' events in the log-table of *Fast Events*.
-You can configure this in the webhooks section of the Mailgun dashboard.
-For the moment other events are discarded.
-Use this as URL ``https://user:password@fillinyourdomain.com/wp-json/fast-events/v1/email/webhook/mailgun``.
-Use a valid WordPress user and an application password in the url and remove the spaces from the application password.
-
 Mailjet API settings
 ^^^^^^^^^^^^^^^^^^^^
 The settings can be found in the `Mailjet dashboard <https://www.mailjet.com/>`_. The URL for the server is:
@@ -209,12 +203,6 @@ The settings can be found in the `Mailjet dashboard <https://www.mailjet.com/>`_
    
 The :guilabel:`Mailjet API key` is the combination of the user identifier and API key, separated by a colon. For example ``7a8e12:1234a1``
 
-It is possible to log Mailjet '*Bounce*', '*Spam*' and '*Blocked*' events in the log-table of *Fast Events*.
-You can configure this in the webhooks section of the Mailjet dashboard. For the moment other events are discarded.
-Use this as URL ``https://user:password@fillinyourdomain.com/wp-json/fast-events/v1/email/webhook/mailjet``.
-Use a valid WordPress user and an application password in the url and remove the spaces from the application password.
-Do not group webhooks. So uncheck these in the Mailjet webhooks dashboard.
-
 Postmark API settings
 ^^^^^^^^^^^^^^^^^^^^^
 The settings can be found in the `Postmark dashboard <https://postmarkapp.com/>`_. The URL for the server is:
@@ -223,12 +211,6 @@ The settings can be found in the `Postmark dashboard <https://postmarkapp.com/>`
 
    https://api.postmarkapp.com/email
 
-It is possible to log Postmark '*Bounce*', '*Spam complaint*', '*Subscription change*' and '*Manual suppression*' events in the log-table of *Fast Events*.
-You can configure this in the webhooks section of the Postmark dashboard. For the moment other events are discarded.
-Use this as URL ``https://fillinyourdomain.com/wp-json/fast-events/v1/email/webhook/postmark``. Furthermore: make sure you enable
-Basic authentication and use a valid WordPress user and an application password.
-Do **not** include the message content in the webhook!
-   
 Sendgrid API settings
 ^^^^^^^^^^^^^^^^^^^^^
 The settings can be found in the `Sendgrid dashboard <https://sendgrid.com/>`_. The URL for the server is:
@@ -236,11 +218,6 @@ The settings can be found in the `Sendgrid dashboard <https://sendgrid.com/>`_. 
 .. code-block:: html
 
    https://api.sendgrid.com/v3/mail/send
-
-It is possible to log Sendgrid '*Deferred*', '*Bounce*', '*Dropped*', '*Spam report*', '*Unsubscribe*' and '*Group unsubscribe*' events in the log-table of *Fast Events*.
-You can configure this in the webhooks section of the Sendgrid dashboard. For the moment other events are discarded.
-Use this as URL ``https://user:password@fillinyourdomain.com/wp-json/fast-events/v1/email/webhook/sendgrid``.
-Use a valid WordPress user and an application password in the url and remove the spaces from the application password.
 
 SMTP2GO API settings
 ^^^^^^^^^^^^^^^^^^^^
@@ -250,13 +227,6 @@ The settings can be found in the `SMTP2GO dashboard <https://app.smtp2go.com/>`_
 
    https://eu-api.smtp2go.com/v3/email/send
 
-It is possible to log SMTP2GO '*bounce*', '*spam*', '*unsubscribe*', '*resubscribe*' and '*reject*' events in the log-table of *Fast Events*.
-To set this up, go to the Webhooks section of the SMTP2GO dashboard. For the moment other events are discarded.
-Use this as URL ``https://fillinyourdomain.com/wp-json/fast-events/v1/email/webhook/smtp2go``. Furthermore: make sure you enable
-Basic authentication and use a valid WordPress user and an application password. Provide the Base64‑encoded string.
-
-Add the custom headers '*X_fast_events_event_id*', '*X_fast_events_order_id*' and '*X_fast_events_name*'. After typing each one, press Enter.
-   
 Sparkpost API settings
 ^^^^^^^^^^^^^^^^^^^^^^
 The settings can be found in the `Sparkpost dashboard <https://www.sparkpost.com/>`_. The URL for the server is:
@@ -362,6 +332,49 @@ Clear queues
 ^^^^^^^^^^^^
 The :guilabel:`Clear queues` button removes all tasks in all *Fast Events* plugin queues and resets the periodic cleanup job.
 
+Check
+^^^^^
+The :guilabel:`Check` button verifies whether the recurring tasks of Fast Events are stil present, and if they are not, it recreates them.
+
+----
+
+Encryption settings
+-------------------
+
+
+.. list-table::
+
+    * - .. image:: ../_static/images/getting-started/Settings-encrypt.png
+           :target: ../_static/images/getting-started/Settings-encrypt.png
+           :alt: Settings - encryption
+
+Optionally, encryption can be enabled for sensitive information such as plugin settings,
+Fast Events user information, and SaaS information (when SaaS is enabled).
+
+You have to add two additional constants to the *wp-config.php* file: :guilabel:`FAST_EVENTS_KEY` and :guilabel:`FAST_EVENTS_SALT`.
+These keys can receive any combination of characters, preferably at least 32 characters.
+
+.. warning:: Once set, they should never be changed. If you change or lose the keys, the data can no longer be decrypted.
+
+An easy way to get to solid values for these constants is to copy some of the values from https://api.wordpress.org/secret-key/1.1/salt/ and use them.
+Eventually, you should have additional code like the following in your *wp-config.php* file:
+
+.. code-block:: php
+   :linenos:
+
+   define( 'FAST_EVENTS_KEY', 'put your unique phrase here' );
+   define( 'FAST_EVENTS_SALT', 'put your unique phrase here' );
+
+Extreme care should always be taken when editing your *wp-config.php* file.
+Before editing this file, we strongly recommend generating a back-up copy of your full site as well as a copy of
+your *wp-config.php* file in the event that you need to undo any changes.
+If you’re unsure about how to do this, please speak with your web designer or technical contact.
+
+Once you have made the necessary changes, refresh the page and it should show that encryption is enabled.
+
+Unencrypted data will be encrypted as soon as it is changed, but a quick fix is to save the plugin settings — even if you didn’t modify anything.
+Modify and save Fast Events (sub)accounts via :guilabel:`Tools` -> :guilabel:`Accounts`
+
 ----
 
 Miscellaneous settings
@@ -372,6 +385,14 @@ Miscellaneous settings
     * - .. image:: ../_static/images/getting-started/Settings-misc.png
            :target: ../_static/images/getting-started/Settings-misc.png
            :alt: Settings - miscellaneous
+
+Daily orders cleanup
+^^^^^^^^^^^^^^^^^^^^
+By checking this box, all orders with the payment status ‘expired’, ‘cancelled’, or ‘failed’ are deleted daily.
+
+Log retention (days)
+^^^^^^^^^^^^^^^^^^^^
+By default, all log entries are deleted after 30 days. Enter a value here for how many days you want to retain the log entries.
 
 Cache time statistics queries
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

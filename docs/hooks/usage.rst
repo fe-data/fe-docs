@@ -19,6 +19,10 @@ Reference
 
 :doc:`fast_events_email_api_result <email_api_result>`
     This action is called after an order email has been send to the email-provider (Host-email, SMTP, Amazon SES, Mailgun, …). This call is made with both a successful email and an incorrect email (submission failed).
+:doc:`fast_events_errorlog <errorlog>`
+    This action is called after the error has been written to the database.
+:doc:`fast_events_errorlog_filter <errorlog_filter>`
+    This filter is called before the error is written to the database.
 :doc:`fast_events_input_fields <input_fields>`
     This filter is called after a basic check of all input and ticket fields.
 :doc:`fast_events_invoice <invoice>`
@@ -41,6 +45,8 @@ Reference
     This filter is called if there is a scan error. Normally the API returns the localized error, but you can override it and create your own version. You can make the error-string even more specific by using the scancode that is linked to a specific entrance.
 :doc:`fast_events_scan_filter_output <scan_filter_output>`
     This filter is called just before the output is sent back to the Android or IOS scan app. You can change any of the text lines in the qrcode block.
+:doc:`fast_events_scan_reset_filter <scan_reset_filter>`
+    This filter is called just before the scan entries are deleted. Used by scan level 6 (Reset).
 :doc:`fast_events_scan_ticket <scan_ticket>`
     This action is called after the ticket has been scanned.
 :doc:`fast_events_ticket_text <ticket_text>`
@@ -51,6 +57,8 @@ Reference
    :hidden:
 
    email_api_result
+   errorlog
+   errorlog_filter
    input_fields
    invoice
    mail_charset
@@ -62,5 +70,6 @@ Reference
    order_name
    scan_error_text
    scan_filter_output
+   scan_reset_filter
    scan_ticket
    ticket_text

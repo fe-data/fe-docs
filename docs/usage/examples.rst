@@ -76,6 +76,12 @@ DJ Festival with backstage tickets
 Create a single event and two tickets types: ``Silver`` tickets for general admission and ``Gold (Backstage)`` tickets.
 Make sure you have different scan-keys and specify which tickets can be scanned for backstage access. See `Scan tab <events.html#scan-keys>`_ for an example.
 
+Repeated access to a sports facility
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The idea behind this is that members enter through a regular entrance scan, and at the exit a reset scan is performed. This allows members to go back inside again.
+For non‑members a normal exit scan is carried out, after which the ticket becomes invalid.
+This behavior can be controlled in the `fast_events_scan_reset_filter <../hooks/scan_reset_filter.html#examples>`_ action filter.
+
 Mountainbike tour (Multiple locations and multiple timeslots)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Depending on the number of locations and the number of timeslots you have different options:

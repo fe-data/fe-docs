@@ -53,7 +53,7 @@ Events
 
 Orders
 ^^^^^^
-#. Detailed overview of the order.
+#. Detailed overview of the order: it also requires displaying input fields permission.
 #. Email the order.
 #. Share tickets link.
 #. Share tickets PDF.
@@ -69,7 +69,7 @@ Orders
 Tools
 ^^^^^
 #. Sales dashboard.
-#. Scan a ticket to see its details. This is an informational scan only.
+#. Scan a ticket to see its details. This is an informational scan only. It also requires order details permission
 #. Show and delete logging entries.
 #. Maintain email lists / closed user groups.
 #. Show, add, modify and delete webhooks.

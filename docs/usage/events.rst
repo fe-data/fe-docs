@@ -610,7 +610,10 @@ Preparation
 Scanning tickets can be easily defined in this screen.
 Varying from a single scan for all types (level 0) of tickets to a stepped scan (level 1) for selected ticket types.
 For example, visitors must first be scanned at the main entrance before they can be scanned at the backstage entrance and only if they have a ``Gold (Backstage)`` ticket.
+
 You can temporarily leave the event (e.g. to smoke) and return a little later using levels 7 (Temporarily leave) and 8 (Re-enter).
+
+It's also possible to reset (level 6) a ticket, as explained in this `example <../usage/examples.html#repeated-access-to-a-sports-facility>`_.
 
 You can also include an exit scan (level 9). Once a user passes this scan, no other scans are possible anymore.
 
@@ -650,7 +653,11 @@ Examples
 **5. Addition on 4. Backstage visitors can also pickup a free cocktail**
    The same definition as example 4, but just add 1 unique scankey for the ``Gold (Backstage)`` ticket,
    the level should be set to ``Level scan`` and give it a name/location (“*Free cocktail*”).
-**6. Cycling tour with several checkpoints**
+**6. Repeated access to a sports facility**
+   The idea behind this is that members enter through a regular entrance scan, and at the exit a reset scan is performed. This allows members to go back inside again.
+   For non‑members a normal exit scan is carried out, after which the ticket becomes invalid.
+   This behavior can be controlled in the `fast_events_scan_reset_filter <../hooks/scan_reset_filter.html#examples>`_ action filter.
+**7. Cycling tour with several checkpoints**
    Make a ``Entry scan`` at the beginning of the tour and a scan key (``Level scan``) for each checkpoint.
    Optionally, you can do a ``Exit scan`` at the end of the tour and, for example,
    give the participants a medal when they have completed all the checkpoints.
