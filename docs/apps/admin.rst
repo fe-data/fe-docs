@@ -10,8 +10,10 @@ and tablets in portrait mode, it will show multiple cards side by side and navig
 
 On large screens, desktop browsers and tablets in landscape mode, the information is displayed in table format.
 
-Download
---------
+----
+
+Install on Android or IOS
+-------------------------
 The App is available for Android 9.0 and above and IOS 13 and above.
 
 .. list-table::
@@ -23,6 +25,114 @@ The App is available for Android 9.0 and above and IOS 13 and above.
       - .. image:: ../_static/images/apps/Admin-IOS.png
            :scale: 50%
            :target: https://apps.apple.com/app/fe-admin/id6448051190
+
+----
+
+Install as PWA
+--------------
+If the `Web interface <../getting-started/settings.html#management-interface>`_ has been installed,
+it is also possible to install the management interface as a PWA on any platform with a web browser.
+The URL is:
+
+.. code-block:: html
+
+   https://exampledomain.com/wp-content/uploads/fast-events/admin/
+
+macOS
+^^^^^
+    .. list-table::
+       :header-rows: 1
+       :width: 100%
+       :widths: 30 70
+
+       *    - **Browser**
+            - **Steps**
+       *    - Safari
+            - #. Open the PWA URL.
+              #. Click the :guilabel:`Share` button → :guilabel:`Add to Dock`.
+       *    - Chrome/Edge
+            - #. Open the PWA URL.
+              #. Click the :guilabel:`Install FE Admin` icon in the address bar
+
+Windows
+^^^^^^^
+    .. list-table::
+       :header-rows: 1
+       :width: 100%
+       :widths: 30 70
+
+       *    - **Browser**
+            - **Steps**
+       *    - Edge
+            - #. Open the PWA URL.
+              #. Click the icon in the address bar that says → :guilabel:`App available. Install FE Admin`.
+       *    - Chrome
+            - #. Open the PWA URL.
+              #. Click the icon the in address bar that says → :guilabel:`Install FE Admin`.
+
+IOS
+^^^
+    .. list-table::
+       :header-rows: 1
+       :width: 100%
+       :widths: 30 70
+
+       *    - **Browser**
+            - **Steps**
+       *    - Safari
+            - #. Open the PWA URL.
+              #. Click the :guilabel:`Share` button → :guilabel:`Add to Home Screen`.
+       *    - Chrome
+            - #. Open the PWA URL.
+              #. Click the :guilabel:`Share` button → :guilabel:`Add to Home Screen`.
+
+Android
+^^^^^^^
+    .. list-table::
+       :header-rows: 1
+       :width: 100%
+       :widths: 30 70
+
+       *    - **Browser**
+            - **Steps**
+       *    - Chrome
+            - #. Open the PWA URL.
+              #. Tap the ⋮ menu → :guilabel:`Add to Home screen` or :guilabel:`Install FE Admin`
+       *    - Edge
+            - #. Open the PWA URL.
+              #. Same flow as Chrome (both Chromium‑based).
+
+ChromeBook
+^^^^^^^^^^
+    .. list-table::
+       :header-rows: 1
+       :width: 100%
+       :widths: 30 70
+
+       *    - **Browser**
+            - **Steps**
+       *    - Chrome
+            - #. Open the PWA URL.
+              #. Click the :guilabel:`Install` icon in the address bar.
+
+Just configure a regular account and you are good to go.
+
+While it is possible to switch between different accounts on the same server in the browser version of the app,
+it is **not possible** to switch between accounts on different servers.
+The WordPress REST API has a strict CORS setting by default for security reasons.
+By default, it is not allowed to use the REST API from a browser with pages loaded from another server.
+The easiest way is then to define multiple bookmarks that point to the correct server, or install different PWA's. For example,
+if you have the *Fast Events* plugin running on 2 servers, configure the URLs as follows:
+
+.. code-block:: html
+
+   https://exampleserver-1.com/wp-content/uploads/fast-events/admin/
+   https://exampleserver-2.com/wp-content/uploads/fast-events/admin/
+
+Nevertheless, for specialists versed in http header configurations and CORS, it is possible to access multiple servers from one location.
+However, we strongly advise against this.
+
+----
 
 Full list of capabilities
 -------------------------
@@ -83,6 +193,8 @@ Tools
 #. Send bulk free format emails.
 #. Bulk refund orders.
 #. (Sub)account management.
+
+----
 
 Server accounts
 ---------------
@@ -163,32 +275,7 @@ With the popupmenu choices you can configure all settings of the account.
 Once you have entered the server details, save them and click/tap the server card to log in.
 To switch between accounts, simply press the top-left 'hamburger' menu and select a different account.
 
-Desktop users
-^^^^^^^^^^^^^
-If the `Web interface <../getting-started/settings.html#management-interface>`_ has been installed it is also
-possible to use it apart from WordPress in any webbrowser.
-The URL is:
-
-.. code-block:: html
-
-   https://exampledomain.com/wp-content/uploads/fast-events/admin/
-
-Just configure a regular account and you are good to go.
-
-While it is possible to switch between different accounts on the same server in the browser version of the app,
-it is **not possible** to switch between accounts on different servers.
-The WordPress REST API has a strict CORS setting by default for security reasons.
-By default, it is not allowed to use the REST API from a browser with pages loaded from another server.
-The easiest way is then to define multiple bookmarks that point to the correct server. For example,
-if you have the *Fast Events* plugin running on 2 servers, configure the URLs as follows:
-
-.. code-block:: html
-
-   https://exampleserver-1.com/wp-content/uploads/fast-events/admin/
-   https://exampleserver-2.com/wp-content/uploads/fast-events/admin/
-
-Nevertheless, for specialists versed in http header configurations and CORS, it is possible to access multiple servers from one location.
-However, we strongly advise against this.
+----
 
 Usage
 -----
