@@ -1,7 +1,7 @@
 Scan App
 ========
 Check in visitors easily with our Android or IOS App; no expensive scanning terminals required.
-The App is available for Android 9.0 and later and IOS 14.0 and later.
+The App is available for Android 12 and later and IOS 15.0 and later.
     
 .. list-table::
 
@@ -47,9 +47,32 @@ scan a configuration QRcode with the camera, or load a configuration QRcode from
 **API Key**
     The ``Scan key`` as defined in the `Scan keys overview <../usage/events.html#scan-keys>`_.
 
-Settings
-^^^^^^^^
-The Settings menu is located in the navigation drawer (top left icon).
+Language settings
+^^^^^^^^^^^^^^^^^
+The Language settings menu are located in the navigation drawer (top left icon).
+
+*FE Scanner* supports standard 4 languages: English, Dutch, German and French. You can add your own language by following the next steps:
+
+#. Make sure you have a `Github <https://github.com>`_ account.
+#. Check the ``languages`` folder of `https://github.com/fe-data/fe-scanner-languages <https://github.com/fe-data/fe-scanner-languages>`_ if your language is supported.
+#. If not, login with the Github account at `https://gitlocalize.com/repo/10688 <https://gitlocalize.com/repo/10688>`_ and check if the translation is in progress.
+#. If not, create a new issue in `https://github.com/fe-data/fe-scanner-languages/issues <https://github.com/fe-data/fe-scanner-languages/issues>`_ requesting the new language code.
+   We will give you the role of moderator for the new language. Use the two letter codes from `this source <http://www.loc.gov/standards/iso639-2/php/code_list.php>`_. Only LTR-languages are supported.
+
+As a moderator you may receive review requests from other translators. Process them and when you are happy with the update create a pull request. Mind you:
+
+#. We will only process pull requests that originate from Gitlocalize, and will not process pull requests from private forks.
+#. For initial translations, we will only accept a full translation of the entire file. Partial translations will be rejected.
+#. Once the pull request has been processed, the new translation will be available in the app’s settings. Reload the translations and select the new language.
+#. There is only 1 moderator per language.
+
+Use the :guilabel:`Download languages` button to download new languages or to update the current version, and then optionally choose another language.
+If you are asked to restart the app, make sure the app is completely removed from memory, then restart the app and optionally select a new language.
+
+
+General settings
+^^^^^^^^^^^^^^^^
+The General settings menu are located in the navigation drawer (top left icon).
 
 **Autoclose timeout**
     Normally you will need to press :guilabel:`Continue` after each scan to start a new scan.
