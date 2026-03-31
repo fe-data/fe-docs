@@ -1,6 +1,19 @@
 Changelog
 =========
 
+3.0.0 (31 Mar 2026)
+-------------------
+* New: Introduction of a pre-compiled dependency injection container to handle class dependencies on all code, as a means to keep a decoupled architecture and to ease unit testing.
+* New: **Breaking upgrade**: the plugin requires PHP 8.1 or greater.
+* New: Added support for Stripe as a Payment Provider. The Stripe component also supports the SaaS model.
+* New: Added support for PayPal as a Payment Provider. SaaS is currently not supported.
+* New: Added support for Monolog and a new settings page for logging.
+* New: Open plugin architecture for email-providers, payment-providers, and logging. Configuring a payment provider, an email provider, or logging is done with JSON in the plugging settings.
+* New: Added **Wait mode** setting for Payment Providers. See the `Wait mode <settings.html#wait-mode>`_ for more information.
+* New: Added **Cancel URL** setting for Payment Providers. See the `Cancel URL <settings.html#cancel-url>`_ for more information.
+* New: Added **Use queuing** setting for Email Providers. See the `Use queueing <settings.html#use-queuing>`_ for more information.
+* Change: The ordering shortcodes are moved from the plugin settings to the Tools menu. See the `documentation <../usage/tools.html#shortcodes>`_ for more information.
+
 2.5.0 (8 Dec 2025)
 ------------------
 * New: Optionally encrypt sensitive data in the database (plugin settings, Fast Events account information and Saas information, if used).

@@ -104,15 +104,9 @@ Payouts next day
    :align: right
    :alt: payouts-the-next-day
        
-*Fast Events* works with the Dutch payment provider `Mollie <https://my.mollie.com/dashboard/signup/5835294>`_.
-No recurring fees, you just pay for successful transactions. Competitive rates: e.g. iDEAL is only € 0,32 (excl. VAT) per transaction.
-All major payment methods supported. No fees per ticket.
-
-Apply for your free account.
-
-.. image:: ../_static/images/getting-started/Mollie.png
-   :target: https://my.mollie.com/dashboard/signup/5835294
-   :alt: Mollie
+*Fast Events* works with `Mollie <https://my.mollie.com/dashboard/signup/5835294>`_, Stripe, or PayPal as Payment Provider.
+No recurring fees, you just pay for successful transactions.
+All major payment methods are supported. You only pay a fee per successful order and not per ticket.
 
 .. raw:: html
 
@@ -166,9 +160,11 @@ SaaS mode
 
 Host multiple organisations on your platform each with their own events. They can use your ticketing platform as sub-merchants.
 
+SaaS mode is only supported, if you select Mollie or Stripe as you payment provider.
+
 Add (sub)accounts in the :doc:`FE Admin App <../apps/admin>` and assign selected events to users and where necessary restrict functionality.
 
-Use flexible application fees, which will automatically be transferred to you by `Mollie <https://my.mollie.com/dashboard/signup/5835294>`_.
+Use flexible application fees, which will automatically be transferred to you by `Mollie <https://my.mollie.com/dashboard/signup/5835294>`_ or Stripe.
 
 .. raw:: html
 

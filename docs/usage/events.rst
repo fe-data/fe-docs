@@ -113,6 +113,9 @@ The basics definition of the event.
      Buying 1 passe-partout gets you 2 e-tickets in this example. One for every day. Stock control is applied on the targeted events;
      stock of the Thursday trip and Friday trip is decreased by one if you buy 1 passe-partout.
      The passe-partout event itself can also have stock control.
+
+.. _redirect-booking:
+
 **Event terms**
    If this field is not empty, then this is shown at the bottom of the order page as a checkbox.
    The user must check this in order to place the order. If you work with links (see screenshot above), always target a new window.
@@ -214,7 +217,7 @@ Event settings
    For a single event there is no need to enter event-id of the current event, as the default is the current event-id.
    But suppose you have a boat trip on Thursday and another one on Friday.
    You define 2 separate events and users are only allowed to book on either Thursday or Friday, but not on both dates.
-   Enter here both event-ids separated by a comma, e.g. “**2,4**”. Mind you, you have to this for both events!
+   Select both event-ids, e.g. “**#2,#4**”. Mind you, you have to this for both events!
 **Dashboard orders**
    Whether or not the option to place order in the :doc:`order menu </usage/orders>` is active. These orders follow all defined logic, but no payments are made.
 **Test payments**
@@ -289,6 +292,7 @@ These are the parameters are included in the body of the HTTP request as a JSON 
 The server should respond with ``{"count":0}`` if you are not allowed to place an order.
 It is possible to include an error as well. For example: ``{"count":0,"error":"This user is unknown"}``.
 This JSON string should be returned in the body of the response. This error-string will be shown to the user.
+Make sure you respond with an HTTP status code in the 4xx range.
 
 If the server decides the input is valid it should return the maximum number of tickets this person can buy, eg. ``{"count":5}``
 
@@ -480,7 +484,7 @@ Upload templates
            :target: ../_static/images/usage/Event-pdf.png
            :alt: Event PDF templates
 
-You will only see the templates you own. 'adminstrator' users will see all templates and who owns them.
+You will only see the templates you own. 'administrator' users will see all templates and who owns them.
 
 Preparation
 ~~~~~~~~~~~
@@ -499,6 +503,9 @@ Preparation
    Make use of use the `pdf system fonts <https://kbpdfstudio.qoppa.com/standard-14-pdf-fonts/>`_.
    For example use for your text the ``Helvetica`` font. Try to prevent the use of special fonts,
    because these are embedded in the PDF and then the PDF becomes larger. You can analyse your `PDF here <http://pdf-analyser.edpsciences.org/>`_.
+
+.. warning:: Do not use online tools to compress PDF files, because Fast Events does not fully support all compression methods.
+             It's best not to use compression.
 
 Example ticket
 ^^^^^^^^^^^^^^
@@ -913,3 +920,27 @@ Totals order status
 
 An overview of the totals per order status. If this even tis part of a group you can show just the order status totals of
 the event or the totals of all group members.
+
+----
+
+Duplicate event
+---------------
+If you need to create a group of events that are all related to each other,
+it’s usually more convenient to fully configure one event first, then duplicate that event and adjust the small differences.
+
+----
+
+Delete all orders
+-----------------
+Make sure you have a backup before you delete all orders from an event.
+
+Pay close attention to the order of deletion when you want to delete the orders of multiple events consecutively.
+
+#. If you have related events (a group) with a passe-partout event, you must **first delete the orders of the passe-partout event** and only then delete those of the other events in the group.
+#. For linked events, **the orders of the linked event must be deleted last**.
+
+----
+
+Delete event
+------------
+For deleting events, the same rules apply as for deleting all orders.

@@ -29,12 +29,9 @@ Summary
    - Export orders, tickets and scans for offline data analysis (Eg. Excel)
    - Flexible realtime scanning at multiple levels
    - Sell to closed user groups
-   - Integrated with `Mollie <https://my.mollie.com/dashboard/signup/5835294>`_ as payment provider, providing a variety of payment methods
+   - Integrated with `Mollie <https://my.mollie.com/dashboard/signup/5835294>`_, Stripe, or PayPal as payment provider, providing a variety of payment methods
    - Define your own statuses for orders
    - And much more ...
-
-.. note:: If online payments are used, the plugin currently only works for companies, associations, foundations ... based in a `SEPA country <https://wiki.xmldation.com/Support/EPC/List_of_SEPA_countries>`_.
-   There is no regional restriction for free tickets or RSVP meetings.
 
 Getting started
 ---------------
@@ -70,6 +67,8 @@ Usage
 
 How to use the different part in *Fast Events*.
 
+* **Supported Payment Providers**:
+  :doc:`Payment Provider <usage/payment>`
 * **Events administration**:
   :doc:`Events <usage/events>`
 * **Order administration**:
@@ -89,6 +88,7 @@ How to use the different part in *Fast Events*.
    :hidden:
    :caption: Usage
 
+   usage/payment
    usage/events
    usage/orders
    usage/tools

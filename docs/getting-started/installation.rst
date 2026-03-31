@@ -3,15 +3,24 @@ Installation
 
 Requirements
 ------------
-*Fast Events* is integrated with `Mollie <https://my.mollie.com/dashboard/signup/5835294>`_ as payment provider, providing a variety of payment options. If online payments are used, the plugin currently only works for companies, associations, foundations ... located in a `SEPA country <https://wiki.xmldation.com/Support/EPC/List_of_SEPA_countries>`_.
-With Mollie there are no fixed recurring costs, you only pay for successful transactions. Press the button below to create your free Mollie account. There is no region restriction for free tickets or RSVP events.
+*Fast Events* is integrated with `Mollie <https://my.mollie.com/dashboard/signup/5835294>`_, Stripe, or PayPal as payment provider, providing a variety of payment options.
+With Mollie there are no fixed recurring costs, you only pay for successful transactions.
+Press the button below to create your free Mollie, Stripe, or PayPal account.
 
 .. image:: ../_static/images/getting-started/Mollie.png
    :target: https://my.mollie.com/dashboard/signup/5835294
    :alt: Mollie
 
+.. image:: ../_static/images/getting-started/Paypal.jpg
+   :target: https://www.paypal.com/us/webapps/mpp/account-selection
+   :alt: PayPal
+
+.. image:: ../_static/images/getting-started/Stripe.png
+   :target: https://dashboard.stripe.com/register
+   :alt: Stripe
+
 .. note::
-   *Fast Events* has been tested on **WordPress 6.4** and above together with **PHP 8.0** and above.
+   *Fast Events* has been tested on **WordPress 6.4** and above together with **PHP 8.1** and above.
    Older versions of WordPress and PHP are not supported! Make sure the PHP extensions ``gd``, ``imagick`` and ``opcache`` are enabled.
    With most hosting providers this can be done via DirectAdmin or cPanel.
 

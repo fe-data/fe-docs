@@ -133,15 +133,17 @@ Personalised coupons
 The idea behind this approach is that everyone receives a unique coupon code, which often can be used once.
 You should take the following steps to generate all these coupons:
 
-- Create a coupon that can act template for the unique coupons.
+- Create a coupon that can act as template for the unique coupons. For example: ``Promo``.
 - Use the :guilabel:`Generate coupons` choice of the template coupon context menu.
-- Enter how many coupons should be generated. If necessary, use a prefix and/or suffix for the code.
+- Enter how many coupons should be generated. If necessary, use a prefix and/or suffix for the code. For example a prefix like ``Promo-``.
 - A csv-file is generated with all the coupons.
 - You can now add emailaddresses to this csv-file in any way you prefer.
 - Use the :guilabel:`Import coupons` from the ``coupon`` menu to import the new csv-file - including the emailaddresses - into *Fast Events*.
 - Use the :guilabel:`Bulk emails` from the ``coupon`` menu to send everyone the unique coupon code.
   You can change the email body and the used `keywords <../apps/admin.html#id3>`_ will be replaced with the information from the coupon.
   Select ``Coupons`` as source and, if needed, specify other selection parameters.
+  If you select ``User groups`` as source, an email is send to all users in the user group (= emaillist).
+  All the users will receive the same coupon code, which you need to specify in the :guilabel:`Coupon code template` field.
 
 ----
 
@@ -196,6 +198,30 @@ Export scans
 
 
 ----
+
+Shortcodes
+----------
+.. grid:: 2
+   :gutter: 2
+
+   .. grid-item-card::  Shortcodes overview
+
+       .. figure:: ../_static/images/usage/Shortcodes.png
+          :target: ../_static/images/usage/Shortcodes.png
+          :alt: Shortcodes overview
+
+   .. grid-item-card::  Edit shortcodes
+
+       .. figure:: ../_static/images/usage/Shortcodes-edit.png
+          :target: ../_static/images/usage/Shortcodes-edit.png
+          :alt: Edit shortcodes
+
+Shortcodes work closely together with the :doc:`ordering API <../advanced/api-ordering>`.
+Define the token IDs that can be used in the ordering API.
+Make sure the token IDs are not traceable, preferably containing a random string, so that inventive users cannot search for other events on the platform.
+
+.. note::
+   The Shortcode tool can only be used by WordPress ``administrator`` accounts.
 
 Export events
 -------------
@@ -359,7 +385,7 @@ And of course, the number of visible events can also be limited while adding/cha
    - Tools: ``Sales dashboard``
 
 **Customer support**
-   *While ordering, there will always be customers who enter the wrong email address or that the email does not arrive..
+   *While ordering, there will always be customers who enter the wrong email address or that the email does not arrive.
    Someone can then provide support (by phone, chat,...) and verify the request and resend or send the emails to another email address.
    Customer details can also be changed.*
 

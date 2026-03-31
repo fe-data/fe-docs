@@ -19,14 +19,14 @@ Reference
 
 :doc:`fast_events_email_api_result <email_api_result>`
     This action is called after an order email has been send to the email-provider (Host-email, SMTP, Amazon SES, Mailgun, …). This call is made with both a successful email and an incorrect email (submission failed).
-:doc:`fast_events_errorlog <errorlog>`
-    This action is called after the error has been written to the database.
-:doc:`fast_events_errorlog_filter <errorlog_filter>`
-    This filter is called before the error is written to the database.
 :doc:`fast_events_input_fields <input_fields>`
     This filter is called after a basic check of all input and ticket fields.
 :doc:`fast_events_invoice <invoice>`
     Download your own designed invoice possibly using an external financial accounting package.
+:doc:`fast_events_log <log>`
+    This action is called after the error has been written to the database.
+:doc:`fast_events_log_filter <log_filter>`
+    This filter is called before the error is written to the database.
 :doc:`fast_events_mail_charset <mail_charset>`
     This filter is called when an email is sent. Change the character set used in the email.
 :doc:`fast_events_mail_from <mail_from>`
@@ -57,10 +57,10 @@ Reference
    :hidden:
 
    email_api_result
-   errorlog
-   errorlog_filter
    input_fields
    invoice
+   log
+   log_filter
    mail_charset
    mail_from
    mail_from_name

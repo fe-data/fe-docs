@@ -7,6 +7,8 @@ Get orderform
 .. http:get:: /fast-events/v1/ordering/form/(string:token)
 
     Get the order form for this token. You can use this API to embed the ordering form in you own html-code.
+    Use the `Shortcode tool <../usage/tools.html#shortcodes>`_ to define the tokens and the shortcode. Shortcodes like:
+    ``[fast_events id=2]`` or ``[fast_events group="OPENAIR"]``.
 
     **Example request**
 
@@ -64,7 +66,14 @@ Get orderform
                                 document.head.appendChild(js)
                             })
                         } else {
-                            alert(json.message)
+                            if (json.code === 'rest_no_route') {
+                                document.getElementById('remote-form-container').innerHTML =
+                                        '<div style="font-size:18px;color:#141619;background:#d4d4d4;margin-bottom:0!important;padding:1rem;border:1px solid rgb(188,190,191);border-radius:0.375rem">\
+                                            <p>The Ordering API is not enabled.</p>\
+                                        </div>'
+                            } else {
+                                alert(json.message)
+                            }
                         }
                     } catch (error) {
                         alert('Error: ' + error)
@@ -148,10 +157,11 @@ Get orderform
 Get orderstatus
 +++++++++++++++
 
-.. http:get:: /fast-events/v1/ordering/status/(string:uid)
+.. http:get:: /fast-events/v1/ordering/status/(string:id)/(string:uid)
 
-    Retrieve the HTML-content for this order uid.
-    The API checks to which event id the order belongs and then looks for a token that starts with 'status' supplemented with the event id. So for example 'status2'.
+    Retrieve the HTML-content for this order ``uid`` with ``id`` token using the defined shortcode.
+    Use the `Shortcode tool <../usage/tools.html#shortcodes>`_ to define the tokens and the shortcode. Shortcodes like:
+    ``[fe_download showimage="no" downloadtext="Download your tickets"]`` or ``[fe_personalise cdn]``.
 
     **Example request**
 
@@ -161,13 +171,13 @@ Get orderstatus
 
             $ curl \
               -H "Content-Type: application/json" \
-              https://exampledomain.com/wp-json/fast-events/v1/ordering/status/WzJQDnAvm7yswYzfSGVvro45q0IOScEXmdzzqO0K
+              https://exampledomain.com/wp-json/fast-events/v1/ordering/status/STAT3/WzJQDnAvm7yswYzfSGVvro45q0IOScEXmdzzqO0K
 
         .. code-tab:: php
 
             <?php
             $ch = curl_init();
-            $url = 'https://exampledomain.com/wp-json/fast-events/v1/ordering/status/WzJQDnAvm7yswYzfSGVvro45q0IOScEXmdzzqO0K';
+            $url = 'https://exampledomain.com/wp-json/fast-events/v1/ordering/status/STAT3/WzJQDnAvm7yswYzfSGVvro45q0IOScEXmdzzqO0K';
             curl_setopt($ch, CURLOPT_URL, $url);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($ch, CURLOPT_HTTPHEADER, array(
@@ -179,7 +189,7 @@ Get orderstatus
         .. code-tab:: python
 
             import requests
-            URL = 'https://exampledomain.com/wp-json/fast-events/v1/ordering/status/WzJQDnAvm7yswYzfSGVvro45q0IOScEXmdzzqO0K'
+            URL = 'https://exampledomain.com/wp-json/fast-events/v1/ordering/status/STAT3/WzJQDnAvm7yswYzfSGVvro45q0IOScEXmdzzqO0K'
             response = requests.get(URL, headers=HEADERS)
             print(response.json())
 
@@ -192,7 +202,7 @@ Get orderstatus
             "form": "<img src=  ....  tickets</a>",
         }
 
-    The ``form`` field is truncated. If the uid is not found or it doesnt have the right payment status the ``form`` field is empty
+    The ``form`` field is truncated. If the ``uid`` is not found or it doesnt have the right payment status the ``form`` field is empty
     and the ``success`` field is :guilabel:`false`.
 
     **Changelog**
@@ -203,3 +213,4 @@ Get orderstatus
        :widths: auto
 
        "1.3.0", "Introduced."
+       "3.0.0", "Changed the URL to include the shortcode token id."

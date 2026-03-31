@@ -40,7 +40,7 @@ You can add a new checkpoint by pressing the new checkpoint button (bottom right
 The quickest way to configure the App is to scan a configuration qrcode,
 which you can copy from the ``Qrcode`` popupmenu item in the `Scan keys <../usage/events.html#scan-keys>`_ overview when editing an event.
 Pressing the QR code button (top‑right) in the add/edit checkpoint screen gives you two options:
-scan a configuration QRcode with the camera, or load a configuration QRcode from an image file.
+scan a configuration qrcode with the camera, or load a configuration qrcode from an image file.
 
 **Server URL**
     The URL where you have installed WordPress. For example ``https://exampledomain.com``. Only secure connections (https) are allowed.
@@ -49,7 +49,7 @@ scan a configuration QRcode with the camera, or load a configuration QRcode from
 
 Language settings
 ^^^^^^^^^^^^^^^^^
-The Language settings menu are located in the navigation drawer (top left icon).
+The Language settings menu is located in the navigation drawer (top left icon).
 
 *FE Scanner* supports standard 4 languages: English, Dutch, German and French. You can add your own language by following the next steps:
 

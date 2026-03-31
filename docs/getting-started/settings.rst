@@ -14,36 +14,43 @@ By clicking on the tabs on the left you can change various parts of the settings
 
 Payment provider account
 ------------------------
-*Fast Events* is integrated with `Mollie <https://my.mollie.com/dashboard/signup/5835294>`_ as payment provider, providing a variety of payment options.
-As such the plugin is only available for associations/companies residing in a `SEPA country <https://wiki.xmldation.com/Support/EPC/List_of_SEPA_countries>`_.
-With Mollie there are no fixed recurring costs, you only pay for successful transactions. The prices are very competitive.
-The transactions of, for example, iDEAL (the Netherlands) cost only € 0.32 excluding VAT. Press the button below to create your free Mollie account.
+*Fast Events* is integrated with `Mollie <https://my.mollie.com/dashboard/signup/5835294>`_, Paypal, and Stripe as payment provider.
+See `here for detailed information <../usage/payment.html>`_ on how to configure one of the payment providers.
 
-.. image:: ../_static/images/getting-started/Mollie.png
-   :target: https://my.mollie.com/dashboard/signup/5835294
-   :alt: Mollie
+Wait mode
+^^^^^^^^^
+If this is turned on, *Fast Events* waits until the payment is confirmed. The maximum waiting time is 5 seconds.
+If the order is not confirmed as paid within 5 seconds, the user is redirected to the `error page`_;
+otherwise, the user is redirected to the `Redirect after booking <../usage/events.html#redirect-booking>`_ page of the event.
+For the best user experience, it’s better to disable this setting and redirect the user, immediately after payment, to a generic page that, for example,
+states that an email will be sent shortly with further information on how the tickets can be downloaded or personalized.
 
-After you create your free account, you’ll receive an email from Mollie containing your login details. Click the button in that email to confirm your address.
-
-Log in to the Mollie dashboard and go through the wizard to enter all data (Your personal info, chamber of commerce id, bankaccount, VAT number (if applicable),
-your identification (passport), website where you want use payments and finally the payment methods.
-During the process you’ll be asked to transfer 1 cent from your company’s bank account to verify ownership.
-
-Live API-key and Test API-key
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Copy the keys from the Mollie :guilabel:`Dashboard` -> :guilabel:`Developers` into the ``Live API-key`` and ``Test API-key`` fields.
+For PayPal, it is advisable to turn this flag off, since the payment confirmation is often not delivered to *Fast Events* within 5 seconds.
 
 Currency
 ^^^^^^^^
+The three‑character currency code (e.g., ``EUR``) must be a valid ISO 4217 code. Check with you payment provider whether your currency code is supported.
+
+Currency symbol
+^^^^^^^^^^^^^^^
 For example ``€``.
 
 Refund costs
 ^^^^^^^^^^^^
 If you do refunds in the :doc:`Orders overview <../usage/orders>`. This amount is deducted from the reimbursement.
 
-Refund per
-^^^^^^^^^^
+Cost per
+^^^^^^^^
 The refund costs can be per ``Order`` or per ``Ticket``.
+
+Expire time
+^^^^^^^^^^^
+This timer indicates how long an order can remain open. While the order is open, the tickets are locked. However, once the timer expires,
+the order is cancelled (``expired`` status) and the tickets are released again.
+
+Cancel URL
+^^^^^^^^^^
+The page to which the user is redirected when the payment is canceled or when the browser’s back button is used. In that case, the order receives the status ``canceled``.
 
 Error page
 ^^^^^^^^^^
@@ -60,36 +67,24 @@ The :guilabel:`Error page` is the page where users end up if:
 
 SaaS mode
 ^^^^^^^^^
-With SaaS mode, it is possible to use *Fast Events* as a ticketing platform to which multiple organizations. associations, ... can be connected.
-Each organization then has its own event(s) and its own WordPress account on the platform.
-If you want to start using this mode you will first have to register your Application (= *Fast Events* ) once in the
-`Mollie Dashboard <https://my.mollie.com/dashboard/signup/5835294>`_ via the menu Developers->Apps. When entering the data, the ``Redirect URL`` should look like this ``https://example.com/wp-json/fast-events/v1/saas/authorize``.
-Once the registration is complete, the :guilabel:`Client-ID` and :guilabel:`Client-secret` can be entered below.
+You can find detailed SaaS information for each `payment provider here <../usage/payment.html#saas-configuration>`_.
 
-Steps required to connect a new organization to the platform:
-
-1. Create a WordPress account for the new organization in the `Admin accounts <../usage/tools.html#admin-accounts>`_ tool in the ``Tools``-section.
-   Do **not** create the account in the WordPress dashboard.
-2. Add the events for this organization and select the username created under step 1 in the `Saas menu <../usage/events.html#saas>`_.
-3. If necessary, change the sender in the `Email tab <../usage/events.html#address-subject>`_.
-   Verify that the email provider being used can work with this new sender.
-4. Set ``Permissions`` in the `Admin accounts <../usage/tools.html#admin-accounts>`_ menu for the user created in step 1
-   and also limit usage to the event ids defined in step 2.
-5. The customer can now use the `FE Admin App <../apps/admin.html#regular-accounts>`__ to authorize the platform to process payment information on behalf of the customer.
-6. Agree the application fee with the client. Below you can specify this for all organizations, but it can be changed for each event.
-   This fee is automatically retained by `Mollie <https://my.mollie.com/dashboard/signup/5835294>`_ and assigned to the service provider hosting *Fast Events*.
+OAuth test
+^^^^^^^^^^
+It is used by some OAuth API calls to indicate whether the test environment should be used or not.
+OAuth API calls are separate from events and therefore do not know whether the test environment is being used.
 
 Client ID
 ^^^^^^^^^
-The ID you got when registering the App. It usually starts with ``app_``.
+The ID you got when registering the App. For Mollie, the string starts with ``app_``. And for Stripe this is ``ca_``.
 
 Client secret
 ^^^^^^^^^^^^^
-The secret you got when registering the App.
+The secret you got when registering the App. This field is not used by Stripe.
 
 Client fee
 ^^^^^^^^^^
-This is the fee (including VAT) that Mollie retains and allocates to whoever hosts the *Fast Events* plugin in SaaS mode.
+This is the application fee (including VAT) that the Payment provider retains and allocates to whoever hosts the *Fast Events* plugin in SaaS mode.
 
 Client fee per
 ^^^^^^^^^^^^^^
@@ -146,97 +141,203 @@ Email webhooks
 ^^^^^^^^^^^^^^
 Enable this if you want include error notification events (bounces, spam reports, ...) from the email-provider, in the errorlog.
 Potential error-events are visible in the ``Tools`` section of the ``FE Admin`` App.
-For the moment webhooks are only supported for ``Postmark``, ``Mailgun``, ``Mailjet``, ``SMTP2GO``, ``Brevo`` and ``Sendgrid``. See below for the details.
-     
+For the moment webhooks are only supported for ``Postmark``, ``Mailgun``, ``Mailjet``, ``SMTP2GO``, ``Brevo`` and ``Sendgrid``.
+See :doc:`Email webhooks <../usage/email-webhooks>`
+
+Use queuing
+^^^^^^^^^^^
+The default configuration uses synchronous email delivery.
+This means that if the email server takes a few seconds to respond to a send‑request, the end user has to wait as well.
+Setting this checkbox means that the send request is placed in the action‑scheduler’s queue and control returns to the end user immediately.
+The action scheduler processes the queue in the background, so the end user won’t notice any delays even if the email server is slow.
+Nevertheless, it’s good practice to keep an eye on the performance of the email server.
+Long response times tie up resources for the duration of the request.
+Sub‑second response times are absolutely necessary for a well‑configured email server.
+
 SMTP settings
 ^^^^^^^^^^^^^
-**Host email**
-   Check this box if you want use your hosting platform the send emails
-**Email server**
+Use this configuration for SMTP email access:
+
+.. code-block:: json
+
+   {
+       "type": "mailer",
+       "provider": {
+           "class": "FeData\\FastEvents\\Mail\\Provider\\SmtpMailer",
+           "server": "mail.example.com",
+           "user": "mailer@example.com",
+           "password": "K2uKqNzctwr12uiXayVbxwNr",
+           "verify_peer": true,
+           "protocol": "tls",
+           "port": 587
+       }
+   }
+
+**server**
    The name of the server. Check with your email-provider.
-**User**
+**user**
    Most of the time this takes the form of an emailadress. Check with your email-provider.
-**Password**
+**password**
    The password of the account. Check with your email-provider.
-**Verify peer**
+**verify_peer**
    Disabling it and you’ll be vulnerable to a Man-in-the-Middle Attack. Incidentally you may disable it if you are fi. testing with an internal SMTP host with a self-signed certificate.
-**Port number**
-   Most of the time port ``465`` or ``587`` is used. Check with your email-provider.
-**Security protocol**
+**protocol**
    Use ``ssl`` or ``tls``. Check with your email-provider.
+**port**
+   Most of the time port ``465`` or ``587`` is used. Check with your email-provider.
 
 Amazon SES API settings
 ^^^^^^^^^^^^^^^^^^^^^^^
 The settings can be found in the `Amazon console dashboard <https://console.aws.amazon.com/>`_.
-If you still need to create a SES account, make sure you create it in the ``EU`` region as the plugin is only supported in the `European SEPA countries <https://wiki.xmldation.com/Support/EPC/List_of_SEPA_countries>`_ if online payments are used.
 Use `this link <https://docs.aws.amazon.com/general/latest/gr/ses.html>`_ for the AWS regions that can be used (e.g. ``eu-west-2``).
-You can find/create in the Amazon IAM (Identity and Access Management) menu the :guilabel:`Access key` and :guilabel:`Secret key`. Make sure the secret key has the right permissions to send email.
+You can find/create in the Amazon IAM (Identity and Access Management) menu the :guilabel:`Access key` and :guilabel:`Secret key`. Make sure the secret key has the right permissions to send email (AmazonSESFullAccess).
+
+.. code-block:: json
+
+   {
+      "type": "mailer",
+      "provider": {
+        "class": "FeData\\FastEvents\\Mail\\Provider\\AmazonSesMailer",
+        "region": "eu-north-1",
+        "access_key": "AKIASA9QWIUXC4CYJUDE",
+        "secret_key": "MBThasbB0x/6gesCOwrs0wslrjuwqsJbN"
+      }
+   }
 
 Brevo API settings
 ^^^^^^^^^^^^^^^^^^
-The settings can be found in the `Brevo dashboard <https://www.brevo.com/>`_. The URL for the server is:
+The settings can be found in the `Brevo dashboard <https://www.brevo.com/>`_. This is the standard configuration:
 
-.. code-block:: html
+.. code-block:: json
 
-   https://api.brevo.com/v3/smtp/email
+   {
+      "type": "mailer",
+      "provider": {
+        "class": "FeData\\FastEvents\\Mail\\Provider\\BrevoMailer",
+        "server": "https://api.brevo.com/v3/smtp/email",
+        "api_key": "xkeysib-6a9ede3...7b70104d-VjaOgOC4cPNQJm"
+      }
+   }
+
+Replace the ``api_key`` with the one from your Brevo dashboard.
 
 Mailgun API settings
 ^^^^^^^^^^^^^^^^^^^^
-The settings can be found in the `Mailgun dashboard <https://www.mailgun.com/>`_. If for example your domain is ``somedomain.com``. The server URL would be:
+The settings can be found in the `Mailgun dashboard <https://www.mailgun.com/>`_. If for example your domain is ``somedomain.com``. The configuration would be:
 
-.. code-block:: html
+.. code-block:: json
 
-   https://api.eu.mailgun.net/v3/mg.somedomain.com/messages
+   {
+      "type": "mailer",
+      "provider": {
+        "class": "FeData\\FastEvents\\Mail\\Provider\\MailgunMailer",
+        "server": "https://api.eu.mailgun.net/v3/mg.somedomain.com/messages",
+        "api_key": "ec611668-9581-490d-91bc-cf9911494a4f"
+      }
+   }
    
-If you create a new sending domain, make sure you create it in the ``EU`` space of Mailgun as this plugin can only be used by the
-`European SEPA countries <https://wiki.xmldation.com/Support/EPC/List_of_SEPA_countries>`_.
+If you create a new sending domain, be sure to set it up in Mailgun’s ``EU`` region when you are residing in the European Union.
 If you don’t host your domain in the European union (USA flag in dashboard), you have to strip the ``eu`` part from the URL.
 This of course will also works, but it adds some latency to the API request. The ‘mg‘ part depends on your DNS settings.
+Replace the ``api_key`` with the one from your Mailgun dashboard.
 
 Mailjet API settings
 ^^^^^^^^^^^^^^^^^^^^
-The settings can be found in the `Mailjet dashboard <https://www.mailjet.com/>`_. The URL for the server is:
+The settings can be found in the `Mailjet dashboard <https://www.mailjet.com/>`_. This is the standard configuration:
 
-.. code-block:: html
+.. code-block:: json
 
-   https://api.mailjet.com/v3.1/send
+   {
+       "type": "mailer",
+       "provider": {
+           "class": "FeData\\FastEvents\\Mail\\Provider\\MailjetMailer",
+           "server": "https://api.mailjet.com/v3.1/send",
+           "api_key": "7a8e12:1234a1"
+       }
+   }
    
-The :guilabel:`Mailjet API key` is the combination of the user identifier and API key, separated by a colon. For example ``7a8e12:1234a1``
+The :guilabel:`api_key` is the combination of the user identifier and API key, separated by a colon. For example ``7a8e12:1234a1``
 
 Postmark API settings
 ^^^^^^^^^^^^^^^^^^^^^
-The settings can be found in the `Postmark dashboard <https://postmarkapp.com/>`_. The URL for the server is:
+The settings can be found in the `Postmark dashboard <https://postmarkapp.com/>`_. This is the standard configuration:
 
-.. code-block:: html
+.. code-block:: json
 
-   https://api.postmarkapp.com/email
+   {
+      "type": "mailer",
+      "provider": {
+        "class": "FeData\\FastEvents\\Mail\\Provider\\PostmarkMailer",
+        "server": "https://api.postmarkapp.com/email",
+        "api_key": "207cd90f-b9ae-42e7-9dab-f5a717a8cc97"
+      }
+   }
+
+Replace the ``api_key`` with the one from your Postmark dashboard.
 
 Sendgrid API settings
 ^^^^^^^^^^^^^^^^^^^^^
-The settings can be found in the `Sendgrid dashboard <https://sendgrid.com/>`_. The URL for the server is:
+The settings can be found in the `Sendgrid dashboard <https://sendgrid.com/>`_. This is the standard configuration:
 
-.. code-block:: html
+.. code-block:: json
 
-   https://api.sendgrid.com/v3/mail/send
+   {
+      "type": "mailer",
+      "provider": {
+        "class": "FeData\\FastEvents\\Mail\\Provider\\SendgridMailer",
+        "server": "https://api.sendgrid.com/v3/mail/send",
+        "api_key": "SG.3f15e688-eb42-487f-884a-e8750b64c80b"
+      }
+   }
+
+Replace the ``api_key`` with the one from your Sendgrid dashboard.
 
 SMTP2GO API settings
 ^^^^^^^^^^^^^^^^^^^^
-The settings can be found in the `SMTP2GO dashboard <https://app.smtp2go.com/>`_. The URL for the server is:
+The settings can be found in the `SMTP2GO dashboard <https://app.smtp2go.com/>`_. This is the standard configuration:
 
-.. code-block:: html
+.. code-block:: json
 
-   https://eu-api.smtp2go.com/v3/email/send
+   {
+      "type": "mailer",
+      "provider": {
+        "class": "FeData\\FastEvents\\Mail\\Provider\\Smtp2GoMailer",
+        "server": "https://api.smtp2go.com/v3/email/send",
+        "api_key": "f4be40b4-e87b-428f-bda7-3267f86f3694"
+      }
+   }
+
+Aside from the Global URL, requests may be prefixed with one of the following base URL's:
+
+    .. csv-table::
+       :header: "Region", "Server URL"
+       :width: 100%
+       :widths: auto
+
+       "Global", "https://api.smtp2go.com/v3/"
+       "US (United States)", "https://us-api.smtp2go.com/v3/"
+       "EU (European Union)", "https://eu-api.smtp2go.com/v3/"
+       "AU (Oceania)", "https://au-api.smtp2go.com/v3/"
+
+Replace the ``api_key`` with the one from your SMTP2GO dashboard.
 
 Sparkpost API settings
 ^^^^^^^^^^^^^^^^^^^^^^
-The settings can be found in the `Sparkpost dashboard <https://www.sparkpost.com/>`_. The URL for the server is:
+The settings can be found in the `Sparkpost dashboard <https://www.sparkpost.com/>`_. This is the standard configuration:
 
-.. code-block:: html
+.. code-block:: json
 
-   https://api.eu.sparkpost.com/api/v1/transmissions
-   
-If you create a new sending domain, make sure you create it in the ``EU`` space of Sparkpost as this plugin can only be used by the `European SEPA countries <https://wiki.xmldation.com/Support/EPC/List_of_SEPA_countries>`_.
-If you don’t host your domain in the European union, you have to strip the ``eu`` part from the URL. This of course will also works, but it adds some latency to the API request.
+   {
+      "type": "mailer",
+      "provider": {
+        "class": "FeData\\FastEvents\\Mail\\Provider\\SparkpostMailer",
+        "server": "https://api.eu.sparkpost.com/api/v1/transmissions",
+        "api_key": "7f3d82fe-ddff-4aa3-b0a0-d46c51357cf2"
+      }
+   }
+
+If you don’t host your domain in the European union, you have to strip the ``eu`` part from the URL.
+Replace the ``api_key`` with the one from your Sparkpost dashboard.
 
 ----
 
@@ -377,6 +478,93 @@ Modify and save Fast Events (sub)accounts via :guilabel:`Tools` -> :guilabel:`Ac
 
 ----
 
+Logging settings
+----------------
+
+
+.. list-table::
+
+    * - .. image:: ../_static/images/getting-started/Settings-logging.png
+           :target: ../_static/images/getting-started/Settings-logging.png
+           :alt: Settings - logging
+
+*Fast Events* logging is `PSR-3 <https://www.php-fig.org/psr/psr-3/>`_ compliant.
+It always writes each log message to the *Fast Event* log table.
+Monolog is used for logging, and this configuration allows defining various additional log methods.
+
+DB log level
+^^^^^^^^^^^^
+The default loglevel for the *Fast Events* log table is ``notice``. This is the order of the levels:
+
+#. emergency
+#. alert
+#. critical
+#. error
+#. warning
+#. notice
+#. info
+#. debug
+
+If you set the level to ``notice``, all log messages with levels from ``emergency`` up to and including ``notice`` are recorded,
+while ``info`` and ``debug`` messages are omitted.
+
+Monolog
+^^^^^^^
+The default Monolog configuration is the JSON content shown below.
+
+.. code-block:: JSON
+   :linenos:
+
+    {
+      "type": "monolog",
+      "channel": "fast-events",
+      "handlers": []
+    }
+
+With this configuration option, and in addition to the default *Fast Events* logging, you can send your logs to files, sockets, inboxes, databases, and various web services.
+
+This example shows additional logging to a file that rotates daily (every 24 hours) and retains up to 30 rotated files.
+Additionally, it logs ``alert`` level messages and any messages of higher severity to syslog.
+
+.. code-block:: JSON
+   :linenos:
+
+    {
+      "type": "monolog",
+      "channel": "fast-events",
+      "handlers": [
+        {
+          "class": "Monolog\\Handler\\RotatingFileHandler",
+          "args": [
+            "/tmp/daily.log",
+            30,
+            "notice"
+          ]
+        },
+        {
+          "class": "Monolog\\Handler\\SyslogHandler",
+          "args": [
+            "fast-events",
+            8,
+            "alert"
+          ]
+        }
+      ]
+    }
+
+Be sure to enter valid JSON, and you can verify it with online tools such as https://jsonbeautifier.org
+All handlers you define follow this structure.
+Each handler must contain a ``class`` property (a string) and an ``args`` property (an array).
+Even when a handler takes no arguments, you still need to provide an empty array for ``args``.
+Be sure to escape the ``class`` property, which is why the example uses double backslashes.
+
+To define additional handlers, refer to the Monolog documentation here: https://seldaek.github.io/monolog/doc/02-handlers-formatters-processors.html
+Check the handler’s ``__construct`` method to see which arguments it accepts.
+
+If you save the settings, *Fast Events* will perform basic checks—such as validating the syntax and confirming that the handler class exists—but it won’t verify the constructor arguments.
+
+----
+
 Miscellaneous settings
 ----------------------
 
@@ -411,49 +599,15 @@ But you can also use it if you occasionally want to sell a book or whatever. The
 
 Use ordering API
 ^^^^^^^^^^^^^^^^
-Use the Ordering API added for generating order forms and order status forms, so that the client frontend can be integrated with other,
-non WordPress, development environments.
+By enabling this setting, it is possible to use the WordPress Fast Event plugin as a REST API backend in a custom front‑end system that is not based on WordPress.
 See :doc:`ordering API <../advanced/api-ordering>` for the specification.
+It works together with the `Shortcode tool <../usage/tools.html#shortcodes>`_.
 
 Cache time orderscreen
 ^^^^^^^^^^^^^^^^^^^^^^
 Optional specify how many seconds the orderform needs to be cached.
 This option is not using WordPress as cache, but relies on an intermediate cache like Cloudflare or others.
 For example, if you specify 60 (=60 seconds), an HTTP header is generated such as: ``Cache-Control: public, max-age=60, s-max-age=60``.
-
-Ordering shortcodes
-^^^^^^^^^^^^^^^^^^^
-Per line you can specify which token should use which shortcode. This setting is only used if the setting :guilabel:`Use ordering API` in this section is switched on.
-
-.. code-block:: text
-
-  token:shortcode
-
-  Example
-  =======
-  vintage:[fast_events id=2]
-  cycle:[fast_events group="fast"]
-  status2:[fe_download showimage="yes" downloadtext="Download tickets"]
-
-The tokens **vintage** and **cycle** can be used in the ordering API to generate the orderform. To call this API, do as follows:
-
-.. code-block:: text
-
-   https://exampledomain.com/wp-json/fast-events/v1/ordering/form/vintage
-
-You can then embed this orderform in your own frontend.
-To get it working, you also need the ``fe-payment.js`` or ``fe-payment.min.js`` library, which is part of the Fast Events plugin.
-The library is 100% javascript and has no other dependencies.
-
-Query the order status by using the order uid.
-The API checks to which event id the order belongs and then looks for a token that starts with 'status' supplemented with the event id.
-So for example 'status2'. ``LabpCiOAl9a4n4TaVpxI4Gdei63M76zPeDCFfs1N`` is an order that is part of event number 2.
-
-.. code-block:: text
-
-   https://exampledomain.com/wp-json/fast-events/v1/ordering/status/LabpCiOAl9a4n4TaVpxI4Gdei63M76zPeDCFfs1N
-
-The order status lines are **optional**. If not present the default is ``[fe_download showimage="no" downloadtext="Download tickets"]``
 
 ----
 

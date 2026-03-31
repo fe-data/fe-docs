@@ -3,7 +3,7 @@ Performance
 
 PHP version
 -----------
-Make sure you run the latest version of PHP. Right now that is **8.4**
+Make sure you run the latest version of PHP. Right now that is **8.5**
 Most hosting providers give you the option to set the version via DirectAdmin or cPanel.
 
 .. warning:: Make sure the PHP extensions ``gd``, ``imagick`` and ``opcache`` are enabled.
@@ -70,4 +70,5 @@ REST API server
 Another option is to run WordPress only as a REST‑API server, without using it for any front‑end rendering.
 For example, you can use `Cloudflare Pages <https://pages.cloudflare.com/>`_ as the front-end web server and call the `ordering API <api-ordering.html>`_ on the back-end to order etickets.
 Enable :guilabel:`Use ordering API` in the `Miscellaneous-settings <../getting-started/settings.html#miscellaneous-settings>`_ for this scenario.
-Then fill in the :guilabel:`Cache time orderscreen` and :guilabel:`Ordering shortcodes` fields.
+Then fill in the :guilabel:`Cache time orderscreen` and use the `Shortcode tool <../usage/tools.html#shortcodes>`_
+to define the token and shortcodes used bij the ordering API.

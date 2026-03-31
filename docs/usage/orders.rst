@@ -133,7 +133,7 @@ Refund
 
        Refund order while deducting the costs as configured in the `Refund costs <../getting-started/settings.html#refund-costs>`_ parameter in the Settings-menu.
 
-       .. warning:: Do not use the Mollie dashboard for refunding.
+       .. warning:: Preferable do not use the Mollie, Stripe, or PayPal dashboard for refunding.
 
 ----
 

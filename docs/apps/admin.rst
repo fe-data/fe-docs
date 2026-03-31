@@ -14,7 +14,7 @@ On large screens, desktop browsers and tablets in landscape mode, the informatio
 
 Install on Android or IOS
 -------------------------
-The App is available for Android 9.0 and above and IOS 13 and above.
+The App is available for Android 9.0 and above and IOS 15 and above.
 
 .. list-table::
 
@@ -140,7 +140,6 @@ Depending on the permissions configuration, users will only see the components t
 The full list of components is shown below.
 Permissions can be configured in the ``Permissions`` popupmenu choice in the :guilabel:`Accounts` tool.
 
-
 Events
 ^^^^^^
 #. Detailed overview.
@@ -187,6 +186,7 @@ Tools
 #. Export orders to Excel format.
 #. Export tickets to Excel format.
 #. Export scans to Excel format.
+#. Show, add, modify and delete shortcodes.
 #. Export events.
 #. Import events.
 #. Send bulk order emails.
@@ -280,7 +280,7 @@ To switch between accounts, simply press the top-left 'hamburger' menu and selec
 Usage
 -----
 The first time the App is launched and if *Fast Events* is running in ``SaaS mode`` and the sub-merchant has not yet
-authorized access to its payment information, a ``Connect with Mollie`` screen will be displayed to authorise access.
+authorized access to its payment information, a ``Connect with Mollie`` or ``Connect with Stripe`` screen will be displayed to authorise access.
 
 The way the App works is pretty straightforward. You can use the buttons at the bottom or sidebar to switch
 between ``Orders``, ``Events`` and ``Tools``.
@@ -307,6 +307,28 @@ Settings
 The App and Admin Web interface have some general settings. You can find them by clicking on the hamburger menu and selecting :guilabel:`Settings`.
 Most settings are related to sharing information within the application. For example, when sharing information with an email application,
 you can enter a subject and by default the text in the setting will be used.
+
+Languages
+^^^^^^^^^
+The Language settings menu is located in the navigation drawer (top left icon).
+
+*FE Admin* supports standard two languages: English and Dutch. You can add your own language by following the next steps:
+
+#. Make sure you have a `Github <https://github.com>`_ account.
+#. Check the ``languages`` folder of `https://github.com/fe-data/fe-admin-languages <https://github.com/fe-data/fe-admin-languages>`_ if your language is supported.
+#. If not, login with the Github account at `https://gitlocalize.com/repo/9558 <https://gitlocalize.com/repo/9558>`_ and check if the translation is in progress.
+#. If not, create a new issue in `https://github.com/fe-data/fe-admin-languages/issues <https://github.com/fe-data/fe-admin-languages/issues>`_ requesting the new language code.
+   We will give you the role of moderator for the new language. Use the two letter codes from `this source <http://www.loc.gov/standards/iso639-2/php/code_list.php>`_. Only LTR-languages are supported.
+
+As a moderator you may receive review requests from other translators. Process them and when you are happy with the update create a pull request. Mind you:
+
+#. We will only process pull requests that originate from Gitlocalize, and will not process pull requests from private forks.
+#. For initial translations, we will only accept a full translation of the entire file. Partial translations will be rejected.
+#. Once the pull request has been processed, the new translation will be available in the app’s settings. Reload the translations and select the new language.
+#. There is only 1 moderator per language.
+
+Use the :guilabel:`Download languages` button to download new languages or to update the current version, and then optionally choose another language.
+If you are asked to restart the app, make sure the app is completely removed from memory, then restart the app and optionally select a new language.
 
 Events
 ^^^^^^
