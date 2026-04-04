@@ -1,6 +1,12 @@
 FAQ
 ===
 
+I get "The server does not support this request; please ask the site administrator for help)"
+---------------------------------------------------------------------------------------------
+If you update the settings or try to install the management interface, you may get this error.
+Its easy to fix: Goto to the Admin Dashboard and select Settings -> Permalinks and choose anything but 'Plain'.
+This will be fixed in the upcoming 3.0.1 release.
+
 Downloading tickets fails
 -------------------------
 Take a look in the `errorlog <../usage/tools.html#error-log>`_. The PDF template used may not be present.
