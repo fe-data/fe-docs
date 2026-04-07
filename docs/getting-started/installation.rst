@@ -24,9 +24,16 @@ Press the button below to create your free Mollie, Stripe, or PayPal account.
    Older versions of WordPress and PHP are not supported! Make sure the PHP extensions ``gd``, ``imagick`` and ``opcache`` are enabled.
    With most hosting providers this can be done via DirectAdmin or cPanel.
 
-Because the number and variety of plugins is vast and wide, we do not guarantee that the plugin will function with all third-party plugins, themes or browsers of any kind. We do not assume responsibility and will not be held responsible for any conflicts or compatibility issues that may occur due to third-party software. We assume no responsibility for any data loss as a result of installing or using *Fast Events*. Should conflicts occur with third-party software, we may provide support at our discretion.
+Because the number and variety of plugins is vast and wide, we do not guarantee that the plugin will function with all third-party plugins, themes or browsers of any kind.
+We do not assume responsibility and will not be held responsible for any conflicts or compatibility issues that may occur due to third-party software.
+We assume no responsibility for any data loss as a result of installing or using *Fast Events*. Should conflicts occur with third-party software, we may provide support at our discretion.
 
-For performance reasons *Fast Events* is using its own tables and not the WordPress custom post types approach. It requires the presence of the **InnoDB** storage engine in your database engine.
+For performance reasons *Fast Events* is using its own tables and not the WordPress custom post types approach.
+It requires the presence of the **InnoDB** storage engine in your database engine.
+
+Make sure that in WordPress :guilabel:`Settings` -> :guilabel:`Permalinks`, the setting is **not set** to ``Plain``.
+
+The minimum required version of PHP is 8.1
 
 Installation
 ------------
