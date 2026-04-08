@@ -428,7 +428,7 @@ Create order
               -H "X-FE-API-KEY: 3zo58AUYP9zOE6YT"  \
               -H "Content-Type: application/json" \
               -u "test:4ZAN O5OY OAvZ FZb2 Lslv JnJG" \
-              -d '{"event_id":65,"name":"John Doe","email":"John999@doe999.com","fields":[],"tickets":[{"v14a1f":1}]}' \
+              -d '{"event_id":65,"name":"John Doe","email":"John999@doe999.com","fields":[],"amount":"2.50","tickets":[{"v14a1f":1}]}' \
               https://exampledomain.com/wp-json/fast-events/v1/admin/orders
 
         .. code-tab:: php
@@ -449,6 +449,7 @@ Create order
                 "name"     => "John Doe",
                 "email"    => "John999@doe999.com",
                 "fields"   => [],
+                "amount"   => "2.50",
                 "tickets"  => [
                     [
                         "v14a1f" => 1
@@ -470,6 +471,7 @@ Create order
                 'name': 'John Doe',
                 'email': 'John999@doe999.com',
                 'fields': [],
+                'amount': '2.50',
                 'tickets': [
                     {'v14a1f': 1}
                 ]
@@ -505,7 +507,8 @@ Create order
                 ]
             },
             "num_tickets": 1,
-            "total": 40.25,
+            "total": 2.5,
+            "discount": 37.75
             "ip_address": "3.14.17.20",
             "_links": {
                 "self": [
@@ -535,3 +538,4 @@ Create order
        :widths: auto
 
        "1.0", "Introduced."
+       "3.0.0", "Added ``amount``."
