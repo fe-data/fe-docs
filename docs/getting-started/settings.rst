@@ -508,8 +508,12 @@ The default loglevel for the *Fast Events* log table is ``notice``. This is the 
 If you set the level to ``notice``, all log messages with levels from ``emergency`` up to and including ``notice`` are recorded,
 while ``info`` and ``debug`` messages are omitted.
 
-Monolog
-^^^^^^^
+Log retention (days)
+^^^^^^^^^^^^^^^^^^^^
+By default, all log entries are deleted after 30 days. Enter a value here for how many days you want to retain the log entries.
+
+Monolog configuration
+^^^^^^^^^^^^^^^^^^^^^
 The default Monolog configuration is the JSON content shown below.
 
 .. code-block:: JSON
@@ -577,10 +581,6 @@ Miscellaneous settings
 Daily orders cleanup
 ^^^^^^^^^^^^^^^^^^^^
 By checking this box, all orders with the payment status ‘expired’, ‘cancelled’, or ‘failed’ are deleted daily.
-
-Log retention (days)
-^^^^^^^^^^^^^^^^^^^^
-By default, all log entries are deleted after 30 days. Enter a value here for how many days you want to retain the log entries.
 
 Cache time statistics queries
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
